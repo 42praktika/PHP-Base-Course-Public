@@ -45,4 +45,5 @@ function normalizeFamilyTree(array $familyTree): array
 }
 
 
-var_dump(normalizeFamilyTree($familyTree));
+// Раскоммментируй для отладки
+//var_dump(normalizeFamilyTree($familyTree));

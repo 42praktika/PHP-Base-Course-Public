@@ -27,7 +27,7 @@ declare(ticks=$tickValue);
 
 - `declare` влияет на весь код, следующий за ним 
 - при подключении файла с `declare` в файл без директивы, в файле без директивы ошибки не возникнет
-Например, `Code Examples/4_declare_child_script.php`.
+Например, `Homework/4_declare_child_script.php`.
 
 [*Дополнительная информация по конструкции `declare`](https://www.php.net/manual/ru/control-structures.declare.php)
 
