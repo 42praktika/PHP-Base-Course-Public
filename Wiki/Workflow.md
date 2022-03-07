@@ -5,12 +5,12 @@
 Далее:
 
 1. Инициализируем свою ветку (
-   см. **[Wiki/Git](https://github.com/42praktika/PHP-Base-Course-Admin/blob/main/Wiki/Git.md)**)
+   см. **[Wiki/Git](https://github.com/42praktika/PHP-Base-Course-Public/blob/main/Wiki/Git.md)**)
 
 2. Устанавливаем зависимости (появляется директория `vendor/`)
 
 ```
-cd /{yourPathToProject}/PHP-Base-Course-Admin
+cd /{yourPathToProject}/PHP-Base-Course-Public
 composer install
 ```
 
