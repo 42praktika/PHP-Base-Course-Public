@@ -92,3 +92,11 @@ php -S localhost:8081 indexWithMask.php
 `$_SESSION` - массив, содержащий переменные сессии, которые доступны для текущего скрипта. (https://www.php.net/manual/ru/reserved.variables.session.php)
 
 [Функции для работы с сессиями](https://www.php.net/manual/ru/ref.session.php)
+
+
+```
+cd "Lessons/03. PHP basics. Part 3. SuperGlobals/Code Examples/projectWithForms"
+//запуск встроенного php сервера
+php -S localhost:8080 public/index.php
+
+```
