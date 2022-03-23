@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User Form</title>
+    <style>
+        form label {
+            display: block;
+            margin: 0 0 10px 0;
+        }
+
+        form button {
+            margin: 10px 0 0 0;
+        }
+
+        .error {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+<h1>Данные пользователя</h1>
+<p class="error">
+    <?php echo $_SESSION['error'] ?? ''; ?>
+</p>
+<form action="/user/save" method="post">
+    <label for="full_name">
+        Фамилия Имя Отчество: <input type="text" name="full_name" id="full_name">
+    </label>
+    <label for="login">
+        Логин: <input type="text" name="login" id="login">
+    </label>
+    <label for="password">
+        Пароль: <input type="password" name="password" id="password" autocomplete="new-password">
+    </label>
+    <button>Сохранить</button>
+</form>
+
+<h2>
+    <a href="/user/list">Список сохраненных пользователей</a>
+</h2>
+</body>
+</html>

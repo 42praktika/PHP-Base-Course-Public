@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User List</title>
+</head>
+<body>
+<h1>Последний зарегистрированный пользователь:</h1>
+
+<?php
+$lastUserToken = $_SESSION['last_user'] ?? '';
+$lastUser = $_SESSION['user_list'][$lastUserToken] ?? '';
+?>
+<p>
+<?php
+echo 'Фамилия Имя Отчество: '. ($lastUser['full_name'] ?? '');
+?>
+</p>
+<p>
+<?php
+echo 'Логин: '. ($lastUser['login'] ?? '');
+?>
+</p>
+
+<h2>Список зарегистрированных пользователей:</h2>
+<?php
+$userList = $_SESSION['user_list'] ?? [];
+foreach($userList as $userToken => $user) {
+?>
+<p>
+<?php
+echo 'Фамилия Имя Отчество: '. ($user['full_name'] ?? '');
+?>
+</p>
+<p>
+<?php
+echo  'Логин: '. ($user['login'] ?? '');
+?>
+</p>
+<?php
+}
+?>
+
+<a href="/user/restart">Очистить сессию</a>
+
+</body>
+</html>
