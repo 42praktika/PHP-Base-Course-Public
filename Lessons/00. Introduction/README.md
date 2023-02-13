@@ -37,6 +37,9 @@
 - поддерживаемые удобные фреймворки для разработки приложений от сайта визитки до Enterprise приложения
 - средняя зарплата 177 тысяч рублей, медианная - 155 тысяч (по данным https://zarplan.com/)
 
+![image](https://user-images.githubusercontent.com/20073167/218404841-27fcef4c-b136-4791-80dd-ede321bd7157.png)
+
+
 ## Benchmarks
 
 [![PYPL](assets/benchmark.png)](https://habr.com/ru/post/532432/)
