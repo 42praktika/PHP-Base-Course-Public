@@ -365,6 +365,7 @@ gradle-app.setting
 ##### Composer
 composer.phar
 /vendor/
+.phpunit.result.cache
 
 ##### PHP CodeSniffer
 # gitignore for the PHP Codesniffer framework
