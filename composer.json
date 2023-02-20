@@ -1,9 +1,18 @@
 {
-    "name": "deeush/php-base-course-public",
-    "autoload": {
-        "psr-4": {
-            "Deeush\\PhpBaseCoursePublic\\": "src/"
+    "name": "42praktika/php-base-course",
+    "description": "Репозиторий курса по PHP (базовый курс)",
+    "type": "project",
+    "license": "ISC",
+    "authors": [
+        {
+            "name": "42praktika",
+            "email": "itis42lab@gmail.com"
         }
+    ],
+    "require-dev": {
+        "phpunit/phpunit": "^9.5"
     },
-    "require": {}
+    "scripts": {
+        "test": "vendor/bin/phpunit Lessons"
+    }
 }
