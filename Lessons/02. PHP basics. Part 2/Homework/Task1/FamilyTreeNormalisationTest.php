@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 use PHPUnit\Framework\TestCase;
 
-class FamilyTreeNormalisationTest extends TestCase
+class CDFamilyTreeNormalisationTest extends TestCase
 {
     /**
      * @dataProvider getTreeFromTaskProvider
