@@ -40,10 +40,17 @@ $familyTree = [
 
 function normalizeFamilyTree(array $familyTree): array
 {
-    //здесь должен быть твой код
-    return [];
+    array_walk_recursive($familyTree,function(&$item)
+    {
+            $item = mb_convert_encoding($item,'UTF-8');
+            $item = trim($item);
+            $item = str_replace('   ',' ',$item);
+            $item= mb_strtolower($item);
+            $item = mb_convert_case($item, MB_CASE_TITLE, "UTF-8");
+    });
+    return $familyTree;
 }
 
 
-// Раскоммментируй для отладки
-//var_dump(normalizeFamilyTree($familyTree));
+
+var_dump(normalizeFamilyTree($familyTree));
