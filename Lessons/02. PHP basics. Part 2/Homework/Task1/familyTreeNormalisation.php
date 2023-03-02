@@ -46,7 +46,7 @@ function normalizeFamilyTree(array $familyTree): array
         $tree = mb_convert_encoding($tree, 'UTF-8');
         $tree = trim($tree);
         $tree = str_ireplace('  ', '', $tree);
-        $tree = mb_strtolower($tree); //Приведение строки к нижнему регистру
+        $tree = mb_strtolower($tree);
         $tree = mb_convert_case($tree, MB_CASE_TITLE, 'UTF-8');
     });
 
