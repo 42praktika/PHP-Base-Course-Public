@@ -41,9 +41,18 @@ $familyTree = [
 function normalizeFamilyTree(array $familyTree): array
 {
     //здесь должен быть твой код
-    return [];
+    array_walk_recursive($familyTree, function (&$tree)
+    {
+        $tree = mb_convert_encoding($tree, 'UTF-8');
+        $tree = trim($tree);
+        $tree = str_ireplace('  ', '', $tree);
+        $tree = mb_strtolower($tree); //Приведение строки к нижнему регистру
+        $tree = mb_convert_case($tree, MB_CASE_TITLE, 'UTF-8');
+    });
+
+    return $familyTree ;
 }
 
 
 // Раскоммментируй для отладки
-//var_dump(normalizeFamilyTree($familyTree));
+var_dump(normalizeFamilyTree($familyTree));
