@@ -38,12 +38,21 @@ $familyTree = [
 ];
 
 
-function normalizeFamilyTree(array $familyTree): array
+function normalizeFamilyTree(array &$familyTree): array
 {
-    //здесь должен быть твой код
-    return [];
+    foreach ($familyTree as $key=>&$value) {
+        if (is_array($value)) {
+            normalizeFamilyTree($value);
+        }
+        if ($key === "name") {
+            $value = mb_convert_case($value, MB_CASE_TITLE, 'utf8');
+            $value = str_replace('  ','', $value);
+            $value = trim($value);
+            $value = mb_convert_encoding($value, 'utf8');
+        }
+    }
+    return $familyTree;
 }
 
 
-// Раскоммментируй для отладки
-//var_dump(normalizeFamilyTree($familyTree));
+var_dump(normalizeFamilyTree($familyTree));
