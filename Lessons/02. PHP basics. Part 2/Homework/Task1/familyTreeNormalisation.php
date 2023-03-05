@@ -17,7 +17,7 @@ $familyTree = [
                         ]
                     ],
                     'father' => [
-                        'name' => 'Пётр Алексеевич Романов',
+                        'name' => 'пётр Алексеевич Романов',
                         'parents' => [],
                     ],
                 ],
@@ -38,12 +38,21 @@ $familyTree = [
 ];
 
 
-function normalizeFamilyTree(array $familyTree): array
+function normalizeFamilyTree(array &$familyTree): array
 {
-    //здесь должен быть твой код
-    return [];
+    foreach ($familyTree as &$person) {
+        if (is_array($person)) {
+            normalizeFamilyTree($person);
+        } else {
+            $person = trim(mb_convert_encoding($person,'UTF-8'));
+            $person = preg_replace('/\s+(?!\p{L})/','', $person);
+            $person = mb_convert_case(mb_strtolower($person), MB_CASE_TITLE, "UTF-8");
+        }
+    }
+
+    return $familyTree;
 }
 
 
-// Раскоммментируй для отладки
-//var_dump(normalizeFamilyTree($familyTree));
+// Раскомментируй для отладки
+// var_dump(normalizeFamilyTree($familyTree));
