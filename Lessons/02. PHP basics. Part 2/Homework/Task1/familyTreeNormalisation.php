@@ -37,13 +37,26 @@ $familyTree = [
     ]
 ];
 
-
-function normalizeFamilyTree(array $familyTree): array
+function NameNormalize(string &$name): string
 {
-    //здесь должен быть твой код
-    return [];
+    $name = mb_strtolower($name);
+    $name = mb_convert_case($name, MB_CASE_TITLE, "UTF-8");
+    $name = trim($name);
+    $name = str_replace('  ','',$name);
+
+    return $name;
+}
+function normalizeFamilyTree(array &$familyTree): array
+{
+    foreach ($familyTree as $key => &$value) {
+        if (is_array($value)){
+          normalizeFamilyTree($value);
+        }
+        if ($key == "name") {
+            NameNormalize($value);
+        }
+    }
+    return $familyTree;
 }
 
-
-// Раскоммментируй для отладки
-//var_dump(normalizeFamilyTree($familyTree));
+var_dump(normalizeFamilyTree($familyTree));
