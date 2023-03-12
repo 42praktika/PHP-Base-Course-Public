@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Registration</title>
+    <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <link href="/assets/css/index.css" rel="stylesheet" type="text/css">
+    <script defer src="/assets/js/flyForm.js"></script>
+    <script defer src="/assets/js/changeColor.js"></script>
+</head>
+<body>
+<div class="registerForm">
+    <div class="header">Регистрация</div>
+    <form action="/mainPage" method="post" enctype="multipart/form-data">
+        <div class="labels">
+            <label for="name">
+                Имя: <input type="text" name="name" id="name" value="введите имя">
+                <div class="warning">Имя должно содержать от 3х до 20ти символов</div>
+            </label>
+        </div>
+        <br>
+        <div class="labels">
+            <label for="email">
+                e-mail: <input type="email" name="email" id="email" value="Введите email">
+            </label>
+        </div>
+        <br>
+        <div class="labels">
+            <label for="password">
+                Пароль: <input type="password" name="password" id="password" autocomplete="new-password" placeholder="Введите пароль">
+                <div class="warning">Пароль должен содержать более 8ми символов</div>
+            </label>
+        </div>
+        <br>
+        <div class="btn">
+            <button>Зарегистрироваться</button>
+        </div>
+    </form>
+</div>
+</body>
+</html>
