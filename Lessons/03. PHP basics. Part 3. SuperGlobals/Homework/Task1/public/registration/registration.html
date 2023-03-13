@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Registration</title>
+    <link
+            rel="stylesheet"
+            type="text/css"
+            href="index.css"
+    >
+</head>
+<body>
+<h1 id="title">wElCoMe To ReGiStRaIoN...</h1>
+<div id="wrapper">
+    <form id="signin" method="post" action="../userDetail.php">
+        <input type="text" id="user1" name="user" placeholder="Исем" />
+        <input type="text" id="user2" name="Surname" placeholder="Surname" />
+        <input type="text" id="user3" name="Patronymic" placeholder="姓" />
+        <input type="password" id="pass" name="pass" placeholder="Password" />
+        <button type="submit" id="btn">Зарегистироваться</button>
+        <button id="btnNeed">НАДО НАЖАТЬ</button>
+    </form>
+</div>
+</body>
+<script src="../confetti/confetti.js"></script>
+<script>
+
+    const btn=document.querySelector('#btnNeed')
+    btn.addEventListener('click',(e)=>{
+        e.preventDefault()
+        console.log(1)
+        const start = () => {
+            setTimeout(function() {
+                confetti.start()
+            }, 1000);
+        };
+
+        const stop = () => {
+            setTimeout(function() {
+                confetti.stop()
+            }, 50000);
+        };
+        start();
+        stop();
+    })
+</script>
+<script type="module" src="changeBodyColor.js"></script>
+
+</html>
