@@ -1,0 +1,63 @@
+body {
+    text-align: center;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 0 0 0 0;
+}
+
+.form-login {
+    border: black solid 3px;
+    border-radius: 20px;
+    width: 40%;
+    height: 100px;
+    padding-top: 2%;
+    padding-bottom: 5%;
+}
+
+.form-username {
+    display: flex;
+    justify-content: center;
+}
+
+.form-password {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.btn-submit {
+    justify-self: center;
+    margin-top: 20px;
+    border-radius: 8px;
+    background-color: white;
+}
+
+.btn-submit:hover {
+    background-color: darkgray;
+}
+
+label {
+    margin-right: 20px;
+}
+
+input {
+    border-radius: 8px;
+}
+
+input:focus {
+    background-color: darkgrey;
+}
+
+img {
+    height: 25px;
+    width: 25px;
+    margin-left: 90%;
+}
+
+#checker {
+    width: 15px;
+    height: 15px;
+    margin-left: 0;
+}

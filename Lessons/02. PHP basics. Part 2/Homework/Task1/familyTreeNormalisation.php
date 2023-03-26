@@ -46,8 +46,7 @@ function normalizeFamilyTree(array &$familyTree): array
         }
         else {
             $person = mb_convert_encoding(trim($person), 'UTF-8');
-            $spaces = '  ';
-            while (strpos($person, $spaces)) {
+            while (strpos($person, '  ')) {
                 $person = str_replace('  ', ' ', $person);
             }
             $person = mb_convert_case($person, MB_CASE_TITLE, 'UTF-8');
@@ -56,4 +55,4 @@ function normalizeFamilyTree(array &$familyTree): array
     return $familyTree;
 }
 
-//var_dump(normalizeFamilyTree($familyTree));
+var_dump(normalizeFamilyTree($familyTree));
