@@ -1,0 +1,65 @@
+input {
+    margin-left: 5px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 200px;
+    margin: auto;
+}
+
+.main-container {
+    width: 40%;
+    margin: 25vh auto;
+}
+
+.page-name {
+    margin: 20px 0;
+    text-align: center;
+}
+
+.main-form-btn {
+    width: 120px;
+    height: 40px;
+    margin: 0 auto;
+}
+
+.card {
+    width: 90%;
+    margin: auto;
+}
+
+.card__img {
+    max-width: 100%;
+    max-height: 450px;
+    display: block;
+    margin: auto;
+}
+
+.card__buttons {
+    width: 35%;
+    margin: 10px auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.paper {
+    width: 70%;
+    margin: auto;
+}
+
+.paper p {
+    width: 100%;
+    margin: 15px;
+}
+
+.paper h1 {
+    text-align: center;
+}
+
+.paper img {
+    margin: auto;
+    display: block;
+}
