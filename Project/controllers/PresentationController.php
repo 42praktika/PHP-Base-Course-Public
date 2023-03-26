@@ -1,5 +1,5 @@
 <?php
-declare(strict_types=1);
+/*declare(strict_types=1);
 
 namespace app\controllers;
 
@@ -18,4 +18,4 @@ class PresentationController
         $body = Application::$app->getRequest()->getBody();
         var_dump($body);
     }
-}
+}*/
