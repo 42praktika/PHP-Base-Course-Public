@@ -13,7 +13,7 @@
 <h2>Автор курса:</h2>
 <form action="/author?company=42Lab" method="post" enctype="multipart/form-data">
     <label>
-        Имя автора курса: <input type="text" name="authorName"/>
+        Имя автора курса: <input type="text" name="authorName[]"/><input type="text" name="authorName[]"/><input type="text" name="authorName[]"/>
     </label>
     <br>
     <label>

@@ -8,6 +8,6 @@ function testLocal()
 {
     $someLocalVar = 9;
 }
-
+testLocal();
 echo '<pre>';
 var_dump($GLOBALS);
