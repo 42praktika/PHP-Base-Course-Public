@@ -40,7 +40,6 @@ $familyTree = [
 
 function normalizeFamilyTree(array $familyTree): array
 {
-    //здесь должен быть твой код
     return [];
 }
 
