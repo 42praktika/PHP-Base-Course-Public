@@ -15,6 +15,7 @@ $router = $application->getRouter();
 
 $router->setGetRoute("/", [new PresentationController, "getView"]);
 $router->setPostRoute("/handle", [new PresentationController, "handleView"]);
+$router->setGetRoute("/about", [new PresentationController, "aboutView"]);
 
 ob_start();
 $application->run();

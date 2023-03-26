@@ -8,14 +8,16 @@ use app\core\Application;
 class PresentationController
 {
 
-    public function getView()
-    {
+    public function getView() {
         Application::$app->getRouter()->renderView("presentation");
     }
 
-    public function handleView()
-    {
+    public function handleView() {
         $body = Application::$app->getRequest()->getBody();
         var_dump($body);
+    }
+
+    public function aboutView() {
+        Application::$app->getRouter()->renderView("about");
     }
 }
