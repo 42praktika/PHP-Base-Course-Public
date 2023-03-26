@@ -1,0 +1,89 @@
+.cool-form {
+    min-height: 40%;
+    width: 25%;
+    background-color: #fff;
+    margin: auto;
+    text-align: center;
+    padding: 10px;
+    font-family: Arial, sans-serif;
+    font-size: 20px;
+}
+
+.change-time-button {
+    background-color: #e7e7e7;
+    color: black;
+    border: none;
+    padding: 8px 20px;
+    margin: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+.change-time-button:active {
+    background-color: grey;
+    transition: 0.1s;
+}
+
+.send-button {
+    background-color: peru;
+    border: none;
+    width: 90%;
+    padding: 8px 10px;
+    font-size: 20px;
+    margin: 20px;
+}
+
+.send-button:hover {
+    background-color: #14a20a;
+    transition: 0.3s;
+}
+
+.main {
+    background-color: #f8f8f8;
+    min-height: 100%;
+    padding: 10px;
+}
+
+#name, #psw, #psw-repeat, #event {
+    border-color: #ccc;
+    width: 100%;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 25px;
+}
+
+.date-in-seconds {
+    max-width: 100%;
+    text-align: center;
+}
+
+.age-field, .date-in-seconds {
+    max-width: 100%;
+    text-align: center;
+}
+
+.age {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 5px;
+}
+
+.age td, .age th {
+    border: 1px solid #000;
+}
+
+td.checked-item {
+    background-color: #f3bd48;
+}
+
+.message {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    font-style: italic;
+}
+
