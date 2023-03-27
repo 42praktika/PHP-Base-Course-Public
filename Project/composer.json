@@ -1,0 +1,18 @@
+{
+  "name": "elirector/project",
+  "type": "project",
+  "license": "GNU",
+  "authors": [
+    {
+      "name": "Elirector",
+      "email": "elirector@gmail.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "app\\": "./"
+    }
+  },
+  "minimum-stability": "dev",
+  "require": {}
+}

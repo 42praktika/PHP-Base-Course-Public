@@ -13,7 +13,7 @@ spl_autoload_register(function ($className) {
 $application = new Application();
 $router = $application->getRouter();
 
-$router->setGetRoute("/main.php", [new PresentationController, "getView"]);
+$router->setGetRoute("/", [new PresentationController, "getView"]);
 $router->setPostRoute("/handle", [new PresentationController, "handleView"]);
 
 ob_start();
