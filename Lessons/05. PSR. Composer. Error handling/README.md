@@ -561,7 +561,7 @@ require __DIR__ . '/vendor/autoload.php';
 {
   "autoload": {
     "psr-4": {
-      "Acme\\": "src/"
+      "Acme\\": "assets/"
     }
   }
 }

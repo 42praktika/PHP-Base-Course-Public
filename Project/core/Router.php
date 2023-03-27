@@ -32,11 +32,14 @@ class Router
     {
         $path = $this->request->getUri();
         $method = $this->request->getMethod();
+
         if (!isset($this->routes[$method]) || !isset($this->routes[$method][$path])) {
-            $this->renderStatic("404.html");
+            $this->renderStatic("error.php");
+
             return;
         }
         $callback = $this->routes[$method][$path];
+
         if (is_string($callback)) {
             $this->renderView($callback);
             return;
@@ -44,15 +47,16 @@ class Router
         if (is_array($callback)) {
             call_user_func($callback, $this->request);
         }
+
     }
 
-    public function renderView(string $name): void
+    public static function renderView(string $name): void
     {
 
         include PROJECT_ROOT."views/$name.php";
     }
 
-    public function renderStatic(string $name): void
+    public static function renderStatic(string $name): void
     {
         include PROJECT_ROOT."web/$name";
     }
