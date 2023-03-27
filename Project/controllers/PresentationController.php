@@ -13,6 +13,11 @@ class PresentationController
         Application::$app->getRouter()->renderView("presentation");
     }
 
+    public function getViewMainPage()
+    {
+        Application::$app->getRouter()->renderView("mainPage");
+    }
+
     public function handleView()
     {
         $body = Application::$app->getRequest()->getBody();
