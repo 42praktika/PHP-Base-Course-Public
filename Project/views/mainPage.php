@@ -12,7 +12,7 @@
     </a>
 
     <nav class="d-inline-flex mt-2 mt-md-0 ms-md-auto">
-        <a class="p-3 border bg-light me-4 py-2 link-body-emphasis text-decoration-none" href="registration">Регистрация</a>
+        <a class="p-3 border bg-light me-4 py-2 link-body-emphasis text-decoration-none" href="registrationPage">Регистрация</a>
         <a class="p-3 border bg-light me-4 py-2 link-body-emphasis text-decoration-none" href="aboutPage">Доп.информация</a>
         <a class="p-3 border bg-light me-4 py-2 link-body-emphasis text-decoration-none" href="feedBack">Оставьте отзыв</a>
         <a class="p-3 border bg-light py-2 link-body-emphasis text-decoration-none" href="auth">Вход</a>

@@ -1,0 +1,25 @@
+.main-text {
+    font-family: PT Astra Sans;
+    background-color: #e9e9f0;
+    padding: 10px 10px 10px 10px;
+    margin: 10px 10px 10px 10px;
+    font-size: 18px;
+}
+.footer {
+    background-color: dimgrey;
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    text-align: center;
+    width: 100%;
+    font-size: 17px;
+    font-weight: bold;
+    color: #fafaff;
+}
+.ul {
+    position: relative;
+    margin-left: 440px;
+}
+.aboutImage {
+
+}
