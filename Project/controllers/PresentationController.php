@@ -13,6 +13,17 @@ class PresentationController
         Application::$app->getRouter()->renderView("presentation");
     }
 
+    public function getStartPage()
+    {
+        Application::$app->getRouter()->renderView("welcomePage");
+    }
+
+    public function getRegisterPage()
+    {
+        Application::$app->getRouter()->renderView("registerPage");
+    }
+
+
     public function handleView()
     {
         $body = Application::$app->getRequest()->getBody();
