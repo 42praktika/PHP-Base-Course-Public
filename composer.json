@@ -13,7 +13,9 @@
         "phpunit/phpunit": "^9.5"
     },
   "require": {
-    "php": ">=8"
+    "php": ">=8",
+    "ext-yaml": "*",
+    "ext-simplexml": "*"
   },
     "scripts": {
         "test": "vendor/bin/phpunit Lessons"
