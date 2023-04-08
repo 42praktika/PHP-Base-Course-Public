@@ -1,0 +1,150 @@
+.bodyBorders{
+    display: flex;
+    margin: auto;
+    align-items: center;
+    justify-content: center;
+}
+
+.border{
+    width: 245px;
+    min-height: 165vh;
+    margin: -25px;
+    background-color: #868888;
+    box-shadow: 0 15px 15px 15px #868888;
+    z-index: -3
+}
+
+.content{
+    padding-top: 10px;
+    flex: auto;
+    text-align: center;
+}
+
+.header{
+    font-size: 65px;
+    margin-bottom:105px;
+    margin-top: -150px;
+    font-family: header;
+    font-weight: 900;
+    color: #181515;
+}
+
+.articleTopContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.articleTop{
+    min-width: 560px;
+    height: 235px;
+    background-color: #e9e9ef;
+    border-radius: 7px;
+    z-index: 2;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    display: flex;
+}
+
+.articleImg{
+    border-bottom-left-radius: 7px;
+    border-top-left-radius: 7px;
+    max-height: 235px;
+    max-width: 330px;
+}
+
+#top1:hover{
+    content: url("https://cdn-0.brodude.ru/9LyeVf-TFnsWDq_ufDmM5Hk4t9nz4umo7r1283MVxAc/rs:fill:1200:692:0/g:ce:0:0/c:0:0/aHR0cHM6Ly9icm9kdWRlLnJ1L3dwLWNvbnRlbnQvdXBsb2Fkcy8yMDIyLzA2LzE2L2Jyb2R1ZGUucnVfMTYuMDYuMjAyMl9FdFJ6RlBLWWRoMzBmLnBuZw");
+    max-width: 326px;
+    max-height: 227px;
+    border-bottom-left-radius: unset;
+    border-top-left-radius: unset;
+}
+
+#top2:hover{
+    content: url("https://icdn.lenta.ru/images/2018/10/26/20/20181026203414585/detail_52fae87580428e950e7b7fcc1cea8122.jpg");
+    max-width: 235px;
+    border-bottom-left-radius: unset;
+    border-top-left-radius: unset;
+}
+
+.article{
+    width: 997px;
+    background-color: #efefef;
+    justify-items: center;
+    display: flex;
+    height: 100px;
+    padding: 5px;
+    margin: auto;
+    margin-bottom: 20px;
+    cursor: pointer;
+    border: 3px solid;
+    border-color: #706767;
+}
+
+.title{
+    font-size: 24px;
+    font-weight: 700;
+    margin-left: 5px;
+    font-family: Arial;
+    color: rgba(51, 40, 31, 0.83);
+}
+
+.titleMinor{
+    font-size: 18px;
+    text-align: center;
+    display: flex;
+    margin: auto;
+    font-family: Arial;
+    font-weight: 700;
+    color: rgba(51, 40, 31, 0.83);
+}
+
+.articleImgMinor{
+    max-height: 110px;
+}
+
+.links{
+    position: fixed;
+    top: 95px;
+    right: 15px;
+    display : grid;
+    grid-column-start: 1;
+}
+
+.comment{
+    max-height: 30px;
+    display: flex;
+    margin: auto;
+    margin-right: 35px;
+}
+
+button{
+    color: #2d1511;
+    font-size: 22px;
+    font-family: Arial;
+    margin: 7px;
+    font-weight: 600;
+    background: rgba(233, 233, 239, 0.34);
+    border-color: rgba(14, 11, 9, 0.68);
+    padding: 15px;
+}
+
+.bottomContainer{
+    align-content: center;
+    background-color: #777773;
+    height: 120px;
+    width: 100%;
+    position: absolute;
+    bottom: -69%;
+    left: 0;
+    z-index: 0;
+    display: flex;
+}
+
+@font-face {
+    font-family: header;
+    src: url("pics/Monteray-Deco.ttf");
+}
