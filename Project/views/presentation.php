@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <title>Hello</title>
     <meta charset="UTF-8">
-    <title>FoodTube - Регистрация</title>
     <style>
         body {
             font-family: Arial, sans-serif;
