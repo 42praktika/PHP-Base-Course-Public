@@ -4,6 +4,7 @@ use app\controllers\AboutController;
 use app\controllers\MainController;
 use app\controllers\RegistrationController;
 use app\core\Application;
+use app\core\ConfigParser;
 
 //Возвращает файлы напрямую
 if (preg_match('/\.(?:png|jpg|jpeg|gif|css|html?|js)$/', $_SERVER["REQUEST_URI"])) {
@@ -17,6 +18,9 @@ spl_autoload_register(function ($className) {
    require str_replace("app\\",PROJECT_ROOT, $className).".php";
 
 });
+
+ConfigParser::load();
+echo getenv("APP_ENV"); // TODO убрать, это просто для демонстрации д/з
 
 $application = new Application();
 $router = $application->getRouter();
