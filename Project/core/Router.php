@@ -9,17 +9,20 @@ use app\core\Request;
 class Router
 {
     protected Request $request;
+    protected Response $response;
     protected array $routes;
 
-    public function __construct(Request $request)
+    public function __construct(Request $request, Response $response)
     {
         $this->request = $request;
+        $this->response = $response;
         $this->routes = [];
 
     }
 
     public function setGetRoute(string $path, string|array $callback): void
     {
+//        if($callback)
         $this->routes[MethodsEnum::GET][$path] = $callback;
     }
 
@@ -35,7 +38,7 @@ class Router
 
         if (!isset($this->routes[$method]) || !isset($this->routes[$method][$path])) {
             $this->renderStatic("error.php");
-
+            $this->response->setStatusCode(Response::HTTP_NOT_FOUND);
             return;
         }
         $callback = $this->routes[$method][$path];

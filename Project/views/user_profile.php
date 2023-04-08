@@ -77,17 +77,23 @@ include PROJECT_ROOT."views/templates/headerTemplate.php";
         <label style="color: red;" id="auth_error_label"></label>
     </form>
 </div>
-    <div class="page-container">
-        <div class="flex column">
-            <label class="title_name">About us</label>
+<div class="page-container">
+    <div class="flex column">
+        <div class="row">
+            <label class="title_name">Profile</label>
             <br>
-            <label>MangaBoobs - the best (worst) website to read manga!</label>
-            <label>We don't have many pieces, but we are SURE that you will like them!</label>
+            <img src="" alt="user image">
+            <div>
+                <label>Username</label>
+                <label>registration date</label>
+                <button>Edit profile</button>
+            </div>
         </div>
         <div>
-            <img src="assets/images/about_tyanka.jpg">
+            panels
         </div>
     </div>
+</div>
 </body>
 
 <?php

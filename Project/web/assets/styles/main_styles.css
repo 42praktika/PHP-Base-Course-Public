@@ -24,7 +24,7 @@ header{
     line-height: 24px;
     
 }
-.header_content{
+.header-content{
     display: flex;
     position: absolute;
     flex-direction: row;
@@ -47,17 +47,17 @@ header{
     background-clip: text; */
 
     /* text-fill-color: transparent; */
-    font-style: bold;
+    /*font-style: ;*/
     background-color: #B04DFF;
     background-image: linear-gradient(180deg, #B04DFF 0%, #59009F 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
-.header_navlink{
+.header-navlink{
     text-decoration: none;
     color: #9C9C9C;
 }
-.horizontal_items{
+.horizontal-items{
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -65,14 +65,14 @@ header{
     height: 50px;
     margin-left: -25px;
 }
-.horizontal_item{
+.horizontal-item{
     display: flex;
     margin-left: 25px;
     justify-content: center;
     vertical-align: middle;
 }
 
-.button_login{
+.button-login{
     transition: 0.5s;
     /* right: 164.1px; */
     min-width: 100px;
@@ -92,7 +92,7 @@ header{
     
     background: rgba(62, 62, 62, 0.3);
 }
-.button_login:hover{
+.button-login:hover{
     transition: 0.5s;
     background: rgba(62, 62, 62, 0.4);
     box-shadow: 0px 4px 10px rgba(62, 62, 62, 0.3);
@@ -104,9 +104,10 @@ header{
     margin-left: 160px;
     margin-right: 160px;
     display: flex;
+    overflow-x: auto;
     /* position: absolute; */
     flex-direction: row;
-    padding: 15;
+    padding: 15px;
     font-family: 'Inter';
     font-style: normal;
     font-weight: 400;

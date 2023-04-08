@@ -3,10 +3,10 @@
 <head>
     <title>Ooops...</title>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="assets/styles/global_styles.css">
-    <link rel="stylesheet" href="assets/styles/main_styles.css">
-    <link rel="stylesheet" href="assets/styles/user_profile_styles.css">
-    <link rel="stylesheet" href="assets/styles/error_page.css">
+    <link rel="stylesheet" href="/assets/styles/global_styles.css">
+    <link rel="stylesheet" href="/assets/styles/main_styles.css">
+    <link rel="stylesheet" href="/assets/styles/user_profile_styles.css">
+    <link rel="stylesheet" href="/assets/styles/error_page.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,9 +20,8 @@
 </head>
 
 <body>
-    <img src="assets/images/error_bg_alpha_short.png" type="images/png" alt="">
+    <img src="/assets/images/error_bg_alpha_short.png" type="images/png" alt="">
     <div class="error_content">
-
         <h1 class="error_code" id="error_code">ERROR CODE</h1>
 
         <h1 class="error_code" id="error_code">ERROR EXPLANATION.</h1>

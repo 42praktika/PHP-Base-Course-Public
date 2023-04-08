@@ -2,6 +2,7 @@
 
 <head>
     <meta charset="utf-8">
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.svg">
     <link rel="stylesheet" href="assets/styles/global_styles.css">
     <link rel="stylesheet" href="assets/styles/main_styles.css">
     <link rel="stylesheet" href="assets/styles/user_profile_styles.css">
@@ -62,12 +63,12 @@ include PROJECT_ROOT."views/templates/headerTemplate.php";
             The story is set in a world where Devils cause harm to humans, which makes them a target for extermination.
             Denji is a young, depressed man who has sold several of his organs and works as a tree cutter and devil
             hunter to pay back his deceased father’s debt to loan sharks
-            <div class="horizontal_items" style="padding-top: 10px;">
-                <div class="horizontal_item">
+            <div class="horizontal-items" style="padding-top: 10px;">
+                <div class="horizontal-item">
                     <a href="/manga" class="button_purple noselect">Read</a>
                 </div>
 
-                <div class="horizontal_item">
+                <div class="horizontal-item">
 
                     <span class="material-symbols-rounded" font-variato>
                         star
@@ -93,14 +94,43 @@ include PROJECT_ROOT."views/templates/headerTemplate.php";
 
     </div>
 
+    <div class="page-container column">
+
+        <label style="font-size: 18pt">Popular titles</label>
+        <br>
+
+        <div class="title-previews-carousel">
+            <div class="title-preview-container">
+                <img src="https://e1.pxfuel.com/desktop-wallpaper/459/922/desktop-wallpaper-chainsaw-man-manga-cover-manga-cover.jpg" class="title-preview-image" alt="">
+                <a href="/manga" class="header-navlink" style="margin-top: 10px; margin-bottom: 10px">Chainsaw Man</a>
+<!--                <a href="/manga" class="button_purple noselect title-preview-button">Read</a>-->
+            </div>
+            <div class="title-preview-container">
+                <img src="https://comicvine.gamespot.com/a/uploads/scale_small/11157/111571812/8699319-91ppd6vvrol.jpg" class="title-preview-image" alt="">
+                <a href="/manga" class="header-navlink" style="margin-top: 10px; margin-bottom: 10px">OnePunchMan</a>
+<!--                <a href="/manga" class="button_purple noselect title-preview-button">Read</a>-->
+            </div>
+            <div class="title-preview-container">
+                <img src="https://kbimages1-a.akamaihd.net/7170129c-796e-41c3-b21e-d9bc6fc8e993/1200/1200/False/rascal-does-not-dream-of-bunny-girl-senpai-manga.jpg" class="title-preview-image " alt="">
+                <a href="/manga" class="header-navlink" style="margin-top: 10px; margin-bottom: 10px; max-width: 300px; text-align: center">Rascal Does Not Dream of Bunny Girl Senpai</a>
+<!--                <a href="/manga" class="button_purple noselect title-preview-button">Read</a>-->
+            </div>
+            <div class="title-preview-container">
+                <img src="assets/images/baal.jfif" class="title-preview-image " alt="">
+                <a href="/manga" class="header-navlink" style="margin-top: 10px; margin-bottom: 10px; max-width: 300px; text-align: center">Genshin Impact</a>
+<!--                <a href="/manga" class="button_purple noselect title-preview-button">Read</a>-->
+            </div>
+        </div>
+
+    </div>
         <div class="auth_container" id="auth_container">
 
             <form class="auth_content_container" id="auth_content_container" action="login" method="post">
-                <label for="" style="color: white; font-size: 40px; line-height: 48px;">Login in</label>
+                <label for="" style="color: white; font-size: 40px; line-height: 48px;">Account</label>
                     <input type="email" placeholder="email" name="email" class="blurred_input" id="">
                     <input type="password" placeholder="password" name="password" class="blurred_input" id="">
 
-                <button type="submit" class="button_auth">Login</button>
+                <button type="submit" class="button_auth">Sign in</button>
 
                 <div class="auth_bottom_container">
 
@@ -108,13 +138,34 @@ include PROJECT_ROOT."views/templates/headerTemplate.php";
                         close
                     </div>
                     <div style="width: 20px;"></div>
-                    <a href="" class="outlined_button">sign in</a>
+                    <a href="" class="outlined_button">sign up</a>
 
                 </div>
                 <label style="color: red;" id="auth_error_label"></label>
             </form>
+
+
         </div>
 </body>
+<form class="auth_content_container" id="auth_content_container" action="register" method="post">
+    <label for="" style="color: white; font-size: 40px; line-height: 48px;">Register</label>
+    <input type="email" placeholder="email" name="email" class="blurred_input" id="">
+    <input type="password" placeholder="password" name="password_1" class="blurred_input" id="">
+    <input type="password" placeholder="repeat password" name="password_2" class="blurred_input" id="">
+
+    <button type="submit" class="button_auth">Sign up</button>
+
+    <div class="auth_bottom_container">
+
+        <div class="outlined_button noselect" onclick="SetAuthContainerHidden()" onclick="">
+            close
+        </div>
+        <div style="width: 20px;"></div>
+        <a href="" class="outlined_button">sign in</a>
+
+    </div>
+    <label style="color: red;" id="auth_error_label"></label>
+</form>
 <?php
     include PROJECT_ROOT."views/templates/footerTemplate.php";
 ?>

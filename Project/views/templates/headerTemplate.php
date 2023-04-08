@@ -1,41 +1,43 @@
 <header>
-    <div class="header_content">
-        <div class="horizontal_items">
-            <div class="horizontal_item">
-                <a href="/" class="header_navlink">Home</a>
+    <div class="header-content">
+        <div class="horizontal-items">
+            <div class="horizontal-item">
+                <a href="/" class="header-navlink">Home</a>
             </div>
 
-            <div class="horizontal_item">
-                <a href="#" class="header_navlink">Catalog</a>
+            <div class="horizontal-item">
+                <a href="#" class="header-navlink">Catalog</a>
             </div>
-            <div class="horizontal_item">
+            <div class="horizontal-item">
                 <!-- <a href="#" class="header_navlink">Search</a> -->
                 <input type="search" placeholder="Search" name="" class="blurred_input" id="">
             </div>
         </div>
-        <div class="horizontal_items">
-            <div class="horizontal_item">
-                <a href=""><img src="assets/images/logo.svg" alt="" height="50"></a>
-                <!-- <p class="header_logo">MANGA</p> -->
+        <div class="horizontal-items">
+            <div class="horizontal-item">
+                <a href="/" style="transform: translate(0%,13%)"><img src="assets/images/logo.svg" alt="" height="50"></a>
             </div>
         </div>
 
-        <div class="horizontal_items">
-            <div class="horizontal_item">
-                <a href="" class="header_navlink">Favourite</a>
+        <div class="horizontal-items">
+            <div class="horizontal-item">
+                <a href="" class="header-navlink">Favourite</a>
             </div>
-            <div class="horizontal_item">
-                <!-- <a class="top_profile_button" onclick="DisplayTopProfileMenu()">dev_profile</a> -->
+            <div class="horizontal-item">
                 <div class="dropdown">
                     <button class="top_profile_button">user</button>
 
                     <div class="dropdown-content">
-                        <div style="width: 280; height: 20;"></div>
-                        <div class="top_profile_content">
+                        <div style="width: 280px; height: 20px;"></div>
+                        <div class="top-profile-content">
 
-                            <button class="sidemenu_button margin_top">Profile</button>
-                            <button class="sidemenu_button margin_top">Wish list</button>
-
+                            <button onclick="redirect('user')" class="sidemenu-button margin_top">Profile</button>
+                            <button class="sidemenu-button margin_top">Wish list</button>
+                            <script>
+                                function redirect(urn){
+                                    location.href = '/' + urn;
+                                }
+                            </script>
                             <br>
                             <div class="outlined_button noselect margin_top" onclick="">
                                 Logout
@@ -45,8 +47,8 @@
                     </div>
                 </div>
             </div>
-            <div class="horizontal_item">
-                <button onclick="SetAuthContainerVisible()" class="button_login" id="header_login_button">Login</button>
+            <div class="horizontal-item">
+                <button onclick="SetAuthContainerVisible()" class="button-login" id="header-login-button">Login</button>
             </div>
         </div>
     </div>

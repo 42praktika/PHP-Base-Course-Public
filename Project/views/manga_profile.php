@@ -2,11 +2,12 @@
 
 <head>
     <meta charset="utf-8">
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.svg">
     <link rel="stylesheet" href="assets/styles/global_styles.css">
     <link rel="stylesheet" href="assets/styles/main_styles.css">
     <link rel="stylesheet" href="assets/styles/user_profile_styles.css">
     <link rel="stylesheet" href="assets/styles/manga_profile_styles.css">
-    <title>MangaBoobs.cum</title>
+    <title>MangaBoobs - Manga Profile</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
@@ -22,14 +23,10 @@
     <script>
         function SetAuthContainerVisible() {
             document.getElementById('auth_container').style.visibility = "visible"
-
-
-
         }
 
         function SetAuthContainerHidden() {
             document.getElementById('auth_container').style.visibility = "hidden"
-
         }
 
 
@@ -63,22 +60,22 @@ include PROJECT_ROOT."views/templates/headerTemplate.php";
         <div>
             <img src="https://mangalib.me/uploads/cover/chainsaw-man/cover/mUIlgi4AJypL_250x350.jpg"
                 class="daytop_cover" alt="">
-            <div class="horizontal_items" style="padding-top: 10px; justify-content: space-between;">
-                <div class="horizontal_item">
+            <div class="horizontal-items" style="padding-top: 10px; justify-content: space-between;">
+                <div class="horizontal-item">
                     <a href="error" class="button_purple">Read</a>
                 </div>
-                <div class="horizontal_item">
+                <div class="horizontal-item">
                     <!-- <a href="error.html" class="favourite_button">add to</a> -->
                     <div class="dropdown">
                         <button class="top_profile_button">Add to</button>
 
                         <div class="dropdown-content dropdown-content-left">
-                            <div style="width: 280; height: 20;"></div>
-                            <div class="top_profile_content">
+                            <div style="width: 280px; height: 20px;"></div>
+                            <div class="top-profile-content">
 
-                                <button class="sidemenu_button margin_top">Read later</button>
-                                <button class="sidemenu_button margin_top">Already Read</button>
-                                <button class="sidemenu_button margin_top">Reading now</button>
+                                <button class="sidemenu-button margin_top">Read later</button>
+                                <button class="sidemenu-button margin_top">Already Read</button>
+                                <button class="sidemenu-button margin_top">Reading now</button>
 
                                 <div class="outlined_button noselect margin_top" onclick="">
                                     Skipped
@@ -89,7 +86,7 @@ include PROJECT_ROOT."views/templates/headerTemplate.php";
                     </div>
                 </div>
             </div>
-            <table style="border-spacing: 10;">
+            <table style="border-spacing: 10px;">
                 <tr class="manga_specs_row">
                     <td class="manga_specs_key">
                         type

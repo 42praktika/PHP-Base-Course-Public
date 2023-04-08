@@ -5,7 +5,7 @@
         <div class="footer-item flex column">
             <a href="/" class="footer-link">MangaBoobs, <?php echo date("Y")?> </a>
             <label class="footer-label">Unregistered trademark N??????. Licenses NO</label>
-            <a href="privacy" class="header_navlink">Privacy</a>
+            <a href="privacy" class="header-navlink">Privacy</a>
         </div>
         <div class="footer-item flex column">
             <a href="about" class="footer-link">About</a>
