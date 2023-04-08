@@ -1,6 +1,7 @@
 <?php
 
-use app\controllers\PresentationController;
+use app\controllers\MainController;
+use app\controllers;
 use app\core\Application;
 
 const PROJECT_ROOT = __DIR__."/../";
@@ -13,8 +14,9 @@ spl_autoload_register(function ($className) {
 $application = new Application();
 $router = $application->getRouter();
 
-$router->setGetRoute("/", [new PresentationController, "getView"]);
-$router->setPostRoute("/handle", [new PresentationController, "handleView"]);
+$router->setGetRoute("/", [new MainController, "getView"]);
+$router->setGetRoute("/about", [new controllers\AboutUsController(), "getView"]);
+$router->setPostRoute("/handle", [new MainController, "handleView"]);
 
 ob_start();
 $application->run();

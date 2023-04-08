@@ -1,0 +1,15 @@
+@import url("text_styles.css");
+.sticker_img {
+  width: 230px;
+  height: 230px;
+  margin-bottom: 20px;
+}
+.error_container {
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+  padding-top: 135px;
+}
+.space_center {
+  margin-right: 20px;
+}

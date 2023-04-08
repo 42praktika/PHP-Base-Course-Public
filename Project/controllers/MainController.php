@@ -5,12 +5,12 @@ namespace app\controllers;
 
 use app\core\Application;
 
-class PresentationController
+class MainController
 {
 
     public function getView()
     {
-        Application::$app->getRouter()->renderView("presentation");
+        Application::$app->getRouter()->renderView("main");
     }
 
     public function handleView()

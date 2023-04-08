@@ -50,9 +50,9 @@ function normalizeFamilyTree(array &$familyTree): array
         }
         else
         {
+            $value = mb_convert_encoding($value, 'UTF-8');
             $value = trim($value);
             $value = str_replace('  ', '', $value);
-            $value = mb_convert_encoding($value, 'UTF-8');
             $value = mb_convert_case($value, MB_CASE_TITLE, 'UTF-8');
         }
     }
