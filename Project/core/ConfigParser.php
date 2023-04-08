@@ -11,9 +11,7 @@ class ConfigParser
         $config = file(PROJECT_ROOT."/config.ini", FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
         foreach ($config as $line) {
             $line = trim($line);
-//            if (strpos($line, "#" | ";")) continue; TODO так будет работать?
-            if (strpos($line, "#")) continue;
-            if (strpos($line, ";")) continue;
+            if ($line[0] == "#" || $line[0] == ";") continue;
             $parsed = explode("=", $line, 2);
             $_ENV[$parsed[0]] = $parsed[1];
             $_SERVER[$parsed[0]] = $parsed[1];
