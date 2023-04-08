@@ -9,17 +9,23 @@ use app\core\Request;
 class Router
 {
     protected Request $request;
+    protected Response $response;
     protected array $routes;
 
-    public function __construct(Request $request)
+    public function __construct(Request $request, Response $response)
     {
         $this->request = $request;
+        $this->response = $response;
         $this->routes = [];
 
     }
 
+    /**
+     * @throws \Exception Callback not defined
+     */
     public function setGetRoute(string $path, string|array $callback): void
     {
+
         $this->routes[MethodsEnum::GET][$path] = $callback;
     }
 
@@ -33,10 +39,12 @@ class Router
         $path = $this->request->getUri();
         $method = $this->request->getMethod();
         if (!isset($this->routes[$method]) || !isset($this->routes[$method][$path])) {
-            $this->renderStatic("404.php");
+            $this->renderStatic("404.html");
+            $this->response->setStatusCode(Response::HTTP_NOT_FOUND);
             return;
         }
         $callback = $this->routes[$method][$path];
+        if (empty($callback)) throw new \Exception("Callback not defined");
         if (is_string($callback)) {
             $this->renderView($callback);
             return;
