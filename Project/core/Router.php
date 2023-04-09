@@ -20,9 +20,12 @@ class Router
 
     }
 
+    /**
+     * @throws \Exception Callback not defined
+     */
     public function setGetRoute(string $path, string|array $callback): void
     {
-//        if($callback)
+
         $this->routes[MethodsEnum::GET][$path] = $callback;
     }
 
@@ -35,14 +38,13 @@ class Router
     {
         $path = $this->request->getUri();
         $method = $this->request->getMethod();
-
         if (!isset($this->routes[$method]) || !isset($this->routes[$method][$path])) {
             $this->renderStatic("error.php");
             $this->response->setStatusCode(Response::HTTP_NOT_FOUND);
             return;
         }
         $callback = $this->routes[$method][$path];
-
+        if (empty($callback)) throw new \Exception("Callback not defined");
         if (is_string($callback)) {
             $this->renderView($callback);
             return;
@@ -50,16 +52,15 @@ class Router
         if (is_array($callback)) {
             call_user_func($callback, $this->request);
         }
-
     }
 
-    public static function renderView(string $name): void
+    public function renderView(string $name): void
     {
 
         include PROJECT_ROOT."views/$name.php";
     }
 
-    public static function renderStatic(string $name): void
+    public function renderStatic(string $name): void
     {
         include PROJECT_ROOT."web/$name";
     }

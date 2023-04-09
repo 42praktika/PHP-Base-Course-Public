@@ -10,6 +10,7 @@ class Application
     private Request $request;
     private Router $router;
     private Response $response;
+
     public function __construct()
     {
         self::$app = $this;
@@ -21,8 +22,8 @@ class Application
     public function run() {
         try {
             $this->router->resolve();
-        }catch (\Exception $exception){
-            $this->response->setStatusCode(Response::SERVER_ERROR);
+        } catch (\Exception $exception) {
+            $this->response->setStatusCode(Response::HTTP_SERVER_ERROR);
         }
     }
 
@@ -35,13 +36,12 @@ class Application
     }
 
     /**
-     * @return Request
+     * @return Response
      */
     public function getResponse(): Response
     {
         return $this->response;
     }
-
 
     /**
      * @return Router

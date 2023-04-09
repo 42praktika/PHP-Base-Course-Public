@@ -1,6 +1,8 @@
 <?php
 
-class FileException
+namespace app\exceptions;
+
+class FileException extends \Exception
 {
 
 }

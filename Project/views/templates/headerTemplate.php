@@ -33,11 +33,6 @@
 
                             <button onclick="redirect('user')" class="sidemenu-button margin_top">Profile</button>
                             <button class="sidemenu-button margin_top">Wish list</button>
-                            <script>
-                                function redirect(urn){
-                                    location.href = '/' + urn;
-                                }
-                            </script>
                             <br>
                             <div class="outlined_button noselect margin_top" onclick="">
                                 Logout
