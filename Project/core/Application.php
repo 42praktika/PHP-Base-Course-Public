@@ -9,16 +9,22 @@ class Application
     public static Application $app;
     private Request $request;
     private Router $router;
+    private Response $response;
 
     public function __construct()
     {
         self::$app = $this;
         $this->request = new Request();
-        $this->router = new Router($this->request);
+        $this->response = new Response();
+        $this->router = new Router($this->request, $this->response);
     }
 
     public function run() {
-        $this->router->resolve();
+        try {
+            $this->router->resolve();
+        } catch (\Exception $exception) {
+            $this->response->setStatusCode(Response::HTTP_SERVER_ERROR);
+        }
     }
 
     /**
@@ -27,6 +33,14 @@ class Application
     public function getRequest(): Request
     {
         return $this->request;
+    }
+
+    /**
+     * @return Response
+     */
+    public function getResponse(): Response
+    {
+        return $this->response;
     }
 
     /**
