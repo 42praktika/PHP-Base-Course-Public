@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+    <host>localhost</host>
+    <port>8080</port>
+    <username>Rumiya</username>
+    <password>4242</password>
+    <database_name>Project</database_name>
+</database>

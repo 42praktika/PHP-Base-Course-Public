@@ -363,7 +363,7 @@ gradle-app.setting
 # gradle/wrapper/gradle-wrapper.properties
 
 ##### Composer
-composer.phar
+Project/composer.phar
 /vendor/
 
 ##### PHP CodeSniffer
