@@ -25,9 +25,7 @@
             <button type="submit" class="signupbtn">Регистрация</button>
         </div>
     </div>
-    <script>
-        <?php echo file_get_contents("./web/assets/js/registration.js"); ?>
-    </script>
+    <script src="../web/assets/js/registration.js"></script>
 </form>
 </body>
 </html>

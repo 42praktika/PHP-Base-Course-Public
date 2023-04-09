@@ -1,7 +1,10 @@
 <?php
 
-use app\controllers\PresentationController;
+use app\controllers\AboutController;
+use app\controllers\MainPageController;
+use app\controllers\RegistrationController;
 use app\core\Application;
+use app\core\ConfigParser;
 
 //Возвращает файлы напрямую
 if (preg_match('/\.(?:png|jpg|jpeg|gif|css|html?|js)$/', $_SERVER["REQUEST_URI"])) {
@@ -19,6 +22,12 @@ spl_autoload_register(function ($className) {
 $application = new Application();
 $router = $application->getRouter();
 
+$parser = new ConfigParser('config.xml');
+$config = $parser->load();
+echo $config['mark'];
+
+
+$router->setGetRoute("/get500", "");
 $router->setGetRoute("/", [new MainPageController, "getView"]);
 $router->setGetRoute("/aboutPage", [new AboutController, "getView"]);
 $router->setGetRoute("/registrationPage", [new RegistrationController, "getView"]);
