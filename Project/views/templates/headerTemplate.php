@@ -10,7 +10,7 @@
             </div>
             <div class="horizontal-item">
                 <!-- <a href="#" class="header_navlink">Search</a> -->
-                <input type="search" placeholder="Search" name="" class="blurred_input" id="">
+                <input type="search" placeholder="Search" name="" class="blurred-input" id="">
             </div>
         </div>
         <div class="horizontal-items">
@@ -34,7 +34,7 @@
                             <button onclick="redirect('user')" class="sidemenu-button margin_top">Profile</button>
                             <button class="sidemenu-button margin_top">Wish list</button>
                             <br>
-                            <div class="outlined_button noselect margin_top" onclick="">
+                            <div class="outlined-button noselect margin_top" onclick="">
                                 Logout
                             </div>
                         </div>

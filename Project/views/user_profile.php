@@ -18,20 +18,20 @@
     <link rel="stylesheet"
           href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0" />
 
-    <script src="assets/js/global.js"></script>
+    <script src="/assets/js/global.js"></script>
 
     <script>
         function SetAuthContainerVisible() {
-            document.getElementById('auth_container').style.visibility = "visible"
+            document.getElementById('auth-container').style.visibility = "visible"
         }
 
         function SetAuthContainerHidden() {
-            document.getElementById('auth_container').style.visibility = "hidden"
+            document.getElementById('auth-container').style.visibility = "hidden"
         }
 
 
         function DisplayTopProfileMenu() {
-            var x = document.getElementById('top_profile_menu');
+            var x = document.getElementById('top-profile-menu');
             if (x.style.visibility == 'hidden') {
                 x.style.visibility = 'visible';
             } else {
@@ -54,33 +54,33 @@
 include PROJECT_ROOT."views/templates/headerTemplate.php";
 ?>
 
-<body class="main_content">
+<body class="main-content">
 
-<div class="auth_container" id="auth_container">
+<div class="auth-container" id="auth-container">
 
-    <form class="auth_content_container" id="auth_content_container" action="login" method="post">
+    <form class="auth-content-container" id="auth-content-container" action="login" method="post">
         <label for="" style="color: white; font-size: 40px; line-height: 48px;">Login in</label>
-        <input type="email" placeholder="email" name="email" class="blurred_input" id="">
-        <input type="password" placeholder="password" name="password" class="blurred_input" id="">
+        <input type="email" placeholder="email" name="email" class="blurred-input" id="">
+        <input type="password" placeholder="password" name="password" class="blurred-input" id="">
 
-        <button type="submit" class="button_auth">Login</button>
+        <button type="submit" class="button-auth">Login</button>
 
-        <div class="auth_bottom_container">
+        <div class="auth-bottom-container">
 
-            <div class="outlined_button noselect" onclick="SetAuthContainerHidden()" onclick="">
+            <div class="outlined-button noselect" onclick="SetAuthContainerHidden()" onclick="">
                 close
             </div>
             <div style="width: 20px;"></div>
-            <a href="" class="outlined_button">sign in</a>
+            <a href="" class="outlined-button">sign in</a>
 
         </div>
-        <label style="color: red;" id="auth_error_label"></label>
+        <label style="color: red;" id="auth-error-label"></label>
     </form>
 </div>
 <div class="page-container">
     <div class="flex column">
         <div class="row">
-            <label class="title_name">Profile</label>
+            <label class="title-name">Profile</label>
             <br>
             <img src="" alt="user image">
             <div>

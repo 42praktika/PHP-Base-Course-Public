@@ -18,15 +18,15 @@
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0" />
 
-    <script src="/js/global.js"></script>
+    <script src="/assets/js/global.js"></script>
 
     <script>
         function SetAuthContainerVisible() {
-            document.getElementById('auth_container').style.visibility = "visible"
+            document.getElementById('auth-container').style.visibility = "visible"
         }
 
         function SetAuthContainerHidden() {
-            document.getElementById('auth_container').style.visibility = "hidden"
+            document.getElementById('auth-container').style.visibility = "hidden"
         }
 
 
@@ -54,12 +54,12 @@
 include PROJECT_ROOT."views/templates/headerTemplate.php";
 ?>
 
-<body class="main_content">
+<body class="main-content">
     <div class="manga_profile_container">
         <!-- <button class="button_purple"></button> -->
         <div>
             <img src="https://mangalib.me/uploads/cover/chainsaw-man/cover/mUIlgi4AJypL_250x350.jpg"
-                class="daytop_cover" alt="">
+                 class="daytop-cover" alt="">
             <div class="horizontal-items" style="padding-top: 10px; justify-content: space-between;">
                 <div class="horizontal-item">
                     <a href="error" class="button_purple">Read</a>
@@ -77,7 +77,7 @@ include PROJECT_ROOT."views/templates/headerTemplate.php";
                                 <button class="sidemenu-button margin_top">Already Read</button>
                                 <button class="sidemenu-button margin_top">Reading now</button>
 
-                                <div class="outlined_button noselect margin_top" onclick="">
+                                <div class="outlined-button noselect margin_top" onclick="">
                                     Skipped
                                 </div>
                             </div>
@@ -87,56 +87,56 @@ include PROJECT_ROOT."views/templates/headerTemplate.php";
                 </div>
             </div>
             <table style="border-spacing: 10px;">
-                <tr class="manga_specs_row">
-                    <td class="manga_specs_key">
+                <tr class="manga-specs-row">
+                    <td class="manga-specs-key">
                         type
                     </td>
                     <td class="manga_specs_value">
                         manga
                     </td>
                 </tr>
-                <tr class="manga_specs_row">
-                    <td class="manga_specs_key">
+                <tr class="manga-specs-row">
+                    <td class="manga-specs-key">
                         genre
                     </td>
                     <td class="manga_specs_value">
                         action
                     </td>
                 </tr>
-                <tr class="manga_specs_row">
-                    <td class="manga_specs_key">
+                <tr class="manga-specs-row">
+                    <td class="manga-specs-key">
                         chapters
                     </td>
                     <td class="manga_specs_value">
                         49
                     </td>
                 </tr>
-                <tr class="manga_specs_row">
-                    <td class="manga_specs_key">
+                <tr class="manga-specs-row">
+                    <td class="manga-specs-key">
                         release date
                     </td>
                     <td class="manga_specs_value">
                         2019
                     </td>
                 </tr>
-                <tr class="manga_specs_row">
-                    <td class="manga_specs_key">
+                <tr class="manga-specs-row">
+                    <td class="manga-specs-key">
                         author
                     </td>
                     <td class="manga_specs_value">
                         Tatsuki Fujimoto
                     </td>
                 </tr>
-                <tr class="manga_specs_row">
-                    <td class="manga_specs_key">
+                <tr class="manga-specs-row">
+                    <td class="manga-specs-key">
                         publisher
                     </td>
                     <td class="manga_specs_value">
                         Shueisha
                     </td>
                 </tr>
-                <tr class="manga_specs_row">
-                    <td class="manga_specs_key">
+                <tr class="manga-specs-row">
+                    <td class="manga-specs-key">
                         age rating
                     </td>
                     <td class="manga_specs_value">
@@ -145,25 +145,25 @@ include PROJECT_ROOT."views/templates/headerTemplate.php";
                 </tr>
             </table>
         </div>
-        <div class="daytop_info_container">
-            <div class="manga_name_rating">
-                <a href="" class="title_name">chainsaw man</a>
+        <div class="daytop-info-container">
+            <div class="manga-name-rating">
+                <a href="" class="title-name">chainsaw man</a>
 
                 <div class="rating">
                     <div class="rating_stars" id="rating">
-                        <button class="rating_star">
+                        <button class="rating-star">
                             <span class="material-symbols-rounded noselect">star</span>
                         </button>
-                        <button class="rating_star">
+                        <button class="rating-star">
                             <span class="material-symbols-rounded noselect">star</span>
                         </button>
-                        <button class="rating_star">
+                        <button class="rating-star">
                             <span class="material-symbols-rounded noselect">star</span>
                         </button>
-                        <button class="rating_star">
+                        <button class="rating-star">
                             <span class="material-symbols-rounded noselect">star</span>
                         </button>
-                        <button class="rating_star">
+                        <button class="rating-star">
                             <span class="material-symbols-rounded noselect">star</span>
                         </button>
 
@@ -172,7 +172,7 @@ include PROJECT_ROOT."views/templates/headerTemplate.php";
                 </div>
             </div>
 
-            <div class="manga_profile_tags">
+            <div class="manga-profile-tags">
                 <a href="" class="manga_tag">action</a>
                 <a href="" class="manga_tag">blood</a>
                 <a href="" class="manga_tag">vulgar</a>
@@ -227,11 +227,11 @@ include PROJECT_ROOT."views/templates/headerTemplate.php";
                 <div class="panel" id="one-panel">
                     <div style="display: flex; flex-direction: row;">
 
-                        <img class="preview_page"
+                        <img class="preview-page"
                             src="https://h4m.rmr.rocks/auto/25/66/33/003.png_res.jpg?t=1669596330&u=0&h=o0Hbw0DfLI-OgFL6Ffdd-g"
                             alt="">
 
-                        <img class="preview_page"
+                        <img class="preview-page"
                             src="https://h10m.rmr.rocks/auto/25/66/33/007.png_res.jpg?t=1669596330&u=0&h=04XrAFY4l5zQ-pLI0Zv7Eg"
                             alt="">
 
@@ -240,7 +240,7 @@ include PROJECT_ROOT."views/templates/headerTemplate.php";
                 </div>
                 <div class="panel" id="two-panel">
                     <div class="chapter_list" scrolling="yes">
-                        <a href="error.html" class="chapter_list_item">
+                        <a href="error.html" class="chapter-list-item">
                             <div>
                                 1 - 1 - Dog and chainsaw
                             </div>
@@ -248,7 +248,7 @@ include PROJECT_ROOT."views/templates/headerTemplate.php";
                                 29.04.2021
                             </div>
                         </a>
-                        <a href="error.html" class="chapter_list_item">
+                        <a href="error.html" class="chapter-list-item">
                             <div>
                                 1 - 1 - Dog and chainsaw
                             </div>
@@ -256,7 +256,7 @@ include PROJECT_ROOT."views/templates/headerTemplate.php";
                                 29.04.2021
                             </div>
                         </a>
-                        <a href="error.html" class="chapter_list_item">
+                        <a href="error.html" class="chapter-list-item">
                             <div>
                                 1 - 1 - Dog and chainsaw
                             </div>
@@ -264,7 +264,7 @@ include PROJECT_ROOT."views/templates/headerTemplate.php";
                                 29.04.2021
                             </div>
                         </a>
-                        <a href="error.html" class="chapter_list_item">
+                        <a href="error.html" class="chapter-list-item">
                             <div>
                                 1 - 1 - Dog and chainsaw
                             </div>
@@ -272,7 +272,7 @@ include PROJECT_ROOT."views/templates/headerTemplate.php";
                                 29.04.2021
                             </div>
                         </a>
-                        <a href="error.html" class="chapter_list_item">
+                        <a href="error.html" class="chapter-list-item">
                             <div>
                                 1 - 1 - Dog and chainsaw
                             </div>
@@ -280,7 +280,7 @@ include PROJECT_ROOT."views/templates/headerTemplate.php";
                                 29.04.2021
                             </div>
                         </a>
-                        <a href="error.html" class="chapter_list_item">
+                        <a href="error.html" class="chapter-list-item">
                             <div>
                                 1 - 1 - Dog and chainsaw
                             </div>
@@ -288,7 +288,7 @@ include PROJECT_ROOT."views/templates/headerTemplate.php";
                                 29.04.2021
                             </div>
                         </a>
-                        <a href="error.html" class="chapter_list_item">
+                        <a href="error.html" class="chapter-list-item">
                             <div>
                                 1 - 1 - Dog and chainsaw
                             </div>
@@ -296,7 +296,7 @@ include PROJECT_ROOT."views/templates/headerTemplate.php";
                                 29.04.2021
                             </div>
                         </a>
-                        <a href="error.html" class="chapter_list_item">
+                        <a href="error.html" class="chapter-list-item">
                             <div>
                                 1 - 1 - Dog and chainsaw
                             </div>
@@ -304,7 +304,7 @@ include PROJECT_ROOT."views/templates/headerTemplate.php";
                                 29.04.2021
                             </div>
                         </a>
-                        <a href="error.html" class="chapter_list_item">
+                        <a href="error.html" class="chapter-list-item">
                             <div>
                                 1 - 1 - Dog and chainsaw
                             </div>
@@ -312,7 +312,7 @@ include PROJECT_ROOT."views/templates/headerTemplate.php";
                                 29.04.2021
                             </div>
                         </a>
-                        <a href="error.html" class="chapter_list_item">
+                        <a href="error.html" class="chapter-list-item">
                             <div>
                                 1 - 1 - Dog and chainsaw
                             </div>
@@ -328,27 +328,27 @@ include PROJECT_ROOT."views/templates/headerTemplate.php";
                         
                     </div> -->
                     <div class="short_grid_wrapper">
-                        <div class="short_grid_item_container">
-                            <a href="error.html" class="short_grid_item">
-                                <img class="daytop_cover" src="https://staticmm.rmr.rocks/uploads/pics/00/90/254_o.jpg">
+                        <div class="short-grid-item-container">
+                            <a href="error.html" class="short-grid-item">
+                                <img class="daytop-cover" src="https://staticmm.rmr.rocks/uploads/pics/00/90/254_o.jpg">
                             </a>
                             <label>one</label>
                         </div>
-                        <div class="short_grid_item_container">
-                            <a href="error.html" class="short_grid_item">
-                                <img class="daytop_cover" src="https://staticmm.rmr.rocks/uploads/pics/00/90/254_o.jpg">
+                        <div class="short-grid-item-container">
+                            <a href="error.html" class="short-grid-item">
+                                <img class="daytop-cover" src="https://staticmm.rmr.rocks/uploads/pics/00/90/254_o.jpg">
                             </a>
                             <label>one</label>
                         </div>  
-                        <div class="short_grid_item_container">
-                            <a href="error.html" class="short_grid_item">
-                                <img class="daytop_cover" src="https://staticmm.rmr.rocks/uploads/pics/00/90/254_o.jpg">
+                        <div class="short-grid-item-container">
+                            <a href="error.html" class="short-grid-item">
+                                <img class="daytop-cover" src="https://staticmm.rmr.rocks/uploads/pics/00/90/254_o.jpg">
                             </a>
                             <label>one</label>
                         </div>
-                        <div class="short_grid_item_container">
-                            <a href="error.html" class="short_grid_item">
-                                <img class="daytop_cover" src="https://staticmm.rmr.rocks/uploads/pics/00/90/254_o.jpg">
+                        <div class="short-grid-item-container">
+                            <a href="error.html" class="short-grid-item">
+                                <img class="daytop-cover" src="https://staticmm.rmr.rocks/uploads/pics/00/90/254_o.jpg">
                                 <div style="display: flex;">
                                     hello
                                 </div>
@@ -364,28 +364,24 @@ include PROJECT_ROOT."views/templates/headerTemplate.php";
         </div>
     </div>
 
-    <div class="auth_container" id="auth_container">
+    <div class="auth-container" id="auth-container">
 
-        <div class="auth_content_container" id="auth_content_container">
+        <div class="auth-content-container" id="auth_content_container">
             <label for="" style="color: white; font-size: 40px; line-height: 48px;">Login in</label>
-            <input type="email" placeholder="username or email" name="LoginInput" class="blurred_input" id="">
-            <input type="password" placeholder="password" name="" class="blurred_input" id="">
+            <input type="email" placeholder="username or email" name="LoginInput" class="blurred-input" id="">
+            <input type="password" placeholder="password" name="" class="blurred-input" id="">
 
+            <a href="" class="button-auth">Login</a>
+            <div class="auth-bottom-container">
 
-
-            <a href="" class="button_auth">Login</a>
-
-
-            <div class="auth_bottom_container">
-
-                <div class="outlined_button noselect" onclick="SetAuthContainerHidden()" onclick="">
+                <div class="outlined-button noselect" onclick="SetAuthContainerHidden()" onclick="">
                     close
                 </div>
                 <div style="width: 20px;"></div>
-                <a href="" class="outlined_button">sign in</a>
+                <a href="" class="outlined-button">sign in</a>
 
             </div>
-            <label style="color: red;" id="auth_error_label"></label>
+            <label style="color: red;" id="auth-error-label"></label>
         </div>
     </div>
 

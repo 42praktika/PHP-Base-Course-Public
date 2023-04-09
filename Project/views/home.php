@@ -22,11 +22,11 @@
 
     <script>
         function SetAuthContainerVisible() {
-            document.getElementById('auth_container').style.visibility = "visible"
+            document.getElementById('auth-container').style.visibility = "visible"
         }
 
         function SetAuthContainerHidden() {
-            document.getElementById('auth_container').style.visibility = "hidden"
+            document.getElementById('auth-container').style.visibility = "hidden"
         }
 
 
@@ -54,12 +54,12 @@
 include PROJECT_ROOT."views/templates/headerTemplate.php";
 ?>
 
-<body class="main_content">
+<body class="main-content">
     <div class="daytop_container">
-        <img src="https://99px.ru/sstorage/56/2022/02/image_562102221206537735985.jpg" class="daytop_cover" alt="">
-        <div class="daytop_info_container">
+        <img src="https://99px.ru/sstorage/56/2022/02/image_562102221206537735985.jpg" class="daytop-cover" alt="">
+        <div class="daytop-info-container">
             top of the day
-            <a href="" class="title_name">chainsaw man</a>
+            <a href="" class="title-name">chainsaw man</a>
             The story is set in a world where Devils cause harm to humans, which makes them a target for extermination.
             Denji is a young, depressed man who has sold several of his organs and works as a tree cutter and devil
             hunter to pay back his deceased father’s debt to loan sharks
@@ -90,7 +90,7 @@ include PROJECT_ROOT."views/templates/headerTemplate.php";
 
 
         </div>
-        <img src="https://vsthemes.org/uploads/posts/2022-04/1648913749_5.webp" class="daytop_cover" alt="">
+        <img src="https://vsthemes.org/uploads/posts/2022-04/1648913749_5.webp" class="daytop-cover" alt="">
 
     </div>
 
@@ -123,48 +123,48 @@ include PROJECT_ROOT."views/templates/headerTemplate.php";
         </div>
 
     </div>
-        <div class="auth_container" id="auth_container">
+        <div class="auth-container" id="auth-container">
 
-            <form class="auth_content_container" id="auth_content_container" action="login" method="post">
+            <form class="auth-content-container" id="auth-content-container" action="login" method="post">
                 <label for="" style="color: white; font-size: 40px; line-height: 48px;">Account</label>
-                    <input type="email" placeholder="email" name="email" class="blurred_input" id="">
-                    <input type="password" placeholder="password" name="password" class="blurred_input" id="">
+                    <input type="email" placeholder="email" name="email" class="blurred-input" id="">
+                    <input type="password" placeholder="password" name="password" class="blurred-input" id="">
 
-                <button type="submit" class="button_auth">Sign in</button>
+                <button type="submit" class="button-auth">Sign in</button>
 
-                <div class="auth_bottom_container">
+                <div class="auth-bottom-container">
 
-                    <div class="outlined_button noselect" onclick="SetAuthContainerHidden()" onclick="">
+                    <div class="outlined-button noselect" onclick="SetAuthContainerHidden()" onclick="">
                         close
                     </div>
                     <div style="width: 20px;"></div>
-                    <a href="" class="outlined_button">sign up</a>
+                    <a href="" class="outlined-button">sign up</a>
 
                 </div>
-                <label style="color: red;" id="auth_error_label"></label>
+                <label style="color: red;" id="auth-error-label"></label>
             </form>
 
 
         </div>
 </body>
-<form class="auth_content_container" id="auth_content_container" action="register" method="post">
+<form class="auth-content-container" id="auth-content-container" action="register" method="post">
     <label for="" style="color: white; font-size: 40px; line-height: 48px;">Register</label>
-    <input type="email" placeholder="email" name="email" class="blurred_input" id="">
-    <input type="password" placeholder="password" name="password_1" class="blurred_input" id="">
-    <input type="password" placeholder="repeat password" name="password_2" class="blurred_input" id="">
+    <input type="email" placeholder="email" name="email" class="blurred-input" id="">
+    <input type="password" placeholder="password" name="password_1" class="blurred-input" id="">
+    <input type="password" placeholder="repeat password" name="password_2" class="blurred-input" id="">
 
-    <button type="submit" class="button_auth">Sign up</button>
+    <button type="submit" class="button-auth">Sign up</button>
 
-    <div class="auth_bottom_container">
+    <div class="auth-bottom-container">
 
-        <div class="outlined_button noselect" onclick="SetAuthContainerHidden()" onclick="">
+        <div class="outlined-button noselect" onclick="SetAuthContainerHidden()" onclick="">
             close
         </div>
         <div style="width: 20px;"></div>
-        <a href="" class="outlined_button">sign in</a>
+        <a href="" class="outlined-button">sign in</a>
 
     </div>
-    <label style="color: red;" id="auth_error_label"></label>
+    <label style="color: red;" id="auth-error-label"></label>
 </form>
 <?php
     include PROJECT_ROOT."views/templates/footerTemplate.php";

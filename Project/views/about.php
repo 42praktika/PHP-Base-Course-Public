@@ -22,11 +22,11 @@
 
     <script>
         function SetAuthContainerVisible() {
-            document.getElementById('auth_container').style.visibility = "visible"
+            document.getElementById('auth-container').style.visibility = "visible"
         }
 
         function SetAuthContainerHidden() {
-            document.getElementById('auth_container').style.visibility = "hidden"
+            document.getElementById('auth-container').style.visibility = "hidden"
         }
 
 
@@ -54,24 +54,24 @@
 include PROJECT_ROOT."views/templates/headerTemplate.php";
 ?>
 
-<body class="main_content">
+<body class="main-content">
 
-<div class="auth_container" id="auth_container">
+<div class="auth-container" id="auth-container">
 
-    <form class="auth_content_container" id="auth_content_container" action="login" method="post">
+    <form class="auth-content-container" id="auth_content_container" action="login" method="post">
         <label for="" style="color: white; font-size: 40px; line-height: 48px;">Login in</label>
-        <input type="email" placeholder="email" name="email" class="blurred_input" id="">
-        <input type="password" placeholder="password" name="password" class="blurred_input" id="">
+        <input type="email" placeholder="email" name="email" class="blurred-input" id="">
+        <input type="password" placeholder="password" name="password" class="blurred-input" id="">
 
-        <button type="submit" class="button_auth">Login</button>
+        <button type="submit" class="button-auth">Login</button>
 
-        <div class="auth_bottom_container">
+        <div class="auth-bottom-container">
 
-            <div class="outlined_button noselect" onclick="SetAuthContainerHidden()" onclick="">
+            <div class="outlined-button noselect" onclick="SetAuthContainerHidden()" onclick="">
                 close
             </div>
             <div style="width: 20px;"></div>
-            <a href="" class="outlined_button">sign in</a>
+            <a href="" class="outlined-button">sign in</a>
 
         </div>
         <label style="color: red;" id="auth_error_label"></label>
@@ -79,7 +79,7 @@ include PROJECT_ROOT."views/templates/headerTemplate.php";
 </div>
     <div class="page-container">
         <div class="flex column">
-            <label class="title_name">About us</label>
+            <label class="title-name">About us</label>
             <br>
             <label>MangaBoobs - the best (worst) website to read manga!</label>
             <label>We don't have many pieces, but we are SURE that you will like them!</label>
