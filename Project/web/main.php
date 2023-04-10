@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Grape</title>
     <link rel = "stylesheet" href="assets/main.css">
+
 </head>
 <body>
 <div>виноград - это и поесть и попить</div>
@@ -24,7 +25,7 @@
 
 <footer>
 
-    <div class="footer-copyright text-center"> г. Казань, ул. разведчика Сабитова телефон: +79179092384
+    <div class="footer text-center"> г. Казань, ул. разведчика Сабитова телефон: +79179092384
     </div>
 
 </footer>

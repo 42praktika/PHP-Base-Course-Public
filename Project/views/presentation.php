@@ -1,6 +1,6 @@
 <html lang="ru">
 <head>
-    <title>FourOFour</title>
+    <title>Hello</title>
     <meta charset="UTF-8">
 </head>
 <body>

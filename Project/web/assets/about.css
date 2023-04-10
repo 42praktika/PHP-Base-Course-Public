@@ -1,0 +1,102 @@
+body{
+    background-image: url("index.png");
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: 100%;
+    background-attachment: fixed;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    min-height: 100vh;
+    font-family: Hack, monospace;
+}
+* {
+    padding: 0;
+    margin: 0;
+}
+div {
+    color: #484848;
+    text-align: center;
+}
+
+.menuItems {
+    list-style: none;
+    display: flex;
+}
+
+li {
+    margin: 50px;
+}
+
+a {
+    text-decoration: none;
+    color: #484848;
+    font-size: 24px;
+    font-weight: 400;
+    transition: all 0.5s ease-in-out;
+    position: relative;
+    text-transform: uppercase;
+}
+
+footer {
+    position: absolute;
+    font-size: 12px;
+    bottom: 0;
+    width: 100%;
+    height: 65px;
+    line-height: 60px;
+    background: rgba(255,255,255, 0.5);
+    color: #000000;
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    border-bottom: 1px solid;
+}
+.text {
+    background-color: #f5f5f5;
+    padding: 30px;
+    max-width: 450px;
+    margin: 0 auto;
+    font-size: 15px;
+}
+.wrap
+{
+    display: flex;
+    margin: 0 auto;
+    width: 100%; /* отступы относительно окна браузера */
+}
+.header{
+    padding: 1.3em 0em; /* поля вокруг текста */
+}
+.nav {
+    float: right; /* обтекание логотипа */
+    margin-top: 0.82em;
+
+}
+.nav > ul > li {
+    display:inline-block; /* переопределение в строчно-блочный */
+}
+.nav > ul > li.active a{
+    background: #484848;
+    color: #ffffff;
+}
+.nav > ul > li > a {
+    display: block;
+    font-family: 'Lato', sans-serif;
+    font-size: 1.1em;
+    text-transform: uppercase;
+    padding: 0.5em 1em;
+    color: #444;
+    -webkit-transition: 0.9s; /* плавный переход */
+    -moz-transition: 0.9s;
+    -o-transition: 0.9s;
+    transition: 0.9s;
+}
+.nav > ul > li > a:hover {
+    color: #fff;
+    background: #48484877;
+}
