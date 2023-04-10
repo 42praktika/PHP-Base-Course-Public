@@ -26,6 +26,12 @@ class ConfigReader {
     public function getAll() {
         return $this->data;
     }
+
+    public function setKey($key, $value) {
+        $_ENV[$key] = $value;
+        $_SERVER[$key] = $value;
+        putenv("{$key} = {$value}");
+    }
 }
 
 // Пример использования
