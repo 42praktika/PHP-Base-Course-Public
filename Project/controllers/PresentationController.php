@@ -6,6 +6,7 @@ namespace app\controllers;
 use app\core\Application;
 use app\core\Response;
 use app\exceptions\FileException;
+use app\models\User;
 
 class PresentationController
 {
@@ -17,31 +18,17 @@ class PresentationController
 
     public function handleView()
     {
+        try {
         $body = Application::$app->getRequest()->getBody();
 
-        try {
-            $this->writeBody($body);
-        } catch (FileException $e) {
-            Application::$app->getResponse()->setStatusCode(Response::HTTP_SERVER_ERROR);
+        (new User())->assign($body)->save();
+
+        Application::$app->getRouter()->renderView("success"); }
+        catch (\Exception $exception) {
+
+            Application::$app->getLogger()->error($exception);
         }
     }
 
-    private function writeBody(array $body)
-    {
-        $f = @fopen(PROJECT_ROOT . "/runtime/body.txt", "rb+");
-        if ($f === false) {
 
-            Application::$app->getLogger()->error("cannot open file for body at ".__FILE__."(".__LINE__.")");
-
-            throw new FileException("cannot open file");
-        }
-        foreach ($body as $key => $value) {
-            if (!fwrite($f, "$key=$value" . PHP_EOL)) {
-                Application::$app->getLogger()->error("cannot write file for body at ".__FILE__."(".__LINE__.")");
-                throw new FileException("cannot write to file");
-            }
-        }
-
-        fclose($f);
-    }
 }

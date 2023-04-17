@@ -15,6 +15,7 @@
   },
   "minimum-stability": "dev",
   "require": {
-    "psr/log": "*"
+    "psr/log": "*",
+    "ext-pdo": "*"
   }
 }

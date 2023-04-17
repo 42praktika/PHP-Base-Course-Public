@@ -12,7 +12,7 @@ class ConfigParser
         $config = file($confName, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
         foreach ($config as $line) {
             $trim = trim($line);
-            if (strpos($trim,"#")) continue;
+            if (str_starts_with($trim, "#")) continue;
             $parsed = explode("=", $trim, 2 );
             $_ENV[$parsed[0]] = $parsed[1];
             $_SERVER[$parsed[0]] = $parsed[1];
