@@ -30,10 +30,14 @@ class PresentationController
     {
         $f = @fopen(PROJECT_ROOT . "/runtime/body.txt", "rb+");
         if ($f === false) {
+
+            Application::$app->getLogger()->error("cannot open file for body at ".__FILE__."(".__LINE__.")");
+
             throw new FileException("cannot open file");
         }
         foreach ($body as $key => $value) {
             if (!fwrite($f, "$key=$value" . PHP_EOL)) {
+                Application::$app->getLogger()->error("cannot write file for body at ".__FILE__."(".__LINE__.")");
                 throw new FileException("cannot write to file");
             }
         }
