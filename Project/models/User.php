@@ -14,6 +14,6 @@ class User extends DbModel
 
     public function getAttributes(): array
     {
-        return ["first_name", "second_name", "email",   "job", "age"];
+        return ["first_name", "second_name", "email",  "phone", "job", "age"];
     }
 }
