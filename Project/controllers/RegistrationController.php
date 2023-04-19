@@ -9,4 +9,9 @@ class RegistrationController
     {
         Application::$app->getRouter()->renderView("registrationPage");
     }
+    public function handleView()
+    {
+            $body = Application::$app->getRequest()->getBody();
+            print_r($body);
+    }
 }

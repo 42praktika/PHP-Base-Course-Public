@@ -18,19 +18,18 @@ spl_autoload_register(function ($className) {
    require str_replace("app\\",PROJECT_ROOT, $className).".php";
 
 });
+ConfigParser::load();
 
 $application = new Application();
 $router = $application->getRouter();
 
-$parser = new ConfigParser('config.xml');
-$config = $parser->load();
-echo $config['mark'];
 
 
 $router->setGetRoute("/get500", "");
 $router->setGetRoute("/", [new MainPageController, "getView"]);
 $router->setGetRoute("/aboutPage", [new AboutController, "getView"]);
 $router->setGetRoute("/registrationPage", [new RegistrationController, "getView"]);
+$router->setPostRoute("/handle", [new RegistrationController, "handleView"]);
 
 ob_start();
 $application->run();

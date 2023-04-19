@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
 </head>
 <body>
-<form action="registrationPage" style="border:1px solid #ccc">
+<form action="registrationPage" method="post" style="border:1px solid #ccc">
     <div class="container">
         <h1>Регистрация</h1>
         <p>Пожалуйста, заполните эту форму, чтобы создать учетную запись.</p>

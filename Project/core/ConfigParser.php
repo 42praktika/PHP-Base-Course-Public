@@ -3,22 +3,17 @@
 namespace app\core;
 
 class ConfigParser {
-    private $xml; // Объект SimpleXMLElement
+    public static $config;
 
-    public function __construct($file) {
-        if (file_exists('config.xml')) {
-            $this->xml = simplexml_load_file($file);
-        } else {
-            echo ("Такого файла не существует");
-        }
-    }
-
-    public function load(): array
+    public static function load()
     {
-        $config = array();
-        foreach ($this->xml as $key => $value) {
-            $config[$key] = (string) $value;
+        $file = "config.xml";
+        $xmlString = file_get_contents($file);
+        $xml = simplexml_load_string($xmlString);
+        self::$config = array();
+        foreach ($xml as $key => $value) {
+            self::$config[$key] = (string) $value;
         }
-        return $config;
+        return true;
     }
 }
