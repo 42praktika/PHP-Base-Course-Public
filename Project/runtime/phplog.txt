@@ -1,0 +1,198 @@
+[17-Apr-2023 12:02:51 UTC] PHP Warning:  require(User.php): Failed to open stream: No such file or directory in D:\GitHub\PHP-Base-Course-Public\Project\web\index.php on line 15
+[17-Apr-2023 12:02:51 UTC] PHP Fatal error:  Uncaught Error: Failed opening required 'User.php' (include_path='.;C:\php\pear') in D:\GitHub\PHP-Base-Course-Public\Project\web\index.php:15
+Stack trace:
+#0 D:\GitHub\PHP-Base-Course-Public\Project\controllers\RegisterController.php(24): {closure}()
+#1 [internal function]: app\controllers\RegisterController->handleView()
+#2 D:\GitHub\PHP-Base-Course-Public\Project\core\Router.php(53): call_user_func()
+#3 D:\GitHub\PHP-Base-Course-Public\Project\core\Application.php(29): app\core\Router->resolve()
+#4 D:\GitHub\PHP-Base-Course-Public\Project\web\index.php(43): app\core\Application->run()
+#5 {main}
+  thrown in D:\GitHub\PHP-Base-Course-Public\Project\web\index.php on line 15
+[17-Apr-2023 12:04:01 UTC] PHP Warning:  require(User.php): Failed to open stream: No such file or directory in D:\GitHub\PHP-Base-Course-Public\Project\web\index.php on line 15
+[17-Apr-2023 12:04:01 UTC] PHP Fatal error:  Uncaught Error: Failed opening required 'User.php' (include_path='.;C:\php\pear') in D:\GitHub\PHP-Base-Course-Public\Project\web\index.php:15
+Stack trace:
+#0 D:\GitHub\PHP-Base-Course-Public\Project\controllers\RegisterController.php(24): {closure}()
+#1 [internal function]: app\controllers\RegisterController->handleView()
+#2 D:\GitHub\PHP-Base-Course-Public\Project\core\Router.php(53): call_user_func()
+#3 D:\GitHub\PHP-Base-Course-Public\Project\core\Application.php(29): app\core\Router->resolve()
+#4 D:\GitHub\PHP-Base-Course-Public\Project\web\index.php(43): app\core\Application->run()
+#5 {main}
+  thrown in D:\GitHub\PHP-Base-Course-Public\Project\web\index.php on line 15
+[17-Apr-2023 12:05:16 UTC] PHP Warning:  require(User.php): Failed to open stream: No such file or directory in D:\GitHub\PHP-Base-Course-Public\Project\web\index.php on line 16
+[17-Apr-2023 12:05:16 UTC] PHP Fatal error:  Uncaught Error: Failed opening required 'User.php' (include_path='.;C:\php\pear') in D:\GitHub\PHP-Base-Course-Public\Project\web\index.php:16
+Stack trace:
+#0 D:\GitHub\PHP-Base-Course-Public\Project\controllers\RegisterController.php(24): {closure}()
+#1 [internal function]: app\controllers\RegisterController->handleView()
+#2 D:\GitHub\PHP-Base-Course-Public\Project\core\Router.php(53): call_user_func()
+#3 D:\GitHub\PHP-Base-Course-Public\Project\core\Application.php(29): app\core\Router->resolve()
+#4 D:\GitHub\PHP-Base-Course-Public\Project\web\index.php(44): app\core\Application->run()
+#5 {main}
+  thrown in D:\GitHub\PHP-Base-Course-Public\Project\web\index.php on line 16
+[17-Apr-2023 12:05:28 UTC] PHP Warning:  require(User.php): Failed to open stream: No such file or directory in D:\GitHub\PHP-Base-Course-Public\Project\web\index.php on line 16
+[17-Apr-2023 12:05:28 UTC] PHP Fatal error:  Uncaught Error: Failed opening required 'User.php' (include_path='.;C:\php\pear') in D:\GitHub\PHP-Base-Course-Public\Project\web\index.php:16
+Stack trace:
+#0 D:\GitHub\PHP-Base-Course-Public\Project\controllers\RegisterController.php(24): {closure}()
+#1 [internal function]: app\controllers\RegisterController->handleView()
+#2 D:\GitHub\PHP-Base-Course-Public\Project\core\Router.php(53): call_user_func()
+#3 D:\GitHub\PHP-Base-Course-Public\Project\core\Application.php(29): app\core\Router->resolve()
+#4 D:\GitHub\PHP-Base-Course-Public\Project\web\index.php(44): app\core\Application->run()
+#5 {main}
+  thrown in D:\GitHub\PHP-Base-Course-Public\Project\web\index.php on line 16
+[17-Apr-2023 12:08:30 UTC] PHP Warning:  require($className.php): Failed to open stream: No such file or directory in D:\GitHub\PHP-Base-Course-Public\Project\web\index.php on line 15
+[17-Apr-2023 12:08:30 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '$className.php' (include_path='.;C:\php\pear') in D:\GitHub\PHP-Base-Course-Public\Project\web\index.php:15
+Stack trace:
+#0 D:\GitHub\PHP-Base-Course-Public\Project\controllers\RegisterController.php(24): {closure}()
+#1 [internal function]: app\controllers\RegisterController->handleView()
+#2 D:\GitHub\PHP-Base-Course-Public\Project\core\Router.php(53): call_user_func()
+#3 D:\GitHub\PHP-Base-Course-Public\Project\core\Application.php(29): app\core\Router->resolve()
+#4 D:\GitHub\PHP-Base-Course-Public\Project\web\index.php(43): app\core\Application->run()
+#5 {main}
+  thrown in D:\GitHub\PHP-Base-Course-Public\Project\web\index.php on line 15
+[17-Apr-2023 12:08:46 UTC] PHP Warning:  require(User.php): Failed to open stream: No such file or directory in D:\GitHub\PHP-Base-Course-Public\Project\web\index.php on line 15
+[17-Apr-2023 12:08:46 UTC] PHP Fatal error:  Uncaught Error: Failed opening required 'User.php' (include_path='.;C:\php\pear') in D:\GitHub\PHP-Base-Course-Public\Project\web\index.php:15
+Stack trace:
+#0 D:\GitHub\PHP-Base-Course-Public\Project\controllers\RegisterController.php(24): {closure}()
+#1 [internal function]: app\controllers\RegisterController->handleView()
+#2 D:\GitHub\PHP-Base-Course-Public\Project\core\Router.php(53): call_user_func()
+#3 D:\GitHub\PHP-Base-Course-Public\Project\core\Application.php(29): app\core\Router->resolve()
+#4 D:\GitHub\PHP-Base-Course-Public\Project\web\index.php(43): app\core\Application->run()
+#5 {main}
+  thrown in D:\GitHub\PHP-Base-Course-Public\Project\web\index.php on line 15
+[17-Apr-2023 12:12:23 UTC] PHP Warning:  require(User.php): Failed to open stream: No such file or directory in D:\GitHub\PHP-Base-Course-Public\Project\web\index.php on line 16
+[17-Apr-2023 12:12:23 UTC] PHP Fatal error:  Uncaught Error: Failed opening required 'User.php' (include_path='.;C:\php\pear') in D:\GitHub\PHP-Base-Course-Public\Project\web\index.php:16
+Stack trace:
+#0 D:\GitHub\PHP-Base-Course-Public\Project\controllers\RegisterController.php(24): {closure}()
+#1 [internal function]: app\controllers\RegisterController->handleView()
+#2 D:\GitHub\PHP-Base-Course-Public\Project\core\Router.php(53): call_user_func()
+#3 D:\GitHub\PHP-Base-Course-Public\Project\core\Application.php(29): app\core\Router->resolve()
+#4 D:\GitHub\PHP-Base-Course-Public\Project\web\index.php(43): app\core\Application->run()
+#5 {main}
+  thrown in D:\GitHub\PHP-Base-Course-Public\Project\web\index.php on line 16
+[22-Apr-2023 10:25:46 UTC] PHP Warning:  require(User.php): Failed to open stream: No such file or directory in D:\GitHub\PHP-Base-Course-Public\Project\web\index.php on line 16
+[22-Apr-2023 10:25:46 UTC] PHP Fatal error:  Uncaught Error: Failed opening required 'User.php' (include_path='.;C:\php\pear') in D:\GitHub\PHP-Base-Course-Public\Project\web\index.php:16
+Stack trace:
+#0 D:\GitHub\PHP-Base-Course-Public\Project\controllers\LoginController.php(24): {closure}()
+#1 [internal function]: app\controllers\LoginController->handleView()
+#2 D:\GitHub\PHP-Base-Course-Public\Project\core\Router.php(53): call_user_func()
+#3 D:\GitHub\PHP-Base-Course-Public\Project\core\Application.php(29): app\core\Router->resolve()
+#4 D:\GitHub\PHP-Base-Course-Public\Project\web\index.php(43): app\core\Application->run()
+#5 {main}
+  thrown in D:\GitHub\PHP-Base-Course-Public\Project\web\index.php on line 16
+[22-Apr-2023 10:27:24 UTC] PHP Warning:  require(User.php): Failed to open stream: No such file or directory in D:\GitHub\PHP-Base-Course-Public\Project\web\index.php on line 16
+[22-Apr-2023 10:27:24 UTC] PHP Fatal error:  Uncaught Error: Failed opening required 'User.php' (include_path='.;C:\php\pear') in D:\GitHub\PHP-Base-Course-Public\Project\web\index.php:16
+Stack trace:
+#0 D:\GitHub\PHP-Base-Course-Public\Project\controllers\LoginController.php(24): {closure}()
+#1 [internal function]: app\controllers\LoginController->handleView()
+#2 D:\GitHub\PHP-Base-Course-Public\Project\core\Router.php(53): call_user_func()
+#3 D:\GitHub\PHP-Base-Course-Public\Project\core\Application.php(29): app\core\Router->resolve()
+#4 D:\GitHub\PHP-Base-Course-Public\Project\web\index.php(43): app\core\Application->run()
+#5 {main}
+  thrown in D:\GitHub\PHP-Base-Course-Public\Project\web\index.php on line 16
+[24-Apr-2023 12:01:00 UTC] PHP Warning:  require(UserMapper.php): Failed to open stream: No such file or directory in D:\GitHub\PHP-Base-Course-Public\Project\web\index.php on line 16
+[24-Apr-2023 12:01:00 UTC] PHP Fatal error:  Uncaught Error: Failed opening required 'UserMapper.php' (include_path='.;C:\php\pear') in D:\GitHub\PHP-Base-Course-Public\Project\web\index.php:16
+Stack trace:
+#0 D:\GitHub\PHP-Base-Course-Public\Project\controllers\RegisterController.php(24): {closure}()
+#1 [internal function]: app\controllers\RegisterController->handleView()
+#2 D:\GitHub\PHP-Base-Course-Public\Project\core\Router.php(53): call_user_func()
+#3 D:\GitHub\PHP-Base-Course-Public\Project\core\Application.php(29): app\core\Router->resolve()
+#4 D:\GitHub\PHP-Base-Course-Public\Project\web\index.php(44): app\core\Application->run()
+#5 {main}
+  thrown in D:\GitHub\PHP-Base-Course-Public\Project\web\index.php on line 16
+[24-Apr-2023 12:02:22 UTC] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function app\models\User::__construct(), 0 passed in D:\GitHub\PHP-Base-Course-Public\Project\controllers\RegisterController.php on line 45 and exactly 4 expected in D:\GitHub\PHP-Base-Course-Public\Project\models\User.php:17
+Stack trace:
+#0 D:\GitHub\PHP-Base-Course-Public\Project\controllers\RegisterController.php(45): app\models\User->__construct()
+#1 [internal function]: app\controllers\RegisterController->handleView()
+#2 D:\GitHub\PHP-Base-Course-Public\Project\core\Router.php(53): call_user_func()
+#3 D:\GitHub\PHP-Base-Course-Public\Project\core\Application.php(29): app\core\Router->resolve()
+#4 D:\GitHub\PHP-Base-Course-Public\Project\web\index.php(44): app\core\Application->run()
+#5 {main}
+  thrown in D:\GitHub\PHP-Base-Course-Public\Project\models\User.php on line 17
+[24-Apr-2023 12:03:55 UTC] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function app\models\User::__construct(), 0 passed in D:\GitHub\PHP-Base-Course-Public\Project\controllers\RegisterController.php on line 45 and exactly 4 expected in D:\GitHub\PHP-Base-Course-Public\Project\models\User.php:17
+Stack trace:
+#0 D:\GitHub\PHP-Base-Course-Public\Project\controllers\RegisterController.php(45): app\models\User->__construct()
+#1 [internal function]: app\controllers\RegisterController->handleView()
+#2 D:\GitHub\PHP-Base-Course-Public\Project\core\Router.php(53): call_user_func()
+#3 D:\GitHub\PHP-Base-Course-Public\Project\core\Application.php(29): app\core\Router->resolve()
+#4 D:\GitHub\PHP-Base-Course-Public\Project\web\index.php(44): app\core\Application->run()
+#5 {main}
+  thrown in D:\GitHub\PHP-Base-Course-Public\Project\models\User.php on line 17
+[24-Apr-2023 15:23:49 UTC] PHP Fatal error:  Uncaught TypeError: app\core\Collection::__construct(): Argument #2 ($mapper) must be of type app\core\Mapper, null given, called in D:\GitHub\PHP-Base-Course-Public\Project\core\Mapper.php on line 29 and defined in D:\GitHub\PHP-Base-Course-Public\Project\core\Collection.php:18
+Stack trace:
+#0 D:\GitHub\PHP-Base-Course-Public\Project\core\Mapper.php(29): app\core\Collection->__construct()
+#1 D:\GitHub\PHP-Base-Course-Public\Project\controllers\UserProfileContoller.php(17): app\core\Mapper->SelectAll()
+#2 [internal function]: app\controllers\UserProfileContoller->getView()
+#3 D:\GitHub\PHP-Base-Course-Public\Project\core\Router.php(53): call_user_func()
+#4 D:\GitHub\PHP-Base-Course-Public\Project\core\Application.php(29): app\core\Router->resolve()
+#5 D:\GitHub\PHP-Base-Course-Public\Project\web\index.php(44): app\core\Application->run()
+#6 {main}
+  thrown in D:\GitHub\PHP-Base-Course-Public\Project\core\Collection.php on line 18
+[24-Apr-2023 15:24:03 UTC] PHP Fatal error:  Uncaught TypeError: app\core\Collection::__construct(): Argument #2 ($mapper) must be of type app\core\Mapper, null given, called in D:\GitHub\PHP-Base-Course-Public\Project\core\Mapper.php on line 29 and defined in D:\GitHub\PHP-Base-Course-Public\Project\core\Collection.php:18
+Stack trace:
+#0 D:\GitHub\PHP-Base-Course-Public\Project\core\Mapper.php(29): app\core\Collection->__construct()
+#1 D:\GitHub\PHP-Base-Course-Public\Project\controllers\UserProfileContoller.php(17): app\core\Mapper->SelectAll()
+#2 [internal function]: app\controllers\UserProfileContoller->getView()
+#3 D:\GitHub\PHP-Base-Course-Public\Project\core\Router.php(53): call_user_func()
+#4 D:\GitHub\PHP-Base-Course-Public\Project\core\Application.php(29): app\core\Router->resolve()
+#5 D:\GitHub\PHP-Base-Course-Public\Project\web\index.php(44): app\core\Application->run()
+#6 {main}
+  thrown in D:\GitHub\PHP-Base-Course-Public\Project\core\Collection.php on line 18
+[24-Apr-2023 15:24:05 UTC] PHP Fatal error:  Uncaught TypeError: app\core\Collection::__construct(): Argument #2 ($mapper) must be of type app\core\Mapper, null given, called in D:\GitHub\PHP-Base-Course-Public\Project\core\Mapper.php on line 29 and defined in D:\GitHub\PHP-Base-Course-Public\Project\core\Collection.php:18
+Stack trace:
+#0 D:\GitHub\PHP-Base-Course-Public\Project\core\Mapper.php(29): app\core\Collection->__construct()
+#1 D:\GitHub\PHP-Base-Course-Public\Project\controllers\UserProfileContoller.php(17): app\core\Mapper->SelectAll()
+#2 [internal function]: app\controllers\UserProfileContoller->getView()
+#3 D:\GitHub\PHP-Base-Course-Public\Project\core\Router.php(53): call_user_func()
+#4 D:\GitHub\PHP-Base-Course-Public\Project\core\Application.php(29): app\core\Router->resolve()
+#5 D:\GitHub\PHP-Base-Course-Public\Project\web\index.php(44): app\core\Application->run()
+#6 {main}
+  thrown in D:\GitHub\PHP-Base-Course-Public\Project\core\Collection.php on line 18
+[24-Apr-2023 15:24:12 UTC] PHP Fatal error:  Uncaught TypeError: app\core\Collection::__construct(): Argument #2 ($mapper) must be of type app\core\Mapper, null given, called in D:\GitHub\PHP-Base-Course-Public\Project\core\Mapper.php on line 29 and defined in D:\GitHub\PHP-Base-Course-Public\Project\core\Collection.php:18
+Stack trace:
+#0 D:\GitHub\PHP-Base-Course-Public\Project\core\Mapper.php(29): app\core\Collection->__construct()
+#1 D:\GitHub\PHP-Base-Course-Public\Project\controllers\UserProfileContoller.php(17): app\core\Mapper->SelectAll()
+#2 [internal function]: app\controllers\UserProfileContoller->getView()
+#3 D:\GitHub\PHP-Base-Course-Public\Project\core\Router.php(53): call_user_func()
+#4 D:\GitHub\PHP-Base-Course-Public\Project\core\Application.php(29): app\core\Router->resolve()
+#5 D:\GitHub\PHP-Base-Course-Public\Project\web\index.php(44): app\core\Application->run()
+#6 {main}
+  thrown in D:\GitHub\PHP-Base-Course-Public\Project\core\Collection.php on line 18
+[24-Apr-2023 15:25:05 UTC] PHP Fatal error:  Uncaught TypeError: app\core\Collection::__construct(): Argument #2 ($mapper) must be of type app\core\Mapper, null given, called in D:\GitHub\PHP-Base-Course-Public\Project\core\Mapper.php on line 29 and defined in D:\GitHub\PHP-Base-Course-Public\Project\core\Collection.php:18
+Stack trace:
+#0 D:\GitHub\PHP-Base-Course-Public\Project\core\Mapper.php(29): app\core\Collection->__construct()
+#1 D:\GitHub\PHP-Base-Course-Public\Project\controllers\UserProfileContoller.php(17): app\core\Mapper->SelectAll()
+#2 [internal function]: app\controllers\UserProfileContoller->getView()
+#3 D:\GitHub\PHP-Base-Course-Public\Project\core\Router.php(53): call_user_func()
+#4 D:\GitHub\PHP-Base-Course-Public\Project\core\Application.php(29): app\core\Router->resolve()
+#5 D:\GitHub\PHP-Base-Course-Public\Project\web\index.php(44): app\core\Application->run()
+#6 {main}
+  thrown in D:\GitHub\PHP-Base-Course-Public\Project\core\Collection.php on line 18
+[24-Apr-2023 15:25:06 UTC] PHP Fatal error:  Uncaught TypeError: app\core\Collection::__construct(): Argument #2 ($mapper) must be of type app\core\Mapper, null given, called in D:\GitHub\PHP-Base-Course-Public\Project\core\Mapper.php on line 29 and defined in D:\GitHub\PHP-Base-Course-Public\Project\core\Collection.php:18
+Stack trace:
+#0 D:\GitHub\PHP-Base-Course-Public\Project\core\Mapper.php(29): app\core\Collection->__construct()
+#1 D:\GitHub\PHP-Base-Course-Public\Project\controllers\UserProfileContoller.php(17): app\core\Mapper->SelectAll()
+#2 [internal function]: app\controllers\UserProfileContoller->getView()
+#3 D:\GitHub\PHP-Base-Course-Public\Project\core\Router.php(53): call_user_func()
+#4 D:\GitHub\PHP-Base-Course-Public\Project\core\Application.php(29): app\core\Router->resolve()
+#5 D:\GitHub\PHP-Base-Course-Public\Project\web\index.php(44): app\core\Application->run()
+#6 {main}
+  thrown in D:\GitHub\PHP-Base-Course-Public\Project\core\Collection.php on line 18
+[24-Apr-2023 15:25:06 UTC] PHP Fatal error:  Uncaught TypeError: app\core\Collection::__construct(): Argument #2 ($mapper) must be of type app\core\Mapper, null given, called in D:\GitHub\PHP-Base-Course-Public\Project\core\Mapper.php on line 29 and defined in D:\GitHub\PHP-Base-Course-Public\Project\core\Collection.php:18
+Stack trace:
+#0 D:\GitHub\PHP-Base-Course-Public\Project\core\Mapper.php(29): app\core\Collection->__construct()
+#1 D:\GitHub\PHP-Base-Course-Public\Project\controllers\UserProfileContoller.php(17): app\core\Mapper->SelectAll()
+#2 [internal function]: app\controllers\UserProfileContoller->getView()
+#3 D:\GitHub\PHP-Base-Course-Public\Project\core\Router.php(53): call_user_func()
+#4 D:\GitHub\PHP-Base-Course-Public\Project\core\Application.php(29): app\core\Router->resolve()
+#5 D:\GitHub\PHP-Base-Course-Public\Project\web\index.php(44): app\core\Application->run()
+#6 {main}
+  thrown in D:\GitHub\PHP-Base-Course-Public\Project\core\Collection.php on line 18
+[24-Apr-2023 15:25:18 UTC] PHP Fatal error:  Uncaught TypeError: app\core\Collection::__construct(): Argument #2 ($mapper) must be of type app\core\Mapper, null given, called in D:\GitHub\PHP-Base-Course-Public\Project\core\Mapper.php on line 29 and defined in D:\GitHub\PHP-Base-Course-Public\Project\core\Collection.php:18
+Stack trace:
+#0 D:\GitHub\PHP-Base-Course-Public\Project\core\Mapper.php(29): app\core\Collection->__construct()
+#1 D:\GitHub\PHP-Base-Course-Public\Project\controllers\UserProfileContoller.php(17): app\core\Mapper->SelectAll()
+#2 [internal function]: app\controllers\UserProfileContoller->getView()
+#3 D:\GitHub\PHP-Base-Course-Public\Project\core\Router.php(53): call_user_func()
+#4 D:\GitHub\PHP-Base-Course-Public\Project\core\Application.php(29): app\core\Router->resolve()
+#5 D:\GitHub\PHP-Base-Course-Public\Project\web\index.php(44): app\core\Application->run()
+#6 {main}
+  thrown in D:\GitHub\PHP-Base-Course-Public\Project\core\Collection.php on line 18

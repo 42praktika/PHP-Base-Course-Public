@@ -56,27 +56,9 @@ include PROJECT_ROOT."views/templates/headerTemplate.php";
 
 <body class="main-content">
 
-<div class="auth-container" id="auth-container">
-
-    <form class="auth-content-container" id="auth-content-container" action="login" method="post">
-        <label for="" style="color: white; font-size: 40px; line-height: 48px;">Login in</label>
-        <input type="email" placeholder="email" name="email" class="blurred-input" id="">
-        <input type="password" placeholder="password" name="password" class="blurred-input" id="">
-
-        <button type="submit" class="button-auth">Login</button>
-
-        <div class="auth-bottom-container">
-
-            <div class="outlined-button noselect" onclick="SetAuthContainerHidden()" onclick="">
-                close
-            </div>
-            <div style="width: 20px;"></div>
-            <a href="" class="outlined-button">sign in</a>
-
-        </div>
-        <label style="color: red;" id="auth-error-label"></label>
-    </form>
-</div>
+<?php
+include PROJECT_ROOT."views/templates/authTemplate.php";
+?>
 <div class="page-container">
     <div class="flex column">
         <div class="row">
@@ -86,11 +68,29 @@ include PROJECT_ROOT."views/templates/headerTemplate.php";
             <div>
                 <label>Username</label>
                 <label>registration date</label>
-                <button>Edit profile</button>
+                <button class="button-login">Edit profile</button>
             </div>
-        </div>
-        <div>
-            panels
+            <input class="radio" id="one" name="group" type="radio" checked>
+            <input class="radio" id="two" name="group" type="radio">
+            <input class="radio" id="three" name="group" type="radio">
+
+            <div class="tabs">
+                <label class="tab no-select" id="one-tab" for="one">Favourite</label>
+                <label class="tab no-select" id="two-tab" for="two">Read later</label>
+                <label class="tab no-select" id="three-tab" for="three">tab 3</label>
+            </div>
+            <div class="panels">
+                <div class="panel" id="one-panel">
+
+                </div>
+                <div class="panel" id="two-panel">
+
+                </div>
+
+                <div class="panel" id="three-panel">
+
+                </div>
+            </div>
         </div>
     </div>
 </div>

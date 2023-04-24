@@ -34,7 +34,7 @@
                             <button onclick="redirect('user')" class="sidemenu-button margin_top">Profile</button>
                             <button class="sidemenu-button margin_top">Wish list</button>
                             <br>
-                            <div class="outlined-button noselect margin_top" onclick="">
+                            <div class="outlined-button no-select margin_top" onclick="">
                                 Logout
                             </div>
                         </div>
@@ -43,7 +43,7 @@
                 </div>
             </div>
             <div class="horizontal-item">
-                <button onclick="SetAuthContainerVisible()" class="button-login" id="header-login-button">Login</button>
+                <button onclick="SetAuthContainerVisible()" class="button-login" id="header-login-button">Sign in</button>
             </div>
         </div>
     </div>

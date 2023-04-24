@@ -4,13 +4,16 @@ declare(strict_types=1);
 namespace app\controllers;
 
 use app\core\Application;
+use app\mappers\UserMapper;
 
 class UserProfileContoller
 {
 
     public function getView()
     {
+
         Application::$app->getRouter()->renderView("user_profile");
+
     }
 
     public function handleView()

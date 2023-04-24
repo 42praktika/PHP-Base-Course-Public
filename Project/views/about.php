@@ -56,27 +56,9 @@ include PROJECT_ROOT."views/templates/headerTemplate.php";
 
 <body class="main-content">
 
-<div class="auth-container" id="auth-container">
-
-    <form class="auth-content-container" id="auth_content_container" action="login" method="post">
-        <label for="" style="color: white; font-size: 40px; line-height: 48px;">Login in</label>
-        <input type="email" placeholder="email" name="email" class="blurred-input" id="">
-        <input type="password" placeholder="password" name="password" class="blurred-input" id="">
-
-        <button type="submit" class="button-auth">Login</button>
-
-        <div class="auth-bottom-container">
-
-            <div class="outlined-button noselect" onclick="SetAuthContainerHidden()" onclick="">
-                close
-            </div>
-            <div style="width: 20px;"></div>
-            <a href="" class="outlined-button">sign in</a>
-
-        </div>
-        <label style="color: red;" id="auth_error_label"></label>
-    </form>
-</div>
+<?php
+include PROJECT_ROOT."views/templates/authTemplate.php";
+?>
     <div class="page-container">
         <div class="flex column">
             <label class="title-name">About us</label>

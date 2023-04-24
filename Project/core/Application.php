@@ -4,12 +4,16 @@ declare(strict_types=1);
 
 namespace app\core;
 
+
+use PDO;
+
 class Application
 {
     public static Application $app;
     private Request $request;
     private Router $router;
     private Response $response;
+    public static Database $database;
 
     public function __construct()
     {
@@ -17,6 +21,7 @@ class Application
         $this->request = new Request();
         $this->response = new Response();
         $this->router = new Router($this->request, $this->response);
+        self::$database = new Database($_ENV["DB_DSN"], $_ENV["DB_USER"], $_ENV["DB_PASSWORD"]);
     }
 
     public function run() {

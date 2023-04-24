@@ -77,7 +77,7 @@ include PROJECT_ROOT."views/templates/headerTemplate.php";
                                 <button class="sidemenu-button margin_top">Already Read</button>
                                 <button class="sidemenu-button margin_top">Reading now</button>
 
-                                <div class="outlined-button noselect margin_top" onclick="">
+                                <div class="outlined-button no-select margin_top" onclick="">
                                     Skipped
                                 </div>
                             </div>
@@ -152,19 +152,19 @@ include PROJECT_ROOT."views/templates/headerTemplate.php";
                 <div class="rating">
                     <div class="rating_stars" id="rating">
                         <button class="rating-star">
-                            <span class="material-symbols-rounded noselect">star</span>
+                            <span class="material-symbols-rounded no-select">star</span>
                         </button>
                         <button class="rating-star">
-                            <span class="material-symbols-rounded noselect">star</span>
+                            <span class="material-symbols-rounded no-select">star</span>
                         </button>
                         <button class="rating-star">
-                            <span class="material-symbols-rounded noselect">star</span>
+                            <span class="material-symbols-rounded no-select">star</span>
                         </button>
                         <button class="rating-star">
-                            <span class="material-symbols-rounded noselect">star</span>
+                            <span class="material-symbols-rounded no-select">star</span>
                         </button>
                         <button class="rating-star">
-                            <span class="material-symbols-rounded noselect">star</span>
+                            <span class="material-symbols-rounded no-select">star</span>
                         </button>
 
                     </div>
@@ -215,9 +215,9 @@ include PROJECT_ROOT."views/templates/headerTemplate.php";
             <input class="radio" id="three" name="group" type="radio">
 
             <div class="tabs">
-                <label class="tab noselect" id="one-tab" for="one">Preview</label>
-                <label class="tab noselect" id="two-tab" for="two">Chapters</label>
-                <label class="tab noselect" id="three-tab" for="three">Linked content</label>
+                <label class="tab no-select" id="one-tab" for="one">Preview</label>
+                <label class="tab no-select" id="two-tab" for="two">Chapters</label>
+                <label class="tab no-select" id="three-tab" for="three">Linked content</label>
             </div>
 
             <div>
@@ -364,26 +364,9 @@ include PROJECT_ROOT."views/templates/headerTemplate.php";
         </div>
     </div>
 
-    <div class="auth-container" id="auth-container">
-
-        <div class="auth-content-container" id="auth_content_container">
-            <label for="" style="color: white; font-size: 40px; line-height: 48px;">Login in</label>
-            <input type="email" placeholder="username or email" name="LoginInput" class="blurred-input" id="">
-            <input type="password" placeholder="password" name="" class="blurred-input" id="">
-
-            <a href="" class="button-auth">Login</a>
-            <div class="auth-bottom-container">
-
-                <div class="outlined-button noselect" onclick="SetAuthContainerHidden()" onclick="">
-                    close
-                </div>
-                <div style="width: 20px;"></div>
-                <a href="" class="outlined-button">sign in</a>
-
-            </div>
-            <label style="color: red;" id="auth-error-label"></label>
-        </div>
-    </div>
+    <?php
+    include PROJECT_ROOT."views/templates/authTemplate.php";
+    ?>
 
     <!-- <div class="user_profile_container" id="user_profile">
             <div class="user_profile_content">

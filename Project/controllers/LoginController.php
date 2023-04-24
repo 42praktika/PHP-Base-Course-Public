@@ -5,7 +5,7 @@ namespace app\controllers;
 
 use app\core\Application;
 use app\core\Router;
-
+use app\models\User;
 class LoginController
 {
 
@@ -21,7 +21,11 @@ class LoginController
         $email = $body["email"];
         $password = $body["password"];
 
-        $this->login($email, $password);
+        $user = new User();
+        $user->assign($body);
+        $user->save();
+//
+//        $this->login($email, $password);
     }
     public function login(string $email, string $password)
     {
@@ -29,7 +33,7 @@ class LoginController
             return;
         }
 
-        header("Location: /");
+        header("Location: /profile");
         exit();
     }
 }

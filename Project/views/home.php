@@ -65,7 +65,7 @@ include PROJECT_ROOT."views/templates/headerTemplate.php";
             hunter to pay back his deceased father’s debt to loan sharks
             <div class="horizontal-items" style="padding-top: 10px;">
                 <div class="horizontal-item">
-                    <a href="/manga" class="button_purple noselect">Read</a>
+                    <a href="/manga" class="button_purple no-select">Read</a>
                 </div>
 
                 <div class="horizontal-item">
@@ -123,49 +123,11 @@ include PROJECT_ROOT."views/templates/headerTemplate.php";
         </div>
 
     </div>
-        <div class="auth-container" id="auth-container">
-
-            <form class="auth-content-container" id="auth-content-container" action="login" method="post">
-                <label for="" style="color: white; font-size: 40px; line-height: 48px;">Account</label>
-                    <input type="email" placeholder="email" name="email" class="blurred-input" id="">
-                    <input type="password" placeholder="password" name="password" class="blurred-input" id="">
-
-                <button type="submit" class="button-auth">Sign in</button>
-
-                <div class="auth-bottom-container">
-
-                    <div class="outlined-button noselect" onclick="SetAuthContainerHidden()" onclick="">
-                        close
-                    </div>
-                    <div style="width: 20px;"></div>
-                    <a href="" class="outlined-button">sign up</a>
-
-                </div>
-                <label style="color: red;" id="auth-error-label"></label>
-            </form>
-
-
-        </div>
+        <?php
+        include PROJECT_ROOT."views/templates/authTemplate.php";
+        ?>
 </body>
-<form class="auth-content-container" id="auth-content-container" action="register" method="post">
-    <label for="" style="color: white; font-size: 40px; line-height: 48px;">Register</label>
-    <input type="email" placeholder="email" name="email" class="blurred-input" id="">
-    <input type="password" placeholder="password" name="password_1" class="blurred-input" id="">
-    <input type="password" placeholder="repeat password" name="password_2" class="blurred-input" id="">
 
-    <button type="submit" class="button-auth">Sign up</button>
-
-    <div class="auth-bottom-container">
-
-        <div class="outlined-button noselect" onclick="SetAuthContainerHidden()" onclick="">
-            close
-        </div>
-        <div style="width: 20px;"></div>
-        <a href="" class="outlined-button">sign in</a>
-
-    </div>
-    <label style="color: red;" id="auth-error-label"></label>
-</form>
 <?php
     include PROJECT_ROOT."views/templates/footerTemplate.php";
 ?>

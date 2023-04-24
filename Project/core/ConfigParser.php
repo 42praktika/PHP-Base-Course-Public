@@ -2,26 +2,31 @@
 
 namespace app\core;
 
+use function PHPUnit\Framework\isJson;
+
 class ConfigParser
 {
     public static function load(): void
     {
-        $configName = PROJECT_ROOT."/.env";
+        $configName = PROJECT_ROOT."/config.json";
         if(!file_exists($configName)){
             return;
         }
-        $config = file($configName, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
+        $configFileContent = file_get_contents($configName);
 
-        foreach ($config as $line){
-            $trim = trim($line);
-            if(ltrim($trim)[0] == '#'){
-                continue;
-            }
+//        if(!isJson($configFileContent)){
+//            return;
+//        }
 
-            $parsed = explode("=", $trim, 2);
-            $_ENV[$parsed[0]] = $parsed[1];
-            $_SERVER[$parsed[0]] = $parsed[1];
-            putenv(rtrim($parsed[0])."=".ltrim($parsed[1]));
+        $configJson = json_decode($configFileContent, true);
+
+        foreach ($configJson as $key => $value){
+            $cleanedKey = ltrim(rtrim($key));
+            $cleanedValue = ltrim(rtrim($value));
+
+            $_ENV[$cleanedKey] = $cleanedValue;
+            $_SERVER[$cleanedKey] = $cleanedValue;
+            putenv($cleanedKey."=".$cleanedValue);
         }
     }
 }

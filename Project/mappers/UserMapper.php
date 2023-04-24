@@ -1,0 +1,84 @@
+<?php
+
+namespace app\mappers;
+
+use app\core\Collection;
+use app\core\Model;
+use app\models\User;
+use PDOStatement;
+
+class UserMapper extends \app\core\Mapper
+{
+
+    private ?PDOStatement $insert;
+    private ?PDOStatement $update;
+    private ?PDOStatement $delete;
+    private ?PDOStatement $select;
+    private ?PDOStatement $selectAll;
+
+
+    public function __construct()
+    {
+        parent::__construct();
+        $this->insert = $this->getPdo()->prepare("INSERT into users (nickname, email, password) VALUES (:nickname, :email, :password)");
+        $this->update = $this->getPdo()->prepare("UPDATE users SET nickname = :nickname, email = :email, password = :password WHERE id==:id");
+        $this->delete = $this->getPdo()->prepare("DELETE FROM users WHERE id=:id");
+        $this->select = $this->getPdo()->prepare("SELECT * FROM users WHERE id=:id");
+        $this->selectAll = $this->getPdo()->prepare("SELECT * FROM users");
+    }
+
+    /**
+     * @param User $model
+     * @return Model
+     */
+    protected function doInsert(Model $model): Model
+    {
+
+        $this->insert->execute(params: [":nickname" => $model->getNickname(),
+            "email" => $model->getEmail(),
+            "password" => $model->getPassword()]);
+        $id = $this->getPdo()->lastInsertId();
+        $model->setId($id);
+        return $model;
+    }
+
+    protected function doUpdate(Model $model): void
+    {
+        $this->insert->execute(params: [
+            ":id" => $model->getId(),
+            ":nickname" => $model->getNickname(),
+            "email" => $model->getEmail(),
+            "password" => $model->getPassword()]);
+    }
+
+    protected function doDelete(Model $model): void
+    {
+        $this->insert->execute(params: [
+            ":id" => $model->getId()]);
+    }
+
+    protected function doSelect(int $id): array
+    {
+        $this->select->execute([":id"=>$id]);
+        return $this->select->fetch(\PDO::FETCH_NAMED);
+    }
+
+    protected function doSelectAll(): array
+    {
+        $this->selectAll->execute();
+        return $this->selectAll->fetchAll();
+    }
+
+    public function getInstance()
+    {
+        return $this;
+    }
+
+    function createObject(array $data): Model
+    {
+        return new User(array_key_exists("id", $data) ? $data["id"] : null,
+            $data["nickname"],
+            $data["email"],
+            $data["password"]);
+    }
+}

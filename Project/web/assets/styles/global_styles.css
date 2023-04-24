@@ -211,7 +211,7 @@ body{
 .outlined-button{
     border: 1px solid #D9D9D9;
     border-radius: 15px;    
-
+    cursor: pointer;
     width: inherit;
     height: 50px;
     display: flex;
@@ -233,7 +233,7 @@ body{
    
     border: 2px solid white;
 }
-.noselect{
+.no-select{
     -webkit-touch-callout: none;
 	-webkit-user-select: none;
 	-khtml-user-select: none;
