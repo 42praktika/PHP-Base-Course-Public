@@ -39,7 +39,7 @@ class Router
         $path = $this->request->getUri();
         $method = $this->request->getMethod();
         if (!isset($this->routes[$method]) || !isset($this->routes[$method][$path])) {
-            $this->renderStatic("404.html");
+            $this->renderStatic("404.php");
             $this->response->setStatusCode(Response::HTTP_NOT_FOUND);
             return;
         }
