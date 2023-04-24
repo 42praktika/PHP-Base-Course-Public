@@ -1,6 +1,6 @@
 <?php
 
-use app\controllers\PresentationController;
+use app\controllers\MainController;
 use app\core\Application;
 use app\core\ConfigParser;
 
@@ -31,8 +31,10 @@ $application = new Application();
 $router = $application->getRouter();
 
 $router->setGetRoute("/get500", "");
-$router->setGetRoute("/", [new PresentationController, "getView"]);
-$router->setPostRoute("/handle", [new PresentationController, "handleView"]);
+$router->setGetRoute("/", [new MainController, "getView"]);
+$router->setGetRoute("/about", [new \app\controllers\AboutUsController(), "getView"]);
+
+$router->setPostRoute("/handle", [new MainController, "handleView"]);
 
 ob_start();
 $application->run();
