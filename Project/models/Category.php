@@ -4,16 +4,16 @@ namespace app\models;
 
 use app\core\DbModel;
 
-class User extends DbModel
+class Category extends DbModel
 {
 
     public function getTableName(): string
     {
-        return "users";
+        return "categories";
     }
 
     public function getAttributes(): array
     {
-        return ["id","name", "email", "password"];
+        return ["id", "name", "author_id", "income"];
     }
 }

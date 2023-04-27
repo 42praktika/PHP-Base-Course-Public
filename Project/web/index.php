@@ -1,6 +1,7 @@
 <?php
 
 use app\controllers\AboutController;
+use app\controllers\LoginController;
 use app\controllers\MainController;
 use app\controllers\RegistrationController;
 use app\core\Application;
@@ -16,11 +17,7 @@ const PROJECT_ROOT = __DIR__."/../";
 require PROJECT_ROOT."/polyfill/http_send_status.php";
 spl_autoload_register(function ($className) {
    require str_replace("app\\",PROJECT_ROOT, $className).".php";
-
 });
-
-ConfigParser::load();
-echo getenv("APP_ENV"); // TODO убрать, это просто для демонстрации д/з
 
 ConfigParser::load();
 
@@ -29,7 +26,7 @@ if ($env == "dev") {
     error_reporting(E_ALL);
     ini_set('display_errors', '1');
     ini_set('log_errors', '1');
-    ini_set('error_log', PROJECT_ROOT."/runtime/".getenv("PHP_LOG"));
+//    ini_set('error_log', PROJECT_ROOT."/runtime/".getenv("PHP_LOG"));
 }
 
 $application = new Application();
@@ -40,9 +37,14 @@ $router = $application->getRouter();
 $router->setGetRoute("/get500", "");
 
 $router->setGetRoute("/", [new MainController, "getView"]);
+
 $router->setGetRoute("/about", [new AboutController, "getView"]);
+
 $router->setGetRoute("/registration", [new RegistrationController, "getView"]);
 $router->setPostRoute("/registration", [new RegistrationController, "register"]);
+
+$router->setGetRoute("/login", [new LoginController, "getView"]);
+$router->setPostRoute("/login", [new LoginController, "logIn"]);
 
 ob_start();
 $application->run();

@@ -4,6 +4,7 @@ declare(strict_types=1);
 namespace app\controllers;
 
 use app\core\Application;
+use app\models\User;
 
 class RegistrationController
 {
@@ -15,7 +16,13 @@ class RegistrationController
 
     public function register(): void
     {
-        $body = Application::$app->getRequest()->getBody();
-        echo "Здравствуйте, ".$body["name"]."!";
+        try {
+            $body = Application::$app->getRequest()->getBody();
+            (new User())->assign($body)->save();
+            Application::$app->getRouter()->renderView("success"); }
+        catch (\Exception $exception) {
+//            Application::$app->getLogger()->error($exception);
+            echo $exception;
+        }
     }
 }
