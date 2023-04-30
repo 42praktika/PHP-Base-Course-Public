@@ -14,5 +14,9 @@
     }
   },
   "minimum-stability": "dev",
-  "require": {}
+  "require": {
+    "psr/log": "*",
+    "ext-pdo": "*"
+  }
 }
+

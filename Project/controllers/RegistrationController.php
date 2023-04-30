@@ -3,6 +3,8 @@
 namespace app\controllers;
 
 use app\core\application;
+use app\models\User;
+
 class RegistrationController
 {
     public function getView(): void
@@ -11,7 +13,15 @@ class RegistrationController
     }
     public function handleView()
     {
+        try {
             $body = Application::$app->getRequest()->getBody();
-            print_r($body);
+
+            (new User())->assign($body)->save();
+
+            Application::$app->getRouter()->renderView("catalog"); }
+        catch (\Exception $exception) {
+
+            Application::$app->getLogger()->error($exception);
+        }
     }
 }
