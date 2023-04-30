@@ -10,8 +10,8 @@ class Application
     private Request $request;
     private Router $router;
     private Response $response;
-
-//    private Logger $logger;
+    private Logger $logger;
+    public static Database $database;
 
     public function __construct()
     {
@@ -19,14 +19,15 @@ class Application
         $this->request = new Request();
         $this->response = new Response();
         $this->router = new Router($this->request, $this->response);
-//        $this->logger = new Logger(PROJECT_ROOT."/runtime/".getenv("app_log"));
+        $this->logger = new Logger(PROJECT_ROOT."/runtime/".getenv("app_log"));
+        self::$database = new Database($_ENV["db"]["dsn"], $_ENV["db"]["user"], $_ENV["db"]["password"]);
     }
 
     public function run() {
         try {
             $this->router->resolve();
         } catch (\Exception $exception) {
-//            $this->logger->error("Can't resolve route");
+            $this->logger->error("Can not resolve route");
             $this->response->setStatusCode(Response::HTTP_SERVER_ERROR);
         }
     }
@@ -55,14 +56,12 @@ class Application
         return $this->router;
     }
 
-//    /**
-//     * @return Logger
-//     */
-//    public function getLogger(): Logger
-//    {
-//        return $this->logger;
-//    }
-
-
+    /**
+     * @return Logger
+     */
+    public function getLogger(): Logger
+    {
+        return $this->logger;
+    }
 
 }

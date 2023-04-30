@@ -6,15 +6,34 @@ namespace app\controllers;
 use app\core\Application;
 use app\core\Response;
 use app\exceptions\FileException;
+use app\mappers\UserMapper;
+use app\models\User;
 
 class PresentationController
 {
 
-//    public function getView()
-//    {
-//        Application::$app->getRouter()->renderView("presentation");
-//    }
+    public function getView()
+    {
+        Application::$app->getRouter()->renderView("presentation");
+    }
 
+    public function handleView()
+    {
+        try {
+        $body = Application::$app->getRequest()->getBody();
+        var_dump($body);
+       $mapper = new UserMapper();
+       $user = $mapper->createObject($body);
+       $mapper->Insert($user);
+       $users = $mapper->SelectAll();
+       var_dump($users);
+        Application::$app->getRouter()->renderView("success");
+             }
+        catch (\Exception $exception) {
+
+            Application::$app->getLogger()->error($exception);
+        }
+    }
     public function getStartPage()
     {
         Application::$app->getRouter()->renderView("welcomePage");
@@ -26,34 +45,4 @@ class PresentationController
     }
 
 
-    public function handleView()
-    {
-        $body = Application::$app->getRequest()->getBody();
-
-        try {
-            $this->writeBody($body);
-        } catch (FileException $e) {
-            Application::$app->getResponse()->setStatusCode(Response::HTTP_SERVER_ERROR);
-        }
-    }
-
-    /**
-     * @throws FileException
-     */
-    private function writeBody(array $body)
-    {
-        $f = @fopen(PROJECT_ROOT . "/runtime/body.txt", "rb+");
-        if ($f === false) {
-//            Application::$app->getLogger()->error("Can't open file for body at ".__FILE__."(".__LINE__.")");
-            throw new FileException("cannot open file");
-        }
-        foreach ($body as $key => $value) {
-            if (!fwrite($f, "$key=$value" . PHP_EOL)) {
-//                Application::$app->getLogger()->error("Can't write file for body at ".__FILE__."(".__LINE__.")");
-                throw new FileException("cannot write to file");
-            }
-        }
-
-        fclose($f);
-    }
 }

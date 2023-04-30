@@ -26,25 +26,25 @@ readfile('header.html');
         </div>
         <div ng-app ng-init="checked = false">
             <form class="form-signin" action="" method="post" name="form">
-                <label>Username</label>
-                <input class="form-styling" type="text" name="username" placeholder=""/>
-                <label>Password</label>
+                <label>Email</label>
+                <input class="form-styling" type="text" name="email" placeholder=""/>
+                <label>Пароль</label>
                 <input class="form-styling" type="password" name="password" placeholder=""/>
                 <div class="btn-animate">
-                    <a class="btn-signin">Sign in</a>
+                    <input type="submit" class="btn-signin" value="Войти"/>
                 </div>
             </form>
 
-            <form class="form-signup" action="" method="post" name="form">
-                <label>Full name</label>
-                <input class="form-styling" type="text" name="fullname" placeholder=""/>
+            <form class="form-signup" action="http://localhost:8080/handle" method="post" name="form">
+                <label>Username</label>
+                <input class="form-styling" type="text" name="username" placeholder="username"/>
                 <label>Email</label>
-                <input class="form-styling" type="text" name="email" placeholder=""/>
-                <label>Password</label>
-                <input class="form-styling" type="password" name="password" placeholder=""/>
-                <label>Confirm password</label>
-                <input class="form-styling" type="password" name="confirmpassword" placeholder=""/>
-                <a ng-click="checked = !checked" class="btn-signup">Sign Up</a>
+                <input class="form-styling" type="text" name="email" placeholder="email"/>
+                <label>Пароль</label>
+                <input class="form-styling" type="password" name="password" placeholder="password"/>
+                <label>Повторите пароль</label>
+                <input class="form-styling" type="password" name="confirmpassword" placeholder="confirm password"/>
+                <input type="submit" class="btn-signup" value="Зарегистрироваться"/>
             </form>
         </div>
     </div>

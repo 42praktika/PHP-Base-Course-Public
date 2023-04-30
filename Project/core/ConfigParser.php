@@ -11,7 +11,6 @@ class ConfigParser
         };
         $config = file_get_contents($confName);
         $parsed = json_decode($config,true);
-//        var_dump($parsed);
         foreach ($parsed as $item => $items) {
             if (is_array($item)) {
                 foreach ($items as $key => $value) {

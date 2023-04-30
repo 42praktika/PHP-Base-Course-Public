@@ -2,7 +2,7 @@
   "db": {
     "user": "postgres",
     "password": "ksenia543",
-    "dsn": "psql:host=localhost;port=5432;dbname=wishlistDB"
+    "dsn": "pgsql:host=localhost;port=5432;dbname=wishlist"
   },
   "app_env": "dev",
   "php_log": "phplog.txt",
