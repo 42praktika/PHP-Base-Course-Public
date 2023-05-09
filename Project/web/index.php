@@ -1,8 +1,13 @@
 <?php
 
 use app\controllers\AboutController;
+use app\controllers\AddCarController;
+use app\controllers\AuthController;
+use app\controllers\DeleteReviewController;
+use app\controllers\FeedbackController;
 use app\controllers\MainPageController;
 use app\controllers\RegistrationController;
+use app\controllers\RentFormController;
 use app\core\Application;
 use app\core\ConfigParser;
 
@@ -38,6 +43,16 @@ $router->setGetRoute("/", [new MainPageController, "getView"]);
 $router->setGetRoute("/aboutPage", [new AboutController, "getView"]);
 $router->setGetRoute("/registrationPage", [new RegistrationController, "getView"]);
 $router->setPostRoute("/catalog", [new RegistrationController, "handleView"]);
+$router->setGetRoute("/feedBack", [new FeedbackController, "getView"]);
+$router->setPostRoute("/feedBack", [new FeedbackController, "handleView"]);
+$router->setGetRoute("/authPage", [new AuthController, "getView"]);
+$router->setPostRoute("/adminPage", [new AuthController, "handleView"]);
+$router->setGetRoute("/addCar", [new AddCarController, "getView"]);
+$router->setPostRoute("/addCar", [new AddCarController, "handleView"]);
+$router->setGetRoute("/deleteReview", [new DeleteReviewController, "getView"]);
+$router->setPostRoute("/deleteReview", [new DeleteReviewController, "handleView"]);
+$router->setGetRoute("/rentForm", [new RentFormController, "getView"]);
+$router->setPostRoute("/rentForm", [new RentFormController, "handleView"]);
 
 
 ob_start();

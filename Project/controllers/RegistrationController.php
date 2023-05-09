@@ -3,7 +3,8 @@
 namespace app\controllers;
 
 use app\core\application;
-use app\models\User;
+use app\mappers\UserMapper;
+use function PHPUnit\Framework\containsEqual;
 
 class RegistrationController
 {
@@ -15,10 +16,11 @@ class RegistrationController
     {
         try {
             $body = Application::$app->getRequest()->getBody();
-
-            (new User())->assign($body)->save();
-
-            Application::$app->getRouter()->renderView("catalog"); }
+            $mapper = new UserMapper();
+            $user = $mapper->createObject($body);
+            $mapper->Insert($user);
+            Application::$app->getRouter()->renderView("catalog");
+        }
         catch (\Exception $exception) {
 
             Application::$app->getLogger()->error($exception);

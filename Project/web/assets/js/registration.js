@@ -13,7 +13,7 @@ let number_driver = document.querySelector('input[name="number_driver"]');
 let series = document.querySelector('input[name="series"]');
 
 const reg_numbers = /^[0-9]+$/;
-const reg_symbols = /[а-яА-Я];
+const reg_symbols = /[А-я]/;
 const reg_email = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;
 const reg_phone = /^(\s*)?(\+)?([- _():=+]?\d[- _():=+]?){10,14}(\s*)?$/;
 
@@ -38,18 +38,18 @@ buttonSubmit.addEventListener('click', (event) => {
         password.value = '';
         password_repeat.value = '';
     }
-    if (reg_numbers.test(series.value) === false || reg_numbers.test(number.value) === false) {
-        event.preventDefault();
+    if (reg_numbers.test(series.value) === false || reg_numbers.test(number.value) === false || series.value.length !== 4 || number.value.length !== 6 ) {
+        event.preventDefault()
         alert('Неверно введен паспорт(серия или номер)');
         series.value = '';
         number.value = '';
     }
-    if (reg_numbers.test(number_driver.value) === false) {
+    if (reg_numbers.test(number_driver.value) === false || number_driver.value.length !== 10) {
         event.preventDefault();
         alert('Неверно введен номер водительского удостоверения');
         number_driver.value = '';
     }
-    if (reg_symbols.test(first_name.value) === false || reg_symbols.test(second_name.value) === false || reg_symbols.test(third_name.value)) {
+    if (reg_symbols.test(first_name.value) === false || reg_symbols.test(second_name.value) === false || reg_symbols.test(third_name.value) === false) {
         event.preventDefault();
         alert('Неверно введены ФИО');
         first_name.value = '';

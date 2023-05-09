@@ -1,4 +1,4 @@
-<html lang="ru">
+<!--<html lang="ru">
 <head>
     <title>Hello</title>
     <meta charset="UTF-8">
@@ -14,4 +14,4 @@
     Phone: <input type="text" name="phone"><br>
     <input type="submit" value="Submit">
 </form>
-</body>
+</body>-->

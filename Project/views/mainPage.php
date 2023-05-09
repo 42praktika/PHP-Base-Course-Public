@@ -14,8 +14,7 @@
     <nav class="d-inline-flex mt-2 mt-md-0 ms-md-auto">
         <a class="p-3 border bg-light me-4 py-2 link-body-emphasis text-decoration-none" href="registrationPage">Регистрация</a>
         <a class="p-3 border bg-light me-4 py-2 link-body-emphasis text-decoration-none" href="aboutPage">Доп.информация</a>
-        <a class="p-3 border bg-light me-4 py-2 link-body-emphasis text-decoration-none" href="feedBack">Оставьте отзыв</a>
-        <a class="p-3 border bg-light py-2 link-body-emphasis text-decoration-none" href="auth">Вход</a>
+        <a class="p-3 border bg-light py-2 link-body-emphasis text-decoration-none" href="authPage">Вход</a>
     </nav>
 </div>
 <div class="main-info">
@@ -49,6 +48,20 @@
             </div>
         </div>
     </div>
+</div>
+<div>
+    <p class="p-text">
+        <b class="auto_slider">Ниже представлен наш автопарк</b>
+    </p>
+</div>
+
+<div class="container_slider_css">
+    <img class="photo_slider_css" src="../web/assets/img/autoPark/img1.png" alt="">
+    <img class="photo_slider_css" src="../web/assets/img/autoPark/img2.png" alt="">
+    <img class="photo_slider_css" src="../web/assets/img/autoPark/img3.png" alt="">
+    <img class="photo_slider_css" src="../web/assets/img/autoPark/img4.png" alt="">
+    <img class="photo_slider_css" src="../web/assets/img/autoPark/img5.png" alt="">
+    <img class="photo_slider_css" src="../web/assets/img/autoPark/img6.png" alt="">
 </div>
 </body>
 </html>

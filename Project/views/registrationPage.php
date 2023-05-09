@@ -49,7 +49,7 @@
             <button type="submit" class="signupbtn">Регистрация</button>
         </div>
     </div>
-    <script src="../web/assets/js/registration.js"></script>
 </form>
+<script src="../web/assets/js/registration.js"></script>
 </body>
 </html>
