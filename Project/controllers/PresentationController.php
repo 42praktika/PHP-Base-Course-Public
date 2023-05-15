@@ -14,7 +14,8 @@ class PresentationController
 
     public function getView()
     {
-        Application::$app->getRouter()->renderView("presentation");
+        Application::$app->getRouter()->renderTemplate("index", ["post_action"=>"handle"]);
+
     }
 
     public function handleView()
