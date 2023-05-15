@@ -3,19 +3,21 @@
     "description": "Репозиторий курса по PHP (базовый курс)",
     "type": "project",
     "license": "ISC",
-    "authors": [
-        {
-            "name": "42praktika",
-            "email": "itis42lab@gmail.com"
-        }
-    ],
+
     "require-dev": {
         "phpunit/phpunit": "^9.5"
     },
   "require": {
-    "php": ">=8"
+    "psr/log": "*",
+    "php": ">=8",
+    "ext-pdo": "*"
   },
     "scripts": {
         "test": "vendor/bin/phpunit Lessons"
+    },
+  "autoload": {
+    "psr-4": {
+      "app\\": "./"
     }
+  }
 }

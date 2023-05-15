@@ -23,7 +23,7 @@ include "header.php"
                     <div class="carousel-caption text-start">
                         <h1 style="color: black">Join us!</h1>
                         <p style="color: black">Don't waste time and start reading.</p>
-                        <p><a class="btn btn-lg btn-primary" href="#">Sign up right now</a></p>
+                        <p><a class="btn btn-lg btn-primary" href="/registration">Sign up right now</a></p>
                     </div>
                 </div>
             </div>
@@ -33,7 +33,7 @@ include "header.php"
                     <div class="carousel-caption">
                         <h1 style="color: black">Interesting news</h1>
                         <p style="color: black">Our experts conducted an experiment and revealed the advantages of online shopping.</p>
-                        <p><a class="btn btn-lg btn-primary" href="#">Learn more</a></p>
+                        <p><a class="btn btn-lg btn-primary" href="/news">Learn more</a></p>
                     </div>
                 </div>
             </div>
@@ -43,7 +43,7 @@ include "header.php"
                     <div class="carousel-caption text-end">
                         <h1 style="color: black">One good thing</h1>
                         <p style="color: black">Get a promo code for a discount by following the link.</p>
-                        <p><a class="btn btn-lg btn-primary" href="#">Get it!</a></p>
+                        <p><a class="btn btn-lg btn-primary" href="/promo">Get it!</a></p>
                     </div>
                 </div>
             </div>

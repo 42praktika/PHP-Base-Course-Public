@@ -10,14 +10,14 @@
 <nav class="py-2 bg-light border-bottom">
     <div class="container d-flex flex-wrap">
         <ul class="nav me-auto">
-            <li class="nav-item"><a href="#" class="nav-link link-dark px-2 active" aria-current="page">Home</a></li>
-            <li class="nav-item"><a href="#" class="nav-link link-dark px-2">Cart</a></li>
-            <li class="nav-item"><a href="#" class="nav-link link-dark px-2">FAQs</a></li>
-            <li class="nav-item"><a href="#" class="nav-link link-dark px-2">About</a></li>
+            <li class="nav-item"><a href="/main" class="nav-link link-dark px-2 active" aria-current="page">Home</a></li>
+            <li class="nav-item"><a href="/cart" class="nav-link link-dark px-2">Cart</a></li>
+            <li class="nav-item"><a href="/faqs" class="nav-link link-dark px-2">FAQs</a></li>
+            <li class="nav-item"><a href="/about" class="nav-link link-dark px-2">About</a></li>
         </ul>
         <ul class="nav">
-            <li class="nav-item"><a href="#" class="nav-link link-dark px-2">Login</a></li>
-            <li class="nav-item"><a href="#" class="nav-link link-dark px-2">Sign up</a></li>
+            <li class="nav-item"><a href="/login" class="nav-link link-dark px-2">Login</a></li>
+            <li class="nav-item"><a href="/registration" class="nav-link link-dark px-2">Sign up</a></li>
         </ul>
     </div>
 </nav>
@@ -26,7 +26,7 @@
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bookmark-heart-fill" viewBox="0 0 16 16">
             <path d="M2 15.5a.5.5 0 0 0 .74.439L8 13.069l5.26 2.87A.5.5 0 0 0 14 15.5V2a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v13.5zM8 4.41c1.387-1.425 4.854 1.07 0 4.277C3.146 5.48 6.613 2.986 8 4.412z"/>
         </svg>
-        <a href="/" class="d-flex align-items-center mb-3 mb-lg-0 me-lg-auto text-dark text-decoration-none">
+        <a href="#" class="d-flex align-items-center mb-3 mb-lg-0 me-lg-auto text-dark text-decoration-none">
             <span class="fs-4">Book store</span>
 
         </a>

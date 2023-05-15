@@ -1,33 +1,25 @@
 <?php
 
-declare(strict_types=1);
-
 namespace app\controllers;
 
 use app\core\Application;
-use app\core\Response;
-use app\exceptions\FileException;
+use app\mappers\UserMapper;
 
-class PresentationController
+class RegistrationController
 {
 
     public function getView()
     {
-        Application::$app->getRouter()->renderView("presentation");
+        Application::$app->getRouter()->renderView("registration");
     }
-
-
     public function handleView()
     {
         try {
             $body = Application::$app->getRequest()->getBody();
-
             $mapper = new UserMapper();
             $user = $mapper->createObject($body);
             $mapper->Insert($user);
-            $users = $mapper->SelectAll();
-            var_dump($users);
-            // Application::$app->getRouter()->renderView("success");
+            Application::$app->getRouter()->renderView("main");
         }
         catch (\Exception $exception) {
 
