@@ -9,8 +9,8 @@
     <label for="email">Электронная почта</label>
     <input type="text" name="email" id="email"><br>
 
-    <label for="psw">Пароль</label>
-    <input type="password" name="psw" id="psw"><br>
+    <label for="password">Пароль</label>
+    <input type="password" name="password" id="password"><br>
 
     <input type="submit" value="Войти">
 </form>

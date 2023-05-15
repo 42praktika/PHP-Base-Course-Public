@@ -2,18 +2,75 @@
 
 namespace app\models;
 
-use app\core\DbModel;
+use app\core\Model;
 
-class Category extends DbModel
+class Category extends Model
 {
 
-    public function getTableName(): string
+    private string $name;
+
+    private int $author_id;
+
+    private bool $income;
+
+    /**
+     * @param string $name
+     * @param int $author_id
+     * @param bool $income
+     */
+    public function __construct(?int $id, string $name, int $author_id, bool $income)
     {
-        return "categories";
+        parent::__construct($id);
+        $this->name = $name;
+        $this->author_id = $author_id;
+        $this->income = $income;
     }
 
-    public function getAttributes(): array
+    /**
+     * @return string
+     */
+    public function getName(): string
     {
-        return ["id", "name", "author_id", "income"];
+        return $this->name;
+    }
+
+    /**
+     * @param string $name
+     */
+    public function setName(string $name): void
+    {
+        $this->name = $name;
+    }
+
+    /**
+     * @return int
+     */
+    public function getAuthorId(): int
+    {
+        return $this->author_id;
+    }
+
+    /**
+     * @param int $author_id
+     */
+    public function setAuthorId(int $author_id): void
+    {
+        $this->author_id = $author_id;
+    }
+
+    /**
+     * @return bool
+     */
+    public function isIncome(): bool
+    {
+        return $this->income;
+    }
+
+    /**
+     * @param bool $income
+     */
+    public function setIncome(bool $income): void
+    {
+        $this->income = $income;
     }
 }

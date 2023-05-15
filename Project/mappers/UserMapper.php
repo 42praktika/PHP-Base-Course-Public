@@ -5,40 +5,36 @@ namespace app\mappers;
 use app\core\Collection;
 use app\core\Model;
 use app\models\User;
+use PhpParser\Node\Expr\Array_;
 
 class UserMapper extends \app\core\Mapper
 {
-
     private ?\PDOStatement $insert;
-    private ?\PDOStatement $update;
-    private ?\PDOStatement $delete;
-    private ?\PDOStatement $select;
-    private ?\PDOStatement $selectAll;
+    private ?\PDOStatement $selectById;
+    private ?\PDOStatement $selectByEmailPassword;
+    private ?\PDOStatement $selectByEmail;
 
-    /**
-     * @param \PDOStatement|null $insert
-     * @param \PDOStatement|null $update
-     * @param \PDOStatement|null $delete
-     */
     public function __construct()
     {
         parent::__construct();
-        $this->insert = $this->getPdo()->prepare(
-            "INSERT into users  ( first_name, second_name, age, job, email, phone)
-                    VALUES ( :first_name, :second_name, :age, :job, :email, :phone )"
-        );
-        $this->update = $this->getPdo()->prepare(
-            "UPDATE users 
-                  SET first_name = :first_name, 
-                      second_name = :second_name, 
-                      age = :age, 
-                      job = :job,
-                      email = :email,
-                      phone = :phone 
-                      WHERE id = :id");
-        $this->delete = $this->getPdo()->prepare("DELETE FROM users WHERE id=:id");
-        $this->select = $this->getPdo()->prepare("SELECT * FROM users WHERE id = :id");
-        $this->selectAll = $this->getPdo()->prepare("SELECT * FROM users");
+        $this->insert = $this->getPdo()->prepare("INSERT into users (email, password, name) VALUES (:email, :password, :name)");
+        $this->selectById = $this->getPdo()->prepare("SELECT * FROM users WHERE id = :id");
+        $this->selectByEmailPassword = $this->getPdo()->prepare("SELECT * FROM users WHERE email = :email AND password = :password");
+        $this->selectByEmail = $this->getPdo()->prepare("SELECT * FROM users WHERE email = :email");
+    }
+
+    public function doSelectByEmailPassword(string $email, string $password): Model
+    {
+        $this->selectByEmailPassword->execute([":email" => $email, ":password" => $password]);
+        $data = $this->selectByEmailPassword->fetch(\PDO::FETCH_NAMED);
+        return new User($data["id"], $data["email"], $data["password"], $data["name"]);
+    }
+
+    public function doSelectByEmail(string $email): Model
+    {
+        $this->selectByEmail->execute([":email" => $email]);
+        $data = $this->selectByEmail->fetch(\PDO::FETCH_NAMED);
+        return new User($data["id"], $data["email"], $data["password"], $data["name"]);
     }
 
     /**
@@ -47,64 +43,49 @@ class UserMapper extends \app\core\Mapper
      */
     protected function doInsert(Model $model): Model
     {
-
         $this->insert->execute([
-            ":first_name" => $model->getFirstName(),
-            ":second_name" => $model->getSecondName(),
-            ":age" => $model->getAge(),
-            ":job" => $model->getJob(),
+            ":name" => $model->getName(),
             ":email" => $model->getEmail(),
-            ":phone" => $model->getPhone()
+            ":password" => $model->getPassword()
         ]);
         $id = $this->getPdo()->lastInsertId();
         $model->setId($id);
         return $model;
     }
 
-    protected function doUpdate(Model $model): void
-    {
-        $this->update->execute([
-            ":id" => $model->getId(),
-            ":first_name" => $model->getFirstName(),
-            ":second_name" => $model->getSecondName(),
-            ":age" => $model->getAge(),
-            ":job" => $model->getJob(),
-            ":email" => $model->getEmail(),
-            ":phone" => $model->getPhone()
-        ]);
-    }
-
-    protected function doDelete(Model $model): void
-    {
-        $this->delete->execute([":id" => $model->getId()]);
-    }
-
     protected function doSelect(int $id): array
     {
-      $this->select->execute([":id" => $id]);
-      return $this->select->fetch(\PDO::FETCH_NAMED);
-    }
-
-    protected function doSelectAll(): array
-    {
-        $this->selectAll->execute();
-        return $this->selectAll->fetchAll();
+      $this->selectById->execute([":id" => $id]);
+      return $this->selectById->fetch(\PDO::FETCH_NAMED);
     }
 
     function createObject(array $data): Model
     {
         return new User(
             array_key_exists("id", $data) ? $data["id"] : null,
-            $data["first_name"],
-            $data["second_name"],
-            $data["age"],
-            $data["job"],
             $data["email"],
-            $data["phone"]);
+            $data["password"],
+            array_key_exists("name", $data) ? $data["name"] : null);
     }
 
     public function getInstance()
     {
         return $this;
+    }
+
+    protected function doUpdate(Model $model): void
+    {
+        // TODO: Implement doUpdate() method.
+    }
+
+    protected function doDelete(Model $model): void
+    {
+        // TODO: Implement doDelete() method.
+    }
+
+    protected function doSelectAll(): array
+    {
+        // TODO: Implement doSelectAll() method.
+        return [];
     }
 }

@@ -3,6 +3,7 @@
 use app\controllers\AboutController;
 use app\controllers\LoginController;
 use app\controllers\MainController;
+use app\controllers\MoneyOperationController;
 use app\controllers\RegistrationController;
 use app\core\Application;
 use app\core\ConfigParser;
@@ -46,6 +47,11 @@ $router->setPostRoute("/registration", [new RegistrationController, "register"])
 $router->setGetRoute("/login", [new LoginController, "getView"]);
 $router->setPostRoute("/login", [new LoginController, "logIn"]);
 
+$router->setPostRoute("/expenses", [new MoneyOperationController, "getViewExpenses"]);
+
+$router->setPostRoute("/incomes", [new MoneyOperationController, "getViewIncome"]);
+
 ob_start();
 $application->run();
 ob_flush();
+session_start();

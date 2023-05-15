@@ -7,76 +7,38 @@ use app\core\Model;
 class User extends Model
 {
 
-
-    private string $first_name;
-
-    private string $second_name;
+    private ?string $name;
 
     private string $email;
 
-    private string $phone;
+    private string $password;
 
-    private string $job;
-
-    private int $age;
-
-    /**
-     * @param string $first_name
-     * @param string $second_name
-     * @param string $email
-     * @param string $phone
-     * @param string $job
-     * @param int $age
-     */
     public function __construct(
         ?int $id,
-        string $first_name,
-        string $second_name,
-        int $age,
-        string $job,
         string $email,
-        string $phone,
+        string $password,
+        ?string $name
     ) {
         parent::__construct($id);
-        $this->first_name = $first_name;
-        $this->second_name = $second_name;
+        $this->name = $name;
         $this->email = $email;
-        $this->phone = $phone;
-        $this->job = $job;
-        $this->age = $age;
-    }
-
-
-    /**
-     * @return string
-     */
-    public function getFirstName(): string
-    {
-        return $this->first_name;
-    }
-
-    /**
-     * @param string $first_name
-     */
-    public function setFirstName(string $first_name): void
-    {
-        $this->first_name = $first_name;
+        $this->password = $password;
     }
 
     /**
      * @return string
      */
-    public function getSecondName(): string
+    public function getName(): string
     {
-        return $this->second_name;
+        return $this->name;
     }
 
     /**
-     * @param string $second_name
+     * @param string $name
      */
-    public function setSecondName(string $second_name): void
+    public function setName(string $name): void
     {
-        $this->second_name = $second_name;
+        $this->name = $name;
     }
 
     /**
@@ -98,49 +60,19 @@ class User extends Model
     /**
      * @return string
      */
-    public function getPhone(): string
+    public function getPassword(): string
     {
-        return $this->phone;
+        return $this->password;
     }
 
     /**
-     * @param string $phone
+     * @param string $password
      */
-    public function setPhone(string $phone): void
+    public function setPassword(string $password): void
     {
-        $this->phone = $phone;
+        $this->password = $password;
     }
 
-    /**
-     * @return string
-     */
-    public function getJob(): string
-    {
-        return $this->job;
-    }
 
-    /**
-     * @param string $job
-     */
-    public function setJob(string $job): void
-    {
-        $this->job = $job;
-    }
 
-    /**
-     * @return int
-     */
-    public function getAge(): int
-    {
-        return ["id","name", "email", "password"];
-        return $this->age;
-    }
-
-    /**
-     * @param int $age
-     */
-    public function setAge(int $age): void
-    {
-        $this->age = $age;
-    }
 }

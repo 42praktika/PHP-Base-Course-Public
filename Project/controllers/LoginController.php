@@ -4,6 +4,7 @@ declare(strict_types=1);
 namespace app\controllers;
 
 use app\core\Application;
+use app\mappers\UserMapper;
 
 class LoginController
 {
@@ -15,7 +16,17 @@ class LoginController
 
     public function logIn(): void
     {
-        $body = Application::$app->getRequest()->getBody();
-        echo $body["name"].", вы вошли!";
+        try {
+            $body = Application::$app->getRequest()->getBody();
+            $mapper = new UserMapper();
+            $user = $mapper->createObject($body);
+            // TODO это норм так делать?
+            $_SESSION['user'] = $mapper->doSelectByEmailPassword($user->getEmail(), $user->getPassword());;
+            Application::$app->getRouter()->renderView("profile");
+        }
+        catch (\Exception $exception) {
+            echo $exception;
+//            Application::$app->getLogger()->error($exception);
+        }
     }
 }
