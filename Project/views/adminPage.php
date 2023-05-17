@@ -11,6 +11,8 @@
 <nav class="d-inline-flex mt-2 mt-md-0 ms-md-auto">
     <a class="p-3 border bg-light me-4 py-2 link-body-emphasis text-decoration-none" href="addCar">Добавить новую машину</a>
     <a class="p-3 border bg-light me-4 py-2 link-body-emphasis text-decoration-none" href="deleteReview">Удалить плохой отзыв</a>
+    <a class="p-3 border bg-light me-4 py-2 link-body-emphasis text-decoration-none" href="deleteUser">Удалить пользователя</a>
+    <a class="p-3 border bg-light me-4 py-2 link-body-emphasis text-decoration-none" href="deleteCar">Удалить автомобиль</a>
     <a class="p-3 border bg-light me-4 py-2 link-body-emphasis text-decoration-none" href="/">На главную</a>
 </nav>
 </body>

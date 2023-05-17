@@ -1,0 +1,11 @@
+10-05-50 [error] PDOException: SQLSTATE[23505]: Unique violation: 7 ОШИБКА:  повторяющееся значение ключа нарушает ограничение уникальности "rental_pkey"
+DETAIL:  Ключ "(id)=(1)" уже существует. in C:\Projects\PHP-Base-Course-Public\Project\mappers\RentalMapper.php:55
+Stack trace:
+#0 C:\Projects\PHP-Base-Course-Public\Project\mappers\RentalMapper.php(55): PDOStatement->execute()
+#1 C:\Projects\PHP-Base-Course-Public\Project\core\Mapper.php(16): app\mappers\RentalMapper->doInsert()
+#2 C:\Projects\PHP-Base-Course-Public\Project\controllers\RentFormController.php(21): app\core\Mapper->Insert()
+#3 [internal function]: app\controllers\RentFormController->handleView()
+#4 C:\Projects\PHP-Base-Course-Public\Project\core\Router.php(53): call_user_func()
+#5 C:\Projects\PHP-Base-Course-Public\Project\core\Application.php(28): app\core\Router->resolve()
+#6 C:\Projects\PHP-Base-Course-Public\Project\web\index.php(62): app\core\Application->run()
+#7 {main}

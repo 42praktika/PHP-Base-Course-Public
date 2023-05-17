@@ -91,6 +91,6 @@
               </div>
               <input name="submit" type="submit">
           </form>
-          <script src="../web/assets/js/feedback.js"></script>
+        <script src="../web/assets/js/feedback.js"></script>
   </body>
   </html>

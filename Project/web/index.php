@@ -3,7 +3,9 @@
 use app\controllers\AboutController;
 use app\controllers\AddCarController;
 use app\controllers\AuthController;
+use app\controllers\DeleteCarController;
 use app\controllers\DeleteReviewController;
+use app\controllers\DeleteUserController;
 use app\controllers\FeedbackController;
 use app\controllers\MainPageController;
 use app\controllers\RegistrationController;
@@ -53,6 +55,10 @@ $router->setGetRoute("/deleteReview", [new DeleteReviewController, "getView"]);
 $router->setPostRoute("/deleteReview", [new DeleteReviewController, "handleView"]);
 $router->setGetRoute("/rentForm", [new RentFormController, "getView"]);
 $router->setPostRoute("/rentForm", [new RentFormController, "handleView"]);
+$router->setGetRoute("/deleteUser", [new DeleteUserController, "getView"]);
+$router->setPostRoute("/deleteUser", [new DeleteUserController, "handleView"]);
+$router->setGetRoute("/deleteCar", [new DeleteCarController, "getView"]);
+$router->setPostRoute("/deleteCar", [new DeleteCarController, "handleView"]);
 
 
 ob_start();

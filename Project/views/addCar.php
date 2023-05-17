@@ -31,7 +31,7 @@
             <button type="submit" class="signupbtn">Добавить</button>
         </div>
     </div>
-    <script src="../web/assets/js/addCar.js"></script>
 </form>
+<script src="../web/assets/js/addCar.js"></script>
 </body>
 </html>

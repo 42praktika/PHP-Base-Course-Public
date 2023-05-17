@@ -15,9 +15,6 @@ submit.addEventListener('click', (event) => {
             alert("Поставьте оценку!");
     } else {
         alert("Спасибо за отзыв!");
-        name.value = '';
-        star.value = '';
-        review.value = '';
     }
 })
 
