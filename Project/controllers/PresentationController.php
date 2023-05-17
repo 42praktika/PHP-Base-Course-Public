@@ -14,34 +14,26 @@ class PresentationController
 
     public function getView()
     {
-        Application::$app->getRouter()->renderView("presentation");
+        Application::$app->getRouter()->renderTemplate("index", ["post_action"=>"handle"]);
+
     }
 
     public function handleView()
     {
         try {
-        $body = Application::$app->getRequest()->getBody();
-        var_dump($body);
-       $mapper = new UserMapper();
-       $user = $mapper->createObject($body);
-       $mapper->Insert($user);
-       $users = $mapper->SelectAll();
-       var_dump($users);
-        Application::$app->getRouter()->renderView("success");
-             }
+            $body = Application::$app->getRequest()->getBody();
+
+            $mapper = new UserMapper();
+            $user = $mapper->createObject($body);
+            $mapper->Insert($user);
+            $users = $mapper->SelectAll();
+            var_dump($users);
+            // Application::$app->getRouter()->renderView("success");
+        }
         catch (\Exception $exception) {
 
             Application::$app->getLogger()->error($exception);
         }
-    }
-    public function getStartPage()
-    {
-        Application::$app->getRouter()->renderView("welcomePage");
-    }
-
-    public function getRegisterPage()
-    {
-        Application::$app->getRouter()->renderView("registerPage");
     }
 
 
