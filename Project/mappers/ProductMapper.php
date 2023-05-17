@@ -26,11 +26,11 @@ class ProductMapper extends \app\core\Mapper
         $this->selectAll = $this->getPdo()->prepare("select * from products");
         $this->select = $this->getPdo()->prepare("select * from products where id = :id");;
         $this->insert = $this->getPdo()->prepare(
-            "INSERT into products ( image, text)
+            "INSERT into products ( img, text)
                     VALUES ( :image, :text)");
         $this->update = $this->getPdo()->prepare(
             "UPDATE products 
-                  SET image = :image, 
+                  SET img = :image, 
                       text = :text, 
                       WHERE id = :id");
         $this->delete  = $this->getPdo()->prepare("DELETE FROM products WHERE id=:id");

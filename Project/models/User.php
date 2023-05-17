@@ -6,7 +6,7 @@ use app\core\Model;
 
 class User extends Model
 {
-
+//TODO: с айди что то непонятное
     private string $username;
 
 

@@ -93,3 +93,11 @@
     background: #e3aeae;
     color: #8a7474;
 }
+.footer {
+    padding: 5px 5px 5px 5px;
+    text-align: center;
+}
+.footer p {
+    color: #7c4444;
+    font-size: small;
+}

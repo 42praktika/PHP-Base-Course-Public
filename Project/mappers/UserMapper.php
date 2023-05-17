@@ -108,7 +108,7 @@ class UserMapper extends \app\core\Mapper
     function createObject(array $data): Model
     {
         return new User(
-            array_key_exists("id", $data) ? $data["id"] : null,
+//            array_key_exists("id", $data) ? $data["id"] : null,
             $data["username"],
             $data["email"],
             $data["password"]);

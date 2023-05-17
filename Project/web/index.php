@@ -3,6 +3,8 @@
 use app\controllers\PresentationController;
 use app\core\Application;
 use app\core\ConfigParser;
+use \app\controllers\MainPageController;
+use \app\controllers\RegisterController;
 
 const PROJECT_ROOT = __DIR__."/../";
 require PROJECT_ROOT."/vendor/autoload.php";
@@ -23,10 +25,10 @@ if ($env == "dev") {
 $application = new Application();
 $router = $application->getRouter();
 
-$router->setGetRoute("/view", [new PresentationController, "getView"]);
-$router->setPostRoute("/handle", [new PresentationController, "handleView"]);
-$router->setGetRoute("/", [new PresentationController, "getStartPage"]);
-$router->setGetRoute("/register", [new PresentationController, "getRegisterPage"]);
+$router->setPostRoute("/register", [new RegisterController, "registerUser"]);
+$router->setGetRoute("/", [new MainPageController, "getWelcomePage"]);
+$router->setGetRoute("/mainPage", [new MainPageController, "getMainPage"]);
+$router->setGetRoute("/register", [new RegisterController, "getRegisterPage"]);
 
 ob_start();
 $application->run();

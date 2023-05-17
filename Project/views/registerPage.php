@@ -27,15 +27,15 @@ readfile('header.html');
         <div ng-app ng-init="checked = false">
             <form class="form-signin" action="" method="post" name="form">
                 <label>Email</label>
-                <input class="form-styling" type="text" name="email" placeholder=""/>
+                <input class="form-styling" type="text" name="email" placeholder="email"/>
                 <label>Пароль</label>
-                <input class="form-styling" type="password" name="password" placeholder=""/>
+                <input class="form-styling" type="password" name="password" placeholder="password"/>
                 <div class="btn-animate">
                     <input type="submit" class="btn-signin" value="Войти"/>
                 </div>
             </form>
 
-            <form class="form-signup" action="http://localhost:8080/handle" method="post" name="form">
+            <form class="form-signup" action="http://localhost:8080/register" method="post" name="form">
                 <label>Username</label>
                 <input class="form-styling" type="text" name="username" placeholder="username"/>
                 <label>Email</label>
@@ -49,5 +49,8 @@ readfile('header.html');
         </div>
     </div>
 </div>
+<?php
+readfile('footer.html');
+?>
 </body>
 </html>
