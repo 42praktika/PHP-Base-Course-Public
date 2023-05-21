@@ -1,3 +1,4 @@
+<php session_start(); ?>
 <header>
     <div class="header-content">
         <div class="horizontal-items">
@@ -25,7 +26,11 @@
             </div>
             <div class="horizontal-item">
                 <div class="dropdown">
-                    <button class="top_profile_button">user</button>
+                    <button class="top_profile_button">
+                       <?php
+                            echo "username";
+                       ?>
+                    </button>
 
                     <div class="dropdown-content">
                         <div style="width: 280px; height: 20px;"></div>

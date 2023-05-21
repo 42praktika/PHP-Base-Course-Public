@@ -12,7 +12,9 @@ class PresentationController
 
     public function getView()
     {
-        Application::$app->getRouter()->renderView("home");
+        Application::$app->getRouter()->renderTemplate("index", []);
+       // Application::$app->getRouter()->renderView("home");
+//        Application::$app->getRouter()->renderTemplate("home");
     }
 
     public function handleView()

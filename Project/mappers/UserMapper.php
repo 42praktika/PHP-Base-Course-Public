@@ -2,6 +2,7 @@
 
 namespace app\mappers;
 
+use app\core\Application;
 use app\core\Collection;
 use app\core\Model;
 use app\models\User;
@@ -81,4 +82,23 @@ class UserMapper extends \app\core\Mapper
             $data["email"],
             $data["password"]);
     }
+    static function findUserByEmail(string $email):?User
+    {
+        $query = Application::$database->pdo->prepare("SELECT * FROM users WHERE email=:email");
+        $query->execute([":email"=>$email]);
+//        echo User::class;
+        //$query->setFetchMode(\PDO::FETCH_CLASS, User::class);
+//        $query_result = $query->fetch(\PDO::FETCH_NAMED|\PDO::FETCH_CLASS);
+        $query_result = $query->fetch(\PDO::FETCH_NAMED);
+        if(!$query_result)
+        {
+            return null;
+        }
+
+
+        $user = new User($query_result["id"], $query_result["nickname"], $query_result["email"],$query_result["password"]);
+
+        return $user;
+    }
+
 }

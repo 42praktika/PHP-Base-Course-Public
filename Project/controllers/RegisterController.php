@@ -21,13 +21,26 @@ class RegisterController
     {
 
         try{
-
             $body = Application::$app->getRequest()->getBody();
+
+            $email = $body["email"];
+            $password = $body["password"];
+
+
+            if(strlen($password) < 10 || strlen($password) > 35){
+                echo "Password length must be in interval [10:35]";
+                return;
+            }
+
+            $userExist = UserMapper::findUserByEmail($body["email"]) != null;
+            if($userExist){
+                echo "User with Email $email is already registered";
+                return;
+            }
+
             $mapper = new UserMapper();
             $user = $mapper->createObject($body);
             $mapper->Insert($user);
-            $email = $body["email"];
-            $password = $body["password"];
 
             if(is_null($password) || is_null($email)){
                 header("Location: /error");

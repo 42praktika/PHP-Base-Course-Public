@@ -26,6 +26,5 @@ class RegistrationFormValidationController
             return false;
         }
         return true;
-
     }
 }

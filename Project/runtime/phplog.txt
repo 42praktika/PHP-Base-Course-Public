@@ -196,3 +196,436 @@ Stack trace:
 #5 D:\GitHub\PHP-Base-Course-Public\Project\web\index.php(44): app\core\Application->run()
 #6 {main}
   thrown in D:\GitHub\PHP-Base-Course-Public\Project\core\Collection.php on line 18
+[01-May-2023 14:12:58 UTC] PHP Fatal error:  Uncaught TypeError: app\mappers\UserMapper::findUserByEmail(): Return value must be of type app\models\User, array returned in D:\GitHub\PHP-Base-Course-Public\Project\mappers\UserMapper.php:90
+Stack trace:
+#0 D:\GitHub\PHP-Base-Course-Public\Project\controllers\LoginController.php(25): app\mappers\UserMapper::findUserByEmail()
+#1 [internal function]: app\controllers\LoginController->handleView()
+#2 D:\GitHub\PHP-Base-Course-Public\Project\core\Router.php(53): call_user_func()
+#3 D:\GitHub\PHP-Base-Course-Public\Project\core\Application.php(29): app\core\Router->resolve()
+#4 D:\GitHub\PHP-Base-Course-Public\Project\web\index.php(44): app\core\Application->run()
+#5 {main}
+  thrown in D:\GitHub\PHP-Base-Course-Public\Project\mappers\UserMapper.php on line 90
+[01-May-2023 14:16:05 UTC] PHP Warning:  require(User.php): Failed to open stream: No such file or directory in D:\GitHub\PHP-Base-Course-Public\Project\web\index.php on line 16
+[01-May-2023 14:16:05 UTC] PHP Fatal error:  Uncaught Error: Failed opening required 'User.php' (include_path='.;C:\php\pear') in D:\GitHub\PHP-Base-Course-Public\Project\web\index.php:16
+Stack trace:
+#0 [internal function]: {closure}()
+#1 D:\GitHub\PHP-Base-Course-Public\Project\mappers\UserMapper.php(89): PDOStatement->setFetchMode()
+#2 D:\GitHub\PHP-Base-Course-Public\Project\controllers\LoginController.php(25): app\mappers\UserMapper::findUserByEmail()
+#3 [internal function]: app\controllers\LoginController->handleView()
+#4 D:\GitHub\PHP-Base-Course-Public\Project\core\Router.php(53): call_user_func()
+#5 D:\GitHub\PHP-Base-Course-Public\Project\core\Application.php(29): app\core\Router->resolve()
+#6 D:\GitHub\PHP-Base-Course-Public\Project\web\index.php(44): app\core\Application->run()
+#7 {main}
+  thrown in D:\GitHub\PHP-Base-Course-Public\Project\web\index.php on line 16
+[01-May-2023 14:17:03 UTC] PHP Fatal error:  Uncaught TypeError: PDOStatement::setFetchMode(): Argument #2 must be a valid class in D:\GitHub\PHP-Base-Course-Public\Project\mappers\UserMapper.php:89
+Stack trace:
+#0 D:\GitHub\PHP-Base-Course-Public\Project\mappers\UserMapper.php(89): PDOStatement->setFetchMode()
+#1 D:\GitHub\PHP-Base-Course-Public\Project\controllers\LoginController.php(25): app\mappers\UserMapper::findUserByEmail()
+#2 [internal function]: app\controllers\LoginController->handleView()
+#3 D:\GitHub\PHP-Base-Course-Public\Project\core\Router.php(53): call_user_func()
+#4 D:\GitHub\PHP-Base-Course-Public\Project\core\Application.php(29): app\core\Router->resolve()
+#5 D:\GitHub\PHP-Base-Course-Public\Project\web\index.php(44): app\core\Application->run()
+#6 {main}
+  thrown in D:\GitHub\PHP-Base-Course-Public\Project\mappers\UserMapper.php on line 89
+[01-May-2023 14:17:40 UTC] PHP Deprecated:  Creation of dynamic property app\models\User::$id is deprecated in D:\GitHub\PHP-Base-Course-Public\Project\mappers\UserMapper.php on line 90
+[01-May-2023 14:17:40 UTC] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function app\models\User::__construct(), 0 passed and exactly 4 expected in D:\GitHub\PHP-Base-Course-Public\Project\models\User.php:17
+Stack trace:
+#0 [internal function]: app\models\User->__construct()
+#1 D:\GitHub\PHP-Base-Course-Public\Project\mappers\UserMapper.php(90): PDOStatement->fetch()
+#2 D:\GitHub\PHP-Base-Course-Public\Project\controllers\LoginController.php(25): app\mappers\UserMapper::findUserByEmail()
+#3 [internal function]: app\controllers\LoginController->handleView()
+#4 D:\GitHub\PHP-Base-Course-Public\Project\core\Router.php(53): call_user_func()
+#5 D:\GitHub\PHP-Base-Course-Public\Project\core\Application.php(29): app\core\Router->resolve()
+#6 D:\GitHub\PHP-Base-Course-Public\Project\web\index.php(44): app\core\Application->run()
+#7 {main}
+  thrown in D:\GitHub\PHP-Base-Course-Public\Project\models\User.php on line 17
+[01-May-2023 14:18:08 UTC] PHP Deprecated:  Creation of dynamic property app\models\User::$id is deprecated in D:\GitHub\PHP-Base-Course-Public\Project\mappers\UserMapper.php on line 90
+[01-May-2023 14:18:08 UTC] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function app\models\User::__construct(), 0 passed and exactly 4 expected in D:\GitHub\PHP-Base-Course-Public\Project\models\User.php:15
+Stack trace:
+#0 [internal function]: app\models\User->__construct()
+#1 D:\GitHub\PHP-Base-Course-Public\Project\mappers\UserMapper.php(90): PDOStatement->fetch()
+#2 D:\GitHub\PHP-Base-Course-Public\Project\controllers\LoginController.php(25): app\mappers\UserMapper::findUserByEmail()
+#3 [internal function]: app\controllers\LoginController->handleView()
+#4 D:\GitHub\PHP-Base-Course-Public\Project\core\Router.php(53): call_user_func()
+#5 D:\GitHub\PHP-Base-Course-Public\Project\core\Application.php(29): app\core\Router->resolve()
+#6 D:\GitHub\PHP-Base-Course-Public\Project\web\index.php(44): app\core\Application->run()
+#7 {main}
+  thrown in D:\GitHub\PHP-Base-Course-Public\Project\models\User.php on line 15
+[01-May-2023 14:19:11 UTC] PHP Deprecated:  Creation of dynamic property app\models\User::$id is deprecated in D:\GitHub\PHP-Base-Course-Public\Project\mappers\UserMapper.php on line 91
+[01-May-2023 14:19:11 UTC] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function app\models\User::__construct(), 0 passed and exactly 4 expected in D:\GitHub\PHP-Base-Course-Public\Project\models\User.php:15
+Stack trace:
+#0 [internal function]: app\models\User->__construct()
+#1 D:\GitHub\PHP-Base-Course-Public\Project\mappers\UserMapper.php(91): PDOStatement->fetch()
+#2 D:\GitHub\PHP-Base-Course-Public\Project\controllers\LoginController.php(25): app\mappers\UserMapper::findUserByEmail()
+#3 [internal function]: app\controllers\LoginController->handleView()
+#4 D:\GitHub\PHP-Base-Course-Public\Project\core\Router.php(53): call_user_func()
+#5 D:\GitHub\PHP-Base-Course-Public\Project\core\Application.php(29): app\core\Router->resolve()
+#6 D:\GitHub\PHP-Base-Course-Public\Project\web\index.php(44): app\core\Application->run()
+#7 {main}
+  thrown in D:\GitHub\PHP-Base-Course-Public\Project\models\User.php on line 15
+[01-May-2023 14:22:41 UTC] PHP Deprecated:  Creation of dynamic property app\models\User::$id is deprecated in D:\GitHub\PHP-Base-Course-Public\Project\mappers\UserMapper.php on line 91
+[01-May-2023 14:22:41 UTC] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function app\models\User::__construct(), 0 passed and exactly 4 expected in D:\GitHub\PHP-Base-Course-Public\Project\models\User.php:15
+Stack trace:
+#0 [internal function]: app\models\User->__construct()
+#1 D:\GitHub\PHP-Base-Course-Public\Project\mappers\UserMapper.php(91): PDOStatement->fetch()
+#2 D:\GitHub\PHP-Base-Course-Public\Project\controllers\LoginController.php(25): app\mappers\UserMapper::findUserByEmail()
+#3 [internal function]: app\controllers\LoginController->handleView()
+#4 D:\GitHub\PHP-Base-Course-Public\Project\core\Router.php(53): call_user_func()
+#5 D:\GitHub\PHP-Base-Course-Public\Project\core\Application.php(29): app\core\Router->resolve()
+#6 D:\GitHub\PHP-Base-Course-Public\Project\web\index.php(44): app\core\Application->run()
+#7 {main}
+  thrown in D:\GitHub\PHP-Base-Course-Public\Project\models\User.php on line 15
+[01-May-2023 14:36:12 UTC] PHP Deprecated:  Creation of dynamic property app\models\User::$id is deprecated in D:\GitHub\PHP-Base-Course-Public\Project\mappers\UserMapper.php on line 91
+[01-May-2023 14:36:12 UTC] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function app\models\User::__construct(), 0 passed and exactly 4 expected in D:\GitHub\PHP-Base-Course-Public\Project\models\User.php:15
+Stack trace:
+#0 [internal function]: app\models\User->__construct()
+#1 D:\GitHub\PHP-Base-Course-Public\Project\mappers\UserMapper.php(91): PDOStatement->fetch()
+#2 D:\GitHub\PHP-Base-Course-Public\Project\controllers\LoginController.php(25): app\mappers\UserMapper::findUserByEmail()
+#3 [internal function]: app\controllers\LoginController->handleView()
+#4 D:\GitHub\PHP-Base-Course-Public\Project\core\Router.php(53): call_user_func()
+#5 D:\GitHub\PHP-Base-Course-Public\Project\core\Application.php(29): app\core\Router->resolve()
+#6 D:\GitHub\PHP-Base-Course-Public\Project\web\index.php(44): app\core\Application->run()
+#7 {main}
+  thrown in D:\GitHub\PHP-Base-Course-Public\Project\models\User.php on line 15
+[01-May-2023 14:36:49 UTC] PHP Fatal error:  Uncaught TypeError: app\mappers\UserMapper::findUserByEmail(): Return value must be of type app\models\User, array returned in D:\GitHub\PHP-Base-Course-Public\Project\mappers\UserMapper.php:93
+Stack trace:
+#0 D:\GitHub\PHP-Base-Course-Public\Project\controllers\LoginController.php(25): app\mappers\UserMapper::findUserByEmail()
+#1 [internal function]: app\controllers\LoginController->handleView()
+#2 D:\GitHub\PHP-Base-Course-Public\Project\core\Router.php(53): call_user_func()
+#3 D:\GitHub\PHP-Base-Course-Public\Project\core\Application.php(29): app\core\Router->resolve()
+#4 D:\GitHub\PHP-Base-Course-Public\Project\web\index.php(44): app\core\Application->run()
+#5 {main}
+  thrown in D:\GitHub\PHP-Base-Course-Public\Project\mappers\UserMapper.php on line 93
+[01-May-2023 14:36:56 UTC] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function app\models\User::__construct(), 0 passed in D:\GitHub\PHP-Base-Course-Public\Project\mappers\UserMapper.php on line 93 and exactly 4 expected in D:\GitHub\PHP-Base-Course-Public\Project\models\User.php:15
+Stack trace:
+#0 D:\GitHub\PHP-Base-Course-Public\Project\mappers\UserMapper.php(93): app\models\User->__construct()
+#1 D:\GitHub\PHP-Base-Course-Public\Project\controllers\LoginController.php(25): app\mappers\UserMapper::findUserByEmail()
+#2 [internal function]: app\controllers\LoginController->handleView()
+#3 D:\GitHub\PHP-Base-Course-Public\Project\core\Router.php(53): call_user_func()
+#4 D:\GitHub\PHP-Base-Course-Public\Project\core\Application.php(29): app\core\Router->resolve()
+#5 D:\GitHub\PHP-Base-Course-Public\Project\web\index.php(44): app\core\Application->run()
+#6 {main}
+  thrown in D:\GitHub\PHP-Base-Course-Public\Project\models\User.php on line 15
+[01-May-2023 14:38:18 UTC] PHP Fatal error:  Uncaught TypeError: PDOStatement::fetch(): Argument #2 ($cursorOrientation) must be of type int, string given in D:\GitHub\PHP-Base-Course-Public\Project\mappers\UserMapper.php:91
+Stack trace:
+#0 D:\GitHub\PHP-Base-Course-Public\Project\mappers\UserMapper.php(91): PDOStatement->fetch()
+#1 D:\GitHub\PHP-Base-Course-Public\Project\controllers\LoginController.php(25): app\mappers\UserMapper::findUserByEmail()
+#2 [internal function]: app\controllers\LoginController->handleView()
+#3 D:\GitHub\PHP-Base-Course-Public\Project\core\Router.php(53): call_user_func()
+#4 D:\GitHub\PHP-Base-Course-Public\Project\core\Application.php(29): app\core\Router->resolve()
+#5 D:\GitHub\PHP-Base-Course-Public\Project\web\index.php(44): app\core\Application->run()
+#6 {main}
+  thrown in D:\GitHub\PHP-Base-Course-Public\Project\mappers\UserMapper.php on line 91
+[01-May-2023 14:40:18 UTC] PHP Warning:  Trying to access array offset on value of type bool in D:\GitHub\PHP-Base-Course-Public\Project\mappers\UserMapper.php on line 93
+[01-May-2023 14:40:18 UTC] PHP Warning:  Trying to access array offset on value of type bool in D:\GitHub\PHP-Base-Course-Public\Project\mappers\UserMapper.php on line 93
+[01-May-2023 14:40:18 UTC] PHP Warning:  Trying to access array offset on value of type bool in D:\GitHub\PHP-Base-Course-Public\Project\mappers\UserMapper.php on line 93
+[01-May-2023 14:40:18 UTC] PHP Warning:  Trying to access array offset on value of type bool in D:\GitHub\PHP-Base-Course-Public\Project\mappers\UserMapper.php on line 93
+[01-May-2023 14:40:18 UTC] PHP Fatal error:  Uncaught TypeError: app\models\User::__construct(): Argument #2 ($nickname) must be of type string, null given, called in D:\GitHub\PHP-Base-Course-Public\Project\mappers\UserMapper.php on line 93 and defined in D:\GitHub\PHP-Base-Course-Public\Project\models\User.php:15
+Stack trace:
+#0 D:\GitHub\PHP-Base-Course-Public\Project\mappers\UserMapper.php(93): app\models\User->__construct()
+#1 D:\GitHub\PHP-Base-Course-Public\Project\controllers\LoginController.php(25): app\mappers\UserMapper::findUserByEmail()
+#2 [internal function]: app\controllers\LoginController->handleView()
+#3 D:\GitHub\PHP-Base-Course-Public\Project\core\Router.php(53): call_user_func()
+#4 D:\GitHub\PHP-Base-Course-Public\Project\core\Application.php(29): app\core\Router->resolve()
+#5 D:\GitHub\PHP-Base-Course-Public\Project\web\index.php(44): app\core\Application->run()
+#6 {main}
+  thrown in D:\GitHub\PHP-Base-Course-Public\Project\models\User.php on line 15
+[01-May-2023 14:40:30 UTC] PHP Warning:  Trying to access array offset on value of type bool in D:\GitHub\PHP-Base-Course-Public\Project\mappers\UserMapper.php on line 93
+[01-May-2023 14:40:30 UTC] PHP Warning:  Trying to access array offset on value of type bool in D:\GitHub\PHP-Base-Course-Public\Project\mappers\UserMapper.php on line 93
+[01-May-2023 14:40:30 UTC] PHP Warning:  Trying to access array offset on value of type bool in D:\GitHub\PHP-Base-Course-Public\Project\mappers\UserMapper.php on line 93
+[01-May-2023 14:40:30 UTC] PHP Warning:  Trying to access array offset on value of type bool in D:\GitHub\PHP-Base-Course-Public\Project\mappers\UserMapper.php on line 93
+[01-May-2023 14:40:30 UTC] PHP Fatal error:  Uncaught TypeError: app\models\User::__construct(): Argument #2 ($nickname) must be of type string, null given, called in D:\GitHub\PHP-Base-Course-Public\Project\mappers\UserMapper.php on line 93 and defined in D:\GitHub\PHP-Base-Course-Public\Project\models\User.php:15
+Stack trace:
+#0 D:\GitHub\PHP-Base-Course-Public\Project\mappers\UserMapper.php(93): app\models\User->__construct()
+#1 D:\GitHub\PHP-Base-Course-Public\Project\controllers\LoginController.php(25): app\mappers\UserMapper::findUserByEmail()
+#2 [internal function]: app\controllers\LoginController->handleView()
+#3 D:\GitHub\PHP-Base-Course-Public\Project\core\Router.php(53): call_user_func()
+#4 D:\GitHub\PHP-Base-Course-Public\Project\core\Application.php(29): app\core\Router->resolve()
+#5 D:\GitHub\PHP-Base-Course-Public\Project\web\index.php(44): app\core\Application->run()
+#6 {main}
+  thrown in D:\GitHub\PHP-Base-Course-Public\Project\models\User.php on line 15
+[01-May-2023 14:52:59 UTC] PHP Fatal error:  Uncaught TypeError: count(): Argument #1 ($value) must be of type Countable|array, string given in D:\GitHub\PHP-Base-Course-Public\Project\controllers\RegisterController.php:32
+Stack trace:
+#0 D:\GitHub\PHP-Base-Course-Public\Project\controllers\RegisterController.php(32): count()
+#1 [internal function]: app\controllers\RegisterController->handleView()
+#2 D:\GitHub\PHP-Base-Course-Public\Project\core\Router.php(53): call_user_func()
+#3 D:\GitHub\PHP-Base-Course-Public\Project\core\Application.php(29): app\core\Router->resolve()
+#4 D:\GitHub\PHP-Base-Course-Public\Project\web\index.php(44): app\core\Application->run()
+#5 {main}
+  thrown in D:\GitHub\PHP-Base-Course-Public\Project\controllers\RegisterController.php on line 32
+[01-May-2023 15:13:20 UTC] PHP Fatal error:  Uncaught TypeError: app\mappers\UserMapper::findUserByEmail(): Return value must be of type ?app\models\User, stdClass returned in D:\GitHub\PHP-Base-Course-Public\Project\mappers\UserMapper.php:98
+Stack trace:
+#0 D:\GitHub\PHP-Base-Course-Public\Project\controllers\RegisterController.php(35): app\mappers\UserMapper::findUserByEmail()
+#1 [internal function]: app\controllers\RegisterController->handleView()
+#2 D:\GitHub\PHP-Base-Course-Public\Project\core\Router.php(53): call_user_func()
+#3 D:\GitHub\PHP-Base-Course-Public\Project\core\Application.php(29): app\core\Router->resolve()
+#4 D:\GitHub\PHP-Base-Course-Public\Project\web\index.php(44): app\core\Application->run()
+#5 {main}
+  thrown in D:\GitHub\PHP-Base-Course-Public\Project\mappers\UserMapper.php on line 98
+[01-May-2023 15:13:38 UTC] PHP Deprecated:  Creation of dynamic property app\models\User::$id is deprecated in D:\GitHub\PHP-Base-Course-Public\Project\mappers\UserMapper.php on line 91
+[01-May-2023 15:13:38 UTC] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function app\models\User::__construct(), 0 passed and exactly 4 expected in D:\GitHub\PHP-Base-Course-Public\Project\models\User.php:15
+Stack trace:
+#0 [internal function]: app\models\User->__construct()
+#1 D:\GitHub\PHP-Base-Course-Public\Project\mappers\UserMapper.php(91): PDOStatement->fetchAll()
+#2 D:\GitHub\PHP-Base-Course-Public\Project\controllers\RegisterController.php(35): app\mappers\UserMapper::findUserByEmail()
+#3 [internal function]: app\controllers\RegisterController->handleView()
+#4 D:\GitHub\PHP-Base-Course-Public\Project\core\Router.php(53): call_user_func()
+#5 D:\GitHub\PHP-Base-Course-Public\Project\core\Application.php(29): app\core\Router->resolve()
+#6 D:\GitHub\PHP-Base-Course-Public\Project\web\index.php(44): app\core\Application->run()
+#7 {main}
+  thrown in D:\GitHub\PHP-Base-Course-Public\Project\models\User.php on line 15
+[01-May-2023 15:21:03 UTC] PHP Fatal error:  Uncaught ArgumentCountError: PDOStatement::fetchAll() expects exactly 1 argument for the fetch mode provided, 2 given in D:\GitHub\PHP-Base-Course-Public\Project\mappers\UserMapper.php:91
+Stack trace:
+#0 D:\GitHub\PHP-Base-Course-Public\Project\mappers\UserMapper.php(91): PDOStatement->fetchAll()
+#1 D:\GitHub\PHP-Base-Course-Public\Project\controllers\RegisterController.php(35): app\mappers\UserMapper::findUserByEmail()
+#2 [internal function]: app\controllers\RegisterController->handleView()
+#3 D:\GitHub\PHP-Base-Course-Public\Project\core\Router.php(53): call_user_func()
+#4 D:\GitHub\PHP-Base-Course-Public\Project\core\Application.php(29): app\core\Router->resolve()
+#5 D:\GitHub\PHP-Base-Course-Public\Project\web\index.php(44): app\core\Application->run()
+#6 {main}
+  thrown in D:\GitHub\PHP-Base-Course-Public\Project\mappers\UserMapper.php on line 91
+[01-May-2023 15:21:15 UTC] PHP Fatal error:  Uncaught TypeError: PDOStatement::fetch(): Argument #2 ($cursorOrientation) must be of type int, string given in D:\GitHub\PHP-Base-Course-Public\Project\mappers\UserMapper.php:91
+Stack trace:
+#0 D:\GitHub\PHP-Base-Course-Public\Project\mappers\UserMapper.php(91): PDOStatement->fetch()
+#1 D:\GitHub\PHP-Base-Course-Public\Project\controllers\RegisterController.php(35): app\mappers\UserMapper::findUserByEmail()
+#2 [internal function]: app\controllers\RegisterController->handleView()
+#3 D:\GitHub\PHP-Base-Course-Public\Project\core\Router.php(53): call_user_func()
+#4 D:\GitHub\PHP-Base-Course-Public\Project\core\Application.php(29): app\core\Router->resolve()
+#5 D:\GitHub\PHP-Base-Course-Public\Project\web\index.php(44): app\core\Application->run()
+#6 {main}
+  thrown in D:\GitHub\PHP-Base-Course-Public\Project\mappers\UserMapper.php on line 91
+[01-May-2023 15:21:50 UTC] PHP Fatal error:  Uncaught TypeError: PDOStatement::setFetchMode(): Argument #2 must be of type object, string given in D:\GitHub\PHP-Base-Course-Public\Project\mappers\UserMapper.php:90
+Stack trace:
+#0 D:\GitHub\PHP-Base-Course-Public\Project\mappers\UserMapper.php(90): PDOStatement->setFetchMode()
+#1 D:\GitHub\PHP-Base-Course-Public\Project\controllers\RegisterController.php(35): app\mappers\UserMapper::findUserByEmail()
+#2 [internal function]: app\controllers\RegisterController->handleView()
+#3 D:\GitHub\PHP-Base-Course-Public\Project\core\Router.php(53): call_user_func()
+#4 D:\GitHub\PHP-Base-Course-Public\Project\core\Application.php(29): app\core\Router->resolve()
+#5 D:\GitHub\PHP-Base-Course-Public\Project\web\index.php(44): app\core\Application->run()
+#6 {main}
+  thrown in D:\GitHub\PHP-Base-Course-Public\Project\mappers\UserMapper.php on line 90
+[01-May-2023 15:24:03 UTC] PHP Fatal error:  Uncaught TypeError: PDOStatement::setFetchMode(): Argument #2 must be of type object, string given in D:\GitHub\PHP-Base-Course-Public\Project\mappers\UserMapper.php:90
+Stack trace:
+#0 D:\GitHub\PHP-Base-Course-Public\Project\mappers\UserMapper.php(90): PDOStatement->setFetchMode()
+#1 D:\GitHub\PHP-Base-Course-Public\Project\controllers\RegisterController.php(35): app\mappers\UserMapper::findUserByEmail()
+#2 [internal function]: app\controllers\RegisterController->handleView()
+#3 D:\GitHub\PHP-Base-Course-Public\Project\core\Router.php(53): call_user_func()
+#4 D:\GitHub\PHP-Base-Course-Public\Project\core\Application.php(29): app\core\Router->resolve()
+#5 D:\GitHub\PHP-Base-Course-Public\Project\web\index.php(44): app\core\Application->run()
+#6 {main}
+  thrown in D:\GitHub\PHP-Base-Course-Public\Project\mappers\UserMapper.php on line 90
+[01-May-2023 15:24:13 UTC] PHP Deprecated:  Creation of dynamic property app\models\User::$id is deprecated in D:\GitHub\PHP-Base-Course-Public\Project\mappers\UserMapper.php on line 91
+[01-May-2023 15:24:13 UTC] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function app\models\User::__construct(), 0 passed and exactly 4 expected in D:\GitHub\PHP-Base-Course-Public\Project\models\User.php:15
+Stack trace:
+#0 [internal function]: app\models\User->__construct()
+#1 D:\GitHub\PHP-Base-Course-Public\Project\mappers\UserMapper.php(91): PDOStatement->fetch()
+#2 D:\GitHub\PHP-Base-Course-Public\Project\controllers\RegisterController.php(35): app\mappers\UserMapper::findUserByEmail()
+#3 [internal function]: app\controllers\RegisterController->handleView()
+#4 D:\GitHub\PHP-Base-Course-Public\Project\core\Router.php(53): call_user_func()
+#5 D:\GitHub\PHP-Base-Course-Public\Project\core\Application.php(29): app\core\Router->resolve()
+#6 D:\GitHub\PHP-Base-Course-Public\Project\web\index.php(44): app\core\Application->run()
+#7 {main}
+  thrown in D:\GitHub\PHP-Base-Course-Public\Project\models\User.php on line 15
+[01-May-2023 15:25:52 UTC] PHP Deprecated:  Creation of dynamic property app\models\User::$id is deprecated in D:\GitHub\PHP-Base-Course-Public\Project\mappers\UserMapper.php on line 91
+[01-May-2023 15:25:52 UTC] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function app\models\User::__construct(), 0 passed and exactly 4 expected in D:\GitHub\PHP-Base-Course-Public\Project\models\User.php:15
+Stack trace:
+#0 [internal function]: app\models\User->__construct()
+#1 D:\GitHub\PHP-Base-Course-Public\Project\mappers\UserMapper.php(91): PDOStatement->fetch()
+#2 D:\GitHub\PHP-Base-Course-Public\Project\controllers\RegisterController.php(35): app\mappers\UserMapper::findUserByEmail()
+#3 [internal function]: app\controllers\RegisterController->handleView()
+#4 D:\GitHub\PHP-Base-Course-Public\Project\core\Router.php(53): call_user_func()
+#5 D:\GitHub\PHP-Base-Course-Public\Project\core\Application.php(29): app\core\Router->resolve()
+#6 D:\GitHub\PHP-Base-Course-Public\Project\web\index.php(44): app\core\Application->run()
+#7 {main}
+  thrown in D:\GitHub\PHP-Base-Course-Public\Project\models\User.php on line 15
+[01-May-2023 15:26:15 UTC] PHP Fatal error:  Uncaught TypeError: PDOStatement::setFetchMode(): Argument #2 must be a valid class in D:\GitHub\PHP-Base-Course-Public\Project\mappers\UserMapper.php:90
+Stack trace:
+#0 D:\GitHub\PHP-Base-Course-Public\Project\mappers\UserMapper.php(90): PDOStatement->setFetchMode()
+#1 D:\GitHub\PHP-Base-Course-Public\Project\controllers\RegisterController.php(35): app\mappers\UserMapper::findUserByEmail()
+#2 [internal function]: app\controllers\RegisterController->handleView()
+#3 D:\GitHub\PHP-Base-Course-Public\Project\core\Router.php(53): call_user_func()
+#4 D:\GitHub\PHP-Base-Course-Public\Project\core\Application.php(29): app\core\Router->resolve()
+#5 D:\GitHub\PHP-Base-Course-Public\Project\web\index.php(44): app\core\Application->run()
+#6 {main}
+  thrown in D:\GitHub\PHP-Base-Course-Public\Project\mappers\UserMapper.php on line 90
+[01-May-2023 15:26:41 UTC] PHP Warning:  require(User.php): Failed to open stream: No such file or directory in D:\GitHub\PHP-Base-Course-Public\Project\web\index.php on line 16
+[01-May-2023 15:26:41 UTC] PHP Fatal error:  Uncaught Error: Failed opening required 'User.php' (include_path='.;C:\php\pear') in D:\GitHub\PHP-Base-Course-Public\Project\web\index.php:16
+Stack trace:
+#0 [internal function]: {closure}()
+#1 D:\GitHub\PHP-Base-Course-Public\Project\mappers\UserMapper.php(90): PDOStatement->setFetchMode()
+#2 D:\GitHub\PHP-Base-Course-Public\Project\controllers\RegisterController.php(35): app\mappers\UserMapper::findUserByEmail()
+#3 [internal function]: app\controllers\RegisterController->handleView()
+#4 D:\GitHub\PHP-Base-Course-Public\Project\core\Router.php(53): call_user_func()
+#5 D:\GitHub\PHP-Base-Course-Public\Project\core\Application.php(29): app\core\Router->resolve()
+#6 D:\GitHub\PHP-Base-Course-Public\Project\web\index.php(44): app\core\Application->run()
+#7 {main}
+  thrown in D:\GitHub\PHP-Base-Course-Public\Project\web\index.php on line 16
+[01-May-2023 15:26:44 UTC] PHP Fatal error:  Uncaught TypeError: PDOStatement::setFetchMode(): Argument #2 must be a valid class in D:\GitHub\PHP-Base-Course-Public\Project\mappers\UserMapper.php:90
+Stack trace:
+#0 D:\GitHub\PHP-Base-Course-Public\Project\mappers\UserMapper.php(90): PDOStatement->setFetchMode()
+#1 D:\GitHub\PHP-Base-Course-Public\Project\controllers\RegisterController.php(35): app\mappers\UserMapper::findUserByEmail()
+#2 [internal function]: app\controllers\RegisterController->handleView()
+#3 D:\GitHub\PHP-Base-Course-Public\Project\core\Router.php(53): call_user_func()
+#4 D:\GitHub\PHP-Base-Course-Public\Project\core\Application.php(29): app\core\Router->resolve()
+#5 D:\GitHub\PHP-Base-Course-Public\Project\web\index.php(44): app\core\Application->run()
+#6 {main}
+  thrown in D:\GitHub\PHP-Base-Course-Public\Project\mappers\UserMapper.php on line 90
+[01-May-2023 15:26:57 UTC] PHP Fatal error:  Uncaught TypeError: PDOStatement::setFetchMode(): Argument #2 must be a valid class in D:\GitHub\PHP-Base-Course-Public\Project\mappers\UserMapper.php:90
+Stack trace:
+#0 D:\GitHub\PHP-Base-Course-Public\Project\mappers\UserMapper.php(90): PDOStatement->setFetchMode()
+#1 D:\GitHub\PHP-Base-Course-Public\Project\controllers\RegisterController.php(35): app\mappers\UserMapper::findUserByEmail()
+#2 [internal function]: app\controllers\RegisterController->handleView()
+#3 D:\GitHub\PHP-Base-Course-Public\Project\core\Router.php(53): call_user_func()
+#4 D:\GitHub\PHP-Base-Course-Public\Project\core\Application.php(29): app\core\Router->resolve()
+#5 D:\GitHub\PHP-Base-Course-Public\Project\web\index.php(44): app\core\Application->run()
+#6 {main}
+  thrown in D:\GitHub\PHP-Base-Course-Public\Project\mappers\UserMapper.php on line 90
+[01-May-2023 15:28:24 UTC] PHP Warning:  require(models\User.php): Failed to open stream: No such file or directory in D:\GitHub\PHP-Base-Course-Public\Project\web\index.php on line 16
+[01-May-2023 15:28:24 UTC] PHP Fatal error:  Uncaught Error: Failed opening required 'models\User.php' (include_path='.;C:\php\pear') in D:\GitHub\PHP-Base-Course-Public\Project\web\index.php:16
+Stack trace:
+#0 [internal function]: {closure}()
+#1 D:\GitHub\PHP-Base-Course-Public\Project\mappers\UserMapper.php(90): PDOStatement->setFetchMode()
+#2 D:\GitHub\PHP-Base-Course-Public\Project\controllers\RegisterController.php(35): app\mappers\UserMapper::findUserByEmail()
+#3 [internal function]: app\controllers\RegisterController->handleView()
+#4 D:\GitHub\PHP-Base-Course-Public\Project\core\Router.php(53): call_user_func()
+#5 D:\GitHub\PHP-Base-Course-Public\Project\core\Application.php(29): app\core\Router->resolve()
+#6 D:\GitHub\PHP-Base-Course-Public\Project\web\index.php(44): app\core\Application->run()
+#7 {main}
+  thrown in D:\GitHub\PHP-Base-Course-Public\Project\web\index.php on line 16
+[01-May-2023 15:28:42 UTC] PHP Deprecated:  Creation of dynamic property app\models\User::$id is deprecated in D:\GitHub\PHP-Base-Course-Public\Project\mappers\UserMapper.php on line 91
+[01-May-2023 15:28:42 UTC] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function app\models\User::__construct(), 0 passed and exactly 4 expected in D:\GitHub\PHP-Base-Course-Public\Project\models\User.php:15
+Stack trace:
+#0 [internal function]: app\models\User->__construct()
+#1 D:\GitHub\PHP-Base-Course-Public\Project\mappers\UserMapper.php(91): PDOStatement->fetch()
+#2 D:\GitHub\PHP-Base-Course-Public\Project\controllers\RegisterController.php(35): app\mappers\UserMapper::findUserByEmail()
+#3 [internal function]: app\controllers\RegisterController->handleView()
+#4 D:\GitHub\PHP-Base-Course-Public\Project\core\Router.php(53): call_user_func()
+#5 D:\GitHub\PHP-Base-Course-Public\Project\core\Application.php(29): app\core\Router->resolve()
+#6 D:\GitHub\PHP-Base-Course-Public\Project\web\index.php(44): app\core\Application->run()
+#7 {main}
+  thrown in D:\GitHub\PHP-Base-Course-Public\Project\models\User.php on line 15
+[01-May-2023 15:31:09 UTC] PHP Fatal error:  Uncaught TypeError: PDOStatement::fetch(): Argument #1 ($mode) must be of type int, array given in D:\GitHub\PHP-Base-Course-Public\Project\mappers\UserMapper.php:91
+Stack trace:
+#0 D:\GitHub\PHP-Base-Course-Public\Project\mappers\UserMapper.php(91): PDOStatement->fetch()
+#1 D:\GitHub\PHP-Base-Course-Public\Project\controllers\RegisterController.php(35): app\mappers\UserMapper::findUserByEmail()
+#2 [internal function]: app\controllers\RegisterController->handleView()
+#3 D:\GitHub\PHP-Base-Course-Public\Project\core\Router.php(53): call_user_func()
+#4 D:\GitHub\PHP-Base-Course-Public\Project\core\Application.php(29): app\core\Router->resolve()
+#5 D:\GitHub\PHP-Base-Course-Public\Project\web\index.php(44): app\core\Application->run()
+#6 {main}
+  thrown in D:\GitHub\PHP-Base-Course-Public\Project\mappers\UserMapper.php on line 91
+[01-May-2023 15:31:21 UTC] PHP Deprecated:  Creation of dynamic property app\models\User::$id is deprecated in D:\GitHub\PHP-Base-Course-Public\Project\mappers\UserMapper.php on line 91
+[01-May-2023 15:31:21 UTC] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function app\models\User::__construct(), 0 passed and exactly 4 expected in D:\GitHub\PHP-Base-Course-Public\Project\models\User.php:15
+Stack trace:
+#0 [internal function]: app\models\User->__construct()
+#1 D:\GitHub\PHP-Base-Course-Public\Project\mappers\UserMapper.php(91): PDOStatement->fetch()
+#2 D:\GitHub\PHP-Base-Course-Public\Project\controllers\RegisterController.php(35): app\mappers\UserMapper::findUserByEmail()
+#3 [internal function]: app\controllers\RegisterController->handleView()
+#4 D:\GitHub\PHP-Base-Course-Public\Project\core\Router.php(53): call_user_func()
+#5 D:\GitHub\PHP-Base-Course-Public\Project\core\Application.php(29): app\core\Router->resolve()
+#6 D:\GitHub\PHP-Base-Course-Public\Project\web\index.php(44): app\core\Application->run()
+#7 {main}
+  thrown in D:\GitHub\PHP-Base-Course-Public\Project\models\User.php on line 15
+[01-May-2023 15:32:49 UTC] PHP Warning:  Undefined array key 0 in D:\GitHub\PHP-Base-Course-Public\Project\mappers\UserMapper.php on line 98
+[01-May-2023 15:33:28 UTC] PHP Warning:  Undefined array key 0 in D:\GitHub\PHP-Base-Course-Public\Project\mappers\UserMapper.php on line 98
+[01-May-2023 15:34:08 UTC] PHP Warning:  Undefined array key 0 in D:\GitHub\PHP-Base-Course-Public\Project\mappers\UserMapper.php on line 98
+[01-May-2023 15:34:18 UTC] PHP Fatal error:  Uncaught TypeError: app\mappers\UserMapper::findUserByEmail(): Return value must be of type ?app\models\User, array returned in D:\GitHub\PHP-Base-Course-Public\Project\mappers\UserMapper.php:98
+Stack trace:
+#0 D:\GitHub\PHP-Base-Course-Public\Project\controllers\LoginController.php(25): app\mappers\UserMapper::findUserByEmail()
+#1 [internal function]: app\controllers\LoginController->handleView()
+#2 D:\GitHub\PHP-Base-Course-Public\Project\core\Router.php(53): call_user_func()
+#3 D:\GitHub\PHP-Base-Course-Public\Project\core\Application.php(29): app\core\Router->resolve()
+#4 D:\GitHub\PHP-Base-Course-Public\Project\web\index.php(44): app\core\Application->run()
+#5 {main}
+  thrown in D:\GitHub\PHP-Base-Course-Public\Project\mappers\UserMapper.php on line 98
+[01-May-2023 15:34:34 UTC] PHP Fatal error:  Uncaught TypeError: app\mappers\UserMapper::findUserByEmail(): Return value must be of type ?app\models\User, array returned in D:\GitHub\PHP-Base-Course-Public\Project\mappers\UserMapper.php:98
+Stack trace:
+#0 D:\GitHub\PHP-Base-Course-Public\Project\controllers\LoginController.php(25): app\mappers\UserMapper::findUserByEmail()
+#1 [internal function]: app\controllers\LoginController->handleView()
+#2 D:\GitHub\PHP-Base-Course-Public\Project\core\Router.php(53): call_user_func()
+#3 D:\GitHub\PHP-Base-Course-Public\Project\core\Application.php(29): app\core\Router->resolve()
+#4 D:\GitHub\PHP-Base-Course-Public\Project\web\index.php(44): app\core\Application->run()
+#5 {main}
+  thrown in D:\GitHub\PHP-Base-Course-Public\Project\mappers\UserMapper.php on line 98
+[15-May-2023 12:10:30 UTC] PHP Warning:  file_get_contents(layout.html): Failed to open stream: No such file or directory in D:\GitHub\PHP-Base-Course-Public\Project\core\Template.php on line 65
+[15-May-2023 12:10:30 UTC] PHP Fatal error:  Uncaught Error: Typed static property app\core\Template::$blocks must not be accessed before initialization in D:\GitHub\PHP-Base-Course-Public\Project\core\Template.php:48
+Stack trace:
+#0 D:\GitHub\PHP-Base-Course-Public\Project\core\Template.php(57): app\core\Template::CompoleYield()
+#1 D:\GitHub\PHP-Base-Course-Public\Project\core\Template.php(81): app\core\Template::CompileCode()
+#2 D:\GitHub\PHP-Base-Course-Public\Project\core\Template.php(13): app\core\Template::Cache()
+#3 D:\GitHub\PHP-Base-Course-Public\Project\core\Router.php(66): app\core\Template::View()
+#4 D:\GitHub\PHP-Base-Course-Public\Project\controllers\PresentationController.php(17): app\core\Router->renderTemplate()
+#5 [internal function]: app\controllers\PresentationController->getView()
+#6 D:\GitHub\PHP-Base-Course-Public\Project\core\Router.php(53): call_user_func()
+#7 D:\GitHub\PHP-Base-Course-Public\Project\core\Application.php(29): app\core\Router->resolve()
+#8 D:\GitHub\PHP-Base-Course-Public\Project\web\index.php(44): app\core\Application->run()
+#9 {main}
+  thrown in D:\GitHub\PHP-Base-Course-Public\Project\core\Template.php on line 48
+[15-May-2023 12:12:12 UTC] PHP Warning:  file_get_contents(layout.html): Failed to open stream: No such file or directory in D:\GitHub\PHP-Base-Course-Public\Project\core\Template.php on line 66
+[15-May-2023 12:12:12 UTC] PHP Fatal error:  Uncaught Error: Typed static property app\core\Template::$blocks must not be accessed before initialization in D:\GitHub\PHP-Base-Course-Public\Project\core\Template.php:49
+Stack trace:
+#0 D:\GitHub\PHP-Base-Course-Public\Project\core\Template.php(58): app\core\Template::CompoleYield()
+#1 D:\GitHub\PHP-Base-Course-Public\Project\core\Template.php(82): app\core\Template::CompileCode()
+#2 D:\GitHub\PHP-Base-Course-Public\Project\core\Template.php(14): app\core\Template::Cache()
+#3 D:\GitHub\PHP-Base-Course-Public\Project\core\Router.php(66): app\core\Template::View()
+#4 D:\GitHub\PHP-Base-Course-Public\Project\controllers\PresentationController.php(17): app\core\Router->renderTemplate()
+#5 [internal function]: app\controllers\PresentationController->getView()
+#6 D:\GitHub\PHP-Base-Course-Public\Project\core\Router.php(53): call_user_func()
+#7 D:\GitHub\PHP-Base-Course-Public\Project\core\Application.php(29): app\core\Router->resolve()
+#8 D:\GitHub\PHP-Base-Course-Public\Project\web\index.php(44): app\core\Application->run()
+#9 {main}
+  thrown in D:\GitHub\PHP-Base-Course-Public\Project\core\Template.php on line 49
+[15-May-2023 12:12:13 UTC] PHP Warning:  file_get_contents(layout.html): Failed to open stream: No such file or directory in D:\GitHub\PHP-Base-Course-Public\Project\core\Template.php on line 66
+[15-May-2023 12:12:13 UTC] PHP Fatal error:  Uncaught Error: Typed static property app\core\Template::$blocks must not be accessed before initialization in D:\GitHub\PHP-Base-Course-Public\Project\core\Template.php:49
+Stack trace:
+#0 D:\GitHub\PHP-Base-Course-Public\Project\core\Template.php(58): app\core\Template::CompoleYield()
+#1 D:\GitHub\PHP-Base-Course-Public\Project\core\Template.php(82): app\core\Template::CompileCode()
+#2 D:\GitHub\PHP-Base-Course-Public\Project\core\Template.php(14): app\core\Template::Cache()
+#3 D:\GitHub\PHP-Base-Course-Public\Project\core\Router.php(66): app\core\Template::View()
+#4 D:\GitHub\PHP-Base-Course-Public\Project\controllers\PresentationController.php(17): app\core\Router->renderTemplate()
+#5 [internal function]: app\controllers\PresentationController->getView()
+#6 D:\GitHub\PHP-Base-Course-Public\Project\core\Router.php(53): call_user_func()
+#7 D:\GitHub\PHP-Base-Course-Public\Project\core\Application.php(29): app\core\Router->resolve()
+#8 D:\GitHub\PHP-Base-Course-Public\Project\web\index.php(44): app\core\Application->run()
+#9 {main}
+  thrown in D:\GitHub\PHP-Base-Course-Public\Project\core\Template.php on line 49
+[15-May-2023 12:14:16 UTC] PHP Warning:  file_get_contents(D:\GitHub\PHP-Base-Course-Public\Project\web/..//views/D:\GitHub\PHP-Base-Course-Public\Project\web/..//views/index.html): Failed to open stream: No such file or directory in D:\GitHub\PHP-Base-Course-Public\Project\core\Template.php on line 66
+[15-May-2023 12:14:16 UTC] PHP Fatal error:  Uncaught Error: Typed static property app\core\Template::$blocks must not be accessed before initialization in D:\GitHub\PHP-Base-Course-Public\Project\core\Template.php:49
+Stack trace:
+#0 D:\GitHub\PHP-Base-Course-Public\Project\core\Template.php(58): app\core\Template::CompoleYield()
+#1 D:\GitHub\PHP-Base-Course-Public\Project\core\Template.php(82): app\core\Template::CompileCode()
+#2 D:\GitHub\PHP-Base-Course-Public\Project\core\Template.php(14): app\core\Template::Cache()
+#3 D:\GitHub\PHP-Base-Course-Public\Project\core\Router.php(66): app\core\Template::View()
+#4 D:\GitHub\PHP-Base-Course-Public\Project\controllers\PresentationController.php(17): app\core\Router->renderTemplate()
+#5 [internal function]: app\controllers\PresentationController->getView()
+#6 D:\GitHub\PHP-Base-Course-Public\Project\core\Router.php(53): call_user_func()
+#7 D:\GitHub\PHP-Base-Course-Public\Project\core\Application.php(29): app\core\Router->resolve()
+#8 D:\GitHub\PHP-Base-Course-Public\Project\web\index.php(44): app\core\Application->run()
+#9 {main}
+  thrown in D:\GitHub\PHP-Base-Course-Public\Project\core\Template.php on line 49
+[15-May-2023 12:14:46 UTC] PHP Fatal error:  Uncaught Error: Typed static property app\core\Template::$blocks must not be accessed before initialization in D:\GitHub\PHP-Base-Course-Public\Project\core\Template.php:49
+Stack trace:
+#0 D:\GitHub\PHP-Base-Course-Public\Project\core\Template.php(58): app\core\Template::CompoleYield()
+#1 D:\GitHub\PHP-Base-Course-Public\Project\core\Template.php(82): app\core\Template::CompileCode()
+#2 D:\GitHub\PHP-Base-Course-Public\Project\core\Template.php(14): app\core\Template::Cache()
+#3 D:\GitHub\PHP-Base-Course-Public\Project\core\Router.php(66): app\core\Template::View()
+#4 D:\GitHub\PHP-Base-Course-Public\Project\controllers\PresentationController.php(17): app\core\Router->renderTemplate()
+#5 [internal function]: app\controllers\PresentationController->getView()
+#6 D:\GitHub\PHP-Base-Course-Public\Project\core\Router.php(53): call_user_func()
+#7 D:\GitHub\PHP-Base-Course-Public\Project\core\Application.php(29): app\core\Router->resolve()
+#8 D:\GitHub\PHP-Base-Course-Public\Project\web\index.php(44): app\core\Application->run()
+#9 {main}
+  thrown in D:\GitHub\PHP-Base-Course-Public\Project\core\Template.php on line 49
+[15-May-2023 12:14:57 UTC] PHP Fatal error:  Uncaught Error: Typed static property app\core\Template::$blocks must not be accessed before initialization in D:\GitHub\PHP-Base-Course-Public\Project\core\Template.php:49
+Stack trace:
+#0 D:\GitHub\PHP-Base-Course-Public\Project\core\Template.php(58): app\core\Template::CompoleYield()
+#1 D:\GitHub\PHP-Base-Course-Public\Project\core\Template.php(82): app\core\Template::CompileCode()
+#2 D:\GitHub\PHP-Base-Course-Public\Project\core\Template.php(14): app\core\Template::Cache()
+#3 D:\GitHub\PHP-Base-Course-Public\Project\core\Router.php(66): app\core\Template::View()
+#4 D:\GitHub\PHP-Base-Course-Public\Project\controllers\PresentationController.php(17): app\core\Router->renderTemplate()
+#5 [internal function]: app\controllers\PresentationController->getView()
+#6 D:\GitHub\PHP-Base-Course-Public\Project\core\Router.php(53): call_user_func()
+#7 D:\GitHub\PHP-Base-Course-Public\Project\core\Application.php(29): app\core\Router->resolve()
+#8 D:\GitHub\PHP-Base-Course-Public\Project\web\index.php(44): app\core\Application->run()
+#9 {main}
+  thrown in D:\GitHub\PHP-Base-Course-Public\Project\core\Template.php on line 49

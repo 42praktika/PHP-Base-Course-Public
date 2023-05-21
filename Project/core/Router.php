@@ -61,6 +61,11 @@ class Router
         include PROJECT_ROOT."views/$name.php";
     }
 
+    public function renderTemplate(string $name, array $data = []) : void{
+
+        Template::View($name.'.html', $data);
+    }
+
     public function renderStatic(string $name): void
     {
         include PROJECT_ROOT."web/$name";

@@ -5,6 +5,7 @@ namespace app\controllers;
 
 use app\core\Application;
 use app\core\Router;
+use app\mappers\UserMapper;
 use app\models\User;
 class LoginController
 {
@@ -21,9 +22,18 @@ class LoginController
         $email = $body["email"];
         $password = $body["password"];
 
-        $user = new User();
-        $user->assign($body);
-        $user->save();
+        $user = UserMapper::findUserByEmail($email);
+        if($user == null){
+            echo "User with Email $email is not found";
+            return;
+        }
+
+        if($user->getPassword() != $password){
+            echo "Incorrect password for user with Email $email";
+            return;
+        }
+
+        var_dump($user);
 //
 //        $this->login($email, $password);
     }
