@@ -37,7 +37,7 @@ class UserMapper extends \app\core\Mapper
 
         $this->insert->execute(params: [":nickname" => $model->getNickname(),
             "email" => $model->getEmail(),
-            "password" => $model->getPassword()]);
+            "password" => password_hash($model->getPassword(), PASSWORD_BCRYPT)]);
         $id = $this->getPdo()->lastInsertId();
         $model->setId($id);
         return $model;
@@ -49,7 +49,7 @@ class UserMapper extends \app\core\Mapper
             ":id" => $model->getId(),
             ":nickname" => $model->getNickname(),
             "email" => $model->getEmail(),
-            "password" => $model->getPassword()]);
+            "password" => password_hash($model->getPassword(), PASSWORD_BCRYPT)]);
     }
 
     protected function doDelete(Model $model): void
@@ -95,10 +95,25 @@ class UserMapper extends \app\core\Mapper
             return null;
         }
 
-
-        $user = new User($query_result["id"], $query_result["nickname"], $query_result["email"],$query_result["password"]);
+        $user = new User($query_result["id"], $query_result["nickname"], $query_result["email"], $query_result["password"]);
 
         return $user;
     }
+    static function findUserByID(int $id):?User
+    {
+        $query = Application::$database->pdo->prepare("SELECT * FROM users WHERE id=:id");
+        $query->execute([":id"=>$id]);
+//        echo User::class;
+        //$query->setFetchMode(\PDO::FETCH_CLASS, User::class);
+//        $query_result = $query->fetch(\PDO::FETCH_NAMED|\PDO::FETCH_CLASS);
+        $query_result = $query->fetch(\PDO::FETCH_NAMED);
+        if(!$query_result)
+        {
+            return null;
+        }
 
+        $user = new User($query_result["id"], $query_result["nickname"], $query_result["email"], $query_result["password"]);
+
+        return $user;
+    }
 }

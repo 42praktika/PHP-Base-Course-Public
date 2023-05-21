@@ -26,6 +26,10 @@ class RegisterController
             $email = $body["email"];
             $password = $body["password"];
 
+            if(RegistrationFormValidationController::ValidateForm($body) !== "ok"){
+                header("Location: /error");
+                return;
+            }
 
             if(strlen($password) < 10 || strlen($password) > 35){
                 echo "Password length must be in interval [10:35]";
@@ -47,6 +51,10 @@ class RegisterController
                 return;
             }
 
+            if(!RegistrationFormValidationController::ValidateForm($_POST)){
+                header("Location: /error");
+                return;
+            }
             $this->login($email, $password);
         }
         catch (\Exception $exception){

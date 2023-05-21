@@ -1,5 +1,11 @@
-<html>
+{% extends layout.html %}
 
+{%block title%} MangaBoobs {% endblock%}
+
+
+
+{% block content %}
+<html>
 <head>
     <meta charset="utf-8">
     <link rel="icon" type="image/x-icon" href="assets/images/favicon.svg">
@@ -50,9 +56,7 @@
         }
     </style>
 </head>
-<?php
-include PROJECT_ROOT."views/templates/headerTemplate.php";
-?>
+{{$header}}
 
 <body class="main-content">
     <div class="daytop_container">
@@ -123,12 +127,11 @@ include PROJECT_ROOT."views/templates/headerTemplate.php";
         </div>
 
     </div>
-        <?php
-        include PROJECT_ROOT."views/templates/authTemplate.php";
-        ?>
+<!--        <?php-->
+<!--        include PROJECT_ROOT."views/templates/authTemplate.php";-->
+<!--        ?>-->
 </body>
 
-<?php
-    include PROJECT_ROOT."views/templates/footerTemplate.php";
-?>
 </html>
+{% endblock %}
+{% extends footer.html %}

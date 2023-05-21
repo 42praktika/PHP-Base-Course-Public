@@ -1,0 +1,19 @@
+{% extends layout.html %}
+
+{%block title %} OOps... {% endblock%}
+
+{% block content %}
+<html>
+<body style="justify-content: center">
+    <img src="/assets/images/error_bg_alpha_short.png" onclick="redirect('')" type="images/png" alt="">
+    <div class="error_content">
+        <h1 class="error_code" id="error_code">{{ $error_code }}</h1>
+        <label id="error_explanation">
+            {{ $error_explanation }}
+        </label>
+        <br>
+        <a href="/" class="button_purple">Home</a>
+    </div>
+</body>
+</html>
+{% endblock %}

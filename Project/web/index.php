@@ -35,10 +35,13 @@ $router->setGetRoute("/user", [new \app\controllers\UserProfileContoller(), "get
 $router->setGetRoute("/about", [new \app\controllers\AboutContoller(), "getView"]);
 $router->setGetRoute("/manga", [new \app\controllers\MangaProfileContoller(), "getView"]);
 
+$router->setGetRoute("/logout", [new \app\controllers\LogoutController(), "getView"]);
+
 $router->setPostRoute("/login", [new \app\controllers\LoginController(), "handleView"]);
 $router->setPostRoute("/register", [new \app\controllers\RegisterController(), "handleView"]);
 $router->setPostRoute("/handle", [new PresentationController, "handleView"]);
 $router->setPostRoute("/validateRegisterForm", [new \app\controllers\RegistrationFormValidationController(), "handleView"]);
+$router->setPostRoute("/validateLoginForm", [new \app\controllers\LoginValidationController(), "handleView"]);
 
 ob_start();
 $application->run();

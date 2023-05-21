@@ -1,5 +1,4 @@
-<!DOCTYPE html PUBLIC>
-<html>
+{% block footer %}
 <footer class="footer flex">
     <div class="flex row">
         <div class="footer-item flex column">
@@ -16,4 +15,6 @@
         </div>
     </div>
 </footer>
-</html>
+{% endblock %}
+
+{% yield footer %}

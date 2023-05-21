@@ -10,7 +10,7 @@ class MangaProfileContoller
 
     public function getView()
     {
-        Application::$app->getRouter()->renderView("manga_profile");
+        Application::$app->getRouter()->renderTemplate("manga_profile");
     }
 
     public function handleView()

@@ -2,6 +2,6 @@
 <button></button>
 
 <?php
-include PROJECT_ROOT."views/templates/footerTemplate.php";
+include PROJECT_ROOT."views/templates/footer.html";
 ?>
 </html>

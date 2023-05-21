@@ -17,6 +17,20 @@ class Template
         require $cached_file;
     }
 
+    static function ReturnView($file, $data = []): string
+    {
+        ob_start();
+        $cached_file = self::Cache($file);
+        extract($data);
+        require($cached_file);
+        return ob_get_clean();
+    }
+
+//    static function requireToVar($file) : false|string{
+//        ob_start();
+//        require($file);
+//        return ob_get_clean();
+//    }
 
     private static function CompilePHP(string $code): string
     {

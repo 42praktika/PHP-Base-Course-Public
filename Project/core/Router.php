@@ -39,7 +39,7 @@ class Router
         $path = $this->request->getUri();
         $method = $this->request->getMethod();
         if (!isset($this->routes[$method]) || !isset($this->routes[$method][$path])) {
-            $this->renderStatic("error.php");
+            $this->renderTemplate("error", ["error_code"=>Response::HTTP_NOT_FOUND, "error_explanation"=>"Page not found"]);
             $this->response->setStatusCode(Response::HTTP_NOT_FOUND);
             return;
         }

@@ -17,10 +17,16 @@ class LoginController
 
     public function handleView()
     {
+
         $body = Application::$app->getRequest()->getBody();
 
         $email = $body["email"];
         $password = $body["password"];
+
+        if(LoginValidationController::ValidateForm($body) !== "ok"){
+            header("Location: /error");
+            return;
+        }
 
         $user = UserMapper::findUserByEmail($email);
         if($user == null){
@@ -28,22 +34,19 @@ class LoginController
             return;
         }
 
-        if($user->getPassword() != $password){
+        if(!password_verify($password, $user->getPassword())){
             echo "Incorrect password for user with Email $email";
             return;
         }
 
-        var_dump($user);
+        session_start();
+        setcookie("SID", session_id(), time()+20*24*60*60);
+        $_SESSION["authorised"] = true;
+        $_SESSION["userID"] = $user->getId();
+//        var_dump($user);
 //
 //        $this->login($email, $password);
+        header("Location: /");
     }
-    public function login(string $email, string $password)
-    {
-        if($email==null || $password == null){
-            return;
-        }
 
-        header("Location: /profile");
-        exit();
-    }
 }

@@ -5,16 +5,36 @@ namespace app\controllers;
 
 use app\core\Application;
 use app\core\Response;
+use app\core\Template;
 use app\exceptions\FileException;
+use app\mappers\UserMapper;
 
 class PresentationController
 {
 
     public function getView()
     {
-        Application::$app->getRouter()->renderTemplate("index", []);
+        session_start();
+        $authorised = false;
+
+        $userID = isset($_SESSION["userID"]);
+        if($userID) $authorised = true;
+
+
+        if(!$authorised){
+            $header = HeaderController::getView(false);
+            Application::$app->getRouter()->renderTemplate("home", ["header"=>$header]);
+            return;
+        }
+
+        $user = UserMapper::findUserByID($_SESSION["userID"]);
+
+        $header = HeaderController::getView(true, ["username"=>$user->getNickname()]);
+
+
+        Application::$app->getRouter()->renderTemplate("home", ["header"=>$header]);
        // Application::$app->getRouter()->renderView("home");
-//        Application::$app->getRouter()->renderTemplate("home");
+        //Application::$app->getRouter()->renderTemplate("home");
     }
 
     public function handleView()

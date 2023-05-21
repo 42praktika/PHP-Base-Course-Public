@@ -1,3 +1,11 @@
+{% extends layout.html %}
+
+{%block title%} Profile {% endblock%}
+
+
+
+{% block content %}
+
 <html>
 
 <head>
@@ -18,7 +26,7 @@
     <link rel="stylesheet"
           href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0" />
 
-    <script src="assets/js/global.js"></script>
+    <script src="/assets/js/global.js"></script>
 
     <script>
         function SetAuthContainerVisible() {
@@ -31,7 +39,7 @@
 
 
         function DisplayTopProfileMenu() {
-            var x = document.getElementById('top_profile_menu');
+            var x = document.getElementById('top-profile-menu');
             if (x.style.visibility == 'hidden') {
                 x.style.visibility = 'visible';
             } else {
@@ -50,29 +58,61 @@
         }
     </style>
 </head>
-<?php
-include PROJECT_ROOT."views/templates/headerTemplate.php";
-?>
+
+{{$header}}
 
 <body class="main-content">
 
 <?php
 include PROJECT_ROOT."views/templates/authTemplate.php";
 ?>
-    <div class="page-container">
-        <div class="flex column">
-            <label class="title-name">About us</label>
+<div class="page-container">
+    <div class="flex column">
+        <div class="row">
+            <label class="title-name">Profile</label>
             <br>
-            <label>MangaBoobs - the best (worst) website to read manga!</label>
-            <label>We don't have many pieces, but we are SURE that you will like them!</label>
-        </div>
-        <div>
-            <img src="assets/images/about_tyanka.jpg">
+            <div class="flex row" >
+                <img src="" alt="user image">
+                <div class="flex column" style="margin-left: 15px">
+                    <div>
+                        <label>nickname: </label>
+                        <label>{{$username}}</label>
+                    </div>
+
+                    <div>
+                        <label>email: </label>
+                        <label>{{$email}}</label>
+                    </div>
+                    <button class="button-login" style="max-width: 50%">Edit profile</button>
+                </div>
+            </div>
+
+            <input class="radio" id="one" name="group" type="radio" checked>
+            <input class="radio" id="two" name="group" type="radio">
+            <input class="radio" id="three" name="group" type="radio">
+
+            <div class="tabs">
+                <label class="tab no-select" id="one-tab" for="one">Favourite</label>
+                <label class="tab no-select" id="two-tab" for="two">Read later</label>
+                <label class="tab no-select" id="three-tab" for="three">tab 3</label>
+            </div>
+            <div class="panels">
+                <div class="panel" id="one-panel">
+
+                </div>
+                <div class="panel" id="two-panel">
+
+                </div>
+
+                <div class="panel" id="three-panel">
+
+                </div>
+            </div>
         </div>
     </div>
+</div>
 </body>
 
-<?php
-include PROJECT_ROOT."views/templates/footerTemplate.php";
-?>
 </html>
+{% endblock %}
+{% extends footer.html %}
