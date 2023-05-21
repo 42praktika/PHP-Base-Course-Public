@@ -15,11 +15,6 @@ class UserMapper extends \app\core\Mapper
     private ?\PDOStatement $select;
     private ?\PDOStatement $selectAll;
 
-    /**
-     * @param \PDOStatement|null $insert
-     * @param \PDOStatement|null $update
-     * @param \PDOStatement|null $delete
-     */
     public function __construct()
     {
         parent::__construct();
@@ -41,10 +36,7 @@ class UserMapper extends \app\core\Mapper
         $this->selectAll = $this->getPdo()->prepare("SELECT * FROM users");
     }
 
-    /**
-     * @param User $model
-     * @return Model
-     */
+
     protected function doInsert(Model $model): Model
     {
 
@@ -81,8 +73,8 @@ class UserMapper extends \app\core\Mapper
 
     protected function doSelect(int $id): array
     {
-      $this->select->execute([":id" => $id]);
-      return $this->select->fetch(\PDO::FETCH_NAMED);
+        $this->select->execute([":id" => $id]);
+        return $this->select->fetch(\PDO::FETCH_NAMED);
     }
 
     protected function doSelectAll(): array
