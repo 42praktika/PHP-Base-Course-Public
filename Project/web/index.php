@@ -1,5 +1,6 @@
 <?php
 
+use app\controllers\NewsController;
 use app\controllers\PresentationController;
 use app\core\Application;
 use app\core\ConfigParser;
@@ -52,12 +53,16 @@ $router->setGetRoute("/cart", [new CartController, "getView"]);
 $router->setGetRoute("/faqs", [new FAQController, "getView"]);
 
 $router->setGetRoute("/login", [new LoginController, "getView"]);
+$router->setPostRoute("/dologin", [new LoginController, "handleView"]);
 
 $router->setGetRoute("/logout", [new LogoutController, "getView"]);
+
 
 $router->setGetRoute("/main", [new MainController, "getView"]);
 
 $router->setGetRoute("/promo", [new PromocodeController, "getView"]);
+
+$router->setGetRoute("/news", [new NewsController, "getView"]);
 
 $router->setGetRoute("/registration", [new RegistrationController, "getView"]);
 $router->setPostRoute("/doregistration", [new RegistrationController, "handleView"]);

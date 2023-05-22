@@ -9,6 +9,6 @@ class MainController
 
     public function getView()
     {
-        Application::$app->getRouter()->renderView("mainPage");
+        Application::$app->getRouter()->renderTemplate("mainPage");
     }
 }

@@ -10,7 +10,7 @@ class RegistrationController
 
     public function getView()
     {
-        Application::$app->getRouter()->renderView("registration");
+        Application::$app->getRouter()->renderTemplate("registration");
     }
     public function handleView()
     {
@@ -19,11 +19,12 @@ class RegistrationController
             $mapper = new UserMapper();
             $user = $mapper->createObject($body);
             $mapper->Insert($user);
-            Application::$app->getRouter()->renderView("main");
+            Application::$app->getRouter()->renderTemplate("mainPage");
         }
         catch (\Exception $exception) {
 
             Application::$app->getLogger()->error($exception);
+
         }
     }
 }

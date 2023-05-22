@@ -16,9 +16,9 @@ class Migration_0 extends Migration
     {
         $this->database->pdo->query(
             "CREATE TABLE if not exists users (
-                        id serial primary key,
+                        id serial,
                         name varchar(50),
-                        username varchar(50),
+                        username varchar(50) primary key,
                         email varchar(100),
                         password varchar(50),
                         isAdmin int(3)

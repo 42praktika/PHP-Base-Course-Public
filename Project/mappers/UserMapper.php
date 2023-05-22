@@ -90,11 +90,11 @@ class UserMapper extends Mapper
         return $this->selectAll->fetchAll();
     }
 
-    protected function login(Model $model): array
+    public function doLogin(string $username, string $password): array
     {
-        $this->login->execute([":username" => $model->getUsername(),
-            ":password"=>$model->getPassword()]);
-        return $this->login->fetch(\PDO::FETCH_NAMED);
+        $this->login->execute([":username" => $username,
+            ":password"=>$password]);
+        return $this->login->fetchAll(\PDO::FETCH_ASSOC);
     }
     function createObject(array $data): Model
     {

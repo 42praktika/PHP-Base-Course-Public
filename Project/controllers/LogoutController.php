@@ -9,6 +9,10 @@ class LogoutController
 
     public function getView()
     {
-        Application::$app->getRouter()->renderView("mainPage");
+        session_start();
+        session_unset();
+        setcookie("SID", "", time() - 3600);
+        Application::$app->getRouter()->renderTemplate("mainPage");
     }
+
 }

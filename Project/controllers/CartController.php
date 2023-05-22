@@ -9,6 +9,6 @@ class CartController
 
     public function getView()
     {
-        Application::$app->getRouter()->renderView("cart");
+        Application::$app->getRouter()->renderTemplate("cart");
     }
 }

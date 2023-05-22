@@ -32,6 +32,9 @@ abstract class Mapper
         return new Collection($this->doSelectAll(), $this->getInstance());
     }
 
+    public function Login(string $username, string $password): array {
+        return $this->doLogin($username,$password);
+    }
     /**
      * @return PDO
      */
@@ -55,4 +58,5 @@ abstract class Mapper
     protected abstract function doSelectAll(): array;
     public abstract function getInstance();
     public abstract function createObject(array $data): Model;
+    public abstract function doLogin(string $username,string $password): array;
 }

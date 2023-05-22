@@ -9,6 +9,6 @@ class NewsController
 
     public function getView()
     {
-        Application::$app->getRouter()->renderView("news");
+        Application::$app->getRouter()->renderTemplate("news");
     }
 }

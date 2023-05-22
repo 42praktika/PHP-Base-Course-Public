@@ -9,6 +9,6 @@ class FAQController
 
     public function getView()
     {
-        Application::$app->getRouter()->renderView("faqs");
+        Application::$app->getRouter()->renderTemplate("faqs");
     }
 }

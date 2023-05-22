@@ -9,6 +9,6 @@ class PromocodeController
 
     public function getView()
     {
-        Application::$app->getRouter()->renderView("promocode");
+        Application::$app->getRouter()->renderTemplate("promocode");
     }
 }

@@ -7,13 +7,14 @@ namespace app\controllers;
 use app\core\Application;
 use app\core\Response;
 use app\exceptions\FileException;
-
+use app\mappers\UserMapper;
+use app\models\User;
 class PresentationController
 {
 
     public function getView()
     {
-        Application::$app->getRouter()->renderView("presentation");
+        Application::$app->getRouter()->renderTemplate("presentation");
     }
 
 
