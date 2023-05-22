@@ -1,0 +1,41 @@
+{% extends layout.html %}
+
+{% block title %} Welcome {% endblock %}
+
+{% block content %}
+<div class="background">
+</div>
+<div class="container">
+    <div class="frame">
+        <div class="nav">
+            <ul class="links">
+                <li class="signin-active"><a class="btn">Sign in</a></li>
+                <li class="signup-inactive"><a class="btn">Sign up </a></li>
+            </ul>
+        </div>
+        <div ng-app ng-init="checked = false">
+            <form class="form-signin" action="http://localhost:8080/{{ $post_action_signin }}" method="post" name="form">
+                <label>Email</label>
+                <input class="form-styling" type="text" name="email" placeholder="email"/>
+                <label>Пароль</label>
+                <input class="form-styling" type="password" name="password" placeholder="password"/>
+                <div class="btn-animate">
+                    <input type="submit" class="btn-signin" value="Войти"/>
+                </div>
+            </form>
+
+            <form class="form-signup" action="http://localhost:8080/{{ $post_action_signup }}" method="post" name="form">
+                <label>Username</label>
+                <input class="form-styling" type="text" name="username" placeholder="username"/>
+                <label>Email</label>
+                <input class="form-styling" type="text" name="email" placeholder="email"/>
+                <label>Пароль</label>
+                <input class="form-styling" type="password" name="password" placeholder="password"/>
+                <label>Повторите пароль</label>
+                <input class="form-styling" type="password" name="confirmpassword" placeholder="confirm password"/>
+                <input type="submit" class="btn-signup" value="Зарегистрироваться"/>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends layout.html %}
+
+{% block title %} Rename Wishlist {% endblock %}
+
+{% block content %}
+{% extends header.html %}
+<div class="form">
+  <div class="loginForm">
+    <form action="http://localhost:8080/{{ $post }}" method="post">
+      <p style=" text-align: center;">Переименовать wishlist</p>
+      <div>
+        <input type="text" name="title" placeholder="Введите название" value="{{$title}}">
+        <input type="hidden" name="listID" value="{{$wishlistId}}">
+      </div>
+    <br>
+    <br>
+    <input value="Изменить название" type="submit" name="Изменить название">
+    </form>
+    <br>
+    <br><br>
+    <br>
+    <a href="http://localhost:8080/{{ $wishlists }}" class="remove"><i class="fa fa-reply fa-1x"></i>  К моим листам</a>
+  </div>
+</div>
+<br>
+{% extends footer.html %}
+{% endblock %}

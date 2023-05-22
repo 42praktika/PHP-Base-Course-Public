@@ -1,0 +1,33 @@
+{% extends layout.html %}
+
+{% block title %} Main {% endblock %}
+
+{% block content %}
+{% extends header.html %}
+<div class="main">
+  <div class="productCards">
+      {% foreach ( $products as $product): %}
+    <div class="productCard">
+      <img class="imgCard" src="{{ $product['img']}}">
+      <p class="imgText">{{$product['text']}}</p>
+      <div class="dropdownLists">
+        <button class="dropListsBtn">
+          ❤
+        </button>
+        <div class="dropdown-lists dropLists">
+          <a href="http://localhost:8080/{{ $plus }}"><input class="wish" type="submit" value="+"></a>
+          {% foreach ( $wishlists as $wishlist): %}
+            <form action="http://localhost:8080/{{ $post_action_add}}" method="post">
+            <input class="wish" type="submit" value={{$wishlist['title']}}>
+            <input type="hidden" name="listID" value={{$wishlist['id']}}>
+            <input type="hidden" name="prodID" value={{$product['id']}}>
+            </form>
+          {% endforeach %}
+        </div>
+      </div>
+    </div>
+      {% endforeach %}
+  </div>
+</div>
+{% extends footer.html %}
+{% endblock %}

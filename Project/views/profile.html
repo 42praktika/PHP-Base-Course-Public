@@ -1,0 +1,21 @@
+{% extends layout.html %}
+
+{% block title %} Profile {% endblock %}
+
+{% block content %}
+{% extends header.html %}
+<div class="mainProfile">
+  <div class="profile">
+    <p>Username: {{$user["username"]}}</p>
+    <p>Email: {{$user["email"]}}</p>
+    <form action="http://localhost:8080/{{ $action }}" method="post">
+    <input type="submit" value="Изменить профиль">
+    </form>
+    <br>
+    <div class="exit">
+      <a href="http://localhost:8080/{{ $main }}"><i class="fa fa-home fa-1x"></i>  На главную</a>
+    </div>
+  </div>
+</div>
+{% extends footer.html %}
+{% endblock %}

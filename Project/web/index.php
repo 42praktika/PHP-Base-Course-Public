@@ -1,6 +1,9 @@
 <?php
 
-use app\controllers\PresentationController;
+use app\controllers\ErrorController;
+use app\controllers\ProductController;
+use app\controllers\UserController;
+use app\controllers\WishlistController;
 use app\core\Application;
 use app\core\ConfigParser;
 use \app\controllers\MainPageController;
@@ -26,10 +29,25 @@ $application = new Application();
 $router = $application->getRouter();
 
 $router->setPostRoute("/register", [new RegisterController, "registerUser"]);
+$router->setPostRoute("/login", [new RegisterController, "login"]);
+$router->setPostRoute("/addWishlist", [new WishlistController, "addWishlist"]);
+$router->setPostRoute("/addProduct", [new ProductController, "addProduct"]);
+$router->setPostRoute("/wishlist", [new WishlistController, "showWishlist"]);
+$router->setPostRoute("/removeWishlist", [new WishlistController, "removeWishlist"]);
+$router->setPostRoute("/rename", [new WishlistController, "renameWishlist"]);
+$router->setPostRoute("/removeProduct", [new ProductController, "removeProduct"]);
+$router->setPostRoute("/editProfile", [new UserController, "showEditProfileForm"]);
+$router->setPostRoute("/edit", [new UserController, "editProfile"]);
 $router->setGetRoute("/", [new MainPageController, "getWelcomePage"]);
+$router->setGetRoute("/welcome", [new MainPageController, "getWelcomePage"]);
 $router->setGetRoute("/mainPage", [new MainPageController, "getMainPage"]);
 $router->setGetRoute("/register", [new RegisterController, "getRegisterPage"]);
-
+$router->setGetRoute("/errorPage", [new ErrorController, "showError"]);
+$router->setGetRoute("/myWishlists", [new UserController, "showUserWishlists"]);
+$router->setGetRoute("/profile", [new UserController, "showProfile"]);
+$router->setGetRoute("/logout", [new MainPageController, "logout"]);
+$router->setGetRoute("/addWishlist", [new WishlistController, "showAddWishlistForm"]);
+$router->setPostRoute("/renameWishlist", [new WishlistController, "showRenameWishlistForm"]);
 ob_start();
 $application->run();
 ob_flush();

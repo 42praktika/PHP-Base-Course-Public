@@ -1,0 +1,41 @@
+{% extends layout.html %}
+
+{% block title %} Add Wishlist {% endblock %}
+
+{% block content %}
+{% extends header.html %}
+
+<div class="main">
+  <p>{{ $title }}</p>
+  <div class="productCards">
+    {% foreach ( $products as $product): %}
+      <div class="productCard">
+        <img class="imgCard" src="{{ $product['img']}}">
+        <p class="imgText">{{$product['text']}}</p>
+        <form action="http://localhost:8080/{{ $removeProduct }}" method="post">
+        <input type="hidden" name="prodID" value={{$product['id']}}>
+        <input type="hidden" name="listID" value={{$wishlistId}}>
+        <input type="submit" value="Удалить из листа">
+        </form>
+      </div>
+    {% endforeach %}
+  </div>
+  <br>
+  <br>
+  <form action="http://localhost:8080/{{ $removeWishlist }}" method="post">
+  <input type="hidden" name="listID" value={{$wishlistId}}>
+  <input type="submit" value="Удалить весь лист">
+  </form>
+  <br>
+  <form action="http://localhost:8080/{{ $rename }}" method="post">
+  <input type="hidden" name="listID" value={{$wishlistId}}>
+  <input type="hidden" name="title" value={{$title}}>
+  <input type="submit" value="Редактировать название">
+  </form>
+  <br>
+  <br>
+  <br>
+  <a href="http://localhost:8080/{{ $wishlists }}" class="remove"><i class="fa fa-reply fa-1x"></i>  К моим листам</a>
+</div>
+{% extends footer.html %}
+{% endblock %}

@@ -1,5 +1,5 @@
 .idea
 .git
-runtime
+web/runtime
 vendor
 config.json

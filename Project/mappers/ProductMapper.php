@@ -31,7 +31,7 @@ class ProductMapper extends \app\core\Mapper
         $this->update = $this->getPdo()->prepare(
             "UPDATE products 
                   SET img = :image, 
-                      text = :text, 
+                      text = :text  
                       WHERE id = :id");
         $this->delete  = $this->getPdo()->prepare("DELETE FROM products WHERE id=:id");
         $this->selectProductsInWishlist = $this->getPdo()->prepare("select product_id from wishlists_entry where list_id = (select id from wishlists where user_id = :user_id and id= :id);");
@@ -64,7 +64,7 @@ class ProductMapper extends \app\core\Mapper
         $this->delete->execute([":id" => $model->getId()]);
     }
 
-    protected function doSelect(int $id): array
+    public function doSelect(int $id): array
     {
         $this->select->execute([":id" => $id]);
         return $this->select->fetch(\PDO::FETCH_NAMED);
@@ -76,7 +76,7 @@ class ProductMapper extends \app\core\Mapper
         return $this->selectAll->fetchAll();
     }
 
-    protected function doSelectProductsInWishlist(int $userID, int $listID): array
+    public function doSelectProductsInWishlist(int $userID, int $listID): array
     {
         $this->selectProductsInWishlist->execute([
             ":user_id" => $userID,
@@ -85,7 +85,7 @@ class ProductMapper extends \app\core\Mapper
         return $this->selectProductsInWishlist->fetchAll();
     }
 
-    protected function doDeleteProductFromWishlist(int $productID, int $listID): void
+    public function doDeleteProductFromWishlist(int $productID, int $listID): void
     {
         $this->deleteProductFromWishlist->execute([
             ":product_id"=> $productID,

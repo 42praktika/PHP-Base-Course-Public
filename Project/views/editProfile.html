@@ -1,0 +1,56 @@
+{% extends layout.html %}
+
+{% block title %} Profile {% endblock %}
+
+{% block content %}
+{% extends header.html %}
+<form method="post" action="http://localhost:8080/{{ $action }}">
+<div class="mainProfile">
+  <div class="profile">
+    <label>Изменить имя:
+      <input value="{{$user['username']}}" type="text" name="username" placeholder="имя пользователя" required>
+    </label>
+    <br>
+    <label>Изменить email:
+      <input value='{{$user["email"]}}' type="text" name="email" placeholder="email" required>
+    </label>
+    <br>
+    <label>Введите старый пароль:
+      <div>
+        <input class="password_input" type="password" name="oldPassword" placeholder="старый пароль">
+        <a href="#" class="showPass" style="color: #1c1b1b">
+          <i id="i" class="far fa-eye"></i>
+        </a>
+      </div>
+    </label>
+    <br>
+    <label>Введите новый пароль:
+      <div>
+        <input class="new_password_input" type="password" name="newPassword" placeholder="новый пароль">
+        <a href="#" class="showNewPass" style="color: #1c1b1b">
+          <i id="i3" class="far fa-eye"></i>
+        </a>
+      </div>
+    </label>
+    <label>Введите пароль еще раз:
+      <div>
+        <input class="re_password_input" type="password" name="rePassword"
+               placeholder="введите новый пароль еще раз">
+        <a href="#" class="showRePass" style="color: #1c1b1b">
+          <i id="i2" class="far fa-eye"></i>
+        </a>
+      </div>
+    </label>
+    <br>
+    <br>
+    <div class="edit">
+      <input value="Изменить" type="submit" name="изменить">
+    </div>
+    <div class="exit" style="text-align: left">
+      <a href="http://localhost:8080/{{ $profile }}"><i class="fa fa-reply fa-1x"></i>  Назад</a>
+    </div>
+  </div>
+</div>
+</form>
+{% extends footer.html %}
+{% endblock %}

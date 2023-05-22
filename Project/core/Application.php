@@ -19,7 +19,7 @@ class Application
         $this->request = new Request();
         $this->response = new Response();
         $this->router = new Router($this->request, $this->response);
-        $this->logger = new Logger(PROJECT_ROOT."/runtime/".getenv("app_log"));
+        $this->logger = new Logger(PROJECT_ROOT."/runtime/".$_ENV["app_log"]);
         self::$database = new Database($_ENV["db"]["dsn"], $_ENV["db"]["user"], $_ENV["db"]["password"]);
     }
 

@@ -1,0 +1,28 @@
+{% extends layout.html %}
+
+{% block title %} My wishlists {% endblock %}
+
+{% block content %}
+{% extends header.html %}
+<div class="mainLists">
+  <div class="list">
+    <div class="add">
+      <a class="addList" href="http://localhost:8080/{{ $post_action_add}}">
+        +
+      </a>
+    </div>
+  </div>
+    {% foreach ( $wishlists as $wishlist): %}
+    <div class="list">
+      <div class="open">
+        <form action="http://localhost:8080/{{ $open }}" method="post">
+        <input type="hidden" name="listID" value={{$wishlist['id']}}>
+        <input type="submit" value={{$wishlist['title']}}>
+        </form>
+      </div>
+    </div>
+  {% endforeach %}
+  <a href="http://localhost:8080/{{ $main }}" class="remove"><i class="fa fa-reply fa-1x"></i> На главную</a>
+</div>
+{% extends footer.html %}
+{% endblock %}

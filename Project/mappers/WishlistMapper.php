@@ -12,8 +12,6 @@ class WishlistMapper extends \app\core\Mapper
     private ?\PDOStatement $delete;
     private ?\PDOStatement $select;
     private ?\PDOStatement $selectAll;
-
-    private ?\PDOStatement $selectTitleById;
     private ?\PDOStatement $selectProductFromWishlist;
 
     private ?\PDOStatement $insertProductIntoWishlist;
@@ -25,17 +23,16 @@ class WishlistMapper extends \app\core\Mapper
     {
         parent::__construct();
         $this->insert = $this->getPdo()->prepare(
-            "INSERT into wishlists  ( userId, title)
+            "INSERT into wishlists  ( user_id, title)
                     VALUES ( :userId, :title)");
         $this->update = $this->getPdo()->prepare(
             "UPDATE wishlists 
-                  SET userId = :userId, 
+                  SET user_id= :userId, 
                       title = :title
                       WHERE id = :id");
         $this->delete = $this->getPdo()->prepare("DELETE FROM wishlists WHERE id=:id");
         $this->select = $this->getPdo()->prepare("SELECT * FROM wishlists WHERE id = :id");
         $this->selectAll = $this->getPdo()->prepare("SELECT * FROM wishlists");
-        $this->selectTitleById = $this->getPdo()->prepare("select title from wishlists where id = :id");
         $this->selectProductFromWishlist =  $this->getPdo()->prepare("select * from wishlists_entry where list_id = :listId and product_id = :productId");
         $this->insertProductIntoWishlist = $this->getPdo()->prepare("insert into wishlists_entry(list_id, product_id)  values (:listId, :productId)");
         $this->selectUserWishlists = $this->getPdo()->prepare("select * from  wishlists where user_id = :userId");
@@ -62,7 +59,7 @@ class WishlistMapper extends \app\core\Mapper
             ":title" => $model->getTitle(),
         ]);
     }
-    protected function doUpdateTitle(String $title, int $listId, int $userId): void
+    public function doUpdateTitle(String $title, int $listId, int $userId): void
     {
         $this->updateTitle->execute([
             ":title" => $title,
@@ -71,12 +68,12 @@ class WishlistMapper extends \app\core\Mapper
         ]);
     }
 
-    protected function doDelete(Model $model): void
+    public function doDelete(int|Model $model): void
     {
-        $this->delete->execute([":id" => $model->getId()]);
+        $this->delete->execute([":id" => $model]);
     }
 
-    protected function doSelect(int $id): array
+    public function doSelect(int $id): array
     {
         $this->select->execute([":id" => $id]);
         return $this->select->fetch(\PDO::FETCH_NAMED);
@@ -88,29 +85,21 @@ class WishlistMapper extends \app\core\Mapper
         return $this->selectAll->fetchAll();
     }
 
-    protected function doSelectUserWishlists(int $userId): array
+    public function doSelectUserWishlists(int $userId): array
     {
         $this->selectUserWishlists->execute([":userId" => $userId]);
         return $this->selectUserWishlists->fetchAll();
     }
 
-
-    //должно возвращать титл
-    protected function doSelectTitleById(int $id): array
-    {
-        $this->selectTitleById->execute([":id" => $id]);
-        return $this->selectTitleById->fetch(\PDO::FETCH_NAMED);
-    }
-
-    protected function doSelectProductFromWishlist(int $wishlistId, int $productId): bool
+    public function doSelectProductFromWishlist(int $wishlistId, int $productId): bool
     {
         $this->selectProductFromWishlist->execute([":productId" => $productId, ":listId" => $wishlistId]);
         $check =  $this->selectProductFromWishlist->fetch(\PDO::FETCH_NAMED);
-        return ($check == null);
+        return ($check !== null);
         //если не нал то есть
     }
 
-    protected function doInsertProductIntoWishlist(int $wishlistId, int $productId): void
+    public function doInsertProductIntoWishlist(int $wishlistId, int $productId): void
     {
         $this->insertProductIntoWishlist->execute([":productId" => $productId, ":listId" => $wishlistId]);
     }

@@ -18,6 +18,7 @@ class Wishlist extends Model
         $this->title = $title;
     }
 
+
     /**
      * @return int
      */

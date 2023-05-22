@@ -23,12 +23,5 @@ class ConfigParser
                 $_SERVER[$item] = $items;
             }
         }
-//        array_walk_recursive($parsed, function ($value, $key) {
-////            var_dump($key);
-////            var_dump($value);
-//            $_ENV[$key] = $value;
-//            $_SERVER[$key] = $value;
-//            putenv("{$key}={$value}");
-//        });
     }
 }

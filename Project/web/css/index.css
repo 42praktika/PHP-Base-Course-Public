@@ -1,4 +1,9 @@
 /*header*/
+/*html, body {*/
+/*    height: 100%;*/
+/*    margin: 0;*/
+/*    padding: 0;*/
+/*}*/
 
 .navbar {
     overflow: hidden;
@@ -96,8 +101,317 @@
 .footer {
     padding: 5px 5px 5px 5px;
     text-align: center;
+    position: sticky;
+    bottom: 0;
+    height: 40px;
 }
 .footer p {
     color: #7c4444;
+    font-size: small;
+}
+.navbar {
+    overflow: hidden;
+    background-color: #e3aeae;
+    font-family: Arial, Helvetica, sans-serif;
+    min-height: 70px;
+}
+.icons{
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 80px 15px 10px;
+}
+.logo{
+    background: #e3aeae ;
+    border: none;
+    cursor: pointer;
+    color: white;
+}
+.logo:hover{
+    color: #8a4545;
+    cursor: pointer;
+}
+.dropButton {
+    background: #e3aeae ;
+    border: none;
+    cursor: pointer;
+    color: white;
+}
+.dropButton:hover{
+    color: #8a4545;
+    cursor: pointer;
+}
+
+.dropdown-content {
+    display: none;
+    position: fixed;
+    background-color: #f6d0d0;
+    min-width: 160px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    z-index: 100;
+}
+
+.dropdown-content a {
+    float: none;
+    color: #983a3a;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+.show {
+    display: block;
+}
+.footer {
+    padding: 5px 5px 5px 5px;
+    text-align: center;
+    background: #ffcdcd;
+}
+.footer p {
+    color: #7c4444;
+    font-size: small;
+}
+.main {
+    flex: 70%;
+    background-color: #a97f7f;
+    padding: 20px;
+    min-height: 700px;
+}
+.main p {
+    text-align: center;
+}
+.main a{
+    color: #1c1b1b;
+}
+.main_text{
+    margin-top: 350px;
+}
+.links{
+    color: #333333;
+}
+.links:hover{
+    color: #8a4545;
+    text-decoration: none;
+    cursor: pointer;
+}
+.form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.registerForm{
+    padding-left: 30px;
+    padding-top: 10px;
+    min-width: 600px;
+    height: 680px;
+    background-color: #eccfcf;
+    border-radius: 10px 5px 10px 5px;
+    border: 2px solid #8a4545;
+}
+.exit{
+    color: #333333;
+    text-decoration: none;
+    margin-bottom: 5px;
+}
+.exit:hover{
+    border-bottom-color: #8a4545;
+}
+
+.exit a{
+    color: #1c1b1b;
+    text-decoration: none;
+    border-bottom: 1px solid #1c1b1b;
+}
+.exit a:hover{
+    cursor: pointer;
+    color: #7c4444;
+}
+
+.loginForm{
+    padding-left: 10px;
+    padding-top: 10px;
+    min-width: 500px;
+    background-color: #eccfcf;
+    border-radius: 10px 5px 10px 5px;
+    border: 2px solid #8a4545;
+    height: 350px;
+}
+.productCards{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+}
+.productCard{
+    min-width: 280px;
+    min-height: 300px;
+    text-align: center;
+    background-color: #eccfcf;
+    border-radius: 10px 5px 10px 5px;
+    border: 2px solid #8a4545;
+}
+
+.imgCard{
+    height: 200px;
+    padding: 10px;
+}
+
+.imgText{
+    color: #7c4444;
+}
+
+.addProd a{
+    color: #333333;
+}
+.dropListsBtn {
+    background-color: #eccfcf;
+    border: none;
+    cursor: pointer;
+    color: black;
+}
+
+.dropdown-lists {
+    display: none;
+    position: absolute;
+    background-color: #faecec;
+    min-width: 160px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    margin-left: 68px;
+}
+
+.dropdown-lists form {
+    float: none;
+    color: #983a3a;
+    margin-top: 5px;
+    display: block;
+    text-align: center;
+}
+
+
+.show {
+    display: block;
+}
+.wish{
+    border: none;
+    border-radius: 5px;
+    background-color: #faecec;
+}
+.wish:hover{
+    background-color: #7c4444;
+    color: #dddddd;
+}
+.remove{
+    color: #333333;
+    text-decoration: none;
+}
+.remove:hover{
+    color: #8a4545;
+    cursor: pointer;
+}
+
+label{
+    margin: 5px;
+}
+
+input{
+    border-radius: 5px;
+    background-color: #fff6f6;
+}
+input:hover{
+    background-color: #fadddd;
+}
+.mainProfile{
+    background-color: #a97f7f;
+    padding: 30px;
+    display: flex;
+    justify-content: center
+
+}
+.profile{
+    padding-top: 20px;
+    width: 400px;
+    background-color: #eccfcf;
+    border-radius: 10px 5px 10px 5px;
+    border: 2px solid #8a4545;
+    text-align: center;
+}
+
+.mainLists {
+    flex: 90%;
+    background-color: #a97f7f;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+
+}
+.list{
+    min-width: 280px;
+    min-height: 300px;
+    text-align: center;
+    background-color: #eccfcf;
+    border-radius: 10px 5px 10px 5px;
+    border: 2px solid #8a4545;
+}
+.addList{
+    margin-top: 40%;
+    background-color: #eccfcf;
+    border: none;
+    cursor: pointer;
+    color: black;
+    text-decoration: none;
+    font-size: 100px;
+}
+.addList:hover{
+    cursor: pointer;
+    color: #8a4545;
+}
+
+.open{
+    margin-top: 40%;
+}
+.openList{
+    color: black;
+    text-decoration: none;
+}
+.openList:hover{
+    cursor: pointer;
+    color: #8a4545;
+}
+
+.add{
+    margin-top: 30%;
+}
+.remove{
+    color: #333333;
+}
+.remove:hover{
+    color: #8a4545;
+    cursor: pointer;
+}
+.main_part{
+    background-color: #a97f7f;
+    padding-bottom: 30px;
+}
+.wrapper{
+    position: relative;
+    min-height: 100%;
+    background-color: #a97f7f;
+}
+.createForm{
+    padding-left: 10px;
+    padding-top: 10px;
+    min-width: 500px;
+    background-color: #eccfcf;
+    border-radius: 10px 5px 10px 5px;
+    border: 2px solid #8a4545;
+    height: 350px;
+}
+.small{
     font-size: small;
 }

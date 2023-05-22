@@ -23,8 +23,8 @@ class UserMapper extends \app\core\Mapper
     {
         parent::__construct();
         $this->insert = $this->getPdo()->prepare(
-            "INSERT into users  ( username, email, password)
-                    VALUES ( :username, :email, :password)"
+            "INSERT into users  ( username, email, password )
+                    VALUES ( :username, :email, :password )"
         );
         $this->update = $this->getPdo()->prepare(
             "UPDATE users 
@@ -35,8 +35,8 @@ class UserMapper extends \app\core\Mapper
         $this->delete = $this->getPdo()->prepare("DELETE FROM users WHERE id=:id");
         $this->select = $this->getPdo()->prepare("SELECT * FROM users WHERE id = :id");
         $this->selectAll = $this->getPdo()->prepare("SELECT * FROM users");
-        $this->selectByEmail = $this->getPdo()->prepare("select * from users where email = ?");
-        $this->selectByEmailAndPassword = $this->getPdo()->prepare("select * from users where email=(?) and password=(?)");
+        $this->selectByEmail = $this->getPdo()->prepare("select * from users where email = :email");
+        $this->selectByEmailAndPassword = $this->getPdo()->prepare("select * from users where email=:email and password=:password");
     }
 
     /**
@@ -77,7 +77,7 @@ class UserMapper extends \app\core\Mapper
     {
         $this->delete->execute([":id" => $model->getId()]);
     }
-    protected function doSelect(int $id): array
+    public function doSelect(int $id): array
     {
       $this->select->execute([":id" => $id]);
       return $this->select->fetch(\PDO::FETCH_NAMED);
@@ -89,29 +89,38 @@ class UserMapper extends \app\core\Mapper
         return $this->selectAll->fetchAll();
     }
 
-    protected function doSelectByEmail(string $email): bool
+    public function doSelectByEmail(string $email): bool
     {
         $this->selectByEmail->execute([":email" => $email]);
         $check =  $this->selectByEmail->fetch(\PDO::FETCH_NAMED);
-        return ($check == null);
-        //если != null то уже есть емайл такой
+        return ($check !== null);
     }
 
-    protected function doSelectByEmailAndPassword(string $email, string $password): bool
-    {
-        $this->selectByEmailAndPassword->execute([":email" => $email, ":password" => $password]);
-        $check =  $this->selectByEmailAndPassword->fetch(\PDO::FETCH_NAMED);
-        return ($check == null);
-        //если != null то зареган
+
+    public function doSelectByEmailAndPassword(string $email, string $password): ?User
+{
+    $this->selectByEmailAndPassword->execute([':email' => $email, ':password' => $password]);
+    $result = $this->selectByEmailAndPassword->fetch(\PDO::FETCH_ASSOC);
+//    var_dump(password_verify($password, $result['password']));
+    if ($result && password_verify($password, $result['password'])) {
+        return new User(
+            $result['username'],
+            $result['email'],
+            $result['password']
+        );
     }
+    return null;
+}
+
 
     function createObject(array $data): Model
     {
+        $hashedPassword = password_hash($data["password"], PASSWORD_DEFAULT);
         return new User(
 //            array_key_exists("id", $data) ? $data["id"] : null,
             $data["username"],
             $data["email"],
-            $data["password"]);
+            $hashedPassword);
     }
 
     public function getInstance()
