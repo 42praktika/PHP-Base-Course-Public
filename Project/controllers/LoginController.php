@@ -11,7 +11,8 @@ class LoginController
 
     public function getView(): void
     {
-        Application::$app->getRouter()->renderView("login");
+        Application::$app->getRouter()->renderTemplate("login",
+            ["login_action"=>"login", "main_action"=>"/"]);
     }
 
     public function logIn(): void
@@ -20,8 +21,8 @@ class LoginController
             $body = Application::$app->getRequest()->getBody();
             $mapper = new UserMapper();
             $user = $mapper->createObject($body);
-            // TODO это норм так делать?
             $_SESSION['user'] = $mapper->doSelectByEmailPassword($user->getEmail(), $user->getPassword());;
+            // TODO как сделать редирект
             Application::$app->getRouter()->renderView("profile");
         }
         catch (\Exception $exception) {

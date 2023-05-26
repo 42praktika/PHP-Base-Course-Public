@@ -9,6 +9,9 @@ class MainController
 {
     public function getView(): void
     {
-        Application::$app->getRouter()->renderView("main");
+        Application::$app->getRouter()->renderTemplate("main",
+            ["registration_action"=>"registration",
+            "info_action"=>"about",
+            "login_action"=>"login"]);
     }
 }

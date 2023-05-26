@@ -1,0 +1,17 @@
+{% extends layout.html %}
+
+{% block title %} Сбережение {% endblock %}
+
+{% block content %}
+<h1>Добавить запись</h1>
+<form action="{{ $cash_saving_action }}" method="post">
+  <label for="name">Имя</label>
+  <input type="text" name="name" id="name"><br>
+
+  <label for="sum">Сумма</label>
+  <input type="text" name="sum" id="sum"><br>
+
+  <input type="submit" value="Добавить">
+</form>
+<a href="{{ $profile_action }}">Профиль</a>
+{% endblock %}

@@ -5,6 +5,6 @@
 </head>
 <body>
 Success!
-<a href="/">На главное</a>
+<a href="/profile">Профиль</a>
 </body>
 </html>

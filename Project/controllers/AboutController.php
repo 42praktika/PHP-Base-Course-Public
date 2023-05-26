@@ -9,6 +9,6 @@ class AboutController
 {
     public function getView(): void
     {
-        Application::$app->getRouter()->renderView("about");
+        Application::$app->getRouter()->renderTemplate("about", ["main_action"=>"/"]);
     }
 }

@@ -1,9 +1,12 @@
 <?php
 
 use app\controllers\AboutController;
+use app\controllers\CashSavingController;
+use app\controllers\HistoryController;
 use app\controllers\LoginController;
 use app\controllers\MainController;
 use app\controllers\MoneyOperationController;
+use app\controllers\ProfileController;
 use app\controllers\RegistrationController;
 use app\core\Application;
 use app\core\ConfigParser;
@@ -47,9 +50,13 @@ $router->setPostRoute("/registration", [new RegistrationController, "register"])
 $router->setGetRoute("/login", [new LoginController, "getView"]);
 $router->setPostRoute("/login", [new LoginController, "logIn"]);
 
-$router->setPostRoute("/expenses", [new MoneyOperationController, "getViewExpenses"]);
+$router->setGetRoute("/profile", [new ProfileController(), "getView"]);
 
-$router->setPostRoute("/incomes", [new MoneyOperationController, "getViewIncome"]);
+$router->setGetRoute("/add-money-operation", [new MoneyOperationController, "getView"]);
+
+$router->setGetRoute("/add-cash-saving", [new CashSavingController, "getView"]);
+
+$router->setGetRoute("/history", [new HistoryController(), "getView"]);
 
 ob_start();
 $application->run();

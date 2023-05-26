@@ -1,0 +1,34 @@
+{% extends layout.html %}
+
+{% block title %} История {% endblock %}
+
+{% block content %}
+<h1>Все записи</h1>
+{{ $operations }}
+<table class="money-operation">
+  <tr>
+    <th>Category</th>
+    <th>Sum</th>
+    <th>Date</th>
+    <th>Description</th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<!--    <tr>-->
+<!--      <th>${operation.category}</th>-->
+<!--      <th>${operation.sum}</th>-->
+<!--      <th>${operation.date}</th>-->
+<!--      <th>${operation.description}</th>-->
+<!--      <th>-->
+<!--        <a href="">Edit</a>-->
+<!--      </th>-->
+<!--      <th>-->
+<!--        <a href="">Delete</a>-->
+<!--      </th>-->
+<!--    </tr>-->
+
+</table>
+
+<a href="{{ $profile_action }}">Профиль</a>
+{% endblock %}

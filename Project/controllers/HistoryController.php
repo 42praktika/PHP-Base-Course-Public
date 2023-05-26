@@ -4,22 +4,23 @@ declare(strict_types=1);
 namespace app\controllers;
 
 use app\core\Application;
-use app\mappers\CategoryMapper;
+use app\models\MoneyOperation;
 
-class MoneyOperationController
+class HistoryController
 {
 
     public function getView(): void
     {
         try {
-            $mapper = new CategoryMapper();
-            Application::$app->getRouter()->renderTemplate("money",
-                ["money_action"=>"add-money-operation",
+            Application::$app->getRouter()->renderTemplate("history",
+                ["history_action"=>"history",
                     "profile_action"=>"profile",
-                    "categories"=>$mapper->SelectAll()]);
+                    "operations"=>["one", "two"]]);
         } catch (\Exception $exception) {
             echo $exception;
 //            Application::$app->getLogger()->error($exception);
         }
+
+        // TODO как через шаблонизатор сделать forEach
     }
 }

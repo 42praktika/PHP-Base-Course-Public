@@ -1,0 +1,18 @@
+{% extends layout.html %}
+
+{% block title %} Вход {% endblock %}
+
+{% block content %}
+<h1>Войти</h1>
+<form action="{{ $login_action }}" method="post">
+  <label for="email">Электронная почта</label>
+  <input type="text" name="email" id="email"><br>
+
+  <label for="password">Пароль</label>
+  <input type="password" name="password" id="password"><br>
+
+  <input type="submit" value="Войти">
+</form>
+
+<a href="{{ $main_action }}">Назад</a>
+{% endblock %}
