@@ -8,6 +8,7 @@ use app\controllers\MainController;
 use app\controllers\MoneyOperationController;
 use app\controllers\ProfileController;
 use app\controllers\RegistrationController;
+use app\controllers\SuccessController;
 use app\core\Application;
 use app\core\ConfigParser;
 
@@ -15,6 +16,8 @@ use app\core\ConfigParser;
 if (preg_match('/\.(?:png|jpg|jpeg|gif|css|html?|js)$/', $_SERVER["REQUEST_URI"])) {
     return false;
 }
+
+session_start();
 
 const PROJECT_ROOT = __DIR__."/../";
 //require "../vendor/autoload.php"; TODO Не находит этот путь
@@ -58,7 +61,8 @@ $router->setGetRoute("/add-cash-saving", [new CashSavingController, "getView"]);
 
 $router->setGetRoute("/history", [new HistoryController(), "getView"]);
 
+$router->setGetRoute("/success", [new SuccessController(), "getView"]);
+
 ob_start();
 $application->run();
 ob_flush();
-session_start();

@@ -4,34 +4,61 @@ declare(strict_types=1);
 namespace app\controllers;
 
 use app\core\Application;
+use app\mappers\CashSavingMapper;
 use app\mappers\MoneyOperationMapper;
+use app\mappers\UserMapper;
 
 class ProfileController
 {
 
     public function getView(): void
     {
-//        TODO хардкод для демонстрации
+        $userMapper = new UserMapper();
+        $username = $userMapper->Select($_SESSION["userId"])->getName();
         Application::$app->getRouter()->renderTemplate("profile",
-            ["username"=>"TestName",
-                "expenses"=>42,
-                "income"=>43,
-                "savings"=>44,
+            ["username"=>$username,
+                "expenses"=>$this->getExpenseSumByPeriod(),
+                "income"=>$this->getIncomeSumByPeriod(),
+                "savings"=>$this->getCashSavings(),
                 "add_money_operation_action"=>"add-money-operation",
                 "add_cash_savings_action"=>"add-cash-saving"]);
     }
 
-    private function getSumExpensesByPeriod() : int
+    private function getCashSavings() : array
+    {
+        try {
+            $mapper = new CashSavingMapper();
+            return $mapper->doSelectAllByAuthorId($_SESSION["userId"]);
+        } catch (\Exception $exception) {
+            echo $exception;
+            return [];
+//            Application::$app->getLogger()->error($exception);
+        }
+    }
+
+    private function getExpenseSumByPeriod() : string
     {
         try {
             $mapper = new MoneyOperationMapper();
-//            $sum = $mapper->getSumByPeriod(2, false, '2023-05-01', '2023-05-30');
-            $sum = $mapper->getSumByPeriod($_SESSION["user"]->getId(), false, '2023-04-01', '2023-04-30');
-            return $sum[0];
+            $sum = $mapper->getSumByPeriod($_SESSION["userId"], false, date('Y-m-01'), date('Y-m-d'));
+            return $sum["sum"];
         } catch (\Exception $exception) {
             echo $exception;
+            return "";
 //            Application::$app->getLogger()->error($exception);
         }
-        return 12;
+    }
+
+    private function getIncomeSumByPeriod() : string
+    {
+        try {
+            $mapper = new MoneyOperationMapper();
+            $sum = $mapper->getSumByPeriod($_SESSION["userId"], true, date('Y-m-01'), date('Y-m-d'));
+            return $sum["sum"];
+        } catch (\Exception $exception) {
+            echo $exception;
+            return "";
+//            Application::$app->getLogger()->error($exception);
+        }
     }
 }

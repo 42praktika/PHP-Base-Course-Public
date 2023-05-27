@@ -3,18 +3,37 @@
 {% block title %} Профиль {% endblock %}
 
 {% block content %}
-<div class="main">
-    <p class="message">
-        Добрый день, {{ $username }}!
-    </p>
-    Расходы за месяц: {{ $expenses }}
-    <br>
-    Доходы за месяц:  {{ $income }}
-    <br>
-    Сбережения: {{ $savings }}
-    <br>
-    <a href="{{ $add_money_operation_action }}">Добавить доход / расход</a>
-    <br>
-    <a href="{{ $add_cash_savings_action }}">Добавить сбережение</a>
+
+<h1>Дневник расходов и доходов</h1>
+
+<div class="sidebar">
+    <p class="greetings">Добрый день, {{ $username }}!</p>
+
+    <div class="cash-savings">
+        {% if ($savings)
+            echo "<h2>Сбережения</h2>";
+            echo "<br>";
+                foreach ($savings as $saving) {
+                    $n = $saving->getName();
+                    $s = $saving->getSum();
+                    echo "<div class='cash-saving'><h3>$n</h3><p>$s</p></div>";
+                }
+        %}
     </div>
+</div>
+
+<div class="main">
+
+    <div class="month-data">
+        <a class="main-widget" href="">Мои расходы с начала месяца: {{ $expenses }}</a>
+        <a class="main-widget" href="">Мои доходы с начала месяца: {{ $income }}</a>
+    </div>
+
+    <div class="control-buttons">
+        <a class="control-button" href="{{ $add_money_operation_action }}">Добавить расход или доход</a>
+        <a class="control-button" href="{{ $add_cash_savings_action }}">Добавить сбережение</a>
+    </div>
+
+</div>
+
 {% endblock %}

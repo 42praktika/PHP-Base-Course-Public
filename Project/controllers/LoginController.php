@@ -21,9 +21,8 @@ class LoginController
             $body = Application::$app->getRequest()->getBody();
             $mapper = new UserMapper();
             $user = $mapper->createObject($body);
-            $_SESSION['user'] = $mapper->doSelectByEmailPassword($user->getEmail(), $user->getPassword());;
-            // TODO как сделать редирект
-            Application::$app->getRouter()->renderView("profile");
+            $_SESSION['userId'] = $mapper->doSelectByEmailPassword($user->getEmail(), $user->getPassword())->getId();
+            Application::$app->getRouter()->renderTemplate("success", ["profile_action"=>"profile"]);
         }
         catch (\Exception $exception) {
             echo $exception;

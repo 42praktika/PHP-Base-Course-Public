@@ -22,11 +22,8 @@ class RegistrationController
             $body = Application::$app->getRequest()->getBody();
             $mapper = new UserMapper();
             $user = $mapper->createObject($body);
-//            TODO куда класть юзера, чтобы к нему был доступ на следующих страницах?
-            $_SESSION["user"] = $mapper->Insert($user);
-
-//            TODO вообще тут надо бы редирект на profile
-            Application::$app->getRouter()->renderView("success");
+            $_SESSION["userId"] = $mapper->Insert($user)->getId();
+            Application::$app->getRouter()->renderTemplate("success", ["profile_action"=>"profile"]);
         }
         catch (\Exception $exception) {
             echo $exception;
