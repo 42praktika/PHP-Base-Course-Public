@@ -9,16 +9,17 @@ class Category extends Model
 
     private string $name;
 
-    private int $author_id;
+    private ?int $author_id;
 
     private bool $income;
 
     /**
+     * @param int|null $id
      * @param string $name
-     * @param int $author_id
+     * @param int|null $author_id
      * @param bool $income
      */
-    public function __construct(?int $id, string $name, int $author_id, bool $income)
+    public function __construct(?int $id, string $name, ?int $author_id, bool $income)
     {
         parent::__construct($id);
         $this->name = $name;

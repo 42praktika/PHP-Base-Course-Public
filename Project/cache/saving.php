@@ -9,7 +9,13 @@
    
 <h1>Добавить запись</h1>
 <form action="<?php echo $cash_saving_action ?>" method="post">
-  Тут будет форма
+  <label for="name">Имя</label>
+  <input type="text" name="name" id="name"><br>
+
+  <label for="sum">Сумма</label>
+  <input type="text" name="sum" id="sum"><br>
+
+  <input type="submit" value="Добавить">
 </form>
 <a href="<?php echo $profile_action ?>">Профиль</a>
 

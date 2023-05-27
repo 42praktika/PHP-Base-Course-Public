@@ -14,6 +14,7 @@ class CategoryMapper extends \app\core\Mapper
     private ?\PDOStatement $delete;
     private ?\PDOStatement $selectById;
     private ?\PDOStatement $selectAllByTypeAuthorId;
+    private ?\PDOStatement $selectDefaultAllByType;
     private ?\PDOStatement $selectAll;
 
     /**
@@ -28,7 +29,8 @@ class CategoryMapper extends \app\core\Mapper
         $this->delete = $this->getPdo()->prepare("DELETE FROM categories WHERE id=:id");
         $this->selectById = $this->getPdo()->prepare("SELECT * FROM categories WHERE id = :id");
         $this->selectAll = $this->getPdo()->prepare("SELECT * FROM categories");
-        $this->selectAllByTypeAuthorId = $this->getPdo()->prepare("SELECT * FROM categories WHERE income = :income AND (author_id = :author_id OR author_id IS NULL )");
+        $this->selectAllByTypeAuthorId = $this->getPdo()->prepare("SELECT * FROM categories WHERE income = :income AND author_id = :author_id");
+        $this->selectDefaultAllByType = $this->getPdo()->prepare("SELECT * FROM categories WHERE income = :income AND author_id IS NULL");
     }
 
     /**
@@ -71,10 +73,28 @@ class CategoryMapper extends \app\core\Mapper
         return $this->selectAll->fetchAll();
     }
 
-    protected function doSelectAllByTypeAuthorId(?int $author_id, bool $income): array
+    public function doSelectAllByTypeAuthorId(?int $author_id, bool $income): array
     {
+        $income = $income ? 1 : 0;
         $this->selectAllByTypeAuthorId->execute([":author_id" => $author_id, ":income" => $income]);
-        return $this->selectAllByTypeAuthorId->fetchAll(\PDO::FETCH_NAMED);
+        $res = $this->selectAllByTypeAuthorId->fetchAll(\PDO::FETCH_NAMED);
+        $categories = [];
+        foreach ($res as $v) {
+            array_push($categories, $this->createObject($v));
+        }
+        return $categories;
+    }
+
+    public function doSelectDefaultAllByType(bool $income): array
+    {
+        $income = $income ? 1 : 0;
+        $this->selectDefaultAllByType->execute([":income" => $income]);
+        $res = $this->selectDefaultAllByType->fetchAll(\PDO::FETCH_NAMED);
+        $categories = [];
+        foreach ($res as $v) {
+            array_push($categories, $this->createObject($v));
+        }
+        return $categories;
     }
 
     function createObject(array $data): Model
@@ -82,7 +102,7 @@ class CategoryMapper extends \app\core\Mapper
         return new Category(
             array_key_exists("id", $data) ? $data["id"] : null,
             $data["name"],
-            $data["author_id"],
+            array_key_exists("author_id", $data) ? $data["author_id"] : null,
             $data["income"]);
     }
 

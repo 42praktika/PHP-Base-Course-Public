@@ -20,7 +20,12 @@
                 foreach ($savings as $saving) {
                     $n = $saving->getName();
                     $s = $saving->getSum();
-                    echo "<div class='cash-saving'><h3>$n</h3><p>$s</p></div>";
+                    $href = $edit_saving_action.'?id='.$saving->getId();
+                    echo "<div class='cash-saving'>
+                            <h3>$n</h3>
+                            <p>$s</p>
+                            <a href='$href'>Редактировать</a>
+                    </div>";
                 } ?>
     </div>
 </div>
@@ -33,7 +38,8 @@
     </div>
 
     <div class="control-buttons">
-        <a class="control-button" href="<?php echo $add_money_operation_action ?>">Добавить расход или доход</a>
+        <a class="control-button" href="<?php echo $add_income_action ?>">Добавить доход</a>
+        <a class="control-button" href="<?php echo $add_expense_action ?>">Добавить расход</a>
         <a class="control-button" href="<?php echo $add_cash_savings_action ?>">Добавить сбережение</a>
     </div>
 

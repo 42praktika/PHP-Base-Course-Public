@@ -20,8 +20,10 @@ class ProfileController
                 "expenses"=>$this->getExpenseSumByPeriod(),
                 "income"=>$this->getIncomeSumByPeriod(),
                 "savings"=>$this->getCashSavings(),
-                "add_money_operation_action"=>"add-money-operation",
-                "add_cash_savings_action"=>"add-cash-saving"]);
+                "add_income_action"=>"add-income",
+                "add_expense_action"=>"add-expense",
+                "add_cash_savings_action"=>"add-cash-saving",
+                "edit_saving_action"=>"edit-saving"]);
     }
 
     private function getCashSavings() : array

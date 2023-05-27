@@ -3,12 +3,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title> Доход </title>
+    <title> Расход </title>
 </head>
 <body>
    
-<h1>Добавить доход</h1>
-<form action="<?php echo $income_action ?>" method="post">
+<h1>Добавить расход</h1>
+<form action="<?php echo $expense_action ?>" method="post">
   <label for="sum">Сумма</label>
   <input type="number" name="sum" id="sum"><br>
 
@@ -23,7 +23,7 @@
         echo "<option value='$i'>$n</option>";
       } ?>
 
-    <input type="text" hidden="hidden" name="income" value="true">
+    <input type="text" hidden="hidden" name="income" value="false">
   </select>
   <br>
 

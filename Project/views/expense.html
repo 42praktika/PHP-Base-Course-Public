@@ -1,14 +1,10 @@
-<?php class_exists('app\core\Template') or exit; ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title> Доход </title>
-</head>
-<body>
-   
-<h1>Добавить доход</h1>
-<form action="<?php echo $income_action ?>" method="post">
+{% extends layout.html %}
+
+{% block title %} Расход {% endblock %}
+
+{% block content %}
+<h1>Добавить расход</h1>
+<form action="{{ $expense_action }}" method="post">
   <label for="sum">Сумма</label>
   <input type="number" name="sum" id="sum"><br>
 
@@ -17,13 +13,15 @@
 
   <label for="category">Категория</label>
   <select name="category_id" id="category">
-    <?php foreach ($categories as $c) {
+    {%
+      foreach ($categories as $c) {
         $n = $c->getName();
         $i = $c->getId();
         echo "<option value='$i'>$n</option>";
-      } ?>
+      }
+    %}
 
-    <input type="text" hidden="hidden" name="income" value="true">
+    <input type="text" hidden="hidden" name="income" value="false">
   </select>
   <br>
 
@@ -32,11 +30,5 @@
 
   <input type="submit" value="Добавить">
 </form>
-<a href="<?php echo $profile_action ?>">Профиль</a>
-
-</body>
-</html>
-
-
-
-
+<a href="{{ $profile_action }}">Профиль</a>
+{% endblock %}

@@ -55,11 +55,19 @@ $router->setPostRoute("/login", [new LoginController, "logIn"]);
 
 $router->setGetRoute("/profile", [new ProfileController(), "getView"]);
 
-$router->setGetRoute("/add-money-operation", [new MoneyOperationController, "getView"]);
+$router->setGetRoute("/add-income", [new MoneyOperationController, "getIncomeView"]);
+$router->setPostRoute("/add-income", [new MoneyOperationController(), "add"]);
+
+$router->setGetRoute("/add-expense", [new MoneyOperationController, "getExpenseView"]);
+$router->setPostRoute("/add-expense", [new MoneyOperationController(), "add"]);
 
 $router->setGetRoute("/add-cash-saving", [new CashSavingController, "getView"]);
+$router->setPostRoute("/add-cash-saving", [new CashSavingController(), "add"]);
 
 $router->setGetRoute("/history", [new HistoryController(), "getView"]);
+
+//$router->setGetRoute("/edit-saving", [new CashSavingController(), "getView"]);
+//$router->setPostRoute("/edit-saving", [new CashSavingController(), "edit"]);
 
 $router->setGetRoute("/success", [new SuccessController(), "getView"]);
 
