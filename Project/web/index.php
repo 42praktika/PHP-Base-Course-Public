@@ -67,7 +67,7 @@ $router->setPostRoute("/add-cash-saving", [new CashSavingController(), "add"]);
 $router->setGetRoute("/history", [new HistoryController(), "getView"]);
 
 $router->setGetRoute("/edit-saving", [new CashSavingController(), "getView"]);
-//$router->setPostRoute("/edit-saving", [new CashSavingController(), "edit"]);
+$router->setPostRoute("/edit-saving", [new CashSavingController(), "edit"]);
 
 $router->setGetRoute("/success", [new SuccessController(), "getView"]);
 

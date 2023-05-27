@@ -14,9 +14,18 @@ class CashSavingController
     public function getView(): void
     {
         try {
+            if (array_key_exists('id', $_GET)) {
+                $mapper = new CashSavingMapper();
+                $saving = $mapper->Select((int)$_GET['id']);
+                $path = "edit-saving";
+            } else {
+                $saving = new CashSaving(null, "", 0, 0);
+                $path = "add-cash-saving";
+            }
             Application::$app->getRouter()->renderTemplate("saving",
-                ["cash_saving_action"=>"add-cash-saving",
-                    "profile_action"=>"profile"]);
+                ["cash_saving_action"=>$path,
+                    "profile_action"=>"profile",
+                    "saving"=>$saving]);
         } catch (\Exception $exception) {
             echo $exception;
 //            Application::$app->getLogger()->error($exception);
@@ -42,6 +51,13 @@ class CashSavingController
     public function edit(): void
     {
         try {
+            $body = Application::$app->getRequest()->getBody();
+            $body["author_id"] = $_SESSION['userId'];
+            $body["id"] = $_GET["id"];
+            $mapper = new CashSavingMapper();
+            $saving = $mapper->createObject($body);
+            $mapper->Update($saving);
+            Application::$app->getRouter()->renderTemplate("success", ["profile_action"=>"profile"]);
         }
         catch (\Exception $exception) {
             echo $exception;

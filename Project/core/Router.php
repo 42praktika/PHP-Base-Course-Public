@@ -34,9 +34,18 @@ class Router
         $this->routes[MethodsEnum::POST][$path] = $callback;
     }
 
-    public function resolve(): void
+    private function getPath(): string
     {
         $path = $this->request->getUri();
+        if (str_contains($path, "?")) {
+            $path = explode("?", $path)[0];
+        }
+        return $path;
+    }
+
+    public function resolve(): void
+    {
+        $path = $this->getPath();
         $method = $this->request->getMethod();
         if (!isset($this->routes[$method]) || !isset($this->routes[$method][$path])) {
             $this->renderStatic("404.html");

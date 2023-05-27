@@ -107,7 +107,8 @@ class CashSavingMapper extends \app\core\Mapper
     {
         $this->update->execute([
             ":name" => $model->getName(),
-            ":sum" => $model->getSum()
+            ":sum" => $model->getSum(),
+            ":id" => $model->getId()
         ]);
     }
 }

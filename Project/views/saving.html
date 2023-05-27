@@ -3,15 +3,15 @@
 {% block title %} Сбережение {% endblock %}
 
 {% block content %}
-<h1>Добавить запись</h1>
-<form action="{{ $cash_saving_action }}" method="post">
+<h1>Сбережение</h1>
+<form action="{{ $cash_saving_action }}?id={{ $saving->getId() }}" method="post">
   <label for="name">Имя</label>
-  <input type="text" name="name" id="name"><br>
+  <input type="text" name="name" id="name" value="{{ $saving->getName() }}"><br>
 
   <label for="sum">Сумма</label>
-  <input type="text" name="sum" id="sum"><br>
+  <input type="text" name="sum" id="sum" value="{{ $saving->getSum() }}"><br>
 
-  <input type="submit" value="Добавить">
+  <input type="submit" value="Сохранить">
 </form>
 <a href="{{ $profile_action }}">Профиль</a>
 {% endblock %}
