@@ -22,14 +22,13 @@
         $i = $c->getId();
         echo "<option value='$i'>$n</option>";
       } ?>
-
-    <input type="text" hidden="hidden" name="income" value="false">
   </select>
   <br>
 
   <label for="description">Описание</label>
   <input type="text" name="description" id="description"><br>
 
+  <input type="text" hidden="hidden" name="income" value="">
   <input type="submit" value="Добавить">
 </form>
 <a href="<?php echo $profile_action ?>">Профиль</a>

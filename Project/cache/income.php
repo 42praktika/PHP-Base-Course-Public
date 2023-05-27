@@ -23,7 +23,7 @@
         echo "<option value='$i'>$n</option>";
       } ?>
 
-    <input type="text" hidden="hidden" name="income" value="true">
+    <input type="text" hidden="hidden" name="income" value="1">
   </select>
   <br>
 

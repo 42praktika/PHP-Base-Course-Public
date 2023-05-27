@@ -49,7 +49,7 @@ class MoneyOperationMapper extends \app\core\Mapper
             ":date" => $model->getDate(),
             ":category_id" => $model->getCategoryId(),
             ":description" => $model->getDescription(),
-            ":income" => $model->isIncome()
+            ":income" => $model->isIncome() ? 1 : 0
         ]);
         $id = $this->getPdo()->lastInsertId();
         $model->setId($id);
