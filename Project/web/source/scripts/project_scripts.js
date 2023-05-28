@@ -14,4 +14,3 @@ function hiddenForm(){
     document.getElementById("div2").classList.remove('active');
     document.getElementById("div1").classList.add('active');
 }
-

@@ -40,11 +40,13 @@ $router->setGetRoute("/logout", [new \app\controllers\LogoutController(), "getVi
 $router->setGetRoute("/profile", [new \app\controllers\ProfileController(), "getView"]);
 $router->setGetRoute("/cart", [new \app\controllers\CartController(), "getView"]);
 $router->setGetRoute("/menu", [new \app\controllers\MenuController(), "getView"]);
+$router->setGetRoute("/thanks", [new \app\controllers\EndController(), "getView"]);
 
 $router->setPostRoute("/handle", [new MainController, "handleView"]);
 $router->setPostRoute("/signup", [new \app\controllers\SignupController(), "handleView"]);
 $router->setPostRoute("/login", [new \app\controllers\LoginController(), "handleView"]);
 $router->setPostRoute("/edit", [new \app\controllers\EditDataController(), "handleView"]);
+$router->setPostRoute("/order", [new \app\controllers\OrdersController(), "handleView"]);
 
 ob_start();
 $application->run();

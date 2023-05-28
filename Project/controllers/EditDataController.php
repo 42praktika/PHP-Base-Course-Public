@@ -51,6 +51,10 @@ class EditDataController
 
             $mapper = new UserMapper();
             $user = UserMapper::findUserByID($userID);
+            $user->setUsername($username);
+            $user->setEmail($email);
+            $user->setPhone($phone);
+            $user->setPassword($password);
             $mapper->Update($user);
             header("Location: /profile");
         }

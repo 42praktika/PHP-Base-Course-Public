@@ -21,7 +21,7 @@ class UserMapper extends \app\core\Mapper
     {
         parent::__construct();
         $this->insert = $this->getPdo()->prepare("INSERT into users (username, password, email, phone) VALUES (:username, :password, :email, :phone)");
-        $this->update = $this->getPdo()->prepare("UPDATE users SET username = :username, password = :password, email = :email, phone = :phone WHERE id==:id");
+        $this->update = $this->getPdo()->prepare("UPDATE users SET username = :username, password = :password, email = :email, phone = :phone WHERE id=:id");
         $this->delete = $this->getPdo()->prepare("DELETE FROM users WHERE id=:id");
         $this->select = $this->getPdo()->prepare("SELECT * FROM users WHERE id=:id");
         $this->selectAll = $this->getPdo()->prepare("SELECT * FROM users");
@@ -44,13 +44,13 @@ class UserMapper extends \app\core\Mapper
 
     protected function doUpdate(Model $model): void
     {
-        var_dump($model);
-        $this->update->execute(params: [
+//        var_dump($model);
+        $this->update->execute( [
             ":id" => $model->getId(),
             ":username" => $model->getUsername(),
-            "password" => password_hash($model->getPassword(), PASSWORD_BCRYPT),
-            "email" => $model->getEmail(),
-            "phone" => $model->getPhone()]);
+            ":password" => password_hash($model->getPassword(), PASSWORD_BCRYPT),
+            ":email" => $model->getEmail(),
+            ":phone" => $model->getPhone()]);
 
     }
 

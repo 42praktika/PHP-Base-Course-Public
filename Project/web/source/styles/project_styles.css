@@ -286,3 +286,11 @@
 .menu_button:hover{
     background-color:  rgba(236, 214, 210, 0.2);
 }
+
+/*cart-styles*/
+.main_cart{
+    display: none;
+}
+.main_cart.active{
+    display: flex;
+}

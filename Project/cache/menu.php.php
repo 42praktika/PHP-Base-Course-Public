@@ -1,3 +1,4 @@
+<?php class_exists('app\core\Template') or exit; ?>
 <?php
 use app\core\Application;
 $pdo = Application::$database->pdo;
@@ -6,11 +7,22 @@ $query->execute();
 $result = $query->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
-{% extends layout.html %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title> Меню </title>
+  <link rel="stylesheet" href="source/styles/project_styles.css" />
+  <script src="source/scripts/project_scripts.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+          href="https://fonts.googleapis.com/css2?family=Montserrat&family=Playfair+Display:wght@800&display=swap"
+          rel="stylesheet"
+  />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+</head>
 
-{% block title %} Меню {% endblock %}
-
-{% block content %}
 <body style="background-color: #D68B7E">
 <div class="nav_container">
     <div class="hrefs_bar">
@@ -154,6 +166,14 @@ $result = $query->fetchAll(PDO::FETCH_ASSOC);
         localStorage.setItem("cart", JSON.stringify(cart));
     }
 
+    // function showCart(){
+    //     let out="";
+    //     for(let key in cart){
+    //         out+= key + '---' + cart[key] + "<br>";
+    //     }
+    //     console.log(out);
+    // }
+
     function loadCart(){
         if (localStorage.getItem('cart')){
             cart = JSON.parse(localStorage.getItem('cart'));
@@ -165,5 +185,10 @@ $result = $query->fetchAll(PDO::FETCH_ASSOC);
     })
 </script>
 
-{% endblock %}
+
+</html>
+
+
+
+
 

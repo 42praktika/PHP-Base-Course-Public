@@ -1,8 +1,9 @@
+<?php class_exists('app\core\Template') or exit; ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>{% yield title %}</title>
+  <title> Завершение </title>
   <link rel="stylesheet" href="source/styles/project_styles.css" />
   <script src="source/scripts/project_scripts.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -13,5 +14,11 @@
   />
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
 </head>
-{% yield content %}
+
+<body style="background-color: #D68B7E" background-size="400px" >
+</body>
+
 </html>
+
+
+

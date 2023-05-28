@@ -1,8 +1,20 @@
-{% extends layout.html %}
+<?php class_exists('app\core\Template') or exit; ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title> Profile </title>
+  <link rel="stylesheet" href="source/styles/project_styles.css" />
+  <script src="source/scripts/project_scripts.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+          href="https://fonts.googleapis.com/css2?family=Montserrat&family=Playfair+Display:wght@800&display=swap"
+          rel="stylesheet"
+  />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+</head>
 
-{% block title %} Profile {% endblock %}
-
-{% block content %}
 <body style="background-color: #D68B7E">
 <div class="nav_container">
     <a href="/" class="hrefs_bar">
@@ -20,15 +32,15 @@
             <div>
                 <div class="inf_group">
                     <div class="inf_title reg_whiteText">Имя:</div>
-                    <div class="reg_whiteText">{{$username}}</div>
+                    <div class="reg_whiteText"><?php echo $username ?></div>
                 </div>
                 <div class="inf_group">
                     <div class="inf_title reg_whiteText">Номер телефона:</div>
-                    <div class="reg_whiteText">{{$phone}}</div>
+                    <div class="reg_whiteText"><?php echo $phone ?></div>
                 </div>
                 <div class="inf_group">
                     <div class="inf_title reg_whiteText">E-Mail:</div>
-                    <div class="reg_whiteText">{{$email}}</div>
+                    <div class="reg_whiteText"><?php echo $email ?></div>
                 </div>
 
                 <button onclick="showForm()" class="inf_button reg_whiteText">Редактировать профиль</button>
@@ -76,4 +88,9 @@
         window.location.href = '/logout';
     }
 </script>
-{% endblock %}
+
+</html>
+
+
+
+
