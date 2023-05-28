@@ -51,7 +51,8 @@ class MangaProfileContoller
                 "rating_id"=>$manga->getRatingId(),
                 "age_rating"=>$manga->getAgeRating(),
                 "release_date"=>$manga->getReleaseDate(),
-                "author"=>$manga->getAuthorName()]);
+                "author"=>$manga->getAuthorName(),
+                "cover_image_path"=>$manga->getCoverImagePath()]);
 
     }
 

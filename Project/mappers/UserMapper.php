@@ -22,7 +22,7 @@ class UserMapper extends \app\core\Mapper
     {
         parent::__construct();
         $this->insert = $this->getPdo()->prepare("INSERT into users (nickname, email, password) VALUES (:nickname, :email, :password)");
-        $this->update = $this->getPdo()->prepare("UPDATE users SET nickname = :nickname, email = :email, password = :password WHERE id==:id");
+        $this->update = $this->getPdo()->prepare("UPDATE users SET nickname = :nickname, email = :email, password = :password WHERE id=:id");
         $this->delete = $this->getPdo()->prepare("DELETE FROM users WHERE id=:id");
         $this->select = $this->getPdo()->prepare("SELECT * FROM users WHERE id=:id");
         $this->selectAll = $this->getPdo()->prepare("SELECT * FROM users");
