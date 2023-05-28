@@ -2,7 +2,14 @@
 
 {% block title %} Успешно {% endblock %}
 
+{% block headers %}
+<link rel="stylesheet" type="text/css" href="../web/css/main.css">
+<link rel="stylesheet" type="text/css" href="../web/css/profile.css">
+{% endblock %}
+
 {% block content %}
-<h1>Успешно!</h1>
-<a href="{{ $profile_action }}">В профиль</a>
+<div class="container">
+    <h1>Успешно!</h1>
+    <a href="{{ $profile_action }}">В профиль</a>
+</div>
 {% endblock %}

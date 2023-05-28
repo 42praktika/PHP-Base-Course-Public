@@ -69,6 +69,16 @@ $router->setGetRoute("/history", [new HistoryController(), "getView"]);
 $router->setGetRoute("/edit-saving", [new CashSavingController(), "getView"]);
 $router->setPostRoute("/edit-saving", [new CashSavingController(), "edit"]);
 
+$router->setGetRoute("/delete-cash-saving", [new CashSavingController(), "delete"]);
+
+$router->setGetRoute("/history", [new HistoryController(), "getView"]);
+$router->setPostRoute("/history", [new HistoryController(), "getViewForAnotherPeriod"]);
+
+$router->setGetRoute("/edit-money-operation", [new MoneyOperationController(), "getView"]);
+$router->setPostRoute("/edit-money-operation", [new MoneyOperationController(), "edit"]);
+
+$router->setGetRoute("/delete-money-operation", [new MoneyOperationController(), "delete"]);
+
 $router->setGetRoute("/success", [new SuccessController(), "getView"]);
 
 ob_start();

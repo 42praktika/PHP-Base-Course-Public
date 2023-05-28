@@ -2,40 +2,49 @@
 
 {% block title %} Профиль {% endblock %}
 
+{% block headers %}
+<link rel="stylesheet" type="text/css" href="../web/css/main.css">
+<link rel="stylesheet" type="text/css" href="../web/css/profile.css">
+<link rel="stylesheet" type="text/css" href="../web/css/optionSelection.css">
+{% endblock %}
+
 {% block content %}
 
-<h1>Дневник расходов и доходов</h1>
+<div class="container">
+    <h1>Дневник расходов и доходов</h1>
 
-<div class="sidebar">
-    <p class="greetings">Добрый день, {{ $username }}!</p>
+    <div class="sidebar">
+        <p class="greetings">Добрый день, {{ $username }}!</p>
 
-    <div class="cash-savings">
-        {% if ($savings)
+        <div class="cash-savings">
+            {% if ($savings)
             echo "<h2>Сбережения</h2>";
             echo "<br>";
-                foreach ($savings as $saving) {
-                    $n = $saving->getName();
-                    $s = $saving->getSum();
-                    $href = $edit_saving_action.'?id='.$saving->getId();
-                    echo "<div class='cash-saving'><h3>$n</h3><p>$s</p><a href='$href'>Редактировать</a></div>";
-                }
-        %}
+            foreach ($savings as $saving) {
+            $n = $saving->getName();
+            $s = $saving->getSum();
+            $href = $edit_saving_action.'?id='.$saving->getId();
+            echo "<div class='cash-saving'><h3>$n</h3><p>$s</p><a href='$href'>Редактировать</a></div>";
+            }
+            %}
+        </div>
+    </div>
+
+    <div class="main">
+
+        <div class="month-data">
+            <a class="main-widget" href="{{ $history_expense_action }}">Мои расходы с начала месяца: {{ $expenses }}</a>
+            <a class="main-widget" href="{{ $history_income_action }}">Мои доходы с начала месяца: {{ $income }}</a>
+        </div>
+
+        <div class="control-buttons">
+            <a class="control-button" href="{{ $add_income_action }}">Добавить доход</a>
+            <a class="control-button" href="{{ $add_expense_action }}">Добавить расход</a>
+            <a class="control-button" href="{{ $add_cash_savings_action }}">Добавить сбережение</a>
+        </div>
+
     </div>
 </div>
 
-<div class="main">
-
-    <div class="month-data">
-        <a class="main-widget" href="">Мои расходы с начала месяца: {{ $expenses }}</a>
-        <a class="main-widget" href="">Мои доходы с начала месяца: {{ $income }}</a>
-    </div>
-
-    <div class="control-buttons">
-        <a class="control-button" href="{{ $add_income_action }}">Добавить доход</a>
-        <a class="control-button" href="{{ $add_expense_action }}">Добавить расход</a>
-        <a class="control-button" href="{{ $add_cash_savings_action }}">Добавить сбережение</a>
-    </div>
-
-</div>
 
 {% endblock %}

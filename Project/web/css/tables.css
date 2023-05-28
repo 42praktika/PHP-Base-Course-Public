@@ -1,0 +1,16 @@
+table {
+    margin: 40px auto;
+    border-collapse: collapse;
+    width: 90%;
+    font-weight: bold;
+    background: #dddddd;
+    border-radius: 10px;
+}
+
+th, td {
+    padding: 8px;
+    text-align: center;
+    border-bottom: 1px solid #222623;
+}
+
+tr:hover {background-color: #3e4f3f;}

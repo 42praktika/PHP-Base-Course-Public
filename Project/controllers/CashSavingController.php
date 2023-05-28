@@ -17,15 +17,20 @@ class CashSavingController
             if (array_key_exists('id', $_GET)) {
                 $mapper = new CashSavingMapper();
                 $saving = $mapper->Select((int)$_GET['id']);
-                $path = "edit-saving";
+                $path = "edit-saving?id=".$_GET['id'];
+                $delete = "delete-cash-saving?id=".$_GET['id'];
+                Application::$app->getRouter()->renderTemplate("saving",
+                    ["cash_saving_action"=>$path,
+                        "profile_action"=>"profile",
+                        "saving"=>$saving,
+                        "delete_action"=>$delete]);
             } else {
-                $saving = new CashSaving(null, "", 0, 0);
-                $path = "add-cash-saving";
+                Application::$app->getRouter()->renderTemplate("saving",
+                    ["cash_saving_action"=>"add-cash-saving",
+                        "profile_action"=>"profile",
+                        "saving"=>new CashSaving(null, "", 0, 0),
+                        "delete_action"=>null]);
             }
-            Application::$app->getRouter()->renderTemplate("saving",
-                ["cash_saving_action"=>$path,
-                    "profile_action"=>"profile",
-                    "saving"=>$saving]);
         } catch (\Exception $exception) {
             echo $exception;
 //            Application::$app->getLogger()->error($exception);
@@ -57,6 +62,21 @@ class CashSavingController
             $mapper = new CashSavingMapper();
             $saving = $mapper->createObject($body);
             $mapper->Update($saving);
+            Application::$app->getRouter()->renderTemplate("success", ["profile_action"=>"profile"]);
+        }
+        catch (\Exception $exception) {
+            echo $exception;
+//            Application::$app->getLogger()->error($exception);
+        }
+    }
+
+    public function delete(): void
+    {
+        try {
+            $author_id = $_SESSION['userId'];
+            $mapper = new CashSavingMapper();
+            $saving = $mapper->Select((int)$_GET['id']);
+            $mapper->Delete($saving);
             Application::$app->getRouter()->renderTemplate("success", ["profile_action"=>"profile"]);
         }
         catch (\Exception $exception) {

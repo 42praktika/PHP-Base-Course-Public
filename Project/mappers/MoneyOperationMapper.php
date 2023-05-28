@@ -88,8 +88,14 @@ class MoneyOperationMapper extends \app\core\Mapper
 
     public function doSelectAllByPeriodAuthorId(int $author_id, bool $income, string $start, string $end): array
     {
+        $income = $income ? 1 : 0;
         $this->selectAllByPeriodAuthorId->execute([":author_id" => $author_id, ":income" => $income, ":start" => date($start), ":end" => date($end)]);
-        return $this->selectAllByPeriodAuthorId->fetchAll(\PDO::FETCH_NAMED);
+        $res = $this->selectAllByPeriodAuthorId->fetchAll(\PDO::FETCH_NAMED);
+        $operations = [];
+        for ($i = 0; $i < count($res); $i++) {
+            $operations[$i] = $this->createObject($res[$i]);
+        }
+        return $operations;
     }
 
     public function getSumByPeriod(int $author_id, bool $income, string $start, string $end): array

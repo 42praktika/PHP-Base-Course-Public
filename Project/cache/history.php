@@ -4,11 +4,22 @@
 <head>
     <meta charset="UTF-8">
     <title> История </title>
+    
+<link rel="stylesheet" type="text/css" href="../web/css/main.css">
+<link rel="stylesheet" type="text/css" href="../web/css/tables.css">
+<link rel="stylesheet" type="text/css" href="../web/css/userForm.css">
+
 </head>
 <body>
    
-<h1>Все записи</h1>
-<?php echo $operations ?>
+<div class="user-form">
+  <p>Посмотреть за другой период:</p>
+  <form action="<?php echo $history_action ?>" method="POST">
+    <input type="date" name="start">
+    <input type="date" name="end">
+    <input type="submit" value="Посмотреть">
+  </form>
+</div>
 <table class="money-operation">
   <tr>
     <th>Category</th>
@@ -19,25 +30,37 @@
     <th></th>
   </tr>
 
-<!--    <tr>-->
-<!--      <th>${operation.category}</th>-->
-<!--      <th>${operation.sum}</th>-->
-<!--      <th>${operation.date}</th>-->
-<!--      <th>${operation.description}</th>-->
-<!--      <th>-->
-<!--        <a href="">Edit</a>-->
-<!--      </th>-->
-<!--      <th>-->
-<!--        <a href="">Delete</a>-->
-<!--      </th>-->
-<!--    </tr>-->
+  <?php foreach ($operations as $operation) {
+      $categoryId = $operation->getCategoryId();
+      $category = $categories[$categoryId];
+      $sum = $operation->getSum();
+      $date = $operation->getDate();
+      $description = $operation->getDescription();
+      $editHref = $edit_action.'?id='.$operation->getId();
+      $deleteHref = $delete_action.'?id='.$operation->getId();
+      echo "
+  <tr>
+    <th>$category</th>
+    <th>$sum</th>
+    <th>$date</th>
+    <th>$description</th>
+    <th>
+      <a href='$editHref'>Edit</a>
+    </th>
+    <th>
+      <a href='$deleteHref'>Delete</a>
+    </th>
+  </tr>";
+    } ?>
 
 </table>
 
-<a href="<?php echo $profile_action ?>">Профиль</a>
+<a class="user-form user-form__a" href="<?php echo $profile_action ?>">Профиль</a>
 
 </body>
 </html>
+
+
 
 
 

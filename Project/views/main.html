@@ -2,9 +2,17 @@
 
 {% block title %} Дневник расходов и доходов {% endblock %}
 
+{% block headers %}
+<link rel="stylesheet" type="text/css" href="../web/css/main.css">
+<link rel="stylesheet" type="text/css" href="../web/css/optionSelection.css">
+{% endblock %}
+
+
 {% block content %}
-<h1>Добро пожаловать!</h1>
-<a href="{{ $registration_action }}">Регистрация</a>
-<a href="{{ $info_action }}">Информация</a>
-<a href="{{ $login_action }}">Вход</a>
+<div class="option-selection">
+    <h1 class="hello">Добро пожаловать!</h1>
+    <a href="{{ $registration_action }}">Регистрация</a>
+    <a href="{{ $info_action }}">Информация</a>
+    <a href="{{ $login_action }}">Вход</a>
+</div>
 {% endblock %}

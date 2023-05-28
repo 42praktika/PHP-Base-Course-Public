@@ -23,7 +23,9 @@ class ProfileController
                 "add_income_action"=>"add-income",
                 "add_expense_action"=>"add-expense",
                 "add_cash_savings_action"=>"add-cash-saving",
-                "edit_saving_action"=>"edit-saving"]);
+                "edit_saving_action"=>"edit-saving",
+                "history_income_action"=>"history?income=true",
+                "history_expense_action"=>"history?income=false"]);
     }
 
     private function getCashSavings() : array
