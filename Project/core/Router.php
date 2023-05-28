@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace app\core;
 
 use app\core\Request;
+use app\core\Template;
 
 class Router
 {
@@ -65,5 +66,9 @@ class Router
         include PROJECT_ROOT."web/$name";
     }
 
+    public function renderTemplate(string $name, array $data = []) : void{
+
+        Template::View($name.'.php', $data);
+    }
 
 }

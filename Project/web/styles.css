@@ -23,10 +23,15 @@
 .header{
     font-size: 65px;
     margin-bottom:105px;
-    margin-top: -150px;
     font-family: header;
     font-weight: 900;
     color: #181515;
+}
+
+.login{
+    text-align: center;
+    height: 25px;
+    font-size: 16px;
 }
 
 .articleTopContainer{
@@ -55,20 +60,41 @@
     max-width: 330px;
 }
 
-#top1:hover{
-    content: url("https://cdn-0.brodude.ru/9LyeVf-TFnsWDq_ufDmM5Hk4t9nz4umo7r1283MVxAc/rs:fill:1200:692:0/g:ce:0:0/c:0:0/aHR0cHM6Ly9icm9kdWRlLnJ1L3dwLWNvbnRlbnQvdXBsb2Fkcy8yMDIyLzA2LzE2L2Jyb2R1ZGUucnVfMTYuMDYuMjAyMl9FdFJ6RlBLWWRoMzBmLnBuZw");
-    max-width: 326px;
-    max-height: 227px;
-    border-bottom-left-radius: unset;
-    border-top-left-radius: unset;
+.round {
+    max-height: 125px;
+    max-width: 125px;
+    border-radius: 100px;
+    border: 3px solid dimgrey;
+    box-shadow: 0 0 7px #666;
 }
 
-#top2:hover{
-    content: url("https://icdn.lenta.ru/images/2018/10/26/20/20181026203414585/detail_52fae87580428e950e7b7fcc1cea8122.jpg");
-    max-width: 235px;
-    border-bottom-left-radius: unset;
-    border-top-left-radius: unset;
+.information{
+    margin-left: 30px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    z-index: 100;
+    align-content: center;
+    height: 368px;
+    width: 400px;
+    background-color: #b4b4af;
+    backdrop-filter: blur(6px);
 }
+
+/*#top1:hover{*/
+/*    content: url("https://cdn-0.brodude.ru/9LyeVf-TFnsWDq_ufDmM5Hk4t9nz4umo7r1283MVxAc/rs:fill:1200:692:0/g:ce:0:0/c:0:0/aHR0cHM6Ly9icm9kdWRlLnJ1L3dwLWNvbnRlbnQvdXBsb2Fkcy8yMDIyLzA2LzE2L2Jyb2R1ZGUucnVfMTYuMDYuMjAyMl9FdFJ6RlBLWWRoMzBmLnBuZw");*/
+/*    max-width: 326px;*/
+/*    max-height: 227px;*/
+/*    border-bottom-left-radius: unset;*/
+/*    border-top-left-radius: unset;*/
+/*}*/
+
+/*#top2:hover{*/
+/*    content: url("https://icdn.lenta.ru/images/2018/10/26/20/20181026203414585/detail_52fae87580428e950e7b7fcc1cea8122.jpg");*/
+/*    max-width: 235px;*/
+/*    border-bottom-left-radius: unset;*/
+/*    border-top-left-radius: unset;*/
+/*}*/
 
 .article{
     width: 997px;
@@ -143,6 +169,29 @@ button{
     z-index: 0;
     display: flex;
 }
+
+.LoginWindow{
+    position: fixed;
+    margin: 0 auto 420px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    z-index: 100;
+    align-content: center;
+    height: 368px;
+    width: 400px;
+    border-radius: 10px;
+    background-color: #777773;
+    backdrop-filter: blur(6px);
+    visibility: hidden;
+}
+
+.close{
+    margin-left: 360px;
+    margin-top: -89px;
+    cursor: pointer;
+}
+
 
 @font-face {
     font-family: header;

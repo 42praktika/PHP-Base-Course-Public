@@ -6,38 +6,36 @@ namespace app\controllers;
 use app\core\Application;
 use app\core\Response;
 use app\exceptions\FileException;
+use app\mappers\UserMapper;
 
 class PresentationController
 {
-
     public function getView()
     {
-        Application::$app->getRouter()->renderView("presentation");
+        Application::$app->getRouter()->renderTemplate("presentation");
     }
 
     public function handleView()
     {
+
         $body = Application::$app->getRequest()->getBody();
 
-        try {
-            $this->writeBody($body);
-        } catch (FileException $e) {
-            Application::$app->getResponse()->setStatusCode(Response::HTTP_SERVER_ERROR);
-        }
-    }
+        $login = $body["login"];
+        $password = $body["password"];
 
-    private function writeBody(array $body)
-    {
-        $f = @fopen(PROJECT_ROOT . "/runtime/body.txt", "rb+");
-        if ($f === false) {
-            throw new FileException("cannot open file");
-        }
-        foreach ($body as $key => $value) {
-            if (!fwrite($f, "$key=$value" . PHP_EOL)) {
-                throw new FileException("cannot write to file");
-            }
+
+        $user = UserMapper::findUserByLogin($login);
+        if($user == null){
+            echo "User with $login is not found";
+            return;
         }
 
-        fclose($f);
+        session_start();
+
+        $_SESSION["authorised"] = true;
+        $_SESSION["userID"] = $user->getId();
+
+        //echo $_SESSION["userID"];
+        header("Location: /login");
     }
 }
