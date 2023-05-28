@@ -23,17 +23,23 @@ class UserMapper extends \app\core\Mapper
         $this->selectByEmail = $this->getPdo()->prepare("SELECT * FROM users WHERE email = :email");
     }
 
-    public function doSelectByEmailPassword(string $email, string $password): Model
+    public function doSelectByEmailPassword(string $email, string $password): ?Model
     {
         $this->selectByEmailPassword->execute([":email" => $email, ":password" => $password]);
         $data = $this->selectByEmailPassword->fetch(\PDO::FETCH_NAMED);
+        if ($data == null) {
+            return null;
+        }
         return new User($data["id"], $data["email"], $data["password"], $data["name"]);
     }
 
-    public function doSelectByEmail(string $email): Model
+    public function doSelectByEmail(string $email): ?Model
     {
         $this->selectByEmail->execute([":email" => $email]);
         $data = $this->selectByEmail->fetch(\PDO::FETCH_NAMED);
+        if ($data == null) {
+            return null;
+        }
         return new User($data["id"], $data["email"], $data["password"], $data["name"]);
     }
 

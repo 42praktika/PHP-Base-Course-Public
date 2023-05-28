@@ -37,8 +37,7 @@ class CashSavingController
                     ["login_action"=>"login", "main_action"=>"/"]);
             }
         } catch (\Exception $exception) {
-            echo $exception;
-//            Application::$app->getLogger()->error($exception);
+            Application::$app->getLogger()->error($exception);
         }
     }
 
@@ -57,8 +56,7 @@ class CashSavingController
             }
         }
         catch (\Exception $exception) {
-            echo $exception;
-//            Application::$app->getLogger()->error($exception);
+            Application::$app->getLogger()->error($exception);
         }
     }
 
@@ -78,8 +76,7 @@ class CashSavingController
             }
         }
         catch (\Exception $exception) {
-            echo $exception;
-//            Application::$app->getLogger()->error($exception);
+            Application::$app->getLogger()->error($exception);
         }
     }
 
@@ -93,8 +90,7 @@ class CashSavingController
             Application::$app->getRouter()->renderTemplate("success", ["profile_action"=>"profile"]);
         }
         catch (\Exception $exception) {
-            echo $exception;
-//            Application::$app->getLogger()->error($exception);
+            Application::$app->getLogger()->error($exception);
         }
     }
 }

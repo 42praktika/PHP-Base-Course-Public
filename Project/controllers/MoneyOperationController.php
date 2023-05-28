@@ -35,8 +35,7 @@ class MoneyOperationController
                     ["login_action"=>"login", "main_action"=>"/"]);
             }
         } catch (\Exception $exception) {
-            echo $exception;
-//            Application::$app->getLogger()->error($exception);
+            Application::$app->getLogger()->error($exception);
         }
     }
 
@@ -55,8 +54,7 @@ class MoneyOperationController
                     "categories"=>$categories,
                     "operation"=>null]);
         } catch (\Exception $exception) {
-            echo $exception;
-//            Application::$app->getLogger()->error($exception);
+            Application::$app->getLogger()->error($exception);
         }
     }
 
@@ -75,8 +73,7 @@ class MoneyOperationController
                     "categories"=>$categories,
                     "operation"=>null]);
         } catch (\Exception $exception) {
-            echo $exception;
-//            Application::$app->getLogger()->error($exception);
+            Application::$app->getLogger()->error($exception);
         }
     }
 
@@ -97,8 +94,7 @@ class MoneyOperationController
             }
         }
         catch (\Exception $exception) {
-            echo $exception;
-//            Application::$app->getLogger()->error($exception);
+            Application::$app->getLogger()->error($exception);
         }
     }
 
@@ -112,8 +108,7 @@ class MoneyOperationController
             Application::$app->getRouter()->renderTemplate("success", ["profile_action"=>"profile"]);
         }
         catch (\Exception $exception) {
-            echo $exception;
-//            Application::$app->getLogger()->error($exception);
+            Application::$app->getLogger()->error($exception);
         }
     }
 
@@ -133,8 +128,7 @@ class MoneyOperationController
             }
         }
         catch (\Exception $exception) {
-            echo $exception;
-//            Application::$app->getLogger()->error($exception);
+            Application::$app->getLogger()->error($exception);
         }
     }
 }

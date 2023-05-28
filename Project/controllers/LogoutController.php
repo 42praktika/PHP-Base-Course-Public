@@ -19,8 +19,7 @@ class LogoutController
                 "login_action"=>"login"]);
         }
         catch (\Exception $exception) {
-            echo $exception;
-//            Application::$app->getLogger()->error($exception);
+            Application::$app->getLogger()->error($exception);
         }
     }
 }

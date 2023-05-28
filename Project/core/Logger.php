@@ -24,7 +24,7 @@ class Logger extends AbstractLogger
         }
     }
 
-    public function log($level, $message, array $context = array())
+    public function log($level, $message, array $context = array()) : void
     {
         file_put_contents($this->filename, date("H-m-s") . " [$level] $message");
     }

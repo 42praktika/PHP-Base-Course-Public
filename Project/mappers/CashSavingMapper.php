@@ -75,11 +75,12 @@ class CashSavingMapper extends \app\core\Mapper
         return $this->selectAll->fetchAll();
     }
 
-    public function doSelectAllByAuthorId(int $author_id): array
+    public function doSelectAllByAuthorId(int $author_id): ?array
     {
         $this->selectAllByAuthorId->execute([":author_id" => $author_id]);
         $savings = [];
         $res = $this->selectAllByAuthorId->fetchAll();
+        if ($res == null) return null;
         for ($i = 0; $i < count($res); $i++) {
             $savings[$i] = $this->createObject($res[$i]);
         }

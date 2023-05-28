@@ -21,8 +21,13 @@ class LoginController
             $body = Application::$app->getRequest()->getBody();
             $mapper = new UserMapper();
             $user = $mapper->createObject($body);
-            $_SESSION['userId'] = $mapper->doSelectByEmailPassword($user->getEmail(), $user->getPassword())->getId();
-            Application::$app->getRouter()->renderTemplate("success", ["profile_action"=>"profile"]);
+            $userFromDB = $mapper->doSelectByEmailPassword($user->getEmail(), $user->getPassword());
+            if ($userFromDB != null) {
+                $_SESSION['userId'] = $userFromDB->getId();
+                Application::$app->getRouter()->renderTemplate("success", ["profile_action"=>"profile"]);
+            } else {
+                Application::$app->getRouter()->renderStatic("404.html");
+            }
         }
         catch (\Exception $exception) {
             echo $exception;

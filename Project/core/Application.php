@@ -19,7 +19,7 @@ class Application
         $this->request = new Request();
         $this->response = new Response();
         $this->router = new Router($this->request, $this->response);
-//        $this->logger = new Logger(PROJECT_ROOT."/runtime/".getenv("APP_LOG"));
+        $this->logger = new Logger(PROJECT_ROOT."runtime\\".getenv("APP_LOG"));
         self::$database = new Database($_ENV["DB_DSN"], $_ENV["DB_USER"], $_ENV["DB_PASSWORD"]);
     }
 
@@ -27,7 +27,7 @@ class Application
         try {
             $this->router->resolve();
         } catch (\Exception $exception) {
-//            $this->logger->error("Can not resolve route");
+            $this->logger->error("Can not resolve route");
             $this->response->setStatusCode(Response::HTTP_SERVER_ERROR);
         }
     }

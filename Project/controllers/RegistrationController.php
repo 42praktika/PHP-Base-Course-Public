@@ -4,6 +4,7 @@ declare(strict_types=1);
 namespace app\controllers;
 
 use app\core\Application;
+use app\exceptions\EmailAlreadyExistsException;
 use app\mappers\UserMapper;
 
 class RegistrationController
@@ -22,12 +23,18 @@ class RegistrationController
             $body = Application::$app->getRequest()->getBody();
             $mapper = new UserMapper();
             $user = $mapper->createObject($body);
-            $_SESSION["userId"] = $mapper->Insert($user)->getId();
-            Application::$app->getRouter()->renderTemplate("success", ["profile_action"=>"profile"]);
+            if ($mapper->doSelectByEmail($user->getEmail())) {
+                throw new EmailAlreadyExistsException();
+            } else {
+                $_SESSION["userId"] = $mapper->Insert($user)->getId();
+                Application::$app->getRouter()->renderTemplate("success", ["profile_action"=>"profile"]);
+            }
+        }
+        catch (EmailAlreadyExistsException $exception) {
+            Application::$app->getRouter()->renderStatic("conflict.html");
         }
         catch (\Exception $exception) {
-            echo $exception;
-//            Application::$app->getLogger()->error($exception);
+            Application::$app->getLogger()->error($exception);
         }
     }
 }

@@ -6,7 +6,6 @@ namespace app\controllers;
 use app\core\Application;
 use app\mappers\CategoryMapper;
 use app\mappers\MoneyOperationMapper;
-use app\models\MoneyOperation;
 
 class HistoryController
 {
@@ -31,8 +30,7 @@ class HistoryController
                     ["login_action"=>"login", "main_action"=>"/"]);
             }
         } catch (\Exception $exception) {
-            echo $exception;
-//            Application::$app->getLogger()->error($exception);
+            Application::$app->getLogger()->error($exception);
         }
     }
 
@@ -53,8 +51,7 @@ class HistoryController
                     "operations"=>$operations,
                     "categories"=>$categories]);
         } catch (\Exception $exception) {
-            echo $exception;
-//            Application::$app->getLogger()->error($exception);
+            Application::$app->getLogger()->error($exception);
         }
     }
 

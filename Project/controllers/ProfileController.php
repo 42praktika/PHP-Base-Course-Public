@@ -33,8 +33,7 @@ class ProfileController
                     ["login_action"=>"login", "main_action"=>"/"]);
             }
         } catch (\Exception $exception) {
-            echo $exception;
-//            Application::$app->getLogger()->error($exception);
+            Application::$app->getLogger()->error($exception);
         }
 
     }
@@ -45,9 +44,8 @@ class ProfileController
             $mapper = new CashSavingMapper();
             return $mapper->doSelectAllByAuthorId($_SESSION["userId"]);
         } catch (\Exception $exception) {
-            echo $exception;
+            Application::$app->getLogger()->error($exception);
             return [];
-//            Application::$app->getLogger()->error($exception);
         }
     }
 
@@ -58,9 +56,8 @@ class ProfileController
             $sum = $mapper->getSumByPeriod($_SESSION["userId"], false, date('Y-m-01'), date('Y-m-d'));
             return $sum["sum"] !== null ? $sum["sum"] : "0";
         } catch (\Exception $exception) {
-            echo $exception;
+            Application::$app->getLogger()->error($exception);
             return "";
-//            Application::$app->getLogger()->error($exception);
         }
     }
 
@@ -71,9 +68,8 @@ class ProfileController
             $sum = $mapper->getSumByPeriod($_SESSION["userId"], true, date('Y-m-01'), date('Y-m-d'));
             return $sum["sum"] !== null ? $sum["sum"] : "0";
         } catch (\Exception $exception) {
-            echo $exception;
+            Application::$app->getLogger()->error($exception);
             return "";
-//            Application::$app->getLogger()->error($exception);
         }
     }
 }
