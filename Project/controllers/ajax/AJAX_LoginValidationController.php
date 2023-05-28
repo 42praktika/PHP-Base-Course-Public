@@ -1,10 +1,10 @@
 <?php
 
-namespace app\controllers;
+namespace app\controllers\ajax;
 
 use app\mappers\UserMapper;
 
-class LoginValidationController
+class AJAX_LoginValidationController
 {
     public static function ValidateForm(array $data) : string {
 

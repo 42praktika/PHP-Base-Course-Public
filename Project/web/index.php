@@ -3,7 +3,7 @@
 use app\controllers\PresentationController;
 use app\core\Application;
 
-//Возвращает файлы напрямую
+// Return files
 if (preg_match('/\.(?:png|jpg|jpeg|gif|css|html?|js)$/', $_SERVER["REQUEST_URI"])) {
     return false;
 }
@@ -25,23 +25,32 @@ if($env == "dev"){
     ini_set('log_errors', '1');
     ini_set('error_log', PROJECT_ROOT."/runtime/".getenv("PHP_LOG"));
 }
-//var_dump($env);
 $application = new Application();
 $router = $application->getRouter();
+
+// GET controllers
 
 $router->setGetRoute("/get500", "");
 $router->setGetRoute("/", [new PresentationController, "getView"]);
 $router->setGetRoute("/user", [new \app\controllers\UserProfileContoller(), "getView"]);
 $router->setGetRoute("/about", [new \app\controllers\AboutContoller(), "getView"]);
 $router->setGetRoute("/manga", [new \app\controllers\MangaProfileContoller(), "getView"]);
-
+$router->setGetRoute("/favourite", [new \app\controllers\FavouritePageController(), "getView"]);
 $router->setGetRoute("/logout", [new \app\controllers\LogoutController(), "getView"]);
+$router->setGetRoute("/admin", [new \app\controllers\adminPanel\AdminPresentationController(), "getView"]);
+
+// POST controllers
 
 $router->setPostRoute("/login", [new \app\controllers\LoginController(), "handleView"]);
 $router->setPostRoute("/register", [new \app\controllers\RegisterController(), "handleView"]);
 $router->setPostRoute("/handle", [new PresentationController, "handleView"]);
-$router->setPostRoute("/validateRegisterForm", [new \app\controllers\RegistrationFormValidationController(), "handleView"]);
-$router->setPostRoute("/validateLoginForm", [new \app\controllers\LoginValidationController(), "handleView"]);
+
+// AJAX controllers
+
+$router->setPostRoute("/validateRegisterForm", [new \app\controllers\ajax\AJAX_RegistrationFormValidationController(), "handleView"]);
+$router->setPostRoute("/validateLoginForm", [new \app\controllers\ajax\AJAX_LoginValidationController(), "handleView"]);
+
+//
 
 ob_start();
 $application->run();

@@ -4,8 +4,8 @@ declare(strict_types=1);
 namespace app\controllers;
 
 use app\core\Application;
-use app\core\Template;
 use app\mappers\UserMapper;
+use app\viewmodels\HeaderViewModel;
 
 class AboutContoller
 {
@@ -20,14 +20,14 @@ class AboutContoller
 
 
         if(!$authorised){
-            $header = HeaderController::getView(false);
+            $header = HeaderViewModel::getView(false);
             Application::$app->getRouter()->renderTemplate("about", ["header"=>$header]);
             return;
         }
 
         $user = UserMapper::findUserByID($_SESSION["userID"]);
 
-        $header = HeaderController::getView(true, ["username"=>$user->getNickname()]);
+        $header = HeaderViewModel::getView(true, ["username"=>$user->getNickname()]);
 
         Application::$app->getRouter()->renderTemplate("about", ["header"=>$header]);
     }

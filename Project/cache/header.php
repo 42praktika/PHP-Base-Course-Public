@@ -24,7 +24,7 @@
 
         <div class="horizontal-items">
             <div class="horizontal-item">
-                <a href="" class="header-navlink">Favourite</a>
+                <a href="/favourite" class="header-navlink">Favourite</a>
             </div>
 <!--            user-->
 

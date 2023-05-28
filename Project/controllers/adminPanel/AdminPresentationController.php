@@ -1,17 +1,16 @@
 <?php
-declare(strict_types=1);
 
-namespace app\controllers;
+namespace app\controllers\adminPanel;
 
 use app\core\Application;
 use app\core\Response;
 use app\exceptions\FileException;
 use app\mappers\UserMapper;
+use app\viewmodels\adminPanel\AdminHeaderViewModel;
 use app\viewmodels\HeaderViewModel;
 
-class PresentationController
+class AdminPresentationController
 {
-
     public function getView(): void
     {
         session_start();
@@ -22,18 +21,18 @@ class PresentationController
 
 
         if(!$authorised){
-            $header = HeaderViewModel::getView(false);
-            Application::$app->getRouter()->renderTemplate("home", ["header"=>$header]);
+            $header = AdminHeaderViewModel::getView(false);
+            Application::$app->getRouter()->renderTemplate("adminPanel/home", ["header"=>$header]);
             return;
         }
 
         $user = UserMapper::findUserByID($_SESSION["userID"]);
 
-        $header = HeaderViewModel::getView(true, ["username"=>$user->getNickname()]);
+        $header = AdminHeaderViewModel::getView(true, ["username"=>$user->getNickname()]);
 
 
-        Application::$app->getRouter()->renderTemplate("home", ["header"=>$header]);
-       // Application::$app->getRouter()->renderView("home");
+        Application::$app->getRouter()->renderTemplate("adminPanel/home", ["header"=>$header]);
+        // Application::$app->getRouter()->renderView("home");
         //Application::$app->getRouter()->renderTemplate("home");
     }
 

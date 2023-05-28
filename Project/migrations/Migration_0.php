@@ -22,6 +22,10 @@ class Migration_0 extends Migration
                         nickname varchar(50),
                         email varchar(100),
                         password varchar(60)
+                    );
+                    CREATE TABLE if not exists roles (
+                        id serial primary key,
+                        rolename varchar(50)
                     );"
         );
 

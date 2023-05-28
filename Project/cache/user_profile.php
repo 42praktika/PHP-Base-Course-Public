@@ -45,26 +45,7 @@
 
     <script src="/assets/js/global.js"></script>
 
-    <script>
-        function SetAuthContainerVisible() {
-            document.getElementById('auth-container').style.visibility = "visible"
-        }
 
-        function SetAuthContainerHidden() {
-            document.getElementById('auth-container').style.visibility = "hidden"
-        }
-
-
-        function DisplayTopProfileMenu() {
-            var x = document.getElementById('top-profile-menu');
-            if (x.style.visibility == 'hidden') {
-                x.style.visibility = 'visible';
-            } else {
-                x.style.visibility = 'hidden';
-            }
-        }
-
-    </script>
     <style>
         .material-symbols-rounded {
             font-variation-settings:
@@ -88,36 +69,105 @@ include PROJECT_ROOT."views/templates/authTemplate.php";
         <div class="row">
             <label class="title-name">Profile</label>
             <br>
-            <div class="flex row" >
-                <img src="" alt="user image">
-                <div class="flex column" style="margin-left: 15px">
-                    <div>
-                        <label>nickname: </label>
-                        <label><?php echo $username ?></label>
+            <form class="flex row" >
+
+                <div class="profile-image">
+
+                    <img src="https://99px.ru/sstorage/56/2022/02/image_562102221206537735985.jpg" class="no-select" alt="user image">
+                </div>
+<!--                <dl class="flex column" style="margin-left: 15px">-->
+                <dl  style="margin-left: 15px; display: block">
+                    <label class="title-name"><Public></Public></label>
+                    <div class="flex align-center" style="justify-content: space-between">
+                        <dt style="float: left; display: block">
+                            <label>nickname</label>
+                        </dt>
+                        <dd style="float: left; display: flex; align-items: center">
+                            <input type="text" id="nickname-showcase" class="blurred-input" disabled value="<?php echo $username ?>"></input>
+                        </dd>
                     </div>
 
-                    <div>
-                        <label>email: </label>
-                        <label><?php echo $email ?></label>
+
+                    <div class="flex align-center" style="margin-top: 10px; margin-bottom: 10px; justify-content: space-between">
+                        <dt style="float: left; display: block">
+                            <label>email</label>
+                        </dt>
+                        <dd style="float: left; display: flex; align-items: center">
+                            <input type="email" id="email-showcase" class="blurred-input" disabled value="<?php echo $email ?>"></input>
+                        </dd>
                     </div>
-                    <button class="button-login" style="max-width: 50%">Edit profile</button>
-                </div>
-            </div>
+
+                    <label id="edit-profile-form-message"></label>
+<!--                    <button type="button" class="button-login" id="edit-profile-button" style="max-width: 50%">Edit profile</button>-->
+                </dl>
+            </form>
 
             <input class="radio" id="one" name="group" type="radio" checked>
             <input class="radio" id="two" name="group" type="radio">
             <input class="radio" id="three" name="group" type="radio">
 
             <div class="tabs">
-                <label class="tab no-select" id="one-tab" for="one">Favourite</label>
-                <label class="tab no-select" id="two-tab" for="two">Read later</label>
-                <label class="tab no-select" id="three-tab" for="three">tab 3</label>
+                <label class="tab no-select" id="one-tab" for="one">Profile</label>
+                <label class="tab no-select" id="two-tab" for="two">Password</label>
+                <label class="tab no-select" id="three-tab" for="three">smth</label>
             </div>
             <div class="panels">
                 <div class="panel" id="one-panel">
 
+                    <label>Manage profile</label>
+                    <div class="flex align-center" style="justify-content: space-between">
+                        <dt style="float: left; display: block">
+                            <label>nickname</label>
+                        </dt>
+                        <dd style="float: left; display: flex; align-items: center">
+                            <input type="text" id="nickname-input" style="background: #D9D9D9" class="blurred-input"  value="<?php echo $username ?>"></input>
+                        </dd>
+                    </div>
+
+
+                    <div class="flex align-center" style="margin-top: 10px; margin-bottom: 10px; justify-content: space-between">
+                        <dt style="float: left; display: block">
+                            <label>email</label>
+                        </dt>
+                        <dd style="float: left; display: flex; align-items: center">
+                            <input type="email" id="email-input" class="blurred-input" style="background: #D9D9D9"  value="<?php echo $email ?>"></input>
+                        </dd>
+                    </div>
+                    <div class="flex align-center" style="margin-top: 10px; margin-bottom: 10px; justify-content: space-between">
+                        <dt style="float: left; display: block">
+                            <label>confirm with password</label>
+                        </dt>
+                        <dd style="float: left; display: flex; align-items: center">
+                            <input type="password" id="current-password-control" class="blurred-input" style="background: #D9D9D9" placeholder="current password"></input>
+                        </dd>
+
+
+                    </div>
+                    <button class="button-login">Save</button>
+
+
                 </div>
+
+
+
                 <div class="panel" id="two-panel">
+                    <div class="flex" style="justify-content: center; flex-direction: column;align-items: center;">
+                        <label>Change password</label>
+                        <div class="flex align-center" style="margin-top: 5px; margin-bottom: 5px; justify-content: space-between">
+                            <div style="display: flex; align-items: center">
+                                <input type="password" id="current-password-input" class="blurred-input" style="background: #D9D9D9" placeholder="current password"></input>
+                            </div>
+                        </div>
+
+                        <div class="flex align-center" style="margin-top: 5px; margin-bottom: 5px; justify-content: space-between">
+
+                            <div style=" display: flex; align-items: center">
+                                <input type="password" id="new-password-input" class="blurred-input" style="background: #D9D9D9" placeholder="new password"></input>
+                            </div>
+                        </div>
+
+                        <button class="button-login">Save</button>
+                    </div>
 
                 </div>
 
@@ -131,14 +181,58 @@ include PROJECT_ROOT."views/templates/authTemplate.php";
 </body>
 
 </html>
+<script>
+    function SetAuthContainerVisible() {
+        document.getElementById('auth-container').style.visibility = "visible"
+    }
+
+    function SetAuthContainerHidden() {
+        document.getElementById('auth-container').style.visibility = "hidden"
+    }
+
+
+    function DisplayTopProfileMenu() {
+        var x = document.getElementById('top-profile-menu');
+        if (x.style.visibility == 'hidden') {
+            x.style.visibility = 'visible';
+        } else {
+            x.style.visibility = 'hidden';
+        }
+    }
+    let edit_profile_btn = document.getElementById('edit-profile-button');
+    edit_profile_btn.addEventListener("click", onEditProfileButtonClicked);
+
+    let email_input = document.getElementById('email-input');
+    let nickname_input = document.getElementById('nickname-input')
+    let isEditMode = false;
+    function onEditProfileButtonClicked(){
+        isEditMode = !isEditMode;
+        switchEditButton();
+        email_input.disabled = !email_input.disabled;
+        nickname_input.disabled = !nickname_input.disabled;
+    }
+
+    function switchEditButton(){
+        if(isEditMode){
+            edit_profile_btn.textContent="Save";
+            edit_profile_btn.className = "button_purple no-select";
+        }
+        else{
+            edit_profile_btn.textContent="Edit profile";
+            edit_profile_btn.className = "button-login no-select";
+        }
+    }
+
+    function sendProfileChangesForm(){
+
+    }
+</script>
 
 </body>
 </html>
 <?php
         include PROJECT_ROOT."views/templates/authTemplate.php";
-        ?>
-
-
+?>
 
 
 

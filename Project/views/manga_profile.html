@@ -1,3 +1,9 @@
+{% extends layout.html %}
+
+{%block title%} Manga {% endblock%}
+
+{% block content %}
+
 <html>
 
 <head>
@@ -50,9 +56,7 @@
         }
     </style>
 </head>
-<?php
-include PROJECT_ROOT."views/templates/header.html";
-?>
+{{$header}}
 
 <body class="main-content">
     <div class="manga_profile_container">
@@ -401,7 +405,8 @@ include PROJECT_ROOT."views/templates/header.html";
             </div>
         </div>
     </div> -->
-<?php
-include PROJECT_ROOT."views/templates/footer.html";
-?>
+
 </html>
+
+{% endblock %}
+{% extends footer.html %}

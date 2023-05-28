@@ -5,6 +5,7 @@ namespace app\controllers;
 
 use app\core\Application;
 use app\mappers\UserMapper;
+use app\viewmodels\HeaderViewModel;
 
 class UserProfileContoller
 {
@@ -25,7 +26,7 @@ class UserProfileContoller
 
         $user = UserMapper::findUserByID($_SESSION["userID"]);
 
-        $header = HeaderController::getView(true, ["username"=>$user->getNickname()]);
+        $header = HeaderViewModel::getView(true, ["username"=>$user->getNickname()]);
 
 
         Application::$app->getRouter()->renderTemplate("user_profile", ["header"=>$header, "username"=>$user->getNickname(), "email"=>$user->getEmail()]);

@@ -1,13 +1,9 @@
 <?php
 declare(strict_types=1);
 
-namespace app\controllers;
+namespace app\controllers\ajax;
 
-use app\core\Application;
-use app\core\Router;
-use app\models\User;
-
-class RegistrationFormValidationController
+class AJAX_RegistrationFormValidationController
 {
 
     public static function ValidateForm(array $data) : string {

@@ -40,7 +40,7 @@
 </html>
 <?php
         include PROJECT_ROOT."views/templates/authTemplate.php";
-        ?>
+?>
 
 
 

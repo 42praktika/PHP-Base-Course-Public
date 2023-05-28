@@ -3,10 +3,10 @@ declare(strict_types=1);
 
 namespace app\controllers;
 
+use app\controllers\ajax\AJAX_LoginValidationController;
 use app\core\Application;
-use app\core\Router;
 use app\mappers\UserMapper;
-use app\models\User;
+
 class LoginController
 {
 
@@ -23,7 +23,7 @@ class LoginController
         $email = $body["email"];
         $password = $body["password"];
 
-        if(LoginValidationController::ValidateForm($body) !== "ok"){
+        if(AJAX_LoginValidationController::ValidateForm($body) !== "ok"){
             header("Location: /error");
             return;
         }
@@ -43,9 +43,6 @@ class LoginController
         setcookie("SID", session_id(), time()+20*24*60*60);
         $_SESSION["authorised"] = true;
         $_SESSION["userID"] = $user->getId();
-//        var_dump($user);
-//
-//        $this->login($email, $password);
         header("Location: /");
     }
 

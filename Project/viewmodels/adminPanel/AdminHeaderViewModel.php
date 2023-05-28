@@ -1,11 +1,11 @@
 <?php
 
-namespace app\controllers;
+namespace app\viewmodels\adminPanel;
 
-use app\core\Application;
 use app\core\Template;
+use app\viewmodels\HeaderViewModel;
 
-class HeaderController
+class AdminHeaderViewModel
 {
     public static function getView(bool $authorised, array $user = []) : string
     {
@@ -14,12 +14,12 @@ class HeaderController
         }
 
         if(!$authorised){
-            $header = Template::ReturnView("header.html", ["authorised" => HeaderController::$signInButton]);
+            $header = Template::ReturnView("adminPanel/adminHeader.html", ["authorised" => AdminHeaderViewModel::$signInButton]);
             return $header;
         }
         $username = $user["username"];
         $userbutton = Template::ReturnView("_header_userbutton.html", ["username" => $username]);
-        $header = Template::ReturnView("header.html", ["authorised" => $userbutton]);
+        $header = Template::ReturnView("adminPanel/adminHeader.html", ["authorised" => $userbutton]);
         return $header;
     }
 

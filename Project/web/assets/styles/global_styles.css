@@ -131,6 +131,9 @@ body{
     background: rgba(238, 238, 238, 0.8);
     transition: 0.25s;
 }
+.blurred-input:disabled{
+    color: #9C9C9C;
+}
 .input_correct{
     border: 2px solid rgb(0, 185, 0);
 }
@@ -384,12 +387,14 @@ body{
   
   #one:checked ~ .panels #one-panel,
   #two:checked ~ .panels #two-panel,
+  #four:checked ~ .panels #four-panel,
   #three:checked ~ .panels #three-panel {
     display: flex;
   }
   
   #one:checked ~ .tabs #one-tab,
   #two:checked ~ .tabs #two-tab,
+  #four:checked ~ .tabs #four-tab,
   #three:checked ~ .tabs #three-tab {
     /* margin-right: 10px;
    

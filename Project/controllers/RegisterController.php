@@ -3,11 +3,9 @@ declare(strict_types=1);
 
 namespace app\controllers;
 
+use app\controllers\ajax\AJAX_RegistrationFormValidationController;
 use app\core\Application;
-use app\mappers;
-use app\core\Router;
 use app\mappers\UserMapper;
-use app\models\User;
 
 class RegisterController
 {
@@ -26,7 +24,7 @@ class RegisterController
             $email = $body["email"];
             $password = $body["password"];
 
-            if(RegistrationFormValidationController::ValidateForm($body) !== "ok"){
+            if(AJAX_RegistrationFormValidationController::ValidateForm($body) !== "ok"){
                 header("Location: /error");
                 return;
             }
@@ -51,7 +49,7 @@ class RegisterController
                 return;
             }
 
-            if(!RegistrationFormValidationController::ValidateForm($_POST)){
+            if(!AJAX_RegistrationFormValidationController::ValidateForm($_POST)){
                 header("Location: /error");
                 return;
             }
@@ -67,7 +65,10 @@ class RegisterController
         if($email==null || $password == null){
             return;
         }
-
+        session_start();
+        setcookie("SID", session_id(), time()+20*24*60*60);
+        $_SESSION["authorised"] = true;
+        $_SESSION["userID"] = UserMapper::findUserByEmail($email)->getId();
         header("Location: /user");
         exit();
     }

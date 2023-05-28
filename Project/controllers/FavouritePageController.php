@@ -1,5 +1,4 @@
 <?php
-declare(strict_types=1);
 
 namespace app\controllers;
 
@@ -9,9 +8,8 @@ use app\exceptions\FileException;
 use app\mappers\UserMapper;
 use app\viewmodels\HeaderViewModel;
 
-class PresentationController
+class FavouritePageController
 {
-
     public function getView(): void
     {
         session_start();
@@ -23,7 +21,7 @@ class PresentationController
 
         if(!$authorised){
             $header = HeaderViewModel::getView(false);
-            Application::$app->getRouter()->renderTemplate("home", ["header"=>$header]);
+            Application::$app->getRouter()->renderTemplate("favourite", ["header"=>$header]);
             return;
         }
 
@@ -32,8 +30,8 @@ class PresentationController
         $header = HeaderViewModel::getView(true, ["username"=>$user->getNickname()]);
 
 
-        Application::$app->getRouter()->renderTemplate("home", ["header"=>$header]);
-       // Application::$app->getRouter()->renderView("home");
+        Application::$app->getRouter()->renderTemplate("favourite", ["header"=>$header]);
+        // Application::$app->getRouter()->renderView("home");
         //Application::$app->getRouter()->renderTemplate("home");
     }
 
@@ -46,20 +44,5 @@ class PresentationController
         } catch (FileException $e) {
             Application::$app->getResponse()->setStatusCode(Response::HTTP_SERVER_ERROR);
         }
-    }
-
-    private function writeBody(array $body)
-    {
-        $f = @fopen(PROJECT_ROOT . "/runtime/body.txt", "rb+");
-        if ($f === false) {
-            throw new FileException("cannot open file");
-        }
-        foreach ($body as $key => $value) {
-            if (!fwrite($f, "$key=$value" . PHP_EOL)) {
-                throw new FileException("cannot write to file");
-            }
-        }
-
-        fclose($f);
     }
 }
