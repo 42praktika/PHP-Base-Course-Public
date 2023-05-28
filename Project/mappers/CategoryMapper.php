@@ -54,7 +54,17 @@ class CategoryMapper extends \app\core\Mapper
      */
     protected function doDelete(Model $model): void
     {
-        $this->delete->execute([":id" => $model->getId()]);
+        $categoryId = $model->getId();
+        $mapper = new MoneyOperationMapper();
+        $operations = $mapper->doSelectAll();
+        foreach ($operations as $o) {
+            if ($o->getCategoryId() == $categoryId) {
+                $defaultId = $o->isIncome() ? 7 : 8;
+                $o->setCategoryId($defaultId);
+                $mapper->Update($o);
+            }
+        }
+        $this->delete->execute([":id" => $categoryId]);
     }
 
     /**

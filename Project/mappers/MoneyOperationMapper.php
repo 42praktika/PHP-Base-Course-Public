@@ -109,7 +109,12 @@ class MoneyOperationMapper extends \app\core\Mapper
     protected function doSelectAll(): array
     {
         $this->selectAll->execute();
-        return $this->selectAll->fetchAll();
+        $res = $this->selectAll->fetchAll();
+        $operations = [];
+        for ($i = 0; $i < count($res); $i++) {
+            $operations[$i] = $this->createObject($res[$i]);
+        }
+        return $operations;
     }
 
     function createObject(array $data): Model

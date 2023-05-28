@@ -7,7 +7,6 @@ use app\core\Application;
 use app\exceptions\DbException;
 use app\mappers\CategoryMapper;
 use app\mappers\MoneyOperationMapper;
-use function PHPUnit\Framework\throwException;
 
 class MoneyOperationController
 {
@@ -113,8 +112,15 @@ class MoneyOperationController
             $author_id = $_SESSION['userId'];
             $mapper = new MoneyOperationMapper();
             $operation = $mapper->Select((int)$_GET['id']);
-            $mapper->Delete($operation);
-            Application::$app->getRouter()->renderTemplate("success", ["profile_action"=>"profile"]);
+            if ($operation->getAuthorId() == $author_id) {
+                $mapper->Delete($operation);
+                Application::$app->getRouter()->renderTemplate("success", ["profile_action"=>"profile"]);
+            } else {
+                throw new DbException();
+            }
+        }
+        catch (DbException $exception) {
+            Application::$app->getRouter()->renderStatic("403.html");
         }
         catch (\Exception $exception) {
             Application::$app->getLogger()->error($exception);

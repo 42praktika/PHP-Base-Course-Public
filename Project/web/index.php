@@ -2,6 +2,7 @@
 
 use app\controllers\AboutController;
 use app\controllers\CashSavingController;
+use app\controllers\CategoryController;
 use app\controllers\HistoryController;
 use app\controllers\LoginController;
 use app\controllers\LogoutController;
@@ -81,6 +82,10 @@ $router->setGetRoute("/delete-money-operation", [new MoneyOperationController(),
 $router->setGetRoute("/success", [new SuccessController(), "getView"]);
 
 $router->setGetRoute("/logout", [new LogoutController(), "logout"]);
+
+$router->setGetRoute("/category", [new CategoryController(), "getView"]);
+$router->setPostRoute("/add-category", [new CategoryController(), "add"]);
+$router->setGetRoute("/delete-category", [new CategoryController(), "delete"]);
 
 ob_start();
 $application->run();

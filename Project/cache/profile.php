@@ -45,6 +45,7 @@
             <a class="control-button" href="<?php echo $add_income_action ?>">Добавить доход</a>
             <a class="control-button" href="<?php echo $add_expense_action ?>">Добавить расход</a>
             <a class="control-button" href="<?php echo $add_cash_savings_action ?>">Добавить сбережение</a>
+            <a class="control-button" href="<?php echo $category_action ?>">Мои категории</a>
         </div>
 
     </div>

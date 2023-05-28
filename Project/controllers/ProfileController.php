@@ -22,6 +22,7 @@ class ProfileController
                         "expenses"=>$this->getExpenseSumByPeriod(),
                         "income"=>$this->getIncomeSumByPeriod(),
                         "savings"=>$this->getCashSavings(),
+                        "category_action"=>"category",
                         "add_income_action"=>"add-income",
                         "add_expense_action"=>"add-expense",
                         "add_cash_savings_action"=>"add-cash-saving",
