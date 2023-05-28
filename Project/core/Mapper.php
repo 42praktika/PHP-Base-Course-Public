@@ -24,7 +24,7 @@ abstract class Mapper
         $this->doDelete($model);
     }
 
-    public function Select(int $id): Model {
+    public function Select(int $id): ?Model {
         return $this->createObject($this->doSelect($id));
     }
 

@@ -18,7 +18,7 @@
     <input type="text" name="name" id="name" value="<?php echo $saving->getName() ?>"><br>
 
     <label for="sum">Сумма</label>
-    <input type="text" name="sum" id="sum" value="<?php echo $saving->getSum() ?>"><br>
+    <input type="number" name="sum" id="sum" value="<?php echo $saving->getSum() ?>"><br>
 
     <input type="submit" value="Сохранить">
   </form>

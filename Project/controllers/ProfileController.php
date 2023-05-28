@@ -42,7 +42,9 @@ class ProfileController
     {
         try {
             $mapper = new CashSavingMapper();
-            return $mapper->doSelectAllByAuthorId($_SESSION["userId"]);
+            $savings = $mapper->doSelectAllByAuthorId($_SESSION["userId"]);
+            if ($savings == null) return [];
+            return $savings;
         } catch (\Exception $exception) {
             Application::$app->getLogger()->error($exception);
             return [];

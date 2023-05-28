@@ -4,8 +4,10 @@ declare(strict_types=1);
 namespace app\controllers;
 
 use app\core\Application;
+use app\exceptions\DbException;
 use app\mappers\CategoryMapper;
 use app\mappers\MoneyOperationMapper;
+use function PHPUnit\Framework\throwException;
 
 class MoneyOperationController
 {
@@ -17,24 +19,31 @@ class MoneyOperationController
                 $id = $_GET['id'];
                 $moneyOperationMapper = new MoneyOperationMapper();
                 $operation = $moneyOperationMapper->Select((int)$id);
-                $mapper = new CategoryMapper();
-                $defaultCategories = $mapper->doSelectDefaultAllByType($operation->isIncome());
-                $categories = $mapper->doSelectAllByTypeAuthorId($_SESSION["userId"], $operation->isIncome());
-                foreach ($defaultCategories as $c) {
-                    array_push($categories, $c);
+                if ($operation == null || $operation->getAuthorId() != $_SESSION['userId']) {
+                    throw new DbException();
+                } else {
+                    $mapper = new CategoryMapper();
+                    $defaultCategories = $mapper->doSelectDefaultAllByType($operation->isIncome());
+                    $categories = $mapper->doSelectAllByTypeAuthorId($_SESSION["userId"], $operation->isIncome());
+                    foreach ($defaultCategories as $c) {
+                        array_push($categories, $c);
+                    }
+                    $template = $operation->isIncome() ? "income" : "expense";
+                    Application::$app->getRouter()->renderTemplate($template,
+                        ["income_action"=>"edit-money-operation?id=".$_GET['id'],
+                            "expense_action"=>"edit-money-operation?id=".$_GET['id'],
+                            "profile_action"=>"profile",
+                            "categories"=>$categories,
+                            "operation"=>$operation]);
                 }
-                $template = $operation->isIncome() ? "income" : "expense";
-                Application::$app->getRouter()->renderTemplate($template,
-                    ["income_action"=>"edit-money-operation?id=".$_GET['id'],
-                        "expense_action"=>"edit-money-operation?id=".$_GET['id'],
-                        "profile_action"=>"profile",
-                        "categories"=>$categories,
-                        "operation"=>$operation]);
             } else {
                 Application::$app->getRouter()->renderTemplate("login",
                     ["login_action"=>"login", "main_action"=>"/"]);
             }
-        } catch (\Exception $exception) {
+        } catch (DbException $exception) {
+            Application::$app->getRouter()->renderStatic("403.html");
+        }
+        catch (\Exception $exception) {
             Application::$app->getLogger()->error($exception);
         }
     }
@@ -120,12 +129,20 @@ class MoneyOperationController
                 $body["author_id"] = $_SESSION['userId'];
                 $body["id"] = $_GET["id"];
                 $mapper = new MoneyOperationMapper();
-                $operation = $mapper->createObject($body);
-                $mapper->Update($operation);
-                Application::$app->getRouter()->renderTemplate("success", ["profile_action"=>"profile"]);
+                $oldOperation = $mapper->Select((int)$_GET["id"]);
+                if ($oldOperation == null || $oldOperation->getAuthorId() != $_SESSION['userId']) {
+                    throw new DbException();
+                } else {
+                    $operation = $mapper->createObject($body);
+                    $mapper->Update($operation);
+                    Application::$app->getRouter()->renderTemplate("success", ["profile_action"=>"profile"]);
+                }
             } else {
                 Application::$app->getRouter()->renderStatic("400.html");
             }
+        }
+        catch (DbException $exception) {
+            Application::$app->getRouter()->renderStatic("403.html");
         }
         catch (\Exception $exception) {
             Application::$app->getLogger()->error($exception);

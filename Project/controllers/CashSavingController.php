@@ -4,6 +4,7 @@ declare(strict_types=1);
 namespace app\controllers;
 
 use app\core\Application;
+use app\exceptions\DbException;
 use app\mappers\CashSavingMapper;
 use app\mappers\MoneyOperationMapper;
 use app\models\CashSaving;
@@ -18,13 +19,17 @@ class CashSavingController
                 if (array_key_exists('id', $_GET)) {
                     $mapper = new CashSavingMapper();
                     $saving = $mapper->Select((int)$_GET['id']);
-                    $path = "edit-saving?id=".$_GET['id'];
-                    $delete = "delete-cash-saving?id=".$_GET['id'];
-                    Application::$app->getRouter()->renderTemplate("saving",
-                        ["cash_saving_action"=>$path,
-                            "profile_action"=>"profile",
-                            "saving"=>$saving,
-                            "delete_action"=>$delete]);
+                    if ($saving == null || $saving->getAuthorId() != $_SESSION['userId']) {
+                        throw new DbException();
+                    } else {
+                        $path = "edit-saving?id=".$_GET['id'];
+                        $delete = "delete-cash-saving?id=".$_GET['id'];
+                        Application::$app->getRouter()->renderTemplate("saving",
+                            ["cash_saving_action"=>$path,
+                                "profile_action"=>"profile",
+                                "saving"=>$saving,
+                                "delete_action"=>$delete]);
+                    }
                 } else {
                     Application::$app->getRouter()->renderTemplate("saving",
                         ["cash_saving_action"=>"add-cash-saving",
@@ -36,7 +41,10 @@ class CashSavingController
                 Application::$app->getRouter()->renderTemplate("login",
                     ["login_action"=>"login", "main_action"=>"/"]);
             }
-        } catch (\Exception $exception) {
+        } catch (DbException $exception) {
+            Application::$app->getRouter()->renderStatic("403.html");
+        }
+        catch (\Exception $exception) {
             Application::$app->getLogger()->error($exception);
         }
     }
