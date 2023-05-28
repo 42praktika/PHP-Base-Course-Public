@@ -13,21 +13,7 @@ class AboutUsController
 
     public function getView()
     {
-        Application::$app->getRouter()->renderView("about_us");
-    }
-
-    public function handleView()
-    {
-        try {
-        $body = Application::$app->getRequest()->getBody();
-
-        (new User())->assign($body)->save();
-
-        Application::$app->getRouter()->renderView("success"); }
-        catch (\Exception $exception) {
-
-            Application::$app->getLogger()->error($exception);
-        }
+        Application::$app->getRouter()->renderTemplate("about_us");
     }
 
 

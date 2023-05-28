@@ -2,8 +2,9 @@
 
 namespace app\core;
 
+use http\Exception\RuntimeException;
+use MongoDB\Driver\Exception\ExecutionTimeoutException;
 use PDO;
-
 class Database
 {
     public PDO $pdo;
@@ -11,12 +12,6 @@ class Database
     {
         $this->pdo = new PDO($dsn, $user, $password);
         $this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-//        $request = $this->pdo->prepare("SELECT * FROM users");
-//        $request->execute();
-//        $data = $request->fetch(PDO::FETCH_ASSOC);
-//
-//        foreach ($data as $el){
-//            var_dump($el);
-//        }
     }
+
 }

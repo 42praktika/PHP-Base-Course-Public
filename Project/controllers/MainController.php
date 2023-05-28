@@ -10,7 +10,7 @@ class MainController
 
     public function getView()
     {
-        Application::$app->getRouter()->renderView("main");
+        Application::$app->getRouter()->renderTemplate("main");
     }
 
     public function handleView()

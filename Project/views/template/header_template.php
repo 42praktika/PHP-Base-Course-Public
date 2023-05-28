@@ -8,7 +8,7 @@
       <a href="about" class="hrefs_text space">О нас</a>
     </div>
     <div class="icons_bar">
-      <a href="#">
+      <a href="registration">
         <img class="icon_img" src="source/user_icon.png" alt="" />
       </a>
       <a href="#">

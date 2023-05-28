@@ -39,7 +39,7 @@ class Router
         $path = $this->request->getUri();
         $method = $this->request->getMethod();
         if (!isset($this->routes[$method]) || !isset($this->routes[$method][$path])) {
-            $this->renderStatic("404.php");
+            $this->renderTemplate("404");
             $this->response->setStatusCode(Response::HTTP_NOT_FOUND);
             return;
         }
@@ -56,13 +56,16 @@ class Router
 
     public function renderView(string $name): void
     {
-
         include PROJECT_ROOT."views/$name.php";
     }
 
+    public function renderTemplate(string $name, array $data = []) : void
+    {
+        Template::View($name.'.php', $data);
+    }
     public function renderStatic(string $name): void
     {
-        include PROJECT_ROOT."web/$name";
+        include PROJECT_ROOT."views/$name";
     }
 
 

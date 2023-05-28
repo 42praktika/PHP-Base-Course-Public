@@ -33,8 +33,18 @@ $router = $application->getRouter();
 $router->setGetRoute("/get500", "");
 $router->setGetRoute("/", [new MainController, "getView"]);
 $router->setGetRoute("/about", [new \app\controllers\AboutUsController(), "getView"]);
+$router->setGetRoute("/registration", [new \app\controllers\SignupController(), "getView"]);
+$router->setGetRoute("/login", [new \app\controllers\LoginController(), "getView"]);
+$router->setGetRoute("/logout", [new \app\controllers\LogoutController(), "getView"]);
+//$router->setGetRoute("/edit", [new \app\controllers\EditDataController(), "getView"]);
+$router->setGetRoute("/profile", [new \app\controllers\ProfileController(), "getView"]);
+$router->setGetRoute("/cart", [new \app\controllers\CartController(), "getView"]);
+$router->setGetRoute("/menu", [new \app\controllers\MenuController(), "getView"]);
 
 $router->setPostRoute("/handle", [new MainController, "handleView"]);
+$router->setPostRoute("/signup", [new \app\controllers\SignupController(), "handleView"]);
+$router->setPostRoute("/login", [new \app\controllers\LoginController(), "handleView"]);
+$router->setPostRoute("/edit", [new \app\controllers\EditDataController(), "handleView"]);
 
 ob_start();
 $application->run();
