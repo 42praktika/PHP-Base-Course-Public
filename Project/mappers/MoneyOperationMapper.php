@@ -62,6 +62,7 @@ class MoneyOperationMapper extends \app\core\Mapper
     protected function doUpdate(Model $model): void
     {
         $this->update->execute([
+            ":id" => $model->getId(),
             ":sum" => $model->getSum(),
             ":date" => $model->getDate(),
             ":category_id" => $model->getCategoryId(),

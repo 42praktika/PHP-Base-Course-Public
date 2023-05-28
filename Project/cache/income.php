@@ -45,7 +45,7 @@
             } ?>
 
         </select>
-        <input type="hidden" name="income" value="1">
+        <input type="hidden" name="income" value="true">
         <br>
 
         <label for="description">Описание</label>

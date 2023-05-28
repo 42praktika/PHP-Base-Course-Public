@@ -9,6 +9,11 @@ class SuccessController
 {
     public function getView(): void
     {
-        Application::$app->getRouter()->renderTemplate("success", ["profile_action"=>"profile"]);
+        if (array_key_exists("userId", $_SESSION)) {
+            Application::$app->getRouter()->renderTemplate("success", ["profile_action"=>"profile"]);
+        } else {
+            Application::$app->getRouter()->renderTemplate("login",
+                ["login_action"=>"login", "main_action"=>"/"]);
+        }
     }
 }

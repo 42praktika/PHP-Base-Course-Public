@@ -4,6 +4,7 @@ use app\controllers\AboutController;
 use app\controllers\CashSavingController;
 use app\controllers\HistoryController;
 use app\controllers\LoginController;
+use app\controllers\LogoutController;
 use app\controllers\MainController;
 use app\controllers\MoneyOperationController;
 use app\controllers\ProfileController;
@@ -80,6 +81,8 @@ $router->setPostRoute("/edit-money-operation", [new MoneyOperationController(), 
 $router->setGetRoute("/delete-money-operation", [new MoneyOperationController(), "delete"]);
 
 $router->setGetRoute("/success", [new SuccessController(), "getView"]);
+
+$router->setGetRoute("/logout", [new LogoutController(), "logout"]);
 
 ob_start();
 $application->run();

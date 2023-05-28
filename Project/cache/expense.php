@@ -42,9 +42,8 @@
       if ($i == $categoryId) echo "<option value='$i' selected>$n</option>";
       else echo "<option value='$i'>$n</option>";
       } ?>
-
-      <input type="text" hidden="hidden" name="income" value="1">
     </select>
+    <input type="hidden" name="income" value="false">
     <br>
 
     <label for="description">Описание</label>

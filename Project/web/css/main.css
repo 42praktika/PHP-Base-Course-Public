@@ -88,7 +88,10 @@ header {
 }
 
 .nav__logout {
-    color: #222623;
+    color: #3e4f3f;
+    font-size: 15px;
+    margin-left: 85%;
+    font-weight: bold;
 }
 
 .footer__message {

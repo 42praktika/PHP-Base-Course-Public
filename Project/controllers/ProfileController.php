@@ -13,19 +13,30 @@ class ProfileController
 
     public function getView(): void
     {
-        $userMapper = new UserMapper();
-        $username = $userMapper->Select($_SESSION["userId"])->getName();
-        Application::$app->getRouter()->renderTemplate("profile",
-            ["username"=>$username,
-                "expenses"=>$this->getExpenseSumByPeriod(),
-                "income"=>$this->getIncomeSumByPeriod(),
-                "savings"=>$this->getCashSavings(),
-                "add_income_action"=>"add-income",
-                "add_expense_action"=>"add-expense",
-                "add_cash_savings_action"=>"add-cash-saving",
-                "edit_saving_action"=>"edit-saving",
-                "history_income_action"=>"history?income=true",
-                "history_expense_action"=>"history?income=false"]);
+        try {
+            if (array_key_exists("userId", $_SESSION)) {
+                $userMapper = new UserMapper();
+                $username = $userMapper->Select($_SESSION["userId"])->getName();
+                Application::$app->getRouter()->renderTemplate("profile",
+                    ["username"=>$username,
+                        "expenses"=>$this->getExpenseSumByPeriod(),
+                        "income"=>$this->getIncomeSumByPeriod(),
+                        "savings"=>$this->getCashSavings(),
+                        "add_income_action"=>"add-income",
+                        "add_expense_action"=>"add-expense",
+                        "add_cash_savings_action"=>"add-cash-saving",
+                        "edit_saving_action"=>"edit-saving",
+                        "history_income_action"=>"history?income=true",
+                        "history_expense_action"=>"history?income=false"]);
+            } else {
+                Application::$app->getRouter()->renderTemplate("login",
+                    ["login_action"=>"login", "main_action"=>"/"]);
+            }
+        } catch (\Exception $exception) {
+            echo $exception;
+//            Application::$app->getLogger()->error($exception);
+        }
+
     }
 
     private function getCashSavings() : array

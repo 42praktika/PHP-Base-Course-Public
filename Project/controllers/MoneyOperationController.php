@@ -13,22 +13,27 @@ class MoneyOperationController
     public function getView(): void
     {
         try {
-            $id = $_GET['id'];
-            $moneyOperationMapper = new MoneyOperationMapper();
-            $operation = $moneyOperationMapper->Select((int)$id);
-            $mapper = new CategoryMapper();
-            $defaultCategories = $mapper->doSelectDefaultAllByType($operation->isIncome());
-            $categories = $mapper->doSelectAllByTypeAuthorId($_SESSION["userId"], $operation->isIncome());
-            foreach ($defaultCategories as $c) {
-                array_push($categories, $c);
+            if (array_key_exists("userId", $_SESSION)) {
+                $id = $_GET['id'];
+                $moneyOperationMapper = new MoneyOperationMapper();
+                $operation = $moneyOperationMapper->Select((int)$id);
+                $mapper = new CategoryMapper();
+                $defaultCategories = $mapper->doSelectDefaultAllByType($operation->isIncome());
+                $categories = $mapper->doSelectAllByTypeAuthorId($_SESSION["userId"], $operation->isIncome());
+                foreach ($defaultCategories as $c) {
+                    array_push($categories, $c);
+                }
+                $template = $operation->isIncome() ? "income" : "expense";
+                Application::$app->getRouter()->renderTemplate($template,
+                    ["income_action"=>"edit-money-operation?id=".$_GET['id'],
+                        "expense_action"=>"edit-money-operation?id=".$_GET['id'],
+                        "profile_action"=>"profile",
+                        "categories"=>$categories,
+                        "operation"=>$operation]);
+            } else {
+                Application::$app->getRouter()->renderTemplate("login",
+                    ["login_action"=>"login", "main_action"=>"/"]);
             }
-            $template = $operation->isIncome() ? "income" : "expense";
-            Application::$app->getRouter()->renderTemplate($template,
-                ["income_action"=>"add-income",
-                    "expense_action"=>"add-expense",
-                    "profile_action"=>"profile",
-                    "categories"=>$categories,
-                    "operation"=>$operation]);
         } catch (\Exception $exception) {
             echo $exception;
 //            Application::$app->getLogger()->error($exception);
@@ -79,11 +84,17 @@ class MoneyOperationController
     {
         try {
             $body = Application::$app->getRequest()->getBody();
-            $body["author_id"] = $_SESSION['userId'];
-            $mapper = new MoneyOperationMapper();
-            $saving = $mapper->createObject($body);
-            $mapper->Insert($saving);
-            Application::$app->getRouter()->renderTemplate("success", ["profile_action"=>"profile"]);
+            if (array_key_exists("sum", $body) & strlen($body["date"]) != 0 & array_key_exists("category_id", $body) & ctype_digit($body["sum"])) {
+                $body["author_id"] = $_SESSION['userId'];
+                $income = $body["income"] === 'true';
+                $mapper = new MoneyOperationMapper();
+                $operation = $mapper->createObject($body);
+                $operation->setIncome($income);
+                $mapper->Insert($operation);
+                Application::$app->getRouter()->renderTemplate("success", ["profile_action"=>"profile"]);
+            } else {
+                Application::$app->getRouter()->renderStatic("400.html");
+            }
         }
         catch (\Exception $exception) {
             echo $exception;
@@ -99,6 +110,27 @@ class MoneyOperationController
             $operation = $mapper->Select((int)$_GET['id']);
             $mapper->Delete($operation);
             Application::$app->getRouter()->renderTemplate("success", ["profile_action"=>"profile"]);
+        }
+        catch (\Exception $exception) {
+            echo $exception;
+//            Application::$app->getLogger()->error($exception);
+        }
+    }
+
+    public function edit(): void
+    {
+        try {
+            $body = Application::$app->getRequest()->getBody();
+            if (array_key_exists("sum", $body) & strlen($body["date"]) != 0 & array_key_exists("category_id", $body) & ctype_digit($body["sum"])) {
+                $body["author_id"] = $_SESSION['userId'];
+                $body["id"] = $_GET["id"];
+                $mapper = new MoneyOperationMapper();
+                $operation = $mapper->createObject($body);
+                $mapper->Update($operation);
+                Application::$app->getRouter()->renderTemplate("success", ["profile_action"=>"profile"]);
+            } else {
+                Application::$app->getRouter()->renderStatic("400.html");
+            }
         }
         catch (\Exception $exception) {
             echo $exception;

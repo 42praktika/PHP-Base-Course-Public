@@ -14,6 +14,7 @@
    
 
 <div class="container">
+    <a class="nav__logout" href="/logout">Выход</a>
     <h1>Дневник расходов и доходов</h1>
 
     <div class="sidebar">
