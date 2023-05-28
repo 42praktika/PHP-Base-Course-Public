@@ -33,7 +33,7 @@ class Migration_0 extends Migration
                         rating_id int,
                         age_rating int,
                         chapter_list_id int,
-                        release_date date,
+                        release_date int,
                         genre varchar(64)
                     );");
 
@@ -55,6 +55,14 @@ class Migration_0 extends Migration
             "CREATE TABLE if not exists admins (
                         id int,
                         FOREIGN KEY (id) REFERENCES users (id)
+                    );");
+        $this->database->pdo->query(
+            "CREATE TABLE if not exists user_manga_lists (
+                        user_id int,
+                        manga_id int,
+                        list_type varchar(16),
+                        FOREIGN KEY (user_id) REFERENCES users (id),
+                        FOREIGN KEY (manga_id) REFERENCES manga (id)
                     );");
 
       parent::up();

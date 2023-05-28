@@ -114,18 +114,10 @@
             <table style="border-spacing: 10px;">
                 <tr class="manga-specs-row">
                     <td class="manga-specs-key">
-                        type
-                    </td>
-                    <td class="manga_specs_value">
-                        manga
-                    </td>
-                </tr>
-                <tr class="manga-specs-row">
-                    <td class="manga-specs-key">
                         genre
                     </td>
                     <td class="manga_specs_value">
-                        action
+                        <?php echo $genre ?>
                     </td>
                 </tr>
                 <tr class="manga-specs-row">
@@ -141,7 +133,7 @@
                         release date
                     </td>
                     <td class="manga_specs_value">
-                        2019
+                        <?php echo $release_date ?>
                     </td>
                 </tr>
                 <tr class="manga-specs-row">
@@ -149,30 +141,23 @@
                         author
                     </td>
                     <td class="manga_specs_value">
-                        Tatsuki Fujimoto
+                        <?php echo $author ?>
                     </td>
                 </tr>
-                <tr class="manga-specs-row">
-                    <td class="manga-specs-key">
-                        publisher
-                    </td>
-                    <td class="manga_specs_value">
-                        Shueisha
-                    </td>
-                </tr>
+
                 <tr class="manga-specs-row">
                     <td class="manga-specs-key">
                         age rating
                     </td>
                     <td class="manga_specs_value">
-                        18+
+                        <?php echo $age_rating ?>
                     </td>
                 </tr>
             </table>
         </div>
         <div class="daytop-info-container">
             <div class="manga-name-rating">
-                <a href="" class="title-name">chainsaw man</a>
+                <a href="" class="title-name"><?php echo $title ?></a>
 
                 <div class="rating">
                     <div class="rating_stars" id="rating">
@@ -193,7 +178,7 @@
                         </button>
 
                     </div>
-                    <label>4.7/5</label>
+                    <label><?php echo $rating_id ?>/5</label>
                 </div>
             </div>
 
@@ -204,17 +189,7 @@
                 <a href="" class="manga_tag">demons</a>
             </div>
             <div class="manga_profile_description" id="manga_profile_description">
-                “I have always dreamed of living an ordinary life: sleeping in a warm bed, eating jam on toast in the
-                morning, going on dates with my girlfriend and smiling every day. But everything changed with the death
-                of
-                his father - now, Pochita, it's time to kill! - with these words, Denji, along with his chainsaw dog
-                Pochita, goes to another contract, because they are demon hunters. Every day they kill for the money
-                that
-                Denji must pay to one yakuza, otherwise the debt of the deceased father will have to pay with his own
-                life.
-                But what awaits Denji when he returns all the debt: will he live a normal life or continue to save the
-                world
-                from demons? Or maybe fate has its own plans for the fate of the hero?
+                <?php echo $description ?>
             </div>
 
             <!-- <div class="tab_view">

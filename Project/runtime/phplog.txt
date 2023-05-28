@@ -1617,3 +1617,569 @@ Stack trace:
 #4 E:\Repos\PHP-Base-Course-Public\Project\web\index.php(65): app\core\Application->run()
 #5 {main}
   thrown in E:\Repos\PHP-Base-Course-Public\Project\mappers\UserMapper.php on line 102
+[28-May-2023 16:38:17 UTC] PHP Fatal error:  Uncaught TypeError: app\core\Mapper::Select(): Argument #1 ($id) must be of type int, string given, called in E:\Repos\PHP-Base-Course-Public\Project\controllers\MangaProfileContoller.php on line 36 and defined in E:\Repos\PHP-Base-Course-Public\Project\core\Mapper.php:25
+Stack trace:
+#0 E:\Repos\PHP-Base-Course-Public\Project\controllers\MangaProfileContoller.php(36): app\core\Mapper->Select('1')
+#1 [internal function]: app\controllers\MangaProfileContoller->getView(Object(app\core\Request))
+#2 E:\Repos\PHP-Base-Course-Public\Project\core\Router.php(54): call_user_func(Array, Object(app\core\Request))
+#3 E:\Repos\PHP-Base-Course-Public\Project\core\Application.php(29): app\core\Router->resolve()
+#4 E:\Repos\PHP-Base-Course-Public\Project\web\index.php(65): app\core\Application->run()
+#5 {main}
+  thrown in E:\Repos\PHP-Base-Course-Public\Project\core\Mapper.php on line 25
+[28-May-2023 16:39:25 UTC] PHP Warning:  Undefined array key "release_Date" in E:\Repos\PHP-Base-Course-Public\Project\mappers\MangaMapper.php on line 89
+[28-May-2023 16:39:25 UTC] PHP Fatal error:  Uncaught TypeError: app\models\Manga::__construct(): Argument #10 ($release_date) must be of type DateTime, null given, called in E:\Repos\PHP-Base-Course-Public\Project\mappers\MangaMapper.php on line 80 and defined in E:\Repos\PHP-Base-Course-Public\Project\models\Manga.php:29
+Stack trace:
+#0 E:\Repos\PHP-Base-Course-Public\Project\mappers\MangaMapper.php(80): app\models\Manga->__construct(1, 'CHAINSAW MAN', '\xE2\x80\x9CI have alway...', '/', 'Tatsuki Fujimot...', 'action', 4, 18, 0, NULL)
+#1 E:\Repos\PHP-Base-Course-Public\Project\core\Mapper.php(26): app\mappers\MangaMapper->createObject(Array)
+#2 E:\Repos\PHP-Base-Course-Public\Project\controllers\MangaProfileContoller.php(36): app\core\Mapper->Select(1)
+#3 [internal function]: app\controllers\MangaProfileContoller->getView(Object(app\core\Request))
+#4 E:\Repos\PHP-Base-Course-Public\Project\core\Router.php(54): call_user_func(Array, Object(app\core\Request))
+#5 E:\Repos\PHP-Base-Course-Public\Project\core\Application.php(29): app\core\Router->resolve()
+#6 E:\Repos\PHP-Base-Course-Public\Project\web\index.php(65): app\core\Application->run()
+#7 {main}
+  thrown in E:\Repos\PHP-Base-Course-Public\Project\models\Manga.php on line 29
+[28-May-2023 16:41:27 UTC] PHP Warning:  Undefined array key "release_Date" in E:\Repos\PHP-Base-Course-Public\Project\mappers\MangaMapper.php on line 89
+[28-May-2023 16:41:27 UTC] PHP Fatal error:  Uncaught TypeError: app\models\Manga::__construct(): Argument #10 ($release_date) must be of type int, null given, called in E:\Repos\PHP-Base-Course-Public\Project\mappers\MangaMapper.php on line 80 and defined in E:\Repos\PHP-Base-Course-Public\Project\models\Manga.php:29
+Stack trace:
+#0 E:\Repos\PHP-Base-Course-Public\Project\mappers\MangaMapper.php(80): app\models\Manga->__construct(1, 'CHAINSAW MAN', '\xE2\x80\x9CI have alway...', '/', 'Tatsuki Fujimot...', 'action', 4, 18, 0, NULL)
+#1 E:\Repos\PHP-Base-Course-Public\Project\core\Mapper.php(26): app\mappers\MangaMapper->createObject(Array)
+#2 E:\Repos\PHP-Base-Course-Public\Project\controllers\MangaProfileContoller.php(36): app\core\Mapper->Select(1)
+#3 [internal function]: app\controllers\MangaProfileContoller->getView(Object(app\core\Request))
+#4 E:\Repos\PHP-Base-Course-Public\Project\core\Router.php(54): call_user_func(Array, Object(app\core\Request))
+#5 E:\Repos\PHP-Base-Course-Public\Project\core\Application.php(29): app\core\Router->resolve()
+#6 E:\Repos\PHP-Base-Course-Public\Project\web\index.php(65): app\core\Application->run()
+#7 {main}
+  thrown in E:\Repos\PHP-Base-Course-Public\Project\models\Manga.php on line 29
+[28-May-2023 16:41:29 UTC] PHP Warning:  Undefined array key "release_Date" in E:\Repos\PHP-Base-Course-Public\Project\mappers\MangaMapper.php on line 89
+[28-May-2023 16:41:29 UTC] PHP Fatal error:  Uncaught TypeError: app\models\Manga::__construct(): Argument #10 ($release_date) must be of type int, null given, called in E:\Repos\PHP-Base-Course-Public\Project\mappers\MangaMapper.php on line 80 and defined in E:\Repos\PHP-Base-Course-Public\Project\models\Manga.php:29
+Stack trace:
+#0 E:\Repos\PHP-Base-Course-Public\Project\mappers\MangaMapper.php(80): app\models\Manga->__construct(1, 'CHAINSAW MAN', '\xE2\x80\x9CI have alway...', '/', 'Tatsuki Fujimot...', 'action', 4, 18, 0, NULL)
+#1 E:\Repos\PHP-Base-Course-Public\Project\core\Mapper.php(26): app\mappers\MangaMapper->createObject(Array)
+#2 E:\Repos\PHP-Base-Course-Public\Project\controllers\MangaProfileContoller.php(36): app\core\Mapper->Select(1)
+#3 [internal function]: app\controllers\MangaProfileContoller->getView(Object(app\core\Request))
+#4 E:\Repos\PHP-Base-Course-Public\Project\core\Router.php(54): call_user_func(Array, Object(app\core\Request))
+#5 E:\Repos\PHP-Base-Course-Public\Project\core\Application.php(29): app\core\Router->resolve()
+#6 E:\Repos\PHP-Base-Course-Public\Project\web\index.php(65): app\core\Application->run()
+#7 {main}
+  thrown in E:\Repos\PHP-Base-Course-Public\Project\models\Manga.php on line 29
+[28-May-2023 16:41:29 UTC] PHP Warning:  Undefined array key "release_Date" in E:\Repos\PHP-Base-Course-Public\Project\mappers\MangaMapper.php on line 89
+[28-May-2023 16:41:29 UTC] PHP Fatal error:  Uncaught TypeError: app\models\Manga::__construct(): Argument #10 ($release_date) must be of type int, null given, called in E:\Repos\PHP-Base-Course-Public\Project\mappers\MangaMapper.php on line 80 and defined in E:\Repos\PHP-Base-Course-Public\Project\models\Manga.php:29
+Stack trace:
+#0 E:\Repos\PHP-Base-Course-Public\Project\mappers\MangaMapper.php(80): app\models\Manga->__construct(1, 'CHAINSAW MAN', '\xE2\x80\x9CI have alway...', '/', 'Tatsuki Fujimot...', 'action', 4, 18, 0, NULL)
+#1 E:\Repos\PHP-Base-Course-Public\Project\core\Mapper.php(26): app\mappers\MangaMapper->createObject(Array)
+#2 E:\Repos\PHP-Base-Course-Public\Project\controllers\MangaProfileContoller.php(36): app\core\Mapper->Select(1)
+#3 [internal function]: app\controllers\MangaProfileContoller->getView(Object(app\core\Request))
+#4 E:\Repos\PHP-Base-Course-Public\Project\core\Router.php(54): call_user_func(Array, Object(app\core\Request))
+#5 E:\Repos\PHP-Base-Course-Public\Project\core\Application.php(29): app\core\Router->resolve()
+#6 E:\Repos\PHP-Base-Course-Public\Project\web\index.php(65): app\core\Application->run()
+#7 {main}
+  thrown in E:\Repos\PHP-Base-Course-Public\Project\models\Manga.php on line 29
+[28-May-2023 16:41:29 UTC] PHP Warning:  Undefined array key "release_Date" in E:\Repos\PHP-Base-Course-Public\Project\mappers\MangaMapper.php on line 89
+[28-May-2023 16:41:29 UTC] PHP Fatal error:  Uncaught TypeError: app\models\Manga::__construct(): Argument #10 ($release_date) must be of type int, null given, called in E:\Repos\PHP-Base-Course-Public\Project\mappers\MangaMapper.php on line 80 and defined in E:\Repos\PHP-Base-Course-Public\Project\models\Manga.php:29
+Stack trace:
+#0 E:\Repos\PHP-Base-Course-Public\Project\mappers\MangaMapper.php(80): app\models\Manga->__construct(1, 'CHAINSAW MAN', '\xE2\x80\x9CI have alway...', '/', 'Tatsuki Fujimot...', 'action', 4, 18, 0, NULL)
+#1 E:\Repos\PHP-Base-Course-Public\Project\core\Mapper.php(26): app\mappers\MangaMapper->createObject(Array)
+#2 E:\Repos\PHP-Base-Course-Public\Project\controllers\MangaProfileContoller.php(36): app\core\Mapper->Select(1)
+#3 [internal function]: app\controllers\MangaProfileContoller->getView(Object(app\core\Request))
+#4 E:\Repos\PHP-Base-Course-Public\Project\core\Router.php(54): call_user_func(Array, Object(app\core\Request))
+#5 E:\Repos\PHP-Base-Course-Public\Project\core\Application.php(29): app\core\Router->resolve()
+#6 E:\Repos\PHP-Base-Course-Public\Project\web\index.php(65): app\core\Application->run()
+#7 {main}
+  thrown in E:\Repos\PHP-Base-Course-Public\Project\models\Manga.php on line 29
+[28-May-2023 16:41:29 UTC] PHP Warning:  Undefined array key "release_Date" in E:\Repos\PHP-Base-Course-Public\Project\mappers\MangaMapper.php on line 89
+[28-May-2023 16:41:29 UTC] PHP Fatal error:  Uncaught TypeError: app\models\Manga::__construct(): Argument #10 ($release_date) must be of type int, null given, called in E:\Repos\PHP-Base-Course-Public\Project\mappers\MangaMapper.php on line 80 and defined in E:\Repos\PHP-Base-Course-Public\Project\models\Manga.php:29
+Stack trace:
+#0 E:\Repos\PHP-Base-Course-Public\Project\mappers\MangaMapper.php(80): app\models\Manga->__construct(1, 'CHAINSAW MAN', '\xE2\x80\x9CI have alway...', '/', 'Tatsuki Fujimot...', 'action', 4, 18, 0, NULL)
+#1 E:\Repos\PHP-Base-Course-Public\Project\core\Mapper.php(26): app\mappers\MangaMapper->createObject(Array)
+#2 E:\Repos\PHP-Base-Course-Public\Project\controllers\MangaProfileContoller.php(36): app\core\Mapper->Select(1)
+#3 [internal function]: app\controllers\MangaProfileContoller->getView(Object(app\core\Request))
+#4 E:\Repos\PHP-Base-Course-Public\Project\core\Router.php(54): call_user_func(Array, Object(app\core\Request))
+#5 E:\Repos\PHP-Base-Course-Public\Project\core\Application.php(29): app\core\Router->resolve()
+#6 E:\Repos\PHP-Base-Course-Public\Project\web\index.php(65): app\core\Application->run()
+#7 {main}
+  thrown in E:\Repos\PHP-Base-Course-Public\Project\models\Manga.php on line 29
+[28-May-2023 16:41:30 UTC] PHP Warning:  Undefined array key "release_Date" in E:\Repos\PHP-Base-Course-Public\Project\mappers\MangaMapper.php on line 89
+[28-May-2023 16:41:30 UTC] PHP Fatal error:  Uncaught TypeError: app\models\Manga::__construct(): Argument #10 ($release_date) must be of type int, null given, called in E:\Repos\PHP-Base-Course-Public\Project\mappers\MangaMapper.php on line 80 and defined in E:\Repos\PHP-Base-Course-Public\Project\models\Manga.php:29
+Stack trace:
+#0 E:\Repos\PHP-Base-Course-Public\Project\mappers\MangaMapper.php(80): app\models\Manga->__construct(1, 'CHAINSAW MAN', '\xE2\x80\x9CI have alway...', '/', 'Tatsuki Fujimot...', 'action', 4, 18, 0, NULL)
+#1 E:\Repos\PHP-Base-Course-Public\Project\core\Mapper.php(26): app\mappers\MangaMapper->createObject(Array)
+#2 E:\Repos\PHP-Base-Course-Public\Project\controllers\MangaProfileContoller.php(36): app\core\Mapper->Select(1)
+#3 [internal function]: app\controllers\MangaProfileContoller->getView(Object(app\core\Request))
+#4 E:\Repos\PHP-Base-Course-Public\Project\core\Router.php(54): call_user_func(Array, Object(app\core\Request))
+#5 E:\Repos\PHP-Base-Course-Public\Project\core\Application.php(29): app\core\Router->resolve()
+#6 E:\Repos\PHP-Base-Course-Public\Project\web\index.php(65): app\core\Application->run()
+#7 {main}
+  thrown in E:\Repos\PHP-Base-Course-Public\Project\models\Manga.php on line 29
+[28-May-2023 16:42:26 UTC] PHP Warning:  Undefined array key "release_Date" in E:\Repos\PHP-Base-Course-Public\Project\mappers\MangaMapper.php on line 89
+[28-May-2023 16:42:26 UTC] PHP Fatal error:  Uncaught TypeError: app\models\Manga::__construct(): Argument #10 ($release_date) must be of type int, null given, called in E:\Repos\PHP-Base-Course-Public\Project\mappers\MangaMapper.php on line 80 and defined in E:\Repos\PHP-Base-Course-Public\Project\models\Manga.php:29
+Stack trace:
+#0 E:\Repos\PHP-Base-Course-Public\Project\mappers\MangaMapper.php(80): app\models\Manga->__construct(1, 'CHAINSAW MAN', '\xE2\x80\x9CI have alway...', '/', 'Tatsuki Fujimot...', 'action', 4, 18, 0, NULL)
+#1 E:\Repos\PHP-Base-Course-Public\Project\core\Mapper.php(26): app\mappers\MangaMapper->createObject(Array)
+#2 E:\Repos\PHP-Base-Course-Public\Project\controllers\MangaProfileContoller.php(36): app\core\Mapper->Select(1)
+#3 [internal function]: app\controllers\MangaProfileContoller->getView(Object(app\core\Request))
+#4 E:\Repos\PHP-Base-Course-Public\Project\core\Router.php(54): call_user_func(Array, Object(app\core\Request))
+#5 E:\Repos\PHP-Base-Course-Public\Project\core\Application.php(29): app\core\Router->resolve()
+#6 E:\Repos\PHP-Base-Course-Public\Project\web\index.php(65): app\core\Application->run()
+#7 {main}
+  thrown in E:\Repos\PHP-Base-Course-Public\Project\models\Manga.php on line 29
+[28-May-2023 16:42:27 UTC] PHP Warning:  Undefined array key "release_Date" in E:\Repos\PHP-Base-Course-Public\Project\mappers\MangaMapper.php on line 89
+[28-May-2023 16:42:27 UTC] PHP Fatal error:  Uncaught TypeError: app\models\Manga::__construct(): Argument #10 ($release_date) must be of type int, null given, called in E:\Repos\PHP-Base-Course-Public\Project\mappers\MangaMapper.php on line 80 and defined in E:\Repos\PHP-Base-Course-Public\Project\models\Manga.php:29
+Stack trace:
+#0 E:\Repos\PHP-Base-Course-Public\Project\mappers\MangaMapper.php(80): app\models\Manga->__construct(1, 'CHAINSAW MAN', '\xE2\x80\x9CI have alway...', '/', 'Tatsuki Fujimot...', 'action', 4, 18, 0, NULL)
+#1 E:\Repos\PHP-Base-Course-Public\Project\core\Mapper.php(26): app\mappers\MangaMapper->createObject(Array)
+#2 E:\Repos\PHP-Base-Course-Public\Project\controllers\MangaProfileContoller.php(36): app\core\Mapper->Select(1)
+#3 [internal function]: app\controllers\MangaProfileContoller->getView(Object(app\core\Request))
+#4 E:\Repos\PHP-Base-Course-Public\Project\core\Router.php(54): call_user_func(Array, Object(app\core\Request))
+#5 E:\Repos\PHP-Base-Course-Public\Project\core\Application.php(29): app\core\Router->resolve()
+#6 E:\Repos\PHP-Base-Course-Public\Project\web\index.php(65): app\core\Application->run()
+#7 {main}
+  thrown in E:\Repos\PHP-Base-Course-Public\Project\models\Manga.php on line 29
+[28-May-2023 16:42:27 UTC] PHP Warning:  Undefined array key "release_Date" in E:\Repos\PHP-Base-Course-Public\Project\mappers\MangaMapper.php on line 89
+[28-May-2023 16:42:27 UTC] PHP Fatal error:  Uncaught TypeError: app\models\Manga::__construct(): Argument #10 ($release_date) must be of type int, null given, called in E:\Repos\PHP-Base-Course-Public\Project\mappers\MangaMapper.php on line 80 and defined in E:\Repos\PHP-Base-Course-Public\Project\models\Manga.php:29
+Stack trace:
+#0 E:\Repos\PHP-Base-Course-Public\Project\mappers\MangaMapper.php(80): app\models\Manga->__construct(1, 'CHAINSAW MAN', '\xE2\x80\x9CI have alway...', '/', 'Tatsuki Fujimot...', 'action', 4, 18, 0, NULL)
+#1 E:\Repos\PHP-Base-Course-Public\Project\core\Mapper.php(26): app\mappers\MangaMapper->createObject(Array)
+#2 E:\Repos\PHP-Base-Course-Public\Project\controllers\MangaProfileContoller.php(36): app\core\Mapper->Select(1)
+#3 [internal function]: app\controllers\MangaProfileContoller->getView(Object(app\core\Request))
+#4 E:\Repos\PHP-Base-Course-Public\Project\core\Router.php(54): call_user_func(Array, Object(app\core\Request))
+#5 E:\Repos\PHP-Base-Course-Public\Project\core\Application.php(29): app\core\Router->resolve()
+#6 E:\Repos\PHP-Base-Course-Public\Project\web\index.php(65): app\core\Application->run()
+#7 {main}
+  thrown in E:\Repos\PHP-Base-Course-Public\Project\models\Manga.php on line 29
+[28-May-2023 16:43:41 UTC] PHP Warning:  Undefined array key "release_Date" in E:\Repos\PHP-Base-Course-Public\Project\mappers\MangaMapper.php on line 89
+[28-May-2023 16:43:41 UTC] PHP Fatal error:  Uncaught TypeError: app\models\Manga::__construct(): Argument #10 ($release_date) must be of type int, null given, called in E:\Repos\PHP-Base-Course-Public\Project\mappers\MangaMapper.php on line 80 and defined in E:\Repos\PHP-Base-Course-Public\Project\models\Manga.php:29
+Stack trace:
+#0 E:\Repos\PHP-Base-Course-Public\Project\mappers\MangaMapper.php(80): app\models\Manga->__construct(1, 'CHAINSAW MAN', '\xE2\x80\x9CI have alway...', '/', 'Tatsuki Fujimot...', 'action', 4, 18, 0, NULL)
+#1 E:\Repos\PHP-Base-Course-Public\Project\core\Mapper.php(26): app\mappers\MangaMapper->createObject(Array)
+#2 E:\Repos\PHP-Base-Course-Public\Project\controllers\MangaProfileContoller.php(36): app\core\Mapper->Select(1)
+#3 [internal function]: app\controllers\MangaProfileContoller->getView(Object(app\core\Request))
+#4 E:\Repos\PHP-Base-Course-Public\Project\core\Router.php(54): call_user_func(Array, Object(app\core\Request))
+#5 E:\Repos\PHP-Base-Course-Public\Project\core\Application.php(29): app\core\Router->resolve()
+#6 E:\Repos\PHP-Base-Course-Public\Project\web\index.php(65): app\core\Application->run()
+#7 {main}
+  thrown in E:\Repos\PHP-Base-Course-Public\Project\models\Manga.php on line 29
+[28-May-2023 16:44:02 UTC] PHP Warning:  Undefined array key "release_Date" in E:\Repos\PHP-Base-Course-Public\Project\mappers\MangaMapper.php on line 89
+[28-May-2023 16:44:02 UTC] PHP Fatal error:  Uncaught TypeError: app\models\Manga::__construct(): Argument #10 ($release_date) must be of type int, null given, called in E:\Repos\PHP-Base-Course-Public\Project\mappers\MangaMapper.php on line 80 and defined in E:\Repos\PHP-Base-Course-Public\Project\models\Manga.php:29
+Stack trace:
+#0 E:\Repos\PHP-Base-Course-Public\Project\mappers\MangaMapper.php(80): app\models\Manga->__construct(1, 'CHAINSAW MAN', '\xE2\x80\x9CI have alway...', '/', 'Tatsuki Fujimot...', 'action', 4, 18, 0, NULL)
+#1 E:\Repos\PHP-Base-Course-Public\Project\core\Mapper.php(26): app\mappers\MangaMapper->createObject(Array)
+#2 E:\Repos\PHP-Base-Course-Public\Project\controllers\MangaProfileContoller.php(36): app\core\Mapper->Select(1)
+#3 [internal function]: app\controllers\MangaProfileContoller->getView(Object(app\core\Request))
+#4 E:\Repos\PHP-Base-Course-Public\Project\core\Router.php(54): call_user_func(Array, Object(app\core\Request))
+#5 E:\Repos\PHP-Base-Course-Public\Project\core\Application.php(29): app\core\Router->resolve()
+#6 E:\Repos\PHP-Base-Course-Public\Project\web\index.php(65): app\core\Application->run()
+#7 {main}
+  thrown in E:\Repos\PHP-Base-Course-Public\Project\models\Manga.php on line 29
+[28-May-2023 16:44:03 UTC] PHP Warning:  Undefined array key "release_Date" in E:\Repos\PHP-Base-Course-Public\Project\mappers\MangaMapper.php on line 89
+[28-May-2023 16:44:03 UTC] PHP Fatal error:  Uncaught TypeError: app\models\Manga::__construct(): Argument #10 ($release_date) must be of type int, null given, called in E:\Repos\PHP-Base-Course-Public\Project\mappers\MangaMapper.php on line 80 and defined in E:\Repos\PHP-Base-Course-Public\Project\models\Manga.php:29
+Stack trace:
+#0 E:\Repos\PHP-Base-Course-Public\Project\mappers\MangaMapper.php(80): app\models\Manga->__construct(1, 'CHAINSAW MAN', '\xE2\x80\x9CI have alway...', '/', 'Tatsuki Fujimot...', 'action', 4, 18, 0, NULL)
+#1 E:\Repos\PHP-Base-Course-Public\Project\core\Mapper.php(26): app\mappers\MangaMapper->createObject(Array)
+#2 E:\Repos\PHP-Base-Course-Public\Project\controllers\MangaProfileContoller.php(36): app\core\Mapper->Select(1)
+#3 [internal function]: app\controllers\MangaProfileContoller->getView(Object(app\core\Request))
+#4 E:\Repos\PHP-Base-Course-Public\Project\core\Router.php(54): call_user_func(Array, Object(app\core\Request))
+#5 E:\Repos\PHP-Base-Course-Public\Project\core\Application.php(29): app\core\Router->resolve()
+#6 E:\Repos\PHP-Base-Course-Public\Project\web\index.php(65): app\core\Application->run()
+#7 {main}
+  thrown in E:\Repos\PHP-Base-Course-Public\Project\models\Manga.php on line 29
+[28-May-2023 16:44:13 UTC] PHP Warning:  Undefined array key "release_Date" in E:\Repos\PHP-Base-Course-Public\Project\mappers\MangaMapper.php on line 89
+[28-May-2023 16:44:13 UTC] PHP Fatal error:  Uncaught TypeError: app\models\Manga::__construct(): Argument #10 ($release_date) must be of type int, null given, called in E:\Repos\PHP-Base-Course-Public\Project\mappers\MangaMapper.php on line 80 and defined in E:\Repos\PHP-Base-Course-Public\Project\models\Manga.php:29
+Stack trace:
+#0 E:\Repos\PHP-Base-Course-Public\Project\mappers\MangaMapper.php(80): app\models\Manga->__construct(1, 'CHAINSAW MAN', '\xE2\x80\x9CI have alway...', '/', 'Tatsuki Fujimot...', 'action', 4, 18, 0, NULL)
+#1 E:\Repos\PHP-Base-Course-Public\Project\core\Mapper.php(26): app\mappers\MangaMapper->createObject(Array)
+#2 E:\Repos\PHP-Base-Course-Public\Project\controllers\MangaProfileContoller.php(36): app\core\Mapper->Select(1)
+#3 [internal function]: app\controllers\MangaProfileContoller->getView(Object(app\core\Request))
+#4 E:\Repos\PHP-Base-Course-Public\Project\core\Router.php(54): call_user_func(Array, Object(app\core\Request))
+#5 E:\Repos\PHP-Base-Course-Public\Project\core\Application.php(29): app\core\Router->resolve()
+#6 E:\Repos\PHP-Base-Course-Public\Project\web\index.php(65): app\core\Application->run()
+#7 {main}
+  thrown in E:\Repos\PHP-Base-Course-Public\Project\models\Manga.php on line 29
+[28-May-2023 16:44:50 UTC] PHP Warning:  Undefined array key "release_Date" in E:\Repos\PHP-Base-Course-Public\Project\mappers\MangaMapper.php on line 88
+[28-May-2023 16:44:50 UTC] PHP Fatal error:  Uncaught TypeError: app\models\Manga::__construct(): Argument #10 ($release_date) must be of type int, null given, called in E:\Repos\PHP-Base-Course-Public\Project\mappers\MangaMapper.php on line 79 and defined in E:\Repos\PHP-Base-Course-Public\Project\models\Manga.php:29
+Stack trace:
+#0 E:\Repos\PHP-Base-Course-Public\Project\mappers\MangaMapper.php(79): app\models\Manga->__construct(1, 'CHAINSAW MAN', '\xE2\x80\x9CI have alway...', '/', 'Tatsuki Fujimot...', 'action', 4, 18, 0, NULL)
+#1 E:\Repos\PHP-Base-Course-Public\Project\core\Mapper.php(26): app\mappers\MangaMapper->createObject(Array)
+#2 E:\Repos\PHP-Base-Course-Public\Project\controllers\MangaProfileContoller.php(36): app\core\Mapper->Select(1)
+#3 [internal function]: app\controllers\MangaProfileContoller->getView(Object(app\core\Request))
+#4 E:\Repos\PHP-Base-Course-Public\Project\core\Router.php(54): call_user_func(Array, Object(app\core\Request))
+#5 E:\Repos\PHP-Base-Course-Public\Project\core\Application.php(29): app\core\Router->resolve()
+#6 E:\Repos\PHP-Base-Course-Public\Project\web\index.php(65): app\core\Application->run()
+#7 {main}
+  thrown in E:\Repos\PHP-Base-Course-Public\Project\models\Manga.php on line 29
+[28-May-2023 16:44:50 UTC] PHP Warning:  Undefined array key "release_Date" in E:\Repos\PHP-Base-Course-Public\Project\mappers\MangaMapper.php on line 88
+[28-May-2023 16:44:50 UTC] PHP Fatal error:  Uncaught TypeError: app\models\Manga::__construct(): Argument #10 ($release_date) must be of type int, null given, called in E:\Repos\PHP-Base-Course-Public\Project\mappers\MangaMapper.php on line 79 and defined in E:\Repos\PHP-Base-Course-Public\Project\models\Manga.php:29
+Stack trace:
+#0 E:\Repos\PHP-Base-Course-Public\Project\mappers\MangaMapper.php(79): app\models\Manga->__construct(1, 'CHAINSAW MAN', '\xE2\x80\x9CI have alway...', '/', 'Tatsuki Fujimot...', 'action', 4, 18, 0, NULL)
+#1 E:\Repos\PHP-Base-Course-Public\Project\core\Mapper.php(26): app\mappers\MangaMapper->createObject(Array)
+#2 E:\Repos\PHP-Base-Course-Public\Project\controllers\MangaProfileContoller.php(36): app\core\Mapper->Select(1)
+#3 [internal function]: app\controllers\MangaProfileContoller->getView(Object(app\core\Request))
+#4 E:\Repos\PHP-Base-Course-Public\Project\core\Router.php(54): call_user_func(Array, Object(app\core\Request))
+#5 E:\Repos\PHP-Base-Course-Public\Project\core\Application.php(29): app\core\Router->resolve()
+#6 E:\Repos\PHP-Base-Course-Public\Project\web\index.php(65): app\core\Application->run()
+#7 {main}
+  thrown in E:\Repos\PHP-Base-Course-Public\Project\models\Manga.php on line 29
+[28-May-2023 16:45:30 UTC] PHP Warning:  Undefined array key "release_Date" in E:\Repos\PHP-Base-Course-Public\Project\mappers\MangaMapper.php on line 88
+[28-May-2023 16:45:30 UTC] PHP Fatal error:  Uncaught TypeError: app\models\Manga::__construct(): Argument #10 ($release_date) must be of type int, null given, called in E:\Repos\PHP-Base-Course-Public\Project\mappers\MangaMapper.php on line 79 and defined in E:\Repos\PHP-Base-Course-Public\Project\models\Manga.php:29
+Stack trace:
+#0 E:\Repos\PHP-Base-Course-Public\Project\mappers\MangaMapper.php(79): app\models\Manga->__construct(1, 'CHAINSAW MAN', '\xE2\x80\x9CI have alway...', '/', 'Tatsuki Fujimot...', 'action', 4, 18, 0, NULL)
+#1 E:\Repos\PHP-Base-Course-Public\Project\core\Mapper.php(26): app\mappers\MangaMapper->createObject(Array)
+#2 E:\Repos\PHP-Base-Course-Public\Project\controllers\MangaProfileContoller.php(36): app\core\Mapper->Select(1)
+#3 [internal function]: app\controllers\MangaProfileContoller->getView(Object(app\core\Request))
+#4 E:\Repos\PHP-Base-Course-Public\Project\core\Router.php(54): call_user_func(Array, Object(app\core\Request))
+#5 E:\Repos\PHP-Base-Course-Public\Project\core\Application.php(29): app\core\Router->resolve()
+#6 E:\Repos\PHP-Base-Course-Public\Project\web\index.php(65): app\core\Application->run()
+#7 {main}
+  thrown in E:\Repos\PHP-Base-Course-Public\Project\models\Manga.php on line 29
+[28-May-2023 16:45:33 UTC] PHP Warning:  Undefined array key "release_Date" in E:\Repos\PHP-Base-Course-Public\Project\mappers\MangaMapper.php on line 88
+[28-May-2023 16:45:33 UTC] PHP Fatal error:  Uncaught TypeError: app\models\Manga::__construct(): Argument #10 ($release_date) must be of type int, null given, called in E:\Repos\PHP-Base-Course-Public\Project\mappers\MangaMapper.php on line 79 and defined in E:\Repos\PHP-Base-Course-Public\Project\models\Manga.php:29
+Stack trace:
+#0 E:\Repos\PHP-Base-Course-Public\Project\mappers\MangaMapper.php(79): app\models\Manga->__construct(1, 'CHAINSAW MAN', '\xE2\x80\x9CI have alway...', '/', 'Tatsuki Fujimot...', 'action', 4, 18, 0, NULL)
+#1 E:\Repos\PHP-Base-Course-Public\Project\core\Mapper.php(26): app\mappers\MangaMapper->createObject(Array)
+#2 E:\Repos\PHP-Base-Course-Public\Project\controllers\MangaProfileContoller.php(36): app\core\Mapper->Select(1)
+#3 [internal function]: app\controllers\MangaProfileContoller->getView(Object(app\core\Request))
+#4 E:\Repos\PHP-Base-Course-Public\Project\core\Router.php(54): call_user_func(Array, Object(app\core\Request))
+#5 E:\Repos\PHP-Base-Course-Public\Project\core\Application.php(29): app\core\Router->resolve()
+#6 E:\Repos\PHP-Base-Course-Public\Project\web\index.php(65): app\core\Application->run()
+#7 {main}
+  thrown in E:\Repos\PHP-Base-Course-Public\Project\models\Manga.php on line 29
+[28-May-2023 16:47:21 UTC] PHP Warning:  Undefined array key "release_Date" in E:\Repos\PHP-Base-Course-Public\Project\mappers\MangaMapper.php on line 88
+[28-May-2023 16:47:21 UTC] PHP Fatal error:  Uncaught TypeError: app\models\Manga::__construct(): Argument #10 ($release_date) must be of type int, null given, called in E:\Repos\PHP-Base-Course-Public\Project\mappers\MangaMapper.php on line 79 and defined in E:\Repos\PHP-Base-Course-Public\Project\models\Manga.php:29
+Stack trace:
+#0 E:\Repos\PHP-Base-Course-Public\Project\mappers\MangaMapper.php(79): app\models\Manga->__construct(1, 'CHAINSAW MAN', '\xE2\x80\x9CI have alway...', '/', 'Tatsuki Fujimot...', 'action', 4, 18, 0, NULL)
+#1 E:\Repos\PHP-Base-Course-Public\Project\core\Mapper.php(26): app\mappers\MangaMapper->createObject(Array)
+#2 E:\Repos\PHP-Base-Course-Public\Project\controllers\MangaProfileContoller.php(36): app\core\Mapper->Select(1)
+#3 [internal function]: app\controllers\MangaProfileContoller->getView(Object(app\core\Request))
+#4 E:\Repos\PHP-Base-Course-Public\Project\core\Router.php(54): call_user_func(Array, Object(app\core\Request))
+#5 E:\Repos\PHP-Base-Course-Public\Project\core\Application.php(29): app\core\Router->resolve()
+#6 E:\Repos\PHP-Base-Course-Public\Project\web\index.php(65): app\core\Application->run()
+#7 {main}
+  thrown in E:\Repos\PHP-Base-Course-Public\Project\models\Manga.php on line 29
+[28-May-2023 16:48:06 UTC] PHP Warning:  Undefined array key "release_Date" in E:\Repos\PHP-Base-Course-Public\Project\mappers\MangaMapper.php on line 88
+[28-May-2023 16:48:06 UTC] PHP Fatal error:  Uncaught TypeError: app\models\Manga::__construct(): Argument #10 ($release_date) must be of type int, null given, called in E:\Repos\PHP-Base-Course-Public\Project\mappers\MangaMapper.php on line 79 and defined in E:\Repos\PHP-Base-Course-Public\Project\models\Manga.php:29
+Stack trace:
+#0 E:\Repos\PHP-Base-Course-Public\Project\mappers\MangaMapper.php(79): app\models\Manga->__construct(1, 'CHAINSAW MAN', '\xE2\x80\x9CI have alway...', '/', 'Tatsuki Fujimot...', 'action', 4, 18, 0, NULL)
+#1 E:\Repos\PHP-Base-Course-Public\Project\core\Mapper.php(26): app\mappers\MangaMapper->createObject(Array)
+#2 E:\Repos\PHP-Base-Course-Public\Project\controllers\MangaProfileContoller.php(36): app\core\Mapper->Select(1)
+#3 [internal function]: app\controllers\MangaProfileContoller->getView(Object(app\core\Request))
+#4 E:\Repos\PHP-Base-Course-Public\Project\core\Router.php(54): call_user_func(Array, Object(app\core\Request))
+#5 E:\Repos\PHP-Base-Course-Public\Project\core\Application.php(29): app\core\Router->resolve()
+#6 E:\Repos\PHP-Base-Course-Public\Project\web\index.php(65): app\core\Application->run()
+#7 {main}
+  thrown in E:\Repos\PHP-Base-Course-Public\Project\models\Manga.php on line 29
+[28-May-2023 16:50:43 UTC] PHP Warning:  Undefined array key "release_Date" in E:\Repos\PHP-Base-Course-Public\Project\mappers\MangaMapper.php on line 88
+[28-May-2023 16:50:43 UTC] PHP Fatal error:  Uncaught TypeError: app\models\Manga::__construct(): Argument #10 ($release_date) must be of type int, null given, called in E:\Repos\PHP-Base-Course-Public\Project\mappers\MangaMapper.php on line 79 and defined in E:\Repos\PHP-Base-Course-Public\Project\models\Manga.php:29
+Stack trace:
+#0 E:\Repos\PHP-Base-Course-Public\Project\mappers\MangaMapper.php(79): app\models\Manga->__construct(1, 'CHAINSAW MAN', '\xE2\x80\x9CI have alway...', '/', 'Tatsuki Fujimot...', 'action', 4, 18, 0, NULL)
+#1 E:\Repos\PHP-Base-Course-Public\Project\core\Mapper.php(26): app\mappers\MangaMapper->createObject(Array)
+#2 E:\Repos\PHP-Base-Course-Public\Project\controllers\MangaProfileContoller.php(36): app\core\Mapper->Select(1)
+#3 [internal function]: app\controllers\MangaProfileContoller->getView(Object(app\core\Request))
+#4 E:\Repos\PHP-Base-Course-Public\Project\core\Router.php(54): call_user_func(Array, Object(app\core\Request))
+#5 E:\Repos\PHP-Base-Course-Public\Project\core\Application.php(29): app\core\Router->resolve()
+#6 E:\Repos\PHP-Base-Course-Public\Project\web\index.php(65): app\core\Application->run()
+#7 {main}
+  thrown in E:\Repos\PHP-Base-Course-Public\Project\models\Manga.php on line 29
+[28-May-2023 16:50:49 UTC] PHP Warning:  Undefined array key "release_Date" in E:\Repos\PHP-Base-Course-Public\Project\mappers\MangaMapper.php on line 88
+[28-May-2023 16:50:49 UTC] PHP Fatal error:  Uncaught TypeError: app\models\Manga::__construct(): Argument #10 ($release_date) must be of type int, null given, called in E:\Repos\PHP-Base-Course-Public\Project\mappers\MangaMapper.php on line 79 and defined in E:\Repos\PHP-Base-Course-Public\Project\models\Manga.php:29
+Stack trace:
+#0 E:\Repos\PHP-Base-Course-Public\Project\mappers\MangaMapper.php(79): app\models\Manga->__construct(1, 'CHAINSAW MAN', '\xE2\x80\x9CI have alway...', '/', 'Tatsuki Fujimot...', 'action', 4, 18, 0, NULL)
+#1 E:\Repos\PHP-Base-Course-Public\Project\core\Mapper.php(26): app\mappers\MangaMapper->createObject(Array)
+#2 E:\Repos\PHP-Base-Course-Public\Project\controllers\MangaProfileContoller.php(36): app\core\Mapper->Select(1)
+#3 [internal function]: app\controllers\MangaProfileContoller->getView(Object(app\core\Request))
+#4 E:\Repos\PHP-Base-Course-Public\Project\core\Router.php(54): call_user_func(Array, Object(app\core\Request))
+#5 E:\Repos\PHP-Base-Course-Public\Project\core\Application.php(29): app\core\Router->resolve()
+#6 E:\Repos\PHP-Base-Course-Public\Project\web\index.php(65): app\core\Application->run()
+#7 {main}
+  thrown in E:\Repos\PHP-Base-Course-Public\Project\models\Manga.php on line 29
+[28-May-2023 16:51:15 UTC] PHP Fatal error:  Uncaught TypeError: app\mappers\MangaMapper::doSelect(): Return value must be of type array, bool returned in E:\Repos\PHP-Base-Course-Public\Project\mappers\MangaMapper.php:63
+Stack trace:
+#0 E:\Repos\PHP-Base-Course-Public\Project\core\Mapper.php(26): app\mappers\MangaMapper->doSelect(2)
+#1 E:\Repos\PHP-Base-Course-Public\Project\controllers\MangaProfileContoller.php(36): app\core\Mapper->Select(2)
+#2 [internal function]: app\controllers\MangaProfileContoller->getView(Object(app\core\Request))
+#3 E:\Repos\PHP-Base-Course-Public\Project\core\Router.php(54): call_user_func(Array, Object(app\core\Request))
+#4 E:\Repos\PHP-Base-Course-Public\Project\core\Application.php(29): app\core\Router->resolve()
+#5 E:\Repos\PHP-Base-Course-Public\Project\web\index.php(65): app\core\Application->run()
+#6 {main}
+  thrown in E:\Repos\PHP-Base-Course-Public\Project\mappers\MangaMapper.php on line 63
+[28-May-2023 16:51:53 UTC] PHP Fatal error:  Uncaught TypeError: app\mappers\MangaMapper::doSelect(): Return value must be of type array, bool returned in E:\Repos\PHP-Base-Course-Public\Project\mappers\MangaMapper.php:63
+Stack trace:
+#0 E:\Repos\PHP-Base-Course-Public\Project\core\Mapper.php(26): app\mappers\MangaMapper->doSelect(2)
+#1 E:\Repos\PHP-Base-Course-Public\Project\controllers\MangaProfileContoller.php(36): app\core\Mapper->Select(2)
+#2 [internal function]: app\controllers\MangaProfileContoller->getView(Object(app\core\Request))
+#3 E:\Repos\PHP-Base-Course-Public\Project\core\Router.php(54): call_user_func(Array, Object(app\core\Request))
+#4 E:\Repos\PHP-Base-Course-Public\Project\core\Application.php(29): app\core\Router->resolve()
+#5 E:\Repos\PHP-Base-Course-Public\Project\web\index.php(65): app\core\Application->run()
+#6 {main}
+  thrown in E:\Repos\PHP-Base-Course-Public\Project\mappers\MangaMapper.php on line 63
+[28-May-2023 16:54:59 UTC] PHP Fatal error:  Uncaught TypeError: app\mappers\MangaMapper::createObject(): Argument #1 ($data) must be of type array, null given, called in E:\Repos\PHP-Base-Course-Public\Project\core\Mapper.php on line 26 and defined in E:\Repos\PHP-Base-Course-Public\Project\mappers\MangaMapper.php:82
+Stack trace:
+#0 E:\Repos\PHP-Base-Course-Public\Project\core\Mapper.php(26): app\mappers\MangaMapper->createObject(NULL)
+#1 E:\Repos\PHP-Base-Course-Public\Project\controllers\MangaProfileContoller.php(36): app\core\Mapper->Select(2)
+#2 [internal function]: app\controllers\MangaProfileContoller->getView(Object(app\core\Request))
+#3 E:\Repos\PHP-Base-Course-Public\Project\core\Router.php(54): call_user_func(Array, Object(app\core\Request))
+#4 E:\Repos\PHP-Base-Course-Public\Project\core\Application.php(29): app\core\Router->resolve()
+#5 E:\Repos\PHP-Base-Course-Public\Project\web\index.php(65): app\core\Application->run()
+#6 {main}
+  thrown in E:\Repos\PHP-Base-Course-Public\Project\mappers\MangaMapper.php on line 82
+[28-May-2023 16:56:04 UTC] PHP Fatal error:  Uncaught TypeError: app\mappers\MangaMapper::doSelect(): Return value must be of type array, bool returned in E:\Repos\PHP-Base-Course-Public\Project\mappers\MangaMapper.php:65
+Stack trace:
+#0 E:\Repos\PHP-Base-Course-Public\Project\core\Mapper.php(26): app\mappers\MangaMapper->doSelect(2)
+#1 E:\Repos\PHP-Base-Course-Public\Project\controllers\MangaProfileContoller.php(36): app\core\Mapper->Select(2)
+#2 [internal function]: app\controllers\MangaProfileContoller->getView(Object(app\core\Request))
+#3 E:\Repos\PHP-Base-Course-Public\Project\core\Router.php(54): call_user_func(Array, Object(app\core\Request))
+#4 E:\Repos\PHP-Base-Course-Public\Project\core\Application.php(29): app\core\Router->resolve()
+#5 E:\Repos\PHP-Base-Course-Public\Project\web\index.php(65): app\core\Application->run()
+#6 {main}
+  thrown in E:\Repos\PHP-Base-Course-Public\Project\mappers\MangaMapper.php on line 65
+[28-May-2023 16:57:26 UTC] PHP Fatal error:  Uncaught TypeError: app\mappers\MangaMapper::FindUserById(): Return value must be of type array, bool returned in E:\Repos\PHP-Base-Course-Public\Project\mappers\MangaMapper.php:83
+Stack trace:
+#0 E:\Repos\PHP-Base-Course-Public\Project\controllers\MangaProfileContoller.php(36): app\mappers\MangaMapper->FindUserById(2)
+#1 [internal function]: app\controllers\MangaProfileContoller->getView(Object(app\core\Request))
+#2 E:\Repos\PHP-Base-Course-Public\Project\core\Router.php(54): call_user_func(Array, Object(app\core\Request))
+#3 E:\Repos\PHP-Base-Course-Public\Project\core\Application.php(29): app\core\Router->resolve()
+#4 E:\Repos\PHP-Base-Course-Public\Project\web\index.php(65): app\core\Application->run()
+#5 {main}
+  thrown in E:\Repos\PHP-Base-Course-Public\Project\mappers\MangaMapper.php on line 83
+[28-May-2023 16:58:34 UTC] PHP Parse error:  syntax error, unexpected identifier "Application" in E:\Repos\PHP-Base-Course-Public\Project\controllers\MangaProfileContoller.php on line 40
+[28-May-2023 16:58:39 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function 
+
+<header>
+    <div class="header-content">
+        <div class="horizontal-items">
+            <div class="horizontal-item">
+                <a href="/" class="header-navlink">Home</a>
+            </div>
+
+            <div class="horizontal-item">
+                <a href="#" class="header-navlink">Catalog</a>
+            </div>
+            <div class="horizontal-item">
+                <!-- <a href="#" class="header_navlink">Search</a> -->
+                <input type="search" placeholder="Search" name="" class="blurred-input" id="">
+            </div>
+        </div>
+        <div class="horizontal-items">
+            <div class="horizontal-item">
+                <a href="/" style="transform: translate(0%,13%)"><img src="assets/images/logo.svg" alt="" height="50"></a>
+            </div>
+        </div>
+
+        <div class="horizontal-items">
+            <div class="horizontal-item">
+                <a href="/favourite" class="header-navlink">Favourite</a>
+            </div>
+<!--            user-->
+
+<!--            sign in-->
+<!--            <div class="horizontal-item">-->
+<!--                <button onclick="SetAuthContainerVisible()" class="button-login" id="header-login-button">Sign in</button>-->
+<!--            </div>-->
+            
+
+
+<div class="horizontal-item">
+    <div class="dropdown">
+        <button class="top_profile_button">
+            DeeUsh        </button>
+
+        <div class="dropdown-content">
+            <div style="width: 280px; height: 20px;"></div>
+            <div class="top-profile-content">
+
+                <button onclick="redirect('user')" class="sidemenu-button margin_top">Profile</button>
+                <button class="sidemenu-button margin_top">Wish list</button>
+                <br>
+                <div class="outlined-button no-select margin_top" onclick="window.location = '/logout'">
+                    Logout
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+        </div>
+    </div>
+</header>
+() in E:\Repos\PHP-Base-Course-Public\Project\controllers\MangaProfileContoller.php:39
+Stack trace:
+#0 [internal function]: app\controllers\MangaProfileContoller->getView(Object(app\core\Request))
+#1 E:\Repos\PHP-Base-Course-Public\Project\core\Router.php(54): call_user_func(Array, Object(app\core\Request))
+#2 E:\Repos\PHP-Base-Course-Public\Project\core\Application.php(29): app\core\Router->resolve()
+#3 E:\Repos\PHP-Base-Course-Public\Project\web\index.php(65): app\core\Application->run()
+#4 {main}
+  thrown in E:\Repos\PHP-Base-Course-Public\Project\controllers\MangaProfileContoller.php on line 39
+[28-May-2023 16:58:44 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function 
+
+<header>
+    <div class="header-content">
+        <div class="horizontal-items">
+            <div class="horizontal-item">
+                <a href="/" class="header-navlink">Home</a>
+            </div>
+
+            <div class="horizontal-item">
+                <a href="#" class="header-navlink">Catalog</a>
+            </div>
+            <div class="horizontal-item">
+                <!-- <a href="#" class="header_navlink">Search</a> -->
+                <input type="search" placeholder="Search" name="" class="blurred-input" id="">
+            </div>
+        </div>
+        <div class="horizontal-items">
+            <div class="horizontal-item">
+                <a href="/" style="transform: translate(0%,13%)"><img src="assets/images/logo.svg" alt="" height="50"></a>
+            </div>
+        </div>
+
+        <div class="horizontal-items">
+            <div class="horizontal-item">
+                <a href="/favourite" class="header-navlink">Favourite</a>
+            </div>
+<!--            user-->
+
+<!--            sign in-->
+<!--            <div class="horizontal-item">-->
+<!--                <button onclick="SetAuthContainerVisible()" class="button-login" id="header-login-button">Sign in</button>-->
+<!--            </div>-->
+            
+
+
+<div class="horizontal-item">
+    <div class="dropdown">
+        <button class="top_profile_button">
+            DeeUsh        </button>
+
+        <div class="dropdown-content">
+            <div style="width: 280px; height: 20px;"></div>
+            <div class="top-profile-content">
+
+                <button onclick="redirect('user')" class="sidemenu-button margin_top">Profile</button>
+                <button class="sidemenu-button margin_top">Wish list</button>
+                <br>
+                <div class="outlined-button no-select margin_top" onclick="window.location = '/logout'">
+                    Logout
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+        </div>
+    </div>
+</header>
+() in E:\Repos\PHP-Base-Course-Public\Project\controllers\MangaProfileContoller.php:39
+Stack trace:
+#0 [internal function]: app\controllers\MangaProfileContoller->getView(Object(app\core\Request))
+#1 E:\Repos\PHP-Base-Course-Public\Project\core\Router.php(54): call_user_func(Array, Object(app\core\Request))
+#2 E:\Repos\PHP-Base-Course-Public\Project\core\Application.php(29): app\core\Router->resolve()
+#3 E:\Repos\PHP-Base-Course-Public\Project\web\index.php(65): app\core\Application->run()
+#4 {main}
+  thrown in E:\Repos\PHP-Base-Course-Public\Project\controllers\MangaProfileContoller.php on line 39
+[28-May-2023 16:58:45 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function 
+
+<header>
+    <div class="header-content">
+        <div class="horizontal-items">
+            <div class="horizontal-item">
+                <a href="/" class="header-navlink">Home</a>
+            </div>
+
+            <div class="horizontal-item">
+                <a href="#" class="header-navlink">Catalog</a>
+            </div>
+            <div class="horizontal-item">
+                <!-- <a href="#" class="header_navlink">Search</a> -->
+                <input type="search" placeholder="Search" name="" class="blurred-input" id="">
+            </div>
+        </div>
+        <div class="horizontal-items">
+            <div class="horizontal-item">
+                <a href="/" style="transform: translate(0%,13%)"><img src="assets/images/logo.svg" alt="" height="50"></a>
+            </div>
+        </div>
+
+        <div class="horizontal-items">
+            <div class="horizontal-item">
+                <a href="/favourite" class="header-navlink">Favourite</a>
+            </div>
+<!--            user-->
+
+<!--            sign in-->
+<!--            <div class="horizontal-item">-->
+<!--                <button onclick="SetAuthContainerVisible()" class="button-login" id="header-login-button">Sign in</button>-->
+<!--            </div>-->
+            
+
+
+<div class="horizontal-item">
+    <div class="dropdown">
+        <button class="top_profile_button">
+            DeeUsh        </button>
+
+        <div class="dropdown-content">
+            <div style="width: 280px; height: 20px;"></div>
+            <div class="top-profile-content">
+
+                <button onclick="redirect('user')" class="sidemenu-button margin_top">Profile</button>
+                <button class="sidemenu-button margin_top">Wish list</button>
+                <br>
+                <div class="outlined-button no-select margin_top" onclick="window.location = '/logout'">
+                    Logout
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+        </div>
+    </div>
+</header>
+() in E:\Repos\PHP-Base-Course-Public\Project\controllers\MangaProfileContoller.php:39
+Stack trace:
+#0 [internal function]: app\controllers\MangaProfileContoller->getView(Object(app\core\Request))
+#1 E:\Repos\PHP-Base-Course-Public\Project\core\Router.php(54): call_user_func(Array, Object(app\core\Request))
+#2 E:\Repos\PHP-Base-Course-Public\Project\core\Application.php(29): app\core\Router->resolve()
+#3 E:\Repos\PHP-Base-Course-Public\Project\web\index.php(65): app\core\Application->run()
+#4 {main}
+  thrown in E:\Repos\PHP-Base-Course-Public\Project\controllers\MangaProfileContoller.php on line 39
+[28-May-2023 17:02:27 UTC] PHP Parse error:  syntax error, unexpected token "]", expecting identifier or variable or "{" or "$" in E:\Repos\PHP-Base-Course-Public\Project\controllers\MangaProfileContoller.php on line 42
+[28-May-2023 17:02:31 UTC] PHP Parse error:  syntax error, unexpected token "]", expecting identifier or variable or "{" or "$" in E:\Repos\PHP-Base-Course-Public\Project\controllers\MangaProfileContoller.php on line 42
+[28-May-2023 17:02:33 UTC] PHP Parse error:  syntax error, unexpected token "]", expecting identifier or variable or "{" or "$" in E:\Repos\PHP-Base-Course-Public\Project\controllers\MangaProfileContoller.php on line 42
+[28-May-2023 17:03:06 UTC] PHP Parse error:  syntax error, unexpected token "]", expecting identifier or variable or "{" or "$" in E:\Repos\PHP-Base-Course-Public\Project\controllers\MangaProfileContoller.php on line 42
+[28-May-2023 17:03:12 UTC] PHP Fatal error:  Uncaught TypeError: app\mappers\MangaMapper::createObject(): Argument #1 ($data) must be of type array, bool given, called in E:\Repos\PHP-Base-Course-Public\Project\mappers\MangaMapper.php on line 84 and defined in E:\Repos\PHP-Base-Course-Public\Project\mappers\MangaMapper.php:86
+Stack trace:
+#0 E:\Repos\PHP-Base-Course-Public\Project\mappers\MangaMapper.php(84): app\mappers\MangaMapper->createObject(false)
+#1 E:\Repos\PHP-Base-Course-Public\Project\controllers\MangaProfileContoller.php(36): app\mappers\MangaMapper->FindUserById(2)
+#2 [internal function]: app\controllers\MangaProfileContoller->getView(Object(app\core\Request))
+#3 E:\Repos\PHP-Base-Course-Public\Project\core\Router.php(54): call_user_func(Array, Object(app\core\Request))
+#4 E:\Repos\PHP-Base-Course-Public\Project\core\Application.php(29): app\core\Router->resolve()
+#5 E:\Repos\PHP-Base-Course-Public\Project\web\index.php(65): app\core\Application->run()
+#6 {main}
+  thrown in E:\Repos\PHP-Base-Course-Public\Project\mappers\MangaMapper.php on line 86
+[28-May-2023 17:05:57 UTC] PHP Parse error:  syntax error, unexpected token "/" in E:\Repos\PHP-Base-Course-Public\Project\cache\manga_profile.php on line 154
+[28-May-2023 17:06:23 UTC] PHP Fatal error:  Uncaught Error: Cannot use object of type app\models\Manga as array in E:\Repos\PHP-Base-Course-Public\Project\controllers\MangaProfileContoller.php:42
+Stack trace:
+#0 [internal function]: app\controllers\MangaProfileContoller->getView(Object(app\core\Request))
+#1 E:\Repos\PHP-Base-Course-Public\Project\core\Router.php(54): call_user_func(Array, Object(app\core\Request))
+#2 E:\Repos\PHP-Base-Course-Public\Project\core\Application.php(29): app\core\Router->resolve()
+#3 E:\Repos\PHP-Base-Course-Public\Project\web\index.php(65): app\core\Application->run()
+#4 {main}
+  thrown in E:\Repos\PHP-Base-Course-Public\Project\controllers\MangaProfileContoller.php on line 42
+[28-May-2023 17:06:42 UTC] PHP Warning:  Undefined property: app\models\Manga::$getTitle in E:\Repos\PHP-Base-Course-Public\Project\controllers\MangaProfileContoller.php on line 42
+[28-May-2023 17:06:42 UTC] PHP Parse error:  syntax error, unexpected token "/" in E:\Repos\PHP-Base-Course-Public\Project\cache\manga_profile.php on line 154
+[28-May-2023 17:06:50 UTC] PHP Parse error:  syntax error, unexpected token "/" in E:\Repos\PHP-Base-Course-Public\Project\cache\manga_profile.php on line 154
+[28-May-2023 17:17:27 UTC] PHP Parse error:  syntax error, unexpected token "/" in E:\Repos\PHP-Base-Course-Public\Project\cache\manga_profile.php on line 154
+[28-May-2023 17:18:37 UTC] PHP Parse error:  syntax error, unexpected token "/" in E:\Repos\PHP-Base-Course-Public\Project\cache\manga_profile.php on line 154
+[28-May-2023 17:18:40 UTC] PHP Parse error:  syntax error, unexpected token "/" in E:\Repos\PHP-Base-Course-Public\Project\cache\manga_profile.php on line 154
+[28-May-2023 17:19:03 UTC] PHP Parse error:  syntax error, unexpected token "/" in E:\Repos\PHP-Base-Course-Public\Project\cache\manga_profile.php on line 154
+[28-May-2023 17:19:03 UTC] PHP Parse error:  syntax error, unexpected token "/" in E:\Repos\PHP-Base-Course-Public\Project\cache\manga_profile.php on line 154
+[28-May-2023 17:19:25 UTC] PHP Parse error:  syntax error, unexpected token "/" in E:\Repos\PHP-Base-Course-Public\Project\cache\manga_profile.php on line 154
+[28-May-2023 17:19:50 UTC] PHP Warning:  Undefined variable $genre in E:\Repos\PHP-Base-Course-Public\Project\cache\manga_profile.php on line 120
+[28-May-2023 17:19:50 UTC] PHP Warning:  Undefined variable $release_date in E:\Repos\PHP-Base-Course-Public\Project\cache\manga_profile.php on line 136
+[28-May-2023 17:19:50 UTC] PHP Warning:  Undefined variable $author in E:\Repos\PHP-Base-Course-Public\Project\cache\manga_profile.php on line 144
+[28-May-2023 17:19:50 UTC] PHP Warning:  Undefined variable $age_rating in E:\Repos\PHP-Base-Course-Public\Project\cache\manga_profile.php on line 153
+[28-May-2023 17:19:50 UTC] PHP Warning:  Undefined variable $rating_id in E:\Repos\PHP-Base-Course-Public\Project\cache\manga_profile.php on line 181
+[28-May-2023 17:21:00 UTC] PHP Warning:  Undefined variable $author in E:\Repos\PHP-Base-Course-Public\Project\cache\manga_profile.php on line 144
+[28-May-2023 17:29:13 UTC] PHP Warning:  Undefined array key "id" in E:\Repos\PHP-Base-Course-Public\Project\controllers\MangaProfileContoller.php on line 38

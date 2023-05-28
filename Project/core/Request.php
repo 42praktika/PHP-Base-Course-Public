@@ -10,7 +10,11 @@ class Request
 {
     public function getUri(): string
     {
-        return $_SERVER["REQUEST_URI"];
+        $rawUri = $_SERVER["REQUEST_URI"];
+        $cleanUri = explode('?', $rawUri)[0];
+
+//        return $_SERVER["REQUEST_URI"];
+        return $cleanUri;
     }
 
     public function getMethod(): string
