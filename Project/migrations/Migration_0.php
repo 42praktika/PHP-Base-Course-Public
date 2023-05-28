@@ -14,20 +14,48 @@ class Migration_0 extends Migration
 
     function up()
     {
-
-
         $this->database->pdo->query(
             "CREATE TABLE if not exists users (
                         id serial primary key,
-                        nickname varchar(50),
-                        email varchar(100),
+                        title varchar(32),
+                        email varchar(128),
                         password varchar(60)
-                    );
-                    CREATE TABLE if not exists roles (
+                    );");
+
+
+            $this->database->pdo->query(
+                "CREATE TABLE if not exists manga (
                         id serial primary key,
-                        rolename varchar(50)
-                    );"
-        );
+                        title varchar(256),
+                        description varchar(1024),
+                        cover_image_path varchar(256),
+                        author_name varchar(64),
+                        rating_id int,
+                        age_rating int,
+                        chapter_list_id int,
+                        release_date date,
+                        genre varchar(64)
+                    );");
+
+        $this->database->pdo->query(
+            "CREATE TABLE if not exists tags (
+                        id serial primary key,
+                        title varchar(32)
+                    );");
+
+        $this->database->pdo->query(
+            "CREATE TABLE if not exists manga_tags (
+                        manga_id int,
+                        tag_id int,
+                        FOREIGN KEY (manga_id) REFERENCES manga (id),
+                        FOREIGN KEY (tag_id) REFERENCES tags (id)
+                    );");
+
+        $this->database->pdo->query(
+            "CREATE TABLE if not exists admins (
+                        id int,
+                        FOREIGN KEY (id) REFERENCES users (id)
+                    );");
 
       parent::up();
 

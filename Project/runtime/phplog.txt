@@ -320,7 +320,7 @@ Stack trace:
 [01-May-2023 14:40:18 UTC] PHP Warning:  Trying to access array offset on value of type bool in D:\GitHub\PHP-Base-Course-Public\Project\mappers\UserMapper.php on line 93
 [01-May-2023 14:40:18 UTC] PHP Warning:  Trying to access array offset on value of type bool in D:\GitHub\PHP-Base-Course-Public\Project\mappers\UserMapper.php on line 93
 [01-May-2023 14:40:18 UTC] PHP Warning:  Trying to access array offset on value of type bool in D:\GitHub\PHP-Base-Course-Public\Project\mappers\UserMapper.php on line 93
-[01-May-2023 14:40:18 UTC] PHP Fatal error:  Uncaught TypeError: app\models\User::__construct(): Argument #2 ($nickname) must be of type string, null given, called in D:\GitHub\PHP-Base-Course-Public\Project\mappers\UserMapper.php on line 93 and defined in D:\GitHub\PHP-Base-Course-Public\Project\models\User.php:15
+[01-May-2023 14:40:18 UTC] PHP Fatal error:  Uncaught TypeError: app\models\User::__construct(): Argument #2 ($title) must be of type string, null given, called in D:\GitHub\PHP-Base-Course-Public\Project\mappers\UserMapper.php on line 93 and defined in D:\GitHub\PHP-Base-Course-Public\Project\models\User.php:15
 Stack trace:
 #0 D:\GitHub\PHP-Base-Course-Public\Project\mappers\UserMapper.php(93): app\models\User->__construct()
 #1 D:\GitHub\PHP-Base-Course-Public\Project\controllers\LoginController.php(25): app\mappers\UserMapper::findUserByEmail()
@@ -334,7 +334,7 @@ Stack trace:
 [01-May-2023 14:40:30 UTC] PHP Warning:  Trying to access array offset on value of type bool in D:\GitHub\PHP-Base-Course-Public\Project\mappers\UserMapper.php on line 93
 [01-May-2023 14:40:30 UTC] PHP Warning:  Trying to access array offset on value of type bool in D:\GitHub\PHP-Base-Course-Public\Project\mappers\UserMapper.php on line 93
 [01-May-2023 14:40:30 UTC] PHP Warning:  Trying to access array offset on value of type bool in D:\GitHub\PHP-Base-Course-Public\Project\mappers\UserMapper.php on line 93
-[01-May-2023 14:40:30 UTC] PHP Fatal error:  Uncaught TypeError: app\models\User::__construct(): Argument #2 ($nickname) must be of type string, null given, called in D:\GitHub\PHP-Base-Course-Public\Project\mappers\UserMapper.php on line 93 and defined in D:\GitHub\PHP-Base-Course-Public\Project\models\User.php:15
+[01-May-2023 14:40:30 UTC] PHP Fatal error:  Uncaught TypeError: app\models\User::__construct(): Argument #2 ($title) must be of type string, null given, called in D:\GitHub\PHP-Base-Course-Public\Project\mappers\UserMapper.php on line 93 and defined in D:\GitHub\PHP-Base-Course-Public\Project\models\User.php:15
 Stack trace:
 #0 D:\GitHub\PHP-Base-Course-Public\Project\mappers\UserMapper.php(93): app\models\User->__construct()
 #1 D:\GitHub\PHP-Base-Course-Public\Project\controllers\LoginController.php(25): app\mappers\UserMapper::findUserByEmail()
@@ -1125,7 +1125,7 @@ Stack trace:
   thrown in E:\Repos\PHP-Base-Course-Public\Project\controllers\PresentationController.php on line 32
 [21-May-2023 16:40:14 UTC] PHP Warning:  Undefined property: app\models\User::$username in E:\Repos\PHP-Base-Course-Public\Project\controllers\PresentationController.php on line 32
 [21-May-2023 16:40:14 UTC] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in E:\Repos\PHP-Base-Course-Public\Project\controllers\HeaderController.php on line 12
-[21-May-2023 16:40:56 UTC] PHP Warning:  Undefined variable $nickname in E:\Repos\PHP-Base-Course-Public\Project\controllers\PresentationController.php on line 32
+[21-May-2023 16:40:56 UTC] PHP Warning:  Undefined variable $title in E:\Repos\PHP-Base-Course-Public\Project\controllers\PresentationController.php on line 32
 [21-May-2023 16:40:56 UTC] PHP Warning:  Undefined property: app\models\User::$ in E:\Repos\PHP-Base-Course-Public\Project\controllers\PresentationController.php on line 32
 [21-May-2023 16:40:56 UTC] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in E:\Repos\PHP-Base-Course-Public\Project\controllers\HeaderController.php on line 12
 [21-May-2023 16:41:23 UTC] PHP Parse error:  Unclosed '[' does not match ')' in E:\Repos\PHP-Base-Course-Public\Project\controllers\PresentationController.php on line 32
@@ -1137,7 +1137,7 @@ Stack trace:
 #3 E:\Repos\PHP-Base-Course-Public\Project\web\index.php(44): app\core\Application->run()
 #4 {main}
   thrown in E:\Repos\PHP-Base-Course-Public\Project\controllers\PresentationController.php on line 32
-[21-May-2023 16:41:49 UTC] PHP Fatal error:  Uncaught Error: Cannot access private property app\models\User::$nickname in E:\Repos\PHP-Base-Course-Public\Project\controllers\PresentationController.php:32
+[21-May-2023 16:41:49 UTC] PHP Fatal error:  Uncaught Error: Cannot access private property app\models\User::$title in E:\Repos\PHP-Base-Course-Public\Project\controllers\PresentationController.php:32
 Stack trace:
 #0 [internal function]: app\controllers\PresentationController->getView(Object(app\core\Request))
 #1 E:\Repos\PHP-Base-Course-Public\Project\core\Router.php(53): call_user_func(Array, Object(app\core\Request))
@@ -1252,7 +1252,7 @@ Stack trace:
 [21-May-2023 18:10:13 UTC] PHP Warning:  include(): Failed opening 'E:\Repos\PHP-Base-Course-Public\Project\web/../views/templates/footer.html' for inclusion (include_path='.;C:\php\pear') in E:\Repos\PHP-Base-Course-Public\Project\views\user_profile.php on line 100
 [21-May-2023 18:36:16 UTC] PHP Warning:  Undefined variable $username in E:\Repos\PHP-Base-Course-Public\Project\cache\user_profile.php on line 93
 [21-May-2023 18:36:16 UTC] PHP Warning:  Undefined variable $email in E:\Repos\PHP-Base-Course-Public\Project\cache\user_profile.php on line 94
-[21-May-2023 18:59:14 UTC] PHP Warning:  Undefined array key "nickname" in E:\Repos\PHP-Base-Course-Public\Project\controllers\RegistrationFormValidationController.php on line 21
+[21-May-2023 18:59:14 UTC] PHP Warning:  Undefined array key "title" in E:\Repos\PHP-Base-Course-Public\Project\controllers\RegistrationFormValidationController.php on line 21
 [21-May-2023 19:05:02 UTC] PHP Warning:  Array to string conversion in E:\Repos\PHP-Base-Course-Public\Project\controllers\LoginValidationController.php on line 11
 [21-May-2023 19:05:11 UTC] PHP Warning:  Array to string conversion in E:\Repos\PHP-Base-Course-Public\Project\controllers\LoginValidationController.php on line 11
 [21-May-2023 19:15:09 UTC] PHP Warning:  include(E:\Repos\PHP-Base-Course-Public\Project\web/../views/templates/header.html): Failed to open stream: No such file or directory in E:\Repos\PHP-Base-Course-Public\Project\cache\manga_profile.php on line 55
@@ -1278,3 +1278,342 @@ Stack trace:
 [21-May-2023 19:39:29 UTC] PHP Warning:  include(): Failed opening 'D:\GitHub\PHP-Base-Course-Public\Project\web/../views/templates/footer.html' for inclusion (include_path='.;C:\php\pear') in D:\GitHub\PHP-Base-Course-Public\Project\cache\manga_profile.php on line 428
 [27-May-2023 10:09:12 UTC] PHP Warning:  Undefined variable $username in D:\GitHub\PHP-Base-Course-Public\Project\cache\favourite.php on line 105
 [27-May-2023 10:09:12 UTC] PHP Warning:  Undefined variable $email in D:\GitHub\PHP-Base-Course-Public\Project\cache\favourite.php on line 115
+[28-May-2023 11:10:56 UTC] PHP Fatal error:  Uncaught Error: Call to a member function getNickname() on null in E:\Repos\PHP-Base-Course-Public\Project\controllers\PresentationController.php:32
+Stack trace:
+#0 [internal function]: app\controllers\PresentationController->getView(Object(app\core\Request))
+#1 E:\Repos\PHP-Base-Course-Public\Project\core\Router.php(53): call_user_func(Array, Object(app\core\Request))
+#2 E:\Repos\PHP-Base-Course-Public\Project\core\Application.php(29): app\core\Router->resolve()
+#3 E:\Repos\PHP-Base-Course-Public\Project\web\index.php(56): app\core\Application->run()
+#4 {main}
+  thrown in E:\Repos\PHP-Base-Course-Public\Project\controllers\PresentationController.php on line 32
+[28-May-2023 11:13:33 UTC] PHP Warning:  Undefined array key "title" in E:\Repos\PHP-Base-Course-Public\Project\controllers\ajax\AJAX_RegistrationFormValidationController.php on line 18
+[28-May-2023 11:13:56 UTC] PHP Warning:  Undefined array key "title" in E:\Repos\PHP-Base-Course-Public\Project\mappers\UserMapper.php on line 81
+[28-May-2023 11:13:56 UTC] PHP Fatal error:  Uncaught TypeError: app\models\User::__construct(): Argument #2 ($title) must be of type string, null given, called in E:\Repos\PHP-Base-Course-Public\Project\mappers\UserMapper.php on line 80 and defined in E:\Repos\PHP-Base-Course-Public\Project\models\User.php:15
+Stack trace:
+#0 E:\Repos\PHP-Base-Course-Public\Project\mappers\UserMapper.php(80): app\models\User->__construct(NULL, NULL, 'dee.ushakoff@gm...', 'deeush123123')
+#1 E:\Repos\PHP-Base-Course-Public\Project\controllers\RegisterController.php(44): app\mappers\UserMapper->createObject(Array)
+#2 [internal function]: app\controllers\RegisterController->handleView(Object(app\core\Request))
+#3 E:\Repos\PHP-Base-Course-Public\Project\core\Router.php(53): call_user_func(Array, Object(app\core\Request))
+#4 E:\Repos\PHP-Base-Course-Public\Project\core\Application.php(29): app\core\Router->resolve()
+#5 E:\Repos\PHP-Base-Course-Public\Project\web\index.php(56): app\core\Application->run()
+#6 {main}
+  thrown in E:\Repos\PHP-Base-Course-Public\Project\models\User.php on line 15
+[28-May-2023 11:34:00 UTC] PHP Warning:  Undefined variable $id in E:\Repos\PHP-Base-Course-Public\Project\cache\adminPanel_home.php on line 90
+[28-May-2023 11:34:04 UTC] PHP Fatal error:  Uncaught Error: Undefined constant "id" in E:\Repos\PHP-Base-Course-Public\Project\cache\adminPanel_home.php:90
+Stack trace:
+#0 E:\Repos\PHP-Base-Course-Public\Project\core\Template.php(17): require()
+#1 E:\Repos\PHP-Base-Course-Public\Project\core\Router.php(66): app\core\Template::View('adminPanel/home...', Array)
+#2 E:\Repos\PHP-Base-Course-Public\Project\controllers\adminPanel\AdminPresentationController.php(34): app\core\Router->renderTemplate('adminPanel/home', Array)
+#3 [internal function]: app\controllers\adminPanel\AdminPresentationController->getView(Object(app\core\Request))
+#4 E:\Repos\PHP-Base-Course-Public\Project\core\Router.php(53): call_user_func(Array, Object(app\core\Request))
+#5 E:\Repos\PHP-Base-Course-Public\Project\core\Application.php(29): app\core\Router->resolve()
+#6 E:\Repos\PHP-Base-Course-Public\Project\web\index.php(62): app\core\Application->run()
+#7 {main}
+  thrown in E:\Repos\PHP-Base-Course-Public\Project\cache\adminPanel_home.php on line 90
+[28-May-2023 11:57:14 UTC] PHP Fatal error:  Uncaught Error: Cannot use object of type app\core\Collection as array in E:\Repos\PHP-Base-Course-Public\Project\controllers\adminPanel\AdminPanelTagListController.php:34
+Stack trace:
+#0 [internal function]: app\controllers\adminPanel\AdminPanelTagListController->getView(Object(app\core\Request))
+#1 E:\Repos\PHP-Base-Course-Public\Project\core\Router.php(53): call_user_func(Array, Object(app\core\Request))
+#2 E:\Repos\PHP-Base-Course-Public\Project\core\Application.php(29): app\core\Router->resolve()
+#3 E:\Repos\PHP-Base-Course-Public\Project\web\index.php(63): app\core\Application->run()
+#4 {main}
+  thrown in E:\Repos\PHP-Base-Course-Public\Project\controllers\adminPanel\AdminPanelTagListController.php on line 34
+[28-May-2023 11:57:15 UTC] PHP Fatal error:  Uncaught Error: Cannot use object of type app\core\Collection as array in E:\Repos\PHP-Base-Course-Public\Project\controllers\adminPanel\AdminPanelTagListController.php:34
+Stack trace:
+#0 [internal function]: app\controllers\adminPanel\AdminPanelTagListController->getView(Object(app\core\Request))
+#1 E:\Repos\PHP-Base-Course-Public\Project\core\Router.php(53): call_user_func(Array, Object(app\core\Request))
+#2 E:\Repos\PHP-Base-Course-Public\Project\core\Application.php(29): app\core\Router->resolve()
+#3 E:\Repos\PHP-Base-Course-Public\Project\web\index.php(63): app\core\Application->run()
+#4 {main}
+  thrown in E:\Repos\PHP-Base-Course-Public\Project\controllers\adminPanel\AdminPanelTagListController.php on line 34
+[28-May-2023 11:58:57 UTC] PHP Warning:  Undefined array key 0 in E:\Repos\PHP-Base-Course-Public\Project\core\Collection.php on line 38
+[28-May-2023 11:58:57 UTC] PHP Fatal error:  Uncaught TypeError: app\viewmodels\adminPanel\AdminTagListItemViewModel::getView(): Argument #1 ($tag) must be of type app\models\Tag, null given, called in E:\Repos\PHP-Base-Course-Public\Project\controllers\adminPanel\AdminPanelTagListController.php on line 39 and defined in E:\Repos\PHP-Base-Course-Public\Project\viewmodels\adminPanel\AdminTagListItemViewModel.php:14
+Stack trace:
+#0 E:\Repos\PHP-Base-Course-Public\Project\controllers\adminPanel\AdminPanelTagListController.php(39): app\viewmodels\adminPanel\AdminTagListItemViewModel::getView(NULL)
+#1 [internal function]: app\controllers\adminPanel\AdminPanelTagListController->getView(Object(app\core\Request))
+#2 E:\Repos\PHP-Base-Course-Public\Project\core\Router.php(53): call_user_func(Array, Object(app\core\Request))
+#3 E:\Repos\PHP-Base-Course-Public\Project\core\Application.php(29): app\core\Router->resolve()
+#4 E:\Repos\PHP-Base-Course-Public\Project\web\index.php(63): app\core\Application->run()
+#5 {main}
+  thrown in E:\Repos\PHP-Base-Course-Public\Project\viewmodels\adminPanel\AdminTagListItemViewModel.php on line 14
+[28-May-2023 12:07:52 UTC] PHP Warning:  Undefined array key 0 in E:\Repos\PHP-Base-Course-Public\Project\core\Collection.php on line 38
+[28-May-2023 12:08:16 UTC] PHP Warning:  Undefined array key 0 in E:\Repos\PHP-Base-Course-Public\Project\core\Collection.php on line 38
+[28-May-2023 12:10:27 UTC] PHP Warning:  Undefined array key 0 in E:\Repos\PHP-Base-Course-Public\Project\core\Collection.php on line 38
+[28-May-2023 12:10:27 UTC] PHP Fatal error:  Uncaught TypeError: app\viewmodels\adminPanel\AdminTagListItemViewModel::getView(): Argument #1 ($tag) must be of type app\models\Tag, null given, called in E:\Repos\PHP-Base-Course-Public\Project\controllers\adminPanel\AdminPanelTagListController.php on line 39 and defined in E:\Repos\PHP-Base-Course-Public\Project\viewmodels\adminPanel\AdminTagListItemViewModel.php:14
+Stack trace:
+#0 E:\Repos\PHP-Base-Course-Public\Project\controllers\adminPanel\AdminPanelTagListController.php(39): app\viewmodels\adminPanel\AdminTagListItemViewModel::getView(NULL)
+#1 [internal function]: app\controllers\adminPanel\AdminPanelTagListController->getView(Object(app\core\Request))
+#2 E:\Repos\PHP-Base-Course-Public\Project\core\Router.php(53): call_user_func(Array, Object(app\core\Request))
+#3 E:\Repos\PHP-Base-Course-Public\Project\core\Application.php(29): app\core\Router->resolve()
+#4 E:\Repos\PHP-Base-Course-Public\Project\web\index.php(63): app\core\Application->run()
+#5 {main}
+  thrown in E:\Repos\PHP-Base-Course-Public\Project\viewmodels\adminPanel\AdminTagListItemViewModel.php on line 14
+[28-May-2023 12:11:24 UTC] PHP Warning:  Undefined array key 0 in E:\Repos\PHP-Base-Course-Public\Project\core\Collection.php on line 38
+[28-May-2023 12:13:09 UTC] PHP Fatal error:  Uncaught Error: Call to a member function getNextRow() on array in E:\Repos\PHP-Base-Course-Public\Project\controllers\adminPanel\AdminPanelTagListController.php:37
+Stack trace:
+#0 [internal function]: app\controllers\adminPanel\AdminPanelTagListController->getView(Object(app\core\Request))
+#1 E:\Repos\PHP-Base-Course-Public\Project\core\Router.php(53): call_user_func(Array, Object(app\core\Request))
+#2 E:\Repos\PHP-Base-Course-Public\Project\core\Application.php(29): app\core\Router->resolve()
+#3 E:\Repos\PHP-Base-Course-Public\Project\web\index.php(63): app\core\Application->run()
+#4 {main}
+  thrown in E:\Repos\PHP-Base-Course-Public\Project\controllers\adminPanel\AdminPanelTagListController.php on line 37
+[28-May-2023 12:13:26 UTC] PHP Fatal error:  Uncaught TypeError: app\viewmodels\adminPanel\AdminTagListItemViewModel::getView(): Argument #1 ($tag) must be of type app\models\Tag, array given, called in E:\Repos\PHP-Base-Course-Public\Project\controllers\adminPanel\AdminPanelTagListController.php on line 39 and defined in E:\Repos\PHP-Base-Course-Public\Project\viewmodels\adminPanel\AdminTagListItemViewModel.php:14
+Stack trace:
+#0 E:\Repos\PHP-Base-Course-Public\Project\controllers\adminPanel\AdminPanelTagListController.php(39): app\viewmodels\adminPanel\AdminTagListItemViewModel::getView(Array)
+#1 [internal function]: app\controllers\adminPanel\AdminPanelTagListController->getView(Object(app\core\Request))
+#2 E:\Repos\PHP-Base-Course-Public\Project\core\Router.php(53): call_user_func(Array, Object(app\core\Request))
+#3 E:\Repos\PHP-Base-Course-Public\Project\core\Application.php(29): app\core\Router->resolve()
+#4 E:\Repos\PHP-Base-Course-Public\Project\web\index.php(63): app\core\Application->run()
+#5 {main}
+  thrown in E:\Repos\PHP-Base-Course-Public\Project\viewmodels\adminPanel\AdminTagListItemViewModel.php on line 14
+[28-May-2023 12:17:33 UTC] PHP Warning:  Undefined array key 0 in E:\Repos\PHP-Base-Course-Public\Project\core\Collection.php on line 39
+[28-May-2023 12:17:33 UTC] PHP Fatal error:  Uncaught TypeError: app\viewmodels\adminPanel\AdminTagListItemViewModel::getView(): Argument #1 ($tag) must be of type app\models\Tag, null given, called in E:\Repos\PHP-Base-Course-Public\Project\controllers\adminPanel\AdminPanelTagListController.php on line 39 and defined in E:\Repos\PHP-Base-Course-Public\Project\viewmodels\adminPanel\AdminTagListItemViewModel.php:14
+Stack trace:
+#0 E:\Repos\PHP-Base-Course-Public\Project\controllers\adminPanel\AdminPanelTagListController.php(39): app\viewmodels\adminPanel\AdminTagListItemViewModel::getView(NULL)
+#1 [internal function]: app\controllers\adminPanel\AdminPanelTagListController->getView(Object(app\core\Request))
+#2 E:\Repos\PHP-Base-Course-Public\Project\core\Router.php(53): call_user_func(Array, Object(app\core\Request))
+#3 E:\Repos\PHP-Base-Course-Public\Project\core\Application.php(29): app\core\Router->resolve()
+#4 E:\Repos\PHP-Base-Course-Public\Project\web\index.php(63): app\core\Application->run()
+#5 {main}
+  thrown in E:\Repos\PHP-Base-Course-Public\Project\viewmodels\adminPanel\AdminTagListItemViewModel.php on line 14
+[28-May-2023 12:17:34 UTC] PHP Warning:  Undefined array key 0 in E:\Repos\PHP-Base-Course-Public\Project\core\Collection.php on line 39
+[28-May-2023 12:17:34 UTC] PHP Fatal error:  Uncaught TypeError: app\viewmodels\adminPanel\AdminTagListItemViewModel::getView(): Argument #1 ($tag) must be of type app\models\Tag, null given, called in E:\Repos\PHP-Base-Course-Public\Project\controllers\adminPanel\AdminPanelTagListController.php on line 39 and defined in E:\Repos\PHP-Base-Course-Public\Project\viewmodels\adminPanel\AdminTagListItemViewModel.php:14
+Stack trace:
+#0 E:\Repos\PHP-Base-Course-Public\Project\controllers\adminPanel\AdminPanelTagListController.php(39): app\viewmodels\adminPanel\AdminTagListItemViewModel::getView(NULL)
+#1 [internal function]: app\controllers\adminPanel\AdminPanelTagListController->getView(Object(app\core\Request))
+#2 E:\Repos\PHP-Base-Course-Public\Project\core\Router.php(53): call_user_func(Array, Object(app\core\Request))
+#3 E:\Repos\PHP-Base-Course-Public\Project\core\Application.php(29): app\core\Router->resolve()
+#4 E:\Repos\PHP-Base-Course-Public\Project\web\index.php(63): app\core\Application->run()
+#5 {main}
+  thrown in E:\Repos\PHP-Base-Course-Public\Project\viewmodels\adminPanel\AdminTagListItemViewModel.php on line 14
+[28-May-2023 12:18:49 UTC] PHP Warning:  Undefined array key 0 in E:\Repos\PHP-Base-Course-Public\Project\core\Collection.php on line 39
+[28-May-2023 12:18:56 UTC] PHP Warning:  Undefined array key 0 in E:\Repos\PHP-Base-Course-Public\Project\core\Collection.php on line 39
+[28-May-2023 12:18:57 UTC] PHP Warning:  Undefined array key 0 in E:\Repos\PHP-Base-Course-Public\Project\core\Collection.php on line 39
+[28-May-2023 12:18:59 UTC] PHP Warning:  Undefined array key 0 in E:\Repos\PHP-Base-Course-Public\Project\core\Collection.php on line 39
+[28-May-2023 12:20:41 UTC] PHP Warning:  Undefined array key 0 in E:\Repos\PHP-Base-Course-Public\Project\core\Collection.php on line 42
+[28-May-2023 12:20:42 UTC] PHP Warning:  Undefined array key 0 in E:\Repos\PHP-Base-Course-Public\Project\core\Collection.php on line 42
+[28-May-2023 12:20:45 UTC] PHP Warning:  Undefined array key 0 in E:\Repos\PHP-Base-Course-Public\Project\core\Collection.php on line 42
+[28-May-2023 12:20:49 UTC] PHP Warning:  Undefined array key 0 in E:\Repos\PHP-Base-Course-Public\Project\core\Collection.php on line 43
+[28-May-2023 12:21:11 UTC] PHP Warning:  Undefined array key 0 in E:\Repos\PHP-Base-Course-Public\Project\core\Collection.php on line 44
+[28-May-2023 12:21:12 UTC] PHP Warning:  Undefined array key 0 in E:\Repos\PHP-Base-Course-Public\Project\core\Collection.php on line 44
+[28-May-2023 12:21:13 UTC] PHP Warning:  Undefined array key 0 in E:\Repos\PHP-Base-Course-Public\Project\core\Collection.php on line 44
+[28-May-2023 12:21:13 UTC] PHP Warning:  Undefined array key 0 in E:\Repos\PHP-Base-Course-Public\Project\core\Collection.php on line 44
+[28-May-2023 12:21:13 UTC] PHP Warning:  Undefined array key 0 in E:\Repos\PHP-Base-Course-Public\Project\core\Collection.php on line 44
+[28-May-2023 12:21:13 UTC] PHP Warning:  Undefined array key 0 in E:\Repos\PHP-Base-Course-Public\Project\core\Collection.php on line 44
+[28-May-2023 12:21:14 UTC] PHP Warning:  Undefined array key 0 in E:\Repos\PHP-Base-Course-Public\Project\core\Collection.php on line 44
+[28-May-2023 12:21:14 UTC] PHP Warning:  Undefined array key 0 in E:\Repos\PHP-Base-Course-Public\Project\core\Collection.php on line 44
+[28-May-2023 12:21:14 UTC] PHP Warning:  Undefined array key 0 in E:\Repos\PHP-Base-Course-Public\Project\core\Collection.php on line 44
+[28-May-2023 12:21:14 UTC] PHP Warning:  Undefined array key 0 in E:\Repos\PHP-Base-Course-Public\Project\core\Collection.php on line 44
+[28-May-2023 12:21:14 UTC] PHP Warning:  Undefined array key 0 in E:\Repos\PHP-Base-Course-Public\Project\core\Collection.php on line 44
+[28-May-2023 12:21:14 UTC] PHP Warning:  Undefined array key 0 in E:\Repos\PHP-Base-Course-Public\Project\core\Collection.php on line 44
+[28-May-2023 12:21:14 UTC] PHP Warning:  Undefined array key 0 in E:\Repos\PHP-Base-Course-Public\Project\core\Collection.php on line 44
+[28-May-2023 12:21:14 UTC] PHP Warning:  Undefined array key 0 in E:\Repos\PHP-Base-Course-Public\Project\core\Collection.php on line 44
+[28-May-2023 12:21:15 UTC] PHP Warning:  Undefined array key 0 in E:\Repos\PHP-Base-Course-Public\Project\core\Collection.php on line 44
+[28-May-2023 12:21:15 UTC] PHP Warning:  Undefined array key 0 in E:\Repos\PHP-Base-Course-Public\Project\core\Collection.php on line 44
+[28-May-2023 12:21:15 UTC] PHP Warning:  Undefined array key 0 in E:\Repos\PHP-Base-Course-Public\Project\core\Collection.php on line 44
+[28-May-2023 12:21:15 UTC] PHP Warning:  Undefined array key 0 in E:\Repos\PHP-Base-Course-Public\Project\core\Collection.php on line 44
+[28-May-2023 12:21:15 UTC] PHP Warning:  Undefined array key 0 in E:\Repos\PHP-Base-Course-Public\Project\core\Collection.php on line 44
+[28-May-2023 12:21:15 UTC] PHP Warning:  Undefined array key 0 in E:\Repos\PHP-Base-Course-Public\Project\core\Collection.php on line 44
+[28-May-2023 12:21:39 UTC] PHP Warning:  Undefined array key 0 in E:\Repos\PHP-Base-Course-Public\Project\core\Collection.php on line 45
+[28-May-2023 12:22:31 UTC] PHP Fatal error:  Uncaught Error: Undefined constant "title" in E:\Repos\PHP-Base-Course-Public\Project\cache\adminPanel_components_adminTagListItem.php:7
+Stack trace:
+#0 E:\Repos\PHP-Base-Course-Public\Project\core\Template.php(25): require()
+#1 E:\Repos\PHP-Base-Course-Public\Project\viewmodels\adminPanel\AdminTagListItemViewModel.php(16): app\core\Template::ReturnView('adminPanel/comp...', Array)
+#2 E:\Repos\PHP-Base-Course-Public\Project\controllers\adminPanel\AdminPanelTagListController.php(39): app\viewmodels\adminPanel\AdminTagListItemViewModel::getView(Object(app\models\Tag))
+#3 [internal function]: app\controllers\adminPanel\AdminPanelTagListController->getView(Object(app\core\Request))
+#4 E:\Repos\PHP-Base-Course-Public\Project\core\Router.php(53): call_user_func(Array, Object(app\core\Request))
+#5 E:\Repos\PHP-Base-Course-Public\Project\core\Application.php(29): app\core\Router->resolve()
+#6 E:\Repos\PHP-Base-Course-Public\Project\web\index.php(63): app\core\Application->run()
+#7 {main}
+  thrown in E:\Repos\PHP-Base-Course-Public\Project\cache\adminPanel_components_adminTagListItem.php on line 7
+[28-May-2023 12:23:09 UTC] PHP Fatal error:  Uncaught Error: Undefined constant "title" in E:\Repos\PHP-Base-Course-Public\Project\cache\adminPanel_components_adminTagListItem.php:7
+Stack trace:
+#0 E:\Repos\PHP-Base-Course-Public\Project\core\Template.php(25): require()
+#1 E:\Repos\PHP-Base-Course-Public\Project\viewmodels\adminPanel\AdminTagListItemViewModel.php(16): app\core\Template::ReturnView('adminPanel/comp...', Array)
+#2 E:\Repos\PHP-Base-Course-Public\Project\controllers\adminPanel\AdminPanelTagListController.php(39): app\viewmodels\adminPanel\AdminTagListItemViewModel::getView(Object(app\models\Tag))
+#3 [internal function]: app\controllers\adminPanel\AdminPanelTagListController->getView(Object(app\core\Request))
+#4 E:\Repos\PHP-Base-Course-Public\Project\core\Router.php(53): call_user_func(Array, Object(app\core\Request))
+#5 E:\Repos\PHP-Base-Course-Public\Project\core\Application.php(29): app\core\Router->resolve()
+#6 E:\Repos\PHP-Base-Course-Public\Project\web\index.php(63): app\core\Application->run()
+#7 {main}
+  thrown in E:\Repos\PHP-Base-Course-Public\Project\cache\adminPanel_components_adminTagListItem.php on line 7
+[28-May-2023 12:23:10 UTC] PHP Fatal error:  Uncaught Error: Undefined constant "title" in E:\Repos\PHP-Base-Course-Public\Project\cache\adminPanel_components_adminTagListItem.php:7
+Stack trace:
+#0 E:\Repos\PHP-Base-Course-Public\Project\core\Template.php(25): require()
+#1 E:\Repos\PHP-Base-Course-Public\Project\viewmodels\adminPanel\AdminTagListItemViewModel.php(16): app\core\Template::ReturnView('adminPanel/comp...', Array)
+#2 E:\Repos\PHP-Base-Course-Public\Project\controllers\adminPanel\AdminPanelTagListController.php(39): app\viewmodels\adminPanel\AdminTagListItemViewModel::getView(Object(app\models\Tag))
+#3 [internal function]: app\controllers\adminPanel\AdminPanelTagListController->getView(Object(app\core\Request))
+#4 E:\Repos\PHP-Base-Course-Public\Project\core\Router.php(53): call_user_func(Array, Object(app\core\Request))
+#5 E:\Repos\PHP-Base-Course-Public\Project\core\Application.php(29): app\core\Router->resolve()
+#6 E:\Repos\PHP-Base-Course-Public\Project\web\index.php(63): app\core\Application->run()
+#7 {main}
+  thrown in E:\Repos\PHP-Base-Course-Public\Project\cache\adminPanel_components_adminTagListItem.php on line 7
+[28-May-2023 12:23:10 UTC] PHP Fatal error:  Uncaught Error: Undefined constant "title" in E:\Repos\PHP-Base-Course-Public\Project\cache\adminPanel_components_adminTagListItem.php:7
+Stack trace:
+#0 E:\Repos\PHP-Base-Course-Public\Project\core\Template.php(25): require()
+#1 E:\Repos\PHP-Base-Course-Public\Project\viewmodels\adminPanel\AdminTagListItemViewModel.php(16): app\core\Template::ReturnView('adminPanel/comp...', Array)
+#2 E:\Repos\PHP-Base-Course-Public\Project\controllers\adminPanel\AdminPanelTagListController.php(39): app\viewmodels\adminPanel\AdminTagListItemViewModel::getView(Object(app\models\Tag))
+#3 [internal function]: app\controllers\adminPanel\AdminPanelTagListController->getView(Object(app\core\Request))
+#4 E:\Repos\PHP-Base-Course-Public\Project\core\Router.php(53): call_user_func(Array, Object(app\core\Request))
+#5 E:\Repos\PHP-Base-Course-Public\Project\core\Application.php(29): app\core\Router->resolve()
+#6 E:\Repos\PHP-Base-Course-Public\Project\web\index.php(63): app\core\Application->run()
+#7 {main}
+  thrown in E:\Repos\PHP-Base-Course-Public\Project\cache\adminPanel_components_adminTagListItem.php on line 7
+[28-May-2023 12:23:10 UTC] PHP Fatal error:  Uncaught Error: Undefined constant "title" in E:\Repos\PHP-Base-Course-Public\Project\cache\adminPanel_components_adminTagListItem.php:7
+Stack trace:
+#0 E:\Repos\PHP-Base-Course-Public\Project\core\Template.php(25): require()
+#1 E:\Repos\PHP-Base-Course-Public\Project\viewmodels\adminPanel\AdminTagListItemViewModel.php(16): app\core\Template::ReturnView('adminPanel/comp...', Array)
+#2 E:\Repos\PHP-Base-Course-Public\Project\controllers\adminPanel\AdminPanelTagListController.php(39): app\viewmodels\adminPanel\AdminTagListItemViewModel::getView(Object(app\models\Tag))
+#3 [internal function]: app\controllers\adminPanel\AdminPanelTagListController->getView(Object(app\core\Request))
+#4 E:\Repos\PHP-Base-Course-Public\Project\core\Router.php(53): call_user_func(Array, Object(app\core\Request))
+#5 E:\Repos\PHP-Base-Course-Public\Project\core\Application.php(29): app\core\Router->resolve()
+#6 E:\Repos\PHP-Base-Course-Public\Project\web\index.php(63): app\core\Application->run()
+#7 {main}
+  thrown in E:\Repos\PHP-Base-Course-Public\Project\cache\adminPanel_components_adminTagListItem.php on line 7
+[28-May-2023 12:23:15 UTC] PHP Fatal error:  Uncaught Error: Undefined constant "title" in E:\Repos\PHP-Base-Course-Public\Project\cache\adminPanel_components_adminTagListItem.php:7
+Stack trace:
+#0 E:\Repos\PHP-Base-Course-Public\Project\core\Template.php(25): require()
+#1 E:\Repos\PHP-Base-Course-Public\Project\viewmodels\adminPanel\AdminTagListItemViewModel.php(16): app\core\Template::ReturnView('adminPanel/comp...', Array)
+#2 E:\Repos\PHP-Base-Course-Public\Project\controllers\adminPanel\AdminPanelTagListController.php(39): app\viewmodels\adminPanel\AdminTagListItemViewModel::getView(Object(app\models\Tag))
+#3 [internal function]: app\controllers\adminPanel\AdminPanelTagListController->getView(Object(app\core\Request))
+#4 E:\Repos\PHP-Base-Course-Public\Project\core\Router.php(53): call_user_func(Array, Object(app\core\Request))
+#5 E:\Repos\PHP-Base-Course-Public\Project\core\Application.php(29): app\core\Router->resolve()
+#6 E:\Repos\PHP-Base-Course-Public\Project\web\index.php(63): app\core\Application->run()
+#7 {main}
+  thrown in E:\Repos\PHP-Base-Course-Public\Project\cache\adminPanel_components_adminTagListItem.php on line 7
+[28-May-2023 12:23:19 UTC] PHP Fatal error:  Uncaught Error: Undefined constant "title" in E:\Repos\PHP-Base-Course-Public\Project\cache\adminPanel_components_adminTagListItem.php:7
+Stack trace:
+#0 E:\Repos\PHP-Base-Course-Public\Project\core\Template.php(25): require()
+#1 E:\Repos\PHP-Base-Course-Public\Project\viewmodels\adminPanel\AdminTagListItemViewModel.php(16): app\core\Template::ReturnView('adminPanel/comp...', Array)
+#2 E:\Repos\PHP-Base-Course-Public\Project\controllers\adminPanel\AdminPanelTagListController.php(39): app\viewmodels\adminPanel\AdminTagListItemViewModel::getView(Object(app\models\Tag))
+#3 [internal function]: app\controllers\adminPanel\AdminPanelTagListController->getView(Object(app\core\Request))
+#4 E:\Repos\PHP-Base-Course-Public\Project\core\Router.php(53): call_user_func(Array, Object(app\core\Request))
+#5 E:\Repos\PHP-Base-Course-Public\Project\core\Application.php(29): app\core\Router->resolve()
+#6 E:\Repos\PHP-Base-Course-Public\Project\web\index.php(63): app\core\Application->run()
+#7 {main}
+  thrown in E:\Repos\PHP-Base-Course-Public\Project\cache\adminPanel_components_adminTagListItem.php on line 7
+[28-May-2023 12:23:21 UTC] PHP Fatal error:  Uncaught Error: Undefined constant "title" in E:\Repos\PHP-Base-Course-Public\Project\cache\adminPanel_components_adminTagListItem.php:7
+Stack trace:
+#0 E:\Repos\PHP-Base-Course-Public\Project\core\Template.php(25): require()
+#1 E:\Repos\PHP-Base-Course-Public\Project\viewmodels\adminPanel\AdminTagListItemViewModel.php(16): app\core\Template::ReturnView('adminPanel/comp...', Array)
+#2 E:\Repos\PHP-Base-Course-Public\Project\controllers\adminPanel\AdminPanelTagListController.php(39): app\viewmodels\adminPanel\AdminTagListItemViewModel::getView(Object(app\models\Tag))
+#3 [internal function]: app\controllers\adminPanel\AdminPanelTagListController->getView(Object(app\core\Request))
+#4 E:\Repos\PHP-Base-Course-Public\Project\core\Router.php(53): call_user_func(Array, Object(app\core\Request))
+#5 E:\Repos\PHP-Base-Course-Public\Project\core\Application.php(29): app\core\Router->resolve()
+#6 E:\Repos\PHP-Base-Course-Public\Project\web\index.php(63): app\core\Application->run()
+#7 {main}
+  thrown in E:\Repos\PHP-Base-Course-Public\Project\cache\adminPanel_components_adminTagListItem.php on line 7
+[28-May-2023 12:23:22 UTC] PHP Fatal error:  Uncaught Error: Undefined constant "title" in E:\Repos\PHP-Base-Course-Public\Project\cache\adminPanel_components_adminTagListItem.php:7
+Stack trace:
+#0 E:\Repos\PHP-Base-Course-Public\Project\core\Template.php(25): require()
+#1 E:\Repos\PHP-Base-Course-Public\Project\viewmodels\adminPanel\AdminTagListItemViewModel.php(16): app\core\Template::ReturnView('adminPanel/comp...', Array)
+#2 E:\Repos\PHP-Base-Course-Public\Project\controllers\adminPanel\AdminPanelTagListController.php(39): app\viewmodels\adminPanel\AdminTagListItemViewModel::getView(Object(app\models\Tag))
+#3 [internal function]: app\controllers\adminPanel\AdminPanelTagListController->getView(Object(app\core\Request))
+#4 E:\Repos\PHP-Base-Course-Public\Project\core\Router.php(53): call_user_func(Array, Object(app\core\Request))
+#5 E:\Repos\PHP-Base-Course-Public\Project\core\Application.php(29): app\core\Router->resolve()
+#6 E:\Repos\PHP-Base-Course-Public\Project\web\index.php(63): app\core\Application->run()
+#7 {main}
+  thrown in E:\Repos\PHP-Base-Course-Public\Project\cache\adminPanel_components_adminTagListItem.php on line 7
+[28-May-2023 12:23:22 UTC] PHP Fatal error:  Uncaught Error: Undefined constant "title" in E:\Repos\PHP-Base-Course-Public\Project\cache\adminPanel_components_adminTagListItem.php:7
+Stack trace:
+#0 E:\Repos\PHP-Base-Course-Public\Project\core\Template.php(25): require()
+#1 E:\Repos\PHP-Base-Course-Public\Project\viewmodels\adminPanel\AdminTagListItemViewModel.php(16): app\core\Template::ReturnView('adminPanel/comp...', Array)
+#2 E:\Repos\PHP-Base-Course-Public\Project\controllers\adminPanel\AdminPanelTagListController.php(39): app\viewmodels\adminPanel\AdminTagListItemViewModel::getView(Object(app\models\Tag))
+#3 [internal function]: app\controllers\adminPanel\AdminPanelTagListController->getView(Object(app\core\Request))
+#4 E:\Repos\PHP-Base-Course-Public\Project\core\Router.php(53): call_user_func(Array, Object(app\core\Request))
+#5 E:\Repos\PHP-Base-Course-Public\Project\core\Application.php(29): app\core\Router->resolve()
+#6 E:\Repos\PHP-Base-Course-Public\Project\web\index.php(63): app\core\Application->run()
+#7 {main}
+  thrown in E:\Repos\PHP-Base-Course-Public\Project\cache\adminPanel_components_adminTagListItem.php on line 7
+[28-May-2023 12:23:56 UTC] PHP Fatal error:  Uncaught Error: Undefined constant "title" in E:\Repos\PHP-Base-Course-Public\Project\cache\_adminPanel_components_adminTagListItem.php:7
+Stack trace:
+#0 E:\Repos\PHP-Base-Course-Public\Project\core\Template.php(25): require()
+#1 E:\Repos\PHP-Base-Course-Public\Project\viewmodels\adminPanel\AdminTagListItemViewModel.php(16): app\core\Template::ReturnView('/adminPanel/com...', Array)
+#2 E:\Repos\PHP-Base-Course-Public\Project\controllers\adminPanel\AdminPanelTagListController.php(39): app\viewmodels\adminPanel\AdminTagListItemViewModel::getView(Object(app\models\Tag))
+#3 [internal function]: app\controllers\adminPanel\AdminPanelTagListController->getView(Object(app\core\Request))
+#4 E:\Repos\PHP-Base-Course-Public\Project\core\Router.php(53): call_user_func(Array, Object(app\core\Request))
+#5 E:\Repos\PHP-Base-Course-Public\Project\core\Application.php(29): app\core\Router->resolve()
+#6 E:\Repos\PHP-Base-Course-Public\Project\web\index.php(63): app\core\Application->run()
+#7 {main}
+  thrown in E:\Repos\PHP-Base-Course-Public\Project\cache\_adminPanel_components_adminTagListItem.php on line 7
+[28-May-2023 12:24:01 UTC] PHP Fatal error:  Uncaught Error: Undefined constant "title" in E:\Repos\PHP-Base-Course-Public\Project\cache\adminPanel_components_adminTagListItem.php:7
+Stack trace:
+#0 E:\Repos\PHP-Base-Course-Public\Project\core\Template.php(25): require()
+#1 E:\Repos\PHP-Base-Course-Public\Project\viewmodels\adminPanel\AdminTagListItemViewModel.php(16): app\core\Template::ReturnView('adminPanel/comp...', Array)
+#2 E:\Repos\PHP-Base-Course-Public\Project\controllers\adminPanel\AdminPanelTagListController.php(39): app\viewmodels\adminPanel\AdminTagListItemViewModel::getView(Object(app\models\Tag))
+#3 [internal function]: app\controllers\adminPanel\AdminPanelTagListController->getView(Object(app\core\Request))
+#4 E:\Repos\PHP-Base-Course-Public\Project\core\Router.php(53): call_user_func(Array, Object(app\core\Request))
+#5 E:\Repos\PHP-Base-Course-Public\Project\core\Application.php(29): app\core\Router->resolve()
+#6 E:\Repos\PHP-Base-Course-Public\Project\web\index.php(63): app\core\Application->run()
+#7 {main}
+  thrown in E:\Repos\PHP-Base-Course-Public\Project\cache\adminPanel_components_adminTagListItem.php on line 7
+[28-May-2023 13:11:29 UTC] PHP Warning:  Undefined array key "email" in E:\Repos\PHP-Base-Course-Public\Project\controllers\ajax\AJAX_RegistrationFormValidationController.php on line 13
+[28-May-2023 13:11:58 UTC] PHP Warning:  Undefined array key "id" in E:\Repos\PHP-Base-Course-Public\Project\controllers\adminPanel\tag\AdminPanelAddTagController.php on line 17
+[28-May-2023 13:11:58 UTC] PHP Fatal error:  Uncaught TypeError: app\core\Mapper::Select(): Argument #1 ($id) must be of type int, null given, called in E:\Repos\PHP-Base-Course-Public\Project\controllers\adminPanel\tag\AdminPanelAddTagController.php on line 21 and defined in E:\Repos\PHP-Base-Course-Public\Project\core\Mapper.php:25
+Stack trace:
+#0 E:\Repos\PHP-Base-Course-Public\Project\controllers\adminPanel\tag\AdminPanelAddTagController.php(21): app\core\Mapper->Select(NULL)
+#1 [internal function]: app\controllers\adminPanel\tag\AdminPanelAddTagController->handleView(Object(app\core\Request))
+#2 E:\Repos\PHP-Base-Course-Public\Project\core\Router.php(53): call_user_func(Array, Object(app\core\Request))
+#3 E:\Repos\PHP-Base-Course-Public\Project\core\Application.php(29): app\core\Router->resolve()
+#4 E:\Repos\PHP-Base-Course-Public\Project\web\index.php(64): app\core\Application->run()
+#5 {main}
+  thrown in E:\Repos\PHP-Base-Course-Public\Project\core\Mapper.php on line 25
+[28-May-2023 13:13:34 UTC] PHP Warning:  Undefined array key "id" in E:\Repos\PHP-Base-Course-Public\Project\controllers\adminPanel\tag\AdminPanelAddTagController.php on line 17
+[28-May-2023 13:13:34 UTC] PHP Fatal error:  Uncaught TypeError: app\core\Mapper::Select(): Argument #1 ($id) must be of type int, null given, called in E:\Repos\PHP-Base-Course-Public\Project\controllers\adminPanel\tag\AdminPanelAddTagController.php on line 21 and defined in E:\Repos\PHP-Base-Course-Public\Project\core\Mapper.php:25
+Stack trace:
+#0 E:\Repos\PHP-Base-Course-Public\Project\controllers\adminPanel\tag\AdminPanelAddTagController.php(21): app\core\Mapper->Select(NULL)
+#1 [internal function]: app\controllers\adminPanel\tag\AdminPanelAddTagController->handleView(Object(app\core\Request))
+#2 E:\Repos\PHP-Base-Course-Public\Project\core\Router.php(53): call_user_func(Array, Object(app\core\Request))
+#3 E:\Repos\PHP-Base-Course-Public\Project\core\Application.php(29): app\core\Router->resolve()
+#4 E:\Repos\PHP-Base-Course-Public\Project\web\index.php(64): app\core\Application->run()
+#5 {main}
+  thrown in E:\Repos\PHP-Base-Course-Public\Project\core\Mapper.php on line 25
+[28-May-2023 14:07:41 UTC] PHP Fatal error:  Uncaught TypeError: app\core\Mapper::Delete(): Argument #1 ($model) must be of type app\core\Model, array given, called in E:\Repos\PHP-Base-Course-Public\Project\controllers\adminPanel\ajax\AJAX_DeleteTagByTitleController.php on line 15 and defined in E:\Repos\PHP-Base-Course-Public\Project\core\Mapper.php:21
+Stack trace:
+#0 E:\Repos\PHP-Base-Course-Public\Project\controllers\adminPanel\ajax\AJAX_DeleteTagByTitleController.php(15): app\core\Mapper->Delete(Array)
+#1 [internal function]: app\controllers\adminPanel\ajax\AJAX_DeleteTagByTitleController->handleView(Object(app\core\Request))
+#2 E:\Repos\PHP-Base-Course-Public\Project\core\Router.php(53): call_user_func(Array, Object(app\core\Request))
+#3 E:\Repos\PHP-Base-Course-Public\Project\core\Application.php(29): app\core\Router->resolve()
+#4 E:\Repos\PHP-Base-Course-Public\Project\web\index.php(65): app\core\Application->run()
+#5 {main}
+  thrown in E:\Repos\PHP-Base-Course-Public\Project\core\Mapper.php on line 21
+[28-May-2023 14:08:05 UTC] PHP Fatal error:  Uncaught TypeError: app\core\Mapper::Delete(): Argument #1 ($model) must be of type app\core\Model, array given, called in E:\Repos\PHP-Base-Course-Public\Project\controllers\adminPanel\ajax\AJAX_DeleteTagByTitleController.php on line 15 and defined in E:\Repos\PHP-Base-Course-Public\Project\core\Mapper.php:21
+Stack trace:
+#0 E:\Repos\PHP-Base-Course-Public\Project\controllers\adminPanel\ajax\AJAX_DeleteTagByTitleController.php(15): app\core\Mapper->Delete(Array)
+#1 [internal function]: app\controllers\adminPanel\ajax\AJAX_DeleteTagByTitleController->handleView(Object(app\core\Request))
+#2 E:\Repos\PHP-Base-Course-Public\Project\core\Router.php(53): call_user_func(Array, Object(app\core\Request))
+#3 E:\Repos\PHP-Base-Course-Public\Project\core\Application.php(29): app\core\Router->resolve()
+#4 E:\Repos\PHP-Base-Course-Public\Project\web\index.php(65): app\core\Application->run()
+#5 {main}
+  thrown in E:\Repos\PHP-Base-Course-Public\Project\core\Mapper.php on line 21
+[28-May-2023 14:08:45 UTC] PHP Fatal error:  Uncaught TypeError: app\mappers\TagMapper::SelectByTitle(): Return value must be of type app\models\Tag, array returned in E:\Repos\PHP-Base-Course-Public\Project\mappers\TagMapper.php:66
+Stack trace:
+#0 E:\Repos\PHP-Base-Course-Public\Project\controllers\adminPanel\ajax\AJAX_DeleteTagByTitleController.php(14): app\mappers\TagMapper->SelectByTitle('test')
+#1 [internal function]: app\controllers\adminPanel\ajax\AJAX_DeleteTagByTitleController->handleView(Object(app\core\Request))
+#2 E:\Repos\PHP-Base-Course-Public\Project\core\Router.php(53): call_user_func(Array, Object(app\core\Request))
+#3 E:\Repos\PHP-Base-Course-Public\Project\core\Application.php(29): app\core\Router->resolve()
+#4 E:\Repos\PHP-Base-Course-Public\Project\web\index.php(65): app\core\Application->run()
+#5 {main}
+  thrown in E:\Repos\PHP-Base-Course-Public\Project\mappers\TagMapper.php on line 66
+[28-May-2023 14:12:04 UTC] PHP Warning:  Array to string conversion in E:\Repos\PHP-Base-Course-Public\Project\controllers\adminPanel\ajax\AJAX_DeleteTagByTitleController.php on line 13
+[28-May-2023 14:38:08 UTC] PHP Warning:  file_get_contents(E:\Repos\PHP-Base-Course-Public\Project\web/..//views//.html): Failed to open stream: No such file or directory in E:\Repos\PHP-Base-Course-Public\Project\core\Template.php on line 92
+[28-May-2023 14:38:15 UTC] PHP Warning:  file_get_contents(E:\Repos\PHP-Base-Course-Public\Project\web/..//views//.html): Failed to open stream: No such file or directory in E:\Repos\PHP-Base-Course-Public\Project\core\Template.php on line 92
+[28-May-2023 14:38:16 UTC] PHP Warning:  file_get_contents(E:\Repos\PHP-Base-Course-Public\Project\web/..//views//.html): Failed to open stream: No such file or directory in E:\Repos\PHP-Base-Course-Public\Project\core\Template.php on line 92
+[28-May-2023 14:40:04 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method app\core\Database::getPdo() in E:\Repos\PHP-Base-Course-Public\Project\controllers\adminPanel\AdminPresentationController.php:30
+Stack trace:
+#0 [internal function]: app\controllers\adminPanel\AdminPresentationController->getView(Object(app\core\Request))
+#1 E:\Repos\PHP-Base-Course-Public\Project\core\Router.php(53): call_user_func(Array, Object(app\core\Request))
+#2 E:\Repos\PHP-Base-Course-Public\Project\core\Application.php(29): app\core\Router->resolve()
+#3 E:\Repos\PHP-Base-Course-Public\Project\web\index.php(65): app\core\Application->run()
+#4 {main}
+  thrown in E:\Repos\PHP-Base-Course-Public\Project\controllers\adminPanel\AdminPresentationController.php on line 30
+[28-May-2023 14:44:10 UTC] PHP Warning:  Undefined array key "userID" in E:\Repos\PHP-Base-Course-Public\Project\controllers\adminPanel\AdminPresentationController.php on line 21
+[28-May-2023 14:44:10 UTC] PHP Fatal error:  Uncaught TypeError: app\mappers\UserMapper::findUserByID(): Argument #1 ($id) must be of type int, null given, called in E:\Repos\PHP-Base-Course-Public\Project\controllers\adminPanel\AdminPresentationController.php on line 21 and defined in E:\Repos\PHP-Base-Course-Public\Project\mappers\UserMapper.php:102
+Stack trace:
+#0 E:\Repos\PHP-Base-Course-Public\Project\controllers\adminPanel\AdminPresentationController.php(21): app\mappers\UserMapper::findUserByID(NULL)
+#1 [internal function]: app\controllers\adminPanel\AdminPresentationController->getView(Object(app\core\Request))
+#2 E:\Repos\PHP-Base-Course-Public\Project\core\Router.php(53): call_user_func(Array, Object(app\core\Request))
+#3 E:\Repos\PHP-Base-Course-Public\Project\core\Application.php(29): app\core\Router->resolve()
+#4 E:\Repos\PHP-Base-Course-Public\Project\web\index.php(65): app\core\Application->run()
+#5 {main}
+  thrown in E:\Repos\PHP-Base-Course-Public\Project\mappers\UserMapper.php on line 102

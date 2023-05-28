@@ -35,8 +35,6 @@ class UserProfileContoller
 
     public function handleView()
     {
-//        $body = Application::$app->getRequest()->getBody();
-//        var_dump($body);
-          //Application::$app->getRouter()->renderView("about");
+
     }
 }

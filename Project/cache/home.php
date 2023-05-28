@@ -1,8 +1,10 @@
 <?php class_exists('app\core\Template') or exit; ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xml:lang="en">
 <head>
     <title> MangaBoobs </title>
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.svg">
+
     <meta charset="utf-8">
     <link rel="stylesheet" href="/assets/styles/global_styles.css">
     <link rel="stylesheet" href="/assets/styles/main_styles.css">
@@ -30,7 +32,6 @@
     <link rel="stylesheet" href="assets/styles/main_styles.css">
     <link rel="stylesheet" href="assets/styles/user_profile_styles.css">
     <link rel="stylesheet" href="assets/styles/manga_profile_styles.css">
-    <title>MangaBoobs</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"

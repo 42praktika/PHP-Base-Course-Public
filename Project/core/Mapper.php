@@ -28,6 +28,10 @@ abstract class Mapper
     public function SelectAll() : Collection{
         return new Collection($this->doSelectAll(), $this->getInstance());
     }
+//    public function SelectAll(): array {
+//
+//        return $this->doSelectAll();
+//    }
     /**
      * @return PDO
      */

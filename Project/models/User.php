@@ -8,14 +8,14 @@ class User extends \app\core\Model
     private string $nickname;
 
     /**
-     * @param string $nickname
+     * @param string $title
      * @param string $email
      * @param string $password
      */
-    public function __construct(?int $id, string $nickname, string $email, string $password)
+    public function __construct(?int $id, string $title, string $email, string $password)
     {
         parent::__construct($id);
-        $this->nickname = $nickname;
+        $this->nickname = $title;
         $this->email = $email;
         $this->password = $password;
     }
@@ -73,6 +73,6 @@ class User extends \app\core\Model
 
     public function getAttributes(): array
     {
-        return ["nickname", "email", "password"];
+        return ["title", "email", "password"];
     }
 }

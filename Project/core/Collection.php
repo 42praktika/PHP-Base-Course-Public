@@ -23,18 +23,23 @@ class Collection
         $this->count = count($rows);
     }
 
-    public function getNextRow(){
+    public function getNextRow(): \Generator
+    {
         for($i = 0; $i < $this->count; $i++){
             yield $this->getRow($i);
         }
     }
     private function getRow(int $i){
+
+
         if($i >= $this->count){
+
             return null;
         }
-        if(array_key_exists($i, $this->objects)){
+        if(!array_key_exists($i, $this->objects)){
             $this->objects[$i] = $this->mapper->createObject($this->rows[$i]);
         }
+
         return $this->objects[$i];
     }
 }

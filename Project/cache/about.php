@@ -3,6 +3,7 @@
 <html lang="en">
 <head>
     <title> About </title>
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.svg">
     <meta charset="utf-8">
     <link rel="stylesheet" href="/assets/styles/global_styles.css">
     <link rel="stylesheet" href="/assets/styles/main_styles.css">

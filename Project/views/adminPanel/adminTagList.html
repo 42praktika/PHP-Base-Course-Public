@@ -1,0 +1,145 @@
+{% extends layout.html %}
+
+{%block title%} Admin | Tag list {% endblock%}
+
+{% block content %}
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="icon" type="image/x-icon" href="assets/images/favicon.svg">
+  <link rel="stylesheet" href="assets/styles/global_styles.css">
+  <link rel="stylesheet" href="assets/styles/main_styles.css">
+  <link rel="stylesheet" href="assets/styles/user_profile_styles.css">
+  <link rel="stylesheet" href="assets/styles/manga_profile_styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0" />
+
+  <script src="assets/js/global.js"></script>
+
+  <script>
+    function SetAuthContainerVisible() {
+      document.getElementById('auth-container').style.visibility = "visible"
+    }
+
+    function SetAuthContainerHidden() {
+      document.getElementById('auth-container').style.visibility = "hidden"
+    }
+
+
+    function DisplayTopProfileMenu() {
+      var x = document.getElementById('top_profile_menu');
+      if (x.style.visibility == 'hidden') {
+        x.style.visibility = 'visible';
+      } else {
+        x.style.visibility = 'hidden';
+      }
+    }
+
+  </script>
+  <style>
+    .material-symbols-rounded {
+      font-variation-settings:
+              'FILL' 0,
+              'wght' 400,
+              'GRAD' 0,
+              'opsz' 48
+    }
+  </style>
+</head>
+{{$header}}
+
+<body class="main-content">
+<div class="page-container column">
+
+  <label style="font-size: 18pt">Tag list</label>
+  <br>
+
+  <form id="add-tag-role-form" action="addMangaTag" class="flex row" method="post">
+  <input type="text" name="title" class="blurred-input" placeholder="tag title">
+    <button type="button" class="button-login" style="margin-left: 10px" onclick="AJAX_AddTag()">Add</button>
+  </form>
+  <br>
+    {{$tag_list}}
+  <br>
+
+</div>
+
+</body>
+
+</html>
+<script>
+
+  function DeleteTag(button){
+    let input;
+
+    button.parentNode.childNodes.forEach(el => {
+      if(el.tagName === "INPUT"){
+        input = el;
+      }
+    })
+
+    if(input == null){
+      alert("Unable to remove tag");
+      return;
+    }
+    let accept = confirm(`Delete Tag ${input.value}?`)
+    if(!accept){
+      return;
+    }
+
+    jQuery.ajax({
+      url:     'http://localhost:8042/deleteTagByTitle',
+      type:     "POST",
+      dataType: "html",
+      data: {title: input.value},
+      success: function(response) {
+        //let result = jQuery.text(response);
+        if(response === "ok"){
+          window.location = "http://localhost:8042/taglist"
+          return;
+        }
+        // registerError.innerText = response;
+        alert(response);
+      },
+      error: function(response) { // Данные не отправлены
+        // loginError.innerText = "Error sending form";
+        alert(response);
+      }
+    });
+  }
+  function SwitchEditMode(button){
+
+  }
+
+  function AJAX_AddTag(){
+    let tagForm = document.getElementById("add-tag-role-form");
+    jQuery.ajax({
+      url:     'http://localhost:8042/validateTagName',
+      type:     "POST",
+      dataType: "html",
+      data: jQuery(tagForm).serialize(),
+      success: function(response) {
+        //let result = jQuery.text(response);
+        if(response === "ok"){
+          tagForm.submit();
+          return;
+        }
+        // registerError.innerText = response;
+        alert(response);
+      },
+      error: function(response) { // Данные не отправлены
+        // loginError.innerText = "Error sending form";
+        alert(response);
+      }
+    });
+  }
+</script>
+{% endblock %}
+{% extends footer.html %}

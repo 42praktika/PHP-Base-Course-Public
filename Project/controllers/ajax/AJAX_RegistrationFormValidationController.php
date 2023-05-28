@@ -3,6 +3,7 @@ declare(strict_types=1);
 
 namespace app\controllers\ajax;
 
+
 class AJAX_RegistrationFormValidationController
 {
 
@@ -35,6 +36,7 @@ class AJAX_RegistrationFormValidationController
             if(strlen($password) < 10 || strlen($password) > 35){
                 return "Password length must be in interval [10:35]";
             }
+
 
         return "ok";
     }

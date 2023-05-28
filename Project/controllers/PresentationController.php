@@ -20,14 +20,18 @@ class PresentationController
         $userID = isset($_SESSION["userID"]);
         if($userID) $authorised = true;
 
-
+        $unAuthorisedHeader = HeaderViewModel::getView(false);
         if(!$authorised){
-            $header = HeaderViewModel::getView(false);
-            Application::$app->getRouter()->renderTemplate("home", ["header"=>$header]);
+            Application::$app->getRouter()->renderTemplate("home", ["header"=>$unAuthorisedHeader]);
             return;
         }
 
         $user = UserMapper::findUserByID($_SESSION["userID"]);
+
+        if(is_null($user)){
+            Application::$app->getRouter()->renderTemplate("home", ["header"=>$unAuthorisedHeader]);
+            return;
+        }
 
         $header = HeaderViewModel::getView(true, ["username"=>$user->getNickname()]);
 

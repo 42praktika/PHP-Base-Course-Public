@@ -1,8 +1,10 @@
 <?php class_exists('app\core\Template') or exit; ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xml:lang="en">
 <head>
     <title> OOps... </title>
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.svg">
+
     <meta charset="utf-8">
     <link rel="stylesheet" href="/assets/styles/global_styles.css">
     <link rel="stylesheet" href="/assets/styles/main_styles.css">

@@ -37,10 +37,19 @@ $router->setGetRoute("/about", [new \app\controllers\AboutContoller(), "getView"
 $router->setGetRoute("/manga", [new \app\controllers\MangaProfileContoller(), "getView"]);
 $router->setGetRoute("/favourite", [new \app\controllers\FavouritePageController(), "getView"]);
 $router->setGetRoute("/logout", [new \app\controllers\LogoutController(), "getView"]);
+
+
+//GET admin panel controllers
 $router->setGetRoute("/admin", [new \app\controllers\adminPanel\AdminPresentationController(), "getView"]);
+$router->setGetRoute("/taglist", [new \app\controllers\adminPanel\AdminPanelTagListController(), "getView"]);
+
+// POST admin panel controllers
+$router->setPostRoute("/addMangaTag", [new \app\controllers\adminPanel\tag\AdminPanelAddTagController(), "handleView"]);
+// AJAX admin panel controllers
+$router->setPostRoute("/validateTagName", [new \app\controllers\adminPanel\ajax\AJAX_VerifyTagNameController(), "handleView"]);
+$router->setPostRoute("/deleteTagByTitle", [new \app\controllers\adminPanel\ajax\AJAX_DeleteTagByTitleController(), "handleView"]);
 
 // POST controllers
-
 $router->setPostRoute("/login", [new \app\controllers\LoginController(), "handleView"]);
 $router->setPostRoute("/register", [new \app\controllers\RegisterController(), "handleView"]);
 $router->setPostRoute("/handle", [new PresentationController, "handleView"]);

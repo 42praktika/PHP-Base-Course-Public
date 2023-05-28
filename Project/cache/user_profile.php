@@ -1,8 +1,10 @@
 <?php class_exists('app\core\Template') or exit; ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xml:lang="en">
 <head>
     <title> Profile </title>
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.svg">
+
     <meta charset="utf-8">
     <link rel="stylesheet" href="/assets/styles/global_styles.css">
     <link rel="stylesheet" href="/assets/styles/main_styles.css">
@@ -23,7 +25,7 @@
 
   
 
-<html>
+<html lang="en" xml:lang="en">
 
 <head>
     <meta charset="utf-8">
@@ -43,7 +45,7 @@
     <link rel="stylesheet"
           href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0" />
 
-    <script src="/assets/js/global.js"></script>
+<!--    <script src="/assets/js/global.js"></script>-->
 
 
     <style>
@@ -60,11 +62,7 @@
 <?php echo $header ?>
 
 <body class="main-content">
-
-<?php
-include PROJECT_ROOT."views/templates/authTemplate.php";
-?>
-<div class="page-container">
+<div class="page-container column">
     <div class="flex column">
         <div class="row">
             <label class="title-name">Profile</label>
@@ -80,10 +78,10 @@ include PROJECT_ROOT."views/templates/authTemplate.php";
                     <label class="title-name"><Public></Public></label>
                     <div class="flex align-center" style="justify-content: space-between">
                         <dt style="float: left; display: block">
-                            <label>nickname</label>
+                            <label>title</label>
                         </dt>
                         <dd style="float: left; display: flex; align-items: center">
-                            <input type="text" id="nickname-showcase" class="blurred-input" disabled value="<?php echo $username ?>"></input>
+                            <input type="text" id="title-showcase" class="blurred-input" disabled value="<?php echo $username ?>"></input>
                         </dd>
                     </div>
 
@@ -96,7 +94,14 @@ include PROJECT_ROOT."views/templates/authTemplate.php";
                             <input type="email" id="email-showcase" class="blurred-input" disabled value="<?php echo $email ?>"></input>
                         </dd>
                     </div>
-
+                    <div class="flex align-center" style="margin-top: 10px; margin-bottom: 10px; justify-content: space-between">
+                        <dt style="float: left; display: block">
+                            <label>birth date</label>
+                        </dt>
+                        <dd style="float: left; display: flex; align-items: center">
+                            <input type="date" id="date-showcase" class="blurred-input" disabled ></input>
+                        </dd>
+                    </div>
                     <label id="edit-profile-form-message"></label>
 <!--                    <button type="button" class="button-login" id="edit-profile-button" style="max-width: 50%">Edit profile</button>-->
                 </dl>
@@ -117,10 +122,10 @@ include PROJECT_ROOT."views/templates/authTemplate.php";
                     <label>Manage profile</label>
                     <div class="flex align-center" style="justify-content: space-between">
                         <dt style="float: left; display: block">
-                            <label>nickname</label>
+                            <label>title</label>
                         </dt>
                         <dd style="float: left; display: flex; align-items: center">
-                            <input type="text" id="nickname-input" style="background: #D9D9D9" class="blurred-input"  value="<?php echo $username ?>"></input>
+                            <input type="text" id="title-input" style="background: #D9D9D9" class="blurred-input"  value="<?php echo $username ?>"></input>
                         </dd>
                     </div>
 
@@ -131,6 +136,14 @@ include PROJECT_ROOT."views/templates/authTemplate.php";
                         </dt>
                         <dd style="float: left; display: flex; align-items: center">
                             <input type="email" id="email-input" class="blurred-input" style="background: #D9D9D9"  value="<?php echo $email ?>"></input>
+                        </dd>
+                    </div>
+                    <div class="flex align-center" style="margin-top: 10px; margin-bottom: 10px; justify-content: space-between">
+                        <dt style="float: left; display: block">
+                            <label>birth date</label>
+                        </dt>
+                        <dd style="float: left; display: flex; align-items: center">
+                            <input type="date" id="date-input" style="background: #D9D9D9" class="blurred-input"  ></input>
                         </dd>
                     </div>
                     <div class="flex align-center" style="margin-top: 10px; margin-bottom: 10px; justify-content: space-between">
@@ -151,23 +164,28 @@ include PROJECT_ROOT."views/templates/authTemplate.php";
 
 
                 <div class="panel" id="two-panel">
-                    <div class="flex" style="justify-content: center; flex-direction: column;align-items: center;">
-                        <label>Change password</label>
-                        <div class="flex align-center" style="margin-top: 5px; margin-bottom: 5px; justify-content: space-between">
-                            <div style="display: flex; align-items: center">
-                                <input type="password" id="current-password-input" class="blurred-input" style="background: #D9D9D9" placeholder="current password"></input>
-                            </div>
-                        </div>
 
-                        <div class="flex align-center" style="margin-top: 5px; margin-bottom: 5px; justify-content: space-between">
+                    <label>Manage password</label>
 
-                            <div style=" display: flex; align-items: center">
-                                <input type="password" id="new-password-input" class="blurred-input" style="background: #D9D9D9" placeholder="new password"></input>
-                            </div>
-                        </div>
-
-                        <button class="button-login">Save</button>
+                    <div class="flex align-center" style="margin-top: 10px; margin-bottom: 10px; justify-content: space-between">
+                        <dt style="float: left; display: block">
+                            <label>current password</label>
+                        </dt>
+                        <dd style="float: left; display: flex; align-items: center">
+                            <input type="password" id="current-password-input" class="blurred-input" style="background: #D9D9D9" placeholder="current password"></input>
+                        </dd>
                     </div>
+                    <div class="flex align-center" style="margin-top: 10px; margin-bottom: 10px; justify-content: space-between">
+                        <dt style="float: left; display: block">
+                            <label>new password</label>
+                        </dt>
+                        <dd style="float: left; display: flex; align-items: center">
+                            <input type="password" id="new-password-input" class="blurred-input" style="background: #D9D9D9" placeholder="new password"></input>
+                        </dd>
+
+
+                    </div>
+                    <button class="button-login">Save</button>
 
                 </div>
 
@@ -182,50 +200,7 @@ include PROJECT_ROOT."views/templates/authTemplate.php";
 
 </html>
 <script>
-    function SetAuthContainerVisible() {
-        document.getElementById('auth-container').style.visibility = "visible"
-    }
 
-    function SetAuthContainerHidden() {
-        document.getElementById('auth-container').style.visibility = "hidden"
-    }
-
-
-    function DisplayTopProfileMenu() {
-        var x = document.getElementById('top-profile-menu');
-        if (x.style.visibility == 'hidden') {
-            x.style.visibility = 'visible';
-        } else {
-            x.style.visibility = 'hidden';
-        }
-    }
-    let edit_profile_btn = document.getElementById('edit-profile-button');
-    edit_profile_btn.addEventListener("click", onEditProfileButtonClicked);
-
-    let email_input = document.getElementById('email-input');
-    let nickname_input = document.getElementById('nickname-input')
-    let isEditMode = false;
-    function onEditProfileButtonClicked(){
-        isEditMode = !isEditMode;
-        switchEditButton();
-        email_input.disabled = !email_input.disabled;
-        nickname_input.disabled = !nickname_input.disabled;
-    }
-
-    function switchEditButton(){
-        if(isEditMode){
-            edit_profile_btn.textContent="Save";
-            edit_profile_btn.className = "button_purple no-select";
-        }
-        else{
-            edit_profile_btn.textContent="Edit profile";
-            edit_profile_btn.className = "button-login no-select";
-        }
-    }
-
-    function sendProfileChangesForm(){
-
-    }
 </script>
 
 </body>

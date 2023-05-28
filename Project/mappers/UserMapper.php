@@ -47,7 +47,7 @@ class UserMapper extends \app\core\Mapper
     {
         $this->insert->execute(params: [
             ":id" => $model->getId(),
-            ":nickname" => $model->getNickname(),
+            ":nickname" => $model->getnickname(),
             "email" => $model->getEmail(),
             "password" => password_hash($model->getPassword(), PASSWORD_BCRYPT)]);
     }

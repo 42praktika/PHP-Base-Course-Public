@@ -45,5 +45,4 @@ class LoginController
         $_SESSION["userID"] = $user->getId();
         header("Location: /");
     }
-
 }

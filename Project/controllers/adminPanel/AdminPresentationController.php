@@ -4,6 +4,7 @@ namespace app\controllers\adminPanel;
 
 use app\core\Application;
 use app\core\Response;
+use app\core\validators\ValidateAdminAuth;
 use app\exceptions\FileException;
 use app\mappers\UserMapper;
 use app\viewmodels\adminPanel\AdminHeaderViewModel;
@@ -14,18 +15,11 @@ class AdminPresentationController
     public function getView(): void
     {
         session_start();
-        $authorised = false;
-
-        $userID = isset($_SESSION["userID"]);
-        if($userID) $authorised = true;
-
-
-        if(!$authorised){
-            $header = AdminHeaderViewModel::getView(false);
-            Application::$app->getRouter()->renderTemplate("adminPanel/home", ["header"=>$header]);
+        $validate_auth = new ValidateAdminAuth();
+        $isAdmin = $validate_auth->Validate();
+        if(!$isAdmin){
             return;
         }
-
         $user = UserMapper::findUserByID($_SESSION["userID"]);
 
         $header = AdminHeaderViewModel::getView(true, ["username"=>$user->getNickname()]);

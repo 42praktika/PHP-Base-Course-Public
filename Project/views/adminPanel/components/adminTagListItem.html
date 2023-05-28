@@ -1,0 +1,13 @@
+{% block tagListItem%}
+<form class="flex row" style="margin-bottom: 10px" scrolling="yes">
+  <input type="text" class="blurred-input"  placeholder="tag title" disabled value="{{$title}}">
+  <button class="button-login" type="button" style="margin-left: 10px" onclick="DeleteTag(this)">delete</button>
+  <button class="button-login" type="button" style="margin-left: 10px">edit</button>
+  <div class="chapter-list-item" style="margin-left: 10px">
+    id: {{$id}}
+  </div>
+
+</form>
+{% endblock %}
+
+{% yield tagListItem%}

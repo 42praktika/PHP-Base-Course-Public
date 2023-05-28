@@ -1,8 +1,10 @@
 <?php class_exists('app\core\Template') or exit; ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xml:lang="en">
 <head>
     <title> Manga </title>
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.svg">
+
     <meta charset="utf-8">
     <link rel="stylesheet" href="/assets/styles/global_styles.css">
     <link rel="stylesheet" href="/assets/styles/main_styles.css">
@@ -386,10 +388,6 @@
             
         </div>
     </div>
-
-    <?php
-    include PROJECT_ROOT."views/templates/authTemplate.php";
-    ?>
 
     <!-- <div class="user_profile_container" id="user_profile">
             <div class="user_profile_content">
