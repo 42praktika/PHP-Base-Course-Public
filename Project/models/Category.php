@@ -44,9 +44,9 @@ class Category extends Model
     }
 
     /**
-     * @return int
+     * @return int|null
      */
-    public function getAuthorId(): int
+    public function getAuthorId(): ?int
     {
         return $this->author_id;
     }

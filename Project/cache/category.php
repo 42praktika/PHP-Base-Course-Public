@@ -17,7 +17,7 @@
     <h1>Добавить категорию</h1>
     <form action="<?php echo $category_action ?>" method="post">
         <label for="name">Имя</label>
-        <input type="text" name="name" id="name"><br>
+        <input type="text" name="name" id="name" required><br>
 
         <label for="income">Тип</label>
         <select name="income" id="income">
