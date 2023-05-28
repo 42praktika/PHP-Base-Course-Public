@@ -56,7 +56,7 @@ class ProfileController
         try {
             $mapper = new MoneyOperationMapper();
             $sum = $mapper->getSumByPeriod($_SESSION["userId"], false, date('Y-m-01'), date('Y-m-d'));
-            return $sum["sum"];
+            return $sum["sum"] !== null ? $sum["sum"] : "0";
         } catch (\Exception $exception) {
             echo $exception;
             return "";
@@ -69,7 +69,7 @@ class ProfileController
         try {
             $mapper = new MoneyOperationMapper();
             $sum = $mapper->getSumByPeriod($_SESSION["userId"], true, date('Y-m-01'), date('Y-m-d'));
-            return $sum["sum"];
+            return $sum["sum"] !== null ? $sum["sum"] : "0";
         } catch (\Exception $exception) {
             echo $exception;
             return "";

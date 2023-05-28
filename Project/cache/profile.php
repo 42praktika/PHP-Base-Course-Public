@@ -19,18 +19,19 @@
 
     <div class="sidebar">
         <p class="greetings">Добрый день, <?php echo $username ?>!</p>
+        <br>
 
-        <div class="cash-savings">
-            <?php if ($savings)
+        <?php if ($savings)
+            echo "<div class='cash-savings'>";
             echo "<h2>Сбережения</h2>";
             echo "<br>";
             foreach ($savings as $saving) {
-            $n = $saving->getName();
-            $s = $saving->getSum();
-            $href = $edit_saving_action.'?id='.$saving->getId();
-            echo "<div class='cash-saving'><h3>$n</h3><p>$s</p><a href='$href'>Редактировать</a></div>";
-            } ?>
-        </div>
+                $n = $saving->getName();
+                $s = $saving->getSum();
+                $href = $edit_saving_action.'?id='.$saving->getId();
+                echo "<div class='cash-saving'><h3>$n</h3><p>$s</p><a href='$href'>Редактировать</a></div>";
+            }
+            echo "</div>"; ?>
     </div>
 
     <div class="main">

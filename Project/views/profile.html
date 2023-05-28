@@ -16,19 +16,20 @@
 
     <div class="sidebar">
         <p class="greetings">Добрый день, {{ $username }}!</p>
+        <br>
 
-        <div class="cash-savings">
-            {% if ($savings)
+        {% if ($savings)
+            echo "<div class='cash-savings'>";
             echo "<h2>Сбережения</h2>";
             echo "<br>";
             foreach ($savings as $saving) {
-            $n = $saving->getName();
-            $s = $saving->getSum();
-            $href = $edit_saving_action.'?id='.$saving->getId();
-            echo "<div class='cash-saving'><h3>$n</h3><p>$s</p><a href='$href'>Редактировать</a></div>";
+                $n = $saving->getName();
+                $s = $saving->getSum();
+                $href = $edit_saving_action.'?id='.$saving->getId();
+                echo "<div class='cash-saving'><h3>$n</h3><p>$s</p><a href='$href'>Редактировать</a></div>";
             }
-            %}
-        </div>
+            echo "</div>";
+        %}
     </div>
 
     <div class="main">
