@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace app\core;
 
+use app\exceptions\DBException;
+
 class Application
 {
     public static Application $app;
@@ -20,14 +22,18 @@ class Application
         $this->response = new Response();
         $this->router = new Router($this->request, $this->response);
         $this->logger = new Logger(PROJECT_ROOT."/runtime/".$_ENV["app_log"]);
-        self::$database = new Database($_ENV["db"]["dsn"], $_ENV["db"]["user"], $_ENV["db"]["password"]);
+        try {
+            self::$database = new Database($_ENV["db"]["dsn"], $_ENV["db"]["user"], $_ENV["db"]["password"]);
+        } catch (DBException $e) {
+            $this->logger->error('Error occurred while initializing the database: ' . $e->getMessage());
+        }
     }
 
     public function run() {
         try {
             $this->router->resolve();
-        } catch (\Exception $exception) {
-            $this->logger->error("Can not resolve route");
+        } catch (\Exception $e) {
+            $this->logger->error("Can not resolve route". $e->getMessage());
             $this->response->setStatusCode(Response::HTTP_SERVER_ERROR);
         }
     }

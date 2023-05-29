@@ -5,6 +5,7 @@
 {% block content %}
 {% extends header.html %}
 <div class="mainLists">
+  <div class="lists">
   <div class="list">
     <div class="add">
       <a class="addList" href="http://localhost:8080/{{ $post_action_add}}">
@@ -21,8 +22,13 @@
         </form>
       </div>
     </div>
-  {% endforeach %}
+  </div>
+  <br>
+  <br>
+  <br>
   <a href="http://localhost:8080/{{ $main }}" class="remove"><i class="fa fa-reply fa-1x"></i> На главную</a>
+  <br>
+  {% endforeach %}
 </div>
 {% extends footer.html %}
 {% endblock %}

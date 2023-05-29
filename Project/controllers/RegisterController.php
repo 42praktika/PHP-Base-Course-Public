@@ -8,14 +8,15 @@ use app\utils\UserValidator;
 
 class RegisterController
 {
-    public function getRegisterPage()
+    public function getRegisterPage(): void
     {
         Application::$app->getRouter()->renderTemplate("registerPage", ["post_action_signin"=>"login", "post_action_signup"=>"register"]);
     }
 
-    public function registerUser()
+    public function registerUser(): void
     {
         try {
+            session_start();
             $body = Application::$app->getRequest()->getBody();
             $username = $body["username"];
             $email = $body['email'];
@@ -35,21 +36,23 @@ class RegisterController
             } else if (!UserValidator::isValidPassword($password)){
                 ErrorController::showError("InvalidPassword","register");
             } else {
-                $mapper = new UserMapper();
+                $mapper = (new UserMapper)->getInstance();
                 $user = $mapper->createObject($body);
                 $mapper->Insert($user);
+                $_SESSION["user"] = $user;
                 header("Location: http://localhost:8080/mainPage");
                 exit();
             }
         }
-        catch (\Exception $exception) {
-            Application::$app->getLogger()->error($exception);
+        catch (\Exception $e) {
+            Application::$app->getLogger()->error($e->getMessage(), ['exception' => $e]);
         }
     }
 
-    public function login()
+    public function login(): void
     {
         try {
+            session_start();
             $body = Application::$app->getRequest()->getBody();
             $email = $body['email'];
             $password = $body['password'];
@@ -57,18 +60,19 @@ class RegisterController
             if (empty($email) || empty($password)) {
                 ErrorController::showError("FieldsMissing","register");
             } else {
-                $mapper = new UserMapper();
-                //TODO:доделать шо то с паролем там
-                $user = $mapper->doSelectByEmailAndPassword($email,$password);
-                if ($user && password_verify($password, $user->getPassword())) {
+                $mapper = (new UserMapper)->getInstance();;
+                $user = $mapper->doSelectUserByEmail($email);
+                $hashedPassword = $user->getPassword();
+                if (password_verify($password, $hashedPassword)){
+                    $_SESSION['user'] = $user;
                     header("Location: http://localhost:8080/mainPage");
                     exit();
                 } else {
                     ErrorController::showError("InvalidLoginCredentials","register");
                 }
             }
-        } catch (\Exception $exception) {
-            Application::$app->getLogger()->error($exception);
+        } catch (\Exception $e) {
+            Application::$app->getLogger()->error($e->getMessage(), ['exception' => $e]);
         }
     }
 }

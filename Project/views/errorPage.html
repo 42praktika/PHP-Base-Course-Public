@@ -5,9 +5,11 @@
 {% block content %}
 {% extends header.html %}
 <br>
-<div align="center">
+<div class="errorPage">
+<div>
   <h2>{{$message}}</h2>
-  <a href="http://localhost:8080/{{ $action }}">Назад</a>
+  <a class="exit" href="http://localhost:8080/{{ $action }}">Назад</a>
+</div>
 </div>
 <br>
 {% extends footer.html %}

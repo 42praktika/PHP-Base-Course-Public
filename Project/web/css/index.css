@@ -1,10 +1,3 @@
-/*header*/
-/*html, body {*/
-/*    height: 100%;*/
-/*    margin: 0;*/
-/*    padding: 0;*/
-/*}*/
-
 .navbar {
     overflow: hidden;
     background-color: #e3aeae;
@@ -99,11 +92,10 @@
     color: #8a7474;
 }
 .footer {
-    padding: 5px 5px 5px 5px;
+    padding: 16px 5px 5px 5px;
     text-align: center;
-    position: sticky;
     bottom: 0;
-    height: 40px;
+    height: 60px;
 }
 .footer p {
     color: #7c4444;
@@ -142,6 +134,7 @@
 }
 
 .dropdown-content {
+    margin-left: -40px;
     display: none;
     position: fixed;
     background-color: #f6d0d0;
@@ -199,6 +192,8 @@
     cursor: pointer;
 }
 .form{
+    margin-bottom: 400px;
+    margin-top: 200px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -247,16 +242,18 @@
     justify-content: space-around;
 }
 .productCard{
-    min-width: 280px;
+    width: 250px;
     min-height: 300px;
     text-align: center;
     background-color: #eccfcf;
     border-radius: 10px 5px 10px 5px;
     border: 2px solid #8a4545;
+    margin: 10px;
 }
 
 .imgCard{
     height: 200px;
+    width: 250px;
     padding: 10px;
 }
 
@@ -280,7 +277,7 @@
     background-color: #faecec;
     min-width: 160px;
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-    margin-left: 68px;
+    margin-left: 48px;
 }
 
 .dropdown-lists form {
@@ -328,27 +325,56 @@ input:hover{
     background-color: #a97f7f;
     padding: 30px;
     display: flex;
-    justify-content: center
+    justify-content: center;
+    min-height: 900px;
 
 }
 .profile{
-    padding-top: 20px;
+    padding-top: 100px;
     width: 400px;
     background-color: #eccfcf;
     border-radius: 10px 5px 10px 5px;
     border: 2px solid #8a4545;
     text-align: center;
+    height: 400px;
+    margin-top: 200px;
+}
+.editProfile{
+    padding-top: 80px;
+    width: 400px;
+    background-color: #eccfcf;
+    border-radius: 10px 5px 10px 5px;
+    border: 2px solid #8a4545;
+    text-align: center;
+    height: 500px;
+    margin-top: 200px;
+}
+.editProfile label{
+    color: #1c1b1b;
+}
+.editExit{
+    text-align: left;
+    margin-left: 15px;
+    margin-top: 40px;
+}
+.editProfile input{
+    width: 200px;
 }
 
 .mainLists {
-    flex: 90%;
     background-color: #a97f7f;
-    padding: 20px;
+    min-height: 900px;
+    padding-top: 20px;
+
+}
+.lists{
+    margin-top: 150px;
+    margin-bottom: 400px;
+    flex: 90%;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    justify-content: space-around;
-
+    justify-content: space-evenly
 }
 .list{
     min-width: 280px;
@@ -414,4 +440,15 @@ input:hover{
 }
 .small{
     font-size: small;
+}
+.error{
+    text-align: center;
+}
+.image{
+    text-align: center;
+}
+.errorPage{
+    min-height: 600px;
+    text-align: center;
+    margin-top: 300px;
 }

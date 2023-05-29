@@ -34,6 +34,9 @@ class Router
         $this->routes[MethodsEnum::POST][$path] = $callback;
     }
 
+    /**
+     * @throws \Exception
+     */
     public function resolve(): void
     {
         $path = $this->request->getUri();
@@ -43,14 +46,24 @@ class Router
             $this->response->setStatusCode(Response::HTTP_NOT_FOUND);
             return;
         }
+
         $callback = $this->routes[$method][$path];
-        if (empty($callback)) throw new \Exception("Callback not defined");
-        if (is_string($callback)) {
-            $this->renderView($callback);
-            return;
+        if (empty($callback)) {
+            throw new \Exception("Callback not defined");
         }
-        if (is_array($callback)) {
-            call_user_func($callback, $this->request);
+        try {
+            if (is_string($callback)) {
+                $this->renderView($callback);
+                return;
+            }
+            if (is_array($callback)) {
+                call_user_func($callback, $this->request);
+            }
+        } catch (\Exception $e) {
+            Application::$app->getLogger()->error($e->getMessage(), ['exception' => $e]);
+            $this->renderStatic("500.html");
+            $this->response->setStatusCode(Response::HTTP_SERVER_ERROR);
+            return;
         }
     }
 
@@ -69,6 +82,5 @@ class Router
     {
         include PROJECT_ROOT."web/$name";
     }
-
 
 }

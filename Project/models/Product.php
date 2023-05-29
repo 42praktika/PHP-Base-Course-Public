@@ -13,8 +13,9 @@ class Product extends Model
      * @param string $image
      * @param string $text
      */
-    public function __construct(string $image, string $text)
+    public function __construct(?int $id, string $image, string $text)
     {
+        parent::__construct($id);
         $this->image = $image;
         $this->text = $text;
     }

@@ -6,7 +6,7 @@ html, body * { box-sizing: border-box; font-family: 'Open Sans', sans-serif; }
 
 .frame {
     left: 50%;
-    top: 60%;
+    top: 50%;
     position: fixed;
     height: 450px;
     transform: translate(-50%,-50%);

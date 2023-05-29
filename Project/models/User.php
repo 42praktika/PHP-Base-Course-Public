@@ -6,7 +6,7 @@ use app\core\Model;
 
 class User extends Model
 {
-//TODO: с айди что то непонятное
+
     private string $username;
 
 
@@ -19,8 +19,9 @@ class User extends Model
      * @param string $email
      * @param string $password
      */
-    public function __construct(string $username, string $email, string $password)
+    public function __construct(?int $id, string $username, string $email, string $password)
     {
+        parent::__construct($id);
         $this->username = $username;
         $this->email = $email;
         $this->password = $password;
@@ -73,4 +74,5 @@ class User extends Model
     {
         $this->password = $password;
     }
+
 }

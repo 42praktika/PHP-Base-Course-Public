@@ -2,6 +2,7 @@
 
 namespace app\utils;
 
+use app\exceptions\DBException;
 use app\mappers\UserMapper;
 
 class UserValidator
@@ -28,7 +29,7 @@ class UserValidator
 
     public static function isValidUsername($username): bool
     {
-        return (strlen($username) > 3 && strlen($username) < 10);
+        return (strlen($username) > 3 && strlen($username) < 20);
     }
 
     public static function isPasswordsEquals($password, $confirmPassword): bool
@@ -36,6 +37,9 @@ class UserValidator
         return $password == $confirmPassword;
     }
 
+    /**
+     * @throws DBException
+     */
     public static function userExistsWithEmail($email): bool
     {
         $userMapper = new UserMapper();

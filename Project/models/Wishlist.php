@@ -12,8 +12,9 @@ class Wishlist extends Model
      * @param int $user_id
      * @param string $title
      */
-    public function __construct(int $user_id, string $title)
+    public function __construct(?int $id, int $user_id, string $title)
     {
+        parent::__construct($id);
         $this->user_id = $user_id;
         $this->title = $title;
     }
@@ -50,4 +51,6 @@ class Wishlist extends Model
     {
         $this->title = $title;
     }
+
+
 }

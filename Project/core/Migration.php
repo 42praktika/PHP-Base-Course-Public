@@ -8,7 +8,8 @@ abstract class Migration
 
     public abstract function getVersion(): int;
 
-   public function setDatabase(Database $database) {
+   public function setDatabase(Database $database): void
+   {
        $this->database = $database;
    }
 
