@@ -6,17 +6,17 @@ use app\core\Model;
 
 class Product extends Model
 {
-private string $name;
+    private string $name;
 
-private string $image;
+    private string $image;
 
-private int $price;
+    private int $price;
 
-private string $title;
+    private string $title;
 
-private string $description;
+    private string $description;
 
-private int $categoryId;
+    private int $categoryid;
 
     /**
      * @param int|null $id
@@ -25,27 +25,28 @@ private int $categoryId;
      * @param int $price
      * @param string $title
      * @param string $description
-     * @param int $categoryId
+     * @param int $categoryid
      */
 
 
     public function __construct(
-        ?int $id,
+        ?int   $id,
         string $name,
         string $image,
-        int $price,
+        int    $price,
         string $title,
         string $description,
-        int $categoryId
+        int    $categoryid
 
-    ) {
+    )
+    {
         parent::__construct($id);
         $this->name = $name;
         $this->image = $image;
         $this->price = $price;
         $this->title = $title;
         $this->description = $description;
-        $this->categoryId = $categoryId;
+        $this->categoryid = $categoryid;
     }
 
     /**
@@ -131,17 +132,17 @@ private int $categoryId;
     /**
      * @return int
      */
-    public function getCategoryId(): int
+    public function getCategoryid(): int
     {
-        return $this->categoryId;
+        return $this->categoryid;
     }
 
     /**
-     * @param int $categoryId
+     * @param int $categoryid
      */
-    public function setCategoryId(int $categoryId): void
+    public function setCategoryid(int $categoryid): void
     {
-        $this->categoryId = $categoryId;
+        $this->categoryid = $categoryid;
     }
 
 

@@ -4,7 +4,7 @@ namespace app\core;
 
 class Collection
 {
-    private array $rows;
+    public array $rows;
     private int $count;
     private array $objects = [];
     private Mapper $mapper;

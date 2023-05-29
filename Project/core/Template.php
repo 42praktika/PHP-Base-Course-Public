@@ -5,7 +5,7 @@ namespace app\core;
 class Template
 {
 
-    private static array $blocks=[];
+    private static array $blocks = [];
     private static string $cache_path = PROJECT_ROOT . "/cache/";
     private static string $template_path = PROJECT_ROOT . "/views/";
     private static bool $cache_enabled = false;
@@ -75,7 +75,7 @@ class Template
 
     private static function IncludeFiles(string $file): string
     {
-        $code = file_get_contents(self::$template_path.$file);
+        $code = file_get_contents(self::$template_path . $file);
         preg_match_all('/{% ?(extends|include) ?\'?(.*?)\'? ?%}/i', $code, $matches, PREG_SET_ORDER);
         foreach ($matches as $value) {
             $code = str_replace($value[0], self::IncludeFiles($value[2]), $code);
@@ -97,8 +97,9 @@ class Template
         return $cached_file;
     }
 
-    public static function ClearCache():void {
-        foreach (glob(self::$cache_path.'*') as $file) {
+    public static function ClearCache(): void
+    {
+        foreach (glob(self::$cache_path . '*') as $file) {
             unlink($file);
         }
     }

@@ -14,115 +14,59 @@
                             <div class="p-5">
                                 <div class="d-flex justify-content-between align-items-center mb-5">
                                     <h1 class="fw-bold mb-0 text-black">Shopping Cart</h1>
-                                    <h6 class="mb-0 text-muted">3 items</h6>
+                                    <h6 class="mb-0 text-muted">{{ $quantity }} items</h6>
                                 </div>
+                                {% foreach ( $items as $item): %}
                                 <hr class="my-4">
 
                                 <div class="row mb-4 d-flex justify-content-between align-items-center">
                                     <div class="col-md-2 col-lg-2 col-xl-2">
                                         <img
-                                            src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-shopping-carts/img5.webp"
-                                            class="img-fluid rounded-3" alt="Cotton T-shirt">
+                                                src="{{ $item['image'] }}"
+                                                class="img-fluid rounded-3" alt="...">
                                     </div>
                                     <div class="col-md-3 col-lg-3 col-xl-3">
-                                        <h6 class="text-muted">Shirt</h6>
-                                        <h6 class="text-black mb-0">Cotton T-shirt</h6>
+                                        <h6 class="text-muted">{{ $item['title'] }}</h6>
+                                        <h6 class="text-black mb-0">{{ $item['name'] }}</h6>
                                     </div>
                                     <div class="col-md-3 col-lg-3 col-xl-2 d-flex">
-                                        <button class="btn btn-link px-2"
-                                                onclick="this.parentNode.querySelector('input[type=number]').stepDown()">
-                                            <i class="fas fa-minus">-</i>
-                                        </button>
+                                        <form action="http://localhost:8081/{{ $down }}" method="post">
+                                            <input hidden name="id" value="{{ $item['id']}}">
+                                            <input hidden name="amount" value="{{ $item['amount'] }}">
+                                            <button class="btn btn-link px-2" type="submit"
+                                                    onclick="this.parentNode.querySelector('input[type=number]').stepDown()">
+                                                <i class="fas fa-minus">-</i>
+                                            </button>
+                                        </form>
 
-                                        <input id="form1" min="0" name="quantity" value="1" type="number"
-                                               class="form-control form-control-sm" />
-
-                                        <button class="btn btn-link px-2"
-                                                onclick="this.parentNode.querySelector('input[type=number]').stepUp()">
-                                            <i class=".bi-cart-plus-fill">+</i>
+                                        <input id="form1" min="0" name="quantity" value="{{ $item['amount'] }}"
+                                               type="number"
+                                               class="form-control form-control-sm"/>
+                                        <form action="http://localhost:8081/{{ $up }}" method="post">
+                                            <input hidden name="id" value="{{ $item['id']}}">
+                                            <input hidden name="amount" value="{{ $item['amount'] }}">
+                                            <button class="btn btn-link px-2"
+                                                    onclick="this.parentNode.querySelector('input[type=number]').stepUp()">
+                                                <i class=".bi-cart-plus-fill">+</i>
+                                        </form>
                                         </button>
                                     </div>
                                     <div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
-                                        <h6 class="mb-0">€ 44.00</h6>
+                                        <h6 class="mb-0">{{ $item['price']}}</h6>
                                     </div>
                                     <div class="col-md-1 col-lg-1 col-xl-1 text-end">
-                                        <p class="text-muted">X</p>
+                                        <form action="http://localhost:8081/{{ $delete }}" method="post">
+                                            <input hidden name="id" value="{{ $item['id']}}">
+                                            <button type="submit" class="text-muted">X</button>
+                                        </form>
                                     </div>
                                 </div>
-
-                                <hr class="my-4">
-
-                                <div class="row mb-4 d-flex justify-content-between align-items-center">
-                                    <div class="col-md-2 col-lg-2 col-xl-2">
-                                        <img
-                                            src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-shopping-carts/img6.webp"
-                                            class="img-fluid rounded-3" alt="Cotton T-shirt">
-                                    </div>
-                                    <div class="col-md-3 col-lg-3 col-xl-3">
-                                        <h6 class="text-muted">Shirt</h6>
-                                        <h6 class="text-black mb-0">Cotton T-shirt</h6>
-                                    </div>
-                                    <div class="col-md-3 col-lg-3 col-xl-2 d-flex">
-                                        <button class="btn btn-link px-2"
-                                                onclick="this.parentNode.querySelector('input[type=number]').stepDown()">
-                                            <i class="fas fa-minus">-</i>
-                                        </button>
-
-                                        <input id="form1" min="0" name="quantity" value="1" type="number"
-                                               class="form-control form-control-sm" />
-
-                                        <button class="btn btn-link px-2"
-                                                onclick="this.parentNode.querySelector('input[type=number]').stepUp()">
-                                            <i class="fas fa-plus">+</i>
-                                        </button>
-                                    </div>
-                                    <div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
-                                        <h6 class="mb-0">€ 44.00</h6>
-                                    </div>
-                                    <div class="col-md-1 col-lg-1 col-xl-1 text-end">
-                                        <p href="#!" class="text-muted">X</p>
-                                    </div>
-                                </div>
-
-                                <hr class="my-4">
-
-                                <div class="row mb-4 d-flex justify-content-between align-items-center">
-                                    <div class="col-md-2 col-lg-2 col-xl-2">
-                                        <img
-                                            src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-shopping-carts/img7.webp"
-                                            class="img-fluid rounded-3" alt="Cotton T-shirt">
-                                    </div>
-                                    <div class="col-md-3 col-lg-3 col-xl-3">
-                                        <h6 class="text-muted">Shirt</h6>
-                                        <h6 class="text-black mb-0">Cotton T-shirt</h6>
-                                    </div>
-                                    <div class="col-md-3 col-lg-3 col-xl-2 d-flex">
-                                        <button class="btn btn-link px-2"
-                                                onclick="this.parentNode.querySelector('input[type=number]').stepDown()">
-                                            <i class="fas fa-minus">-</i>
-                                        </button>
-
-                                        <input id="form1" min="0" name="quantity" value="1" type="number"
-                                               class="form-control form-control-sm" />
-
-                                        <button class="btn btn-link px-2"
-                                                onclick="this.parentNode.querySelector('input[type=number]').stepUp()">
-                                            <i class="fas fa-plus">+</i>
-                                        </button>
-                                    </div>
-                                    <div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
-                                        <h6 class="mb-0">€ 44.00</h6>
-                                    </div>
-                                    <div class="col-md-1 col-lg-1 col-xl-1 text-end">
-                                        <a href="#!" class="text-muted">X</a>
-                                    </div>
-                                </div>
-
+                                {% endforeach %}
                                 <hr class="my-4">
 
                                 <div class="pt-5">
                                     <h6 class="mb-0"><a href="/main" class="text-body"><i
-                                                class="fas fa-long-arrow-alt-left me-2"></i>Back to shop</a></h6>
+                                            class="fas fa-long-arrow-alt-left me-2"></i>Back to shop</a></h6>
                                 </div>
                             </div>
                         </div>
@@ -132,8 +76,8 @@
                                 <hr class="my-4">
 
                                 <div class="d-flex justify-content-between mb-4">
-                                    <h5 class="text-uppercase">items 3</h5>
-                                    <h5>€ 132.00</h5>
+                                    <h5 class="text-uppercase">items {{ $quantity }}</h5>
+                                    <h5>{{ $totalSum }}</h5>
                                 </div>
 
                                 <h5 class="text-uppercase mb-3">Shipping</h5>
@@ -149,7 +93,8 @@
 
                                 <div class="mb-5">
                                     <div class="form-outline">
-                                        <input type="text" id="form3Examplea2" class="form-control form-control-lg" placeholder="Enter your code" />
+                                        <input type="text" id="form3Examplea2" class="form-control form-control-lg"
+                                               placeholder="Enter your code"/>
                                     </div>
                                 </div>
 
@@ -157,12 +102,16 @@
 
                                 <div class="d-flex justify-content-between mb-5">
                                     <h5 class="text-uppercase">Total price</h5>
-                                    <h5>€ 137.00</h5>
+                                    <h5>{{ $totalSum + 5}}</h5>
                                 </div>
+                                <form action="http://localhost:8081/{{ $pay }}" method="post">
+                                    <input hidden name="productid" value="{{ $item['id']}}">
+                                    <input hidden name="amount" value="{{ $item['amount']}}">
+                                    <button type="submit" class="btn btn-dark btn-block btn-lg"
+                                            data-mdb-ripple-color="dark">Pay
+                                    </button>
 
-                                <button type="button" class="btn btn-dark btn-block btn-lg"
-                                        data-mdb-ripple-color="dark">Pay</button>
-
+                                </form>
                             </div>
                         </div>
                     </div>

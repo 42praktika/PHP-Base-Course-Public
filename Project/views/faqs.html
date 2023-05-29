@@ -8,18 +8,20 @@
     <meta charset="UTF-8">
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <style type="text/css">
-        body{
+        body {
             background: #eee;
             padding-top: 20px;
             font-family: monospace;
 
         }
-        .row{
+
+        .row {
             width: 700px;
             position: relative;
             left: 350px;
         }
-        .header{
+
+        .header {
             border-radius: 20px 20px 0px 0px;
             padding: 10px 0px;
             background: #0D6EFD;
@@ -29,29 +31,35 @@
             align-content: center;
             justify-content: center;
         }
-        .faq-item{
+
+        .faq-item {
             margin-bottom: 40px;
             margin-top: 40px;
         }
-        .faq-body{
+
+        .faq-body {
             display: none;
             margin-top: 30px;
         }
-        .faq-wrapper{
+
+        .faq-wrapper {
             width: 75%;
             margin: 0 auto;
         }
-        .faq-inner{
+
+        .faq-inner {
             padding: 30px;
             background: rgba(213, 212, 212, 0.09);
         }
-        .faq-plus{
+
+        .faq-plus {
             float: right;
             font-size: 1.4em;
             line-height: 1em;
             cursor: pointer;
         }
-        hr{
+
+        hr {
             background-color: rgba(155, 155, 155, 0.78);
         }
     </style>
@@ -74,7 +82,9 @@
                         <span class="faq-plus">&plus;</span>
                     </h3>
                     <div class="faq-body">
-                        In order to avoid mistakes and misunderstandings, you need to leave an order through the website, after going through the registration procedure, filling in the necessary information fields and paying for the order.
+                        In order to avoid mistakes and misunderstandings, you need to leave an order through the
+                        website, after going through the registration procedure, filling in the necessary information
+                        fields and paying for the order.
                     </div>
                 </div>
                 <hr>
@@ -94,17 +104,21 @@
                         <span class="faq-plus">&plus;</span>
                     </h3>
                     <div class="faq-body">
-                        Immediately before payment, you will be able to check the exact cost of your chosen delivery, as well as the total amount of the order.
+                        Immediately before payment, you will be able to check the exact cost of your chosen delivery, as
+                        well as the total amount of the order.
                     </div>
                 </div>
                 <hr>
                 <div class="faq-item">
                     <h3>
-                        I want to buy 3 products of the same name, but the site does not allow me to deliver more than 2. What should I do?
+                        I want to buy 3 products of the same name, but the site does not allow me to deliver more than
+                        2. What should I do?
                         <span class="faq-plus">&plus;</span>
                     </h3>
                     <div class="faq-body">
-                        If the site does not allow you to deliver the required quantity, then there is not enough of this product in stock. To clarify the quantity and find out if the goods are in stock in another city, you can call +7(987)654-32-10.
+                        If the site does not allow you to deliver the required quantity, then there is not enough of
+                        this product in stock. To clarify the quantity and find out if the goods are in stock in another
+                        city, you can call +7(987)654-32-10.
                     </div>
                 </div>
                 <hr>
@@ -114,7 +128,8 @@
                         <span class="faq-plus">&plus;</span>
                     </h3>
                     <div class="faq-body">
-                        Our company has been on the market for 26 years, we work with reliable delivery and delivery partners, as well as proven payment systems.
+                        Our company has been on the market for 26 years, we work with reliable delivery and delivery
+                        partners, as well as proven payment systems.
                     </div>
                 </div>
             </div>
@@ -122,7 +137,7 @@
     </div>
 </div>
 <script type="text/javascript">
-    $(".faq-plus").on('click',function(){
+    $(".faq-plus").on('click', function () {
         $(this).parent().parent().find('.faq-body').slideToggle();
     });
 </script>
@@ -130,4 +145,5 @@
 </html>
 
 {% extends footer.html %}
+
 

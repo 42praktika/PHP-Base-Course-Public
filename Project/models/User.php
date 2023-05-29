@@ -24,13 +24,14 @@ class User extends Model
      * @param string $password
      */
     public function __construct(
-        ?int $id,
+        ?int   $id,
         string $name,
         string $username,
         string $email,
         string $password
 
-    ) {
+    )
+    {
         parent::__construct($id);
         $this->name = $name;
         $this->username = $username;

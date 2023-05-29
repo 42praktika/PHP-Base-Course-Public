@@ -21,6 +21,9 @@ class CartMapper extends Mapper
     private ?\PDOStatement $deleteProduct;
 
     private ?\PDOStatement $selectAllCart;
+
+    private ?\PDOStatement $selectProduct;
+
     /**
      * @param \PDOStatement|null $insert
      * @param \PDOStatement|null $update
@@ -41,13 +44,16 @@ class CartMapper extends Mapper
         $this->delete = $this->getPdo()->prepare("DELETE FROM cart WHERE id = :id");
         $this->select = $this->getPdo()->prepare("SELECT * FROM cart WHERE id = :id");
         $this->selectAll = $this->getPdo()->prepare("select * from cart");
+        $this->selectProduct = $this->getPdo()->prepare("select * from cart where username = :username and productId = :productId");
         $this->selectUserCart = $this->getPdo()->prepare("select * from cart where username = :username");
         $this->deleteProduct = $this->getPdo()->prepare("delete from cart where username= :username and productId= :productId");
         $this->selectAllCart = $this->getPdo()->prepare("select p.id,p.name,p.image,p.price,s.amount,p.title,p.description,p.categoryId from cart as s left join product p on s.productID = p.id where s.username= :username ");
         $this->updateAmount = $this->getPdo()->prepare("update cart set amount= :amount where username= :username and productId= :productId ");
+        $this->selectAmount = $this->getPdo()->prepare("select amount from cart where username= :username and productId= :productId ");
     }
+
     /**
-     * @param Product $model
+     * @param Cart $model
      * @return Model
      */
     protected function doInsert(Model $model): Model
@@ -73,12 +79,27 @@ class CartMapper extends Mapper
         ]);
     }
 
+    public function doUpdateAmount(string $username, int $productId, int $amount): void
+    {
+        $this->updateAmount->execute([":amount" => $amount,
+            ":username" => $username,
+            "productId" => $productId]);
+
+    }
+
     protected function doDelete(Model $model): void
     {
         $this->delete->execute([
             ":id" => $model->getId(),
 
-            ]);
+        ]);
+    }
+
+    public function doDeleteProduct(string $username, int $productId): void
+    {
+        $this->deleteProduct->execute([":username" => $username,
+            "productId" => $productId]);
+
     }
 
     protected function doSelect(int $id): array
@@ -87,32 +108,32 @@ class CartMapper extends Mapper
         return $this->select->fetch(\PDO::FETCH_NAMED);
     }
 
-    protected function doSelectUserCart(Model $model): array
+    public function doSelectUserCart(string $username): array
     {
-        $this->selectUserCart->execute([":username"=>$model->getUsername()]);
-        return $this->selectUserCart->fetch(\PDO::FETCH_NAMED);
+        $this->selectUserCart->execute([":username" => $username]);
+        return $this->selectUserCart->fetch(\PDO::FETCH_ASSOC);
     }
 
-    protected function doDeleteProduct(Model $model): void
+    public function doSelectAmount(string $username, int $productId): array
     {
-        $this->deleteProduct->execute([":username" => $model->getUsername(),
-            "productId"=>$model->getProductId()]);
-
+        $this->selectAmount->execute([":username" => $username,
+            "productId" => $productId]);
+        return $this->selectAmount->fetch(\PDO::FETCH_ASSOC);
     }
 
-    protected function doUpdateAmount(Model $model): void
+    public function doSelectProduct(string $username, int $productId): array
     {
-        $this->updateAmount->execute([":amount" => $model->getAmount(),
-        ":username"=>$model->getUsername(),
-          "productId"=>$model->getProductId()]);
-
+        $this->selectProduct->execute([":username" => $username,
+            ":productId" => $productId]);
+        return $this->selectProduct->fetchAll(\PDO::FETCH_ASSOC);
     }
 
-    protected function doSelectAllCart(Model $model): array
+    public function doSelectAllCart(string $username): array
     {
-        $this->selectAllCart->execute([":username" => $model->getUsername()]);
-        return $this->selectAllCart->fetch(\PDO::FETCH_NAMED);
+        $this->selectAllCart->execute([":username" => $username]);
+        return $this->selectAllCart->fetchAll(\PDO::FETCH_ASSOC);
     }
+
     protected function doSelectAll(): array
     {
         $this->selectAll->execute();
@@ -127,7 +148,7 @@ class CartMapper extends Mapper
             $data["username"],
             $data["productId"],
             $data["amount"],
-            );
+        );
     }
 
     public function getInstance()

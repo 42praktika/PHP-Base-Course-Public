@@ -28,17 +28,18 @@ class CartItem extends Model
 
 
     public function __construct(
-        ?int $id,
-        int $productId,
+        ?int   $id,
+        int    $productId,
         string $productName,
         string $productImage,
-        int $productPrice,
-        int $productAmount,
+        int    $productPrice,
+        int    $productAmount,
         string $productTitle,
         string $productDescription,
-        int $productCategoryId
+        int    $productCategoryId
 
-    ) {
+    )
+    {
         parent::__construct($id);
         $this->productId = $productId;
         $this->productName = $productName;

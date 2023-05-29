@@ -1,1 +1,19 @@
+{% extends layout.html %}
+{%block title %} Details {% endblock%}
+{%block content%}
+{% endblock %}
+{% include header.html %}
+<div class="card" style="width: 400px; position: relative; left: 700px;">
+    <img src="{{ $product['image'] }}" class="card-img-top" alt="...">
+    <div class="card-body">
+        <h5 class="card-title">{{ $product['name'] }}</h5>
+        <p class="card-text">{{ $product['description'] }}</p>
+    </div>
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item">{{ $product['title']}}</li>
+        <li class="list-group-item">{{ $category['name'] }}</li>
+        <li class="list-group-item">{{ $product['price']}}</li>
+    </ul>
+</div>
+{% include footer.html %}
 

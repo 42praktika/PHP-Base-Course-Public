@@ -16,6 +16,8 @@ class CategoryMapper extends Mapper
     private ?\PDOStatement $select;
     private ?\PDOStatement $selectAll;
 
+    private ?\PDOStatement $selectName;
+
     /**
      * @param \PDOStatement|null $insert
      * @param \PDOStatement|null $update
@@ -30,15 +32,16 @@ class CategoryMapper extends Mapper
         );
         $this->update = $this->getPdo()->prepare(
             "UPDATE category 
-                  SET name = :name, 
+                  SET name = :name 
                       WHERE id = :id");
         $this->delete = $this->getPdo()->prepare("DELETE FROM category WHERE id=:id");
         $this->select = $this->getPdo()->prepare("SELECT * FROM category WHERE id = :id");
         $this->selectAll = $this->getPdo()->prepare("SELECT * FROM category");
+        $this->selectName = $this->getPdo()->prepare("SELECT name FROM category WHERE id = :id");
     }
 
     /**
-     * @param User $model
+     * @param Category $model
      * @return Model
      */
     protected function doInsert(Model $model): Model
@@ -71,6 +74,12 @@ class CategoryMapper extends Mapper
         return $this->select->fetch(\PDO::FETCH_NAMED);
     }
 
+    public function doSelectName(int $id): array
+    {
+        $this->selectName->execute([":id" => $id]);
+        return $this->selectName->fetch(\PDO::FETCH_ASSOC);
+    }
+
     protected function doSelectAll(): array
     {
         $this->selectAll->execute();
@@ -89,4 +98,5 @@ class CategoryMapper extends Mapper
     {
         return $this;
     }
+
 }

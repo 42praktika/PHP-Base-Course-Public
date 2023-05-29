@@ -2,22 +2,35 @@
 <div style="width: 300px; height:250px; position: relative; left: 50px">
     <ul class="dropdown-menu position-static d-grid gap-1 p-2 rounded-3 mx-0 shadow w-220px">
         <li><a class="dropdown-item rounded-2 active" href="#">Categories</a></li>
-        <li><hr class="dropdown-divider"></li>
-        <li><a class="dropdown-item rounded-2" href="#">Roman</a></li>
-        <li><a class="dropdown-item rounded-2" href="#">Detective</a></li>
-        <li><a class="dropdown-item rounded-2" href="#">Fantasy</a></li>
-        <li><a class="dropdown-item rounded-2" href="#">Science</a></li>
+        <li>
+            <hr class="dropdown-divider">
+        </li>
+        {% foreach ( $categories as $category): %}
+        <form action="http://localhost:8081/{{ $searchCategory}}" method="post">
+            <!--                 <input hidden name="username" value="${sessionScope.acc.login}">-->
+            <input hidden name="categoryid" value="{{ $category['id']}}">
+            <li>
+                <button type="submit" class="dropdown-item rounded-2">{{ $category['name']}}</button>
+            </li>
+        </form>
+        {% endforeach %}
     </ul>
 </div>
+<br><br><br>
 <div class="b-example-divider"></div>
 
 <div class="card" style="width: 300px;position: relative; left: 50px">
-    <h3 class="dropdown-item rounded-2 active" style="position:relative; left: 15px" >Last product</h3>
-    <img src="..." class="card-img-top" alt="...">
+    <h3 class="dropdown-item rounded-2 active" style="position:relative; left: 15px">Last product</h3>
+    <img src="{{ $last['image'] }}" class="card-img-top" alt="...">
     <div class="card-body">
-        <h5 class="card-title">Name of product</h5>
-        <p class="card-text">Book description</p>
-        <a href="#" class="btn btn-primary">Buy</a>
+        <h5 class="card-title">{{ $last['name'] }}</h5>
+        <p class="card-text">{{ $last['description'] }}</p>
+        <form action="http://localhost:8081/{{ $postAction }}" method="post">
+            <!--                 <input hidden name="username" value="${sessionScope.acc.login}">-->
+            <input hidden name="id" value="{{ $last['id']}}">
+            <input hidden name="amount" value="1">
+            <button type="submit" class="btn btn-primary">Buy</button>
+        </form>
     </div>
 </div>
 {% endblock %}

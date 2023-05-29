@@ -7,6 +7,7 @@ use PDO;
 class Database
 {
     public PDO $pdo;
+
     public function __construct(string $dsn, string $user, string $password)
     {
         $this->pdo = new PDO($dsn, $user, $password);

@@ -18,6 +18,8 @@ class UserMapper extends Mapper
 
     private ?\PDOStatement $login;
 
+    private ?\PDOStatement $selectByUsername;
+
     /**
      * @param \PDOStatement|null $insert
      * @param \PDOStatement|null $update
@@ -38,9 +40,10 @@ class UserMapper extends Mapper
                       isAdmin = :isAdmin
                       WHERE username = :username");
         $this->delete = $this->getPdo()->prepare("DELETE FROM users WHERE username=:username");
-        $this->select = $this->getPdo()->prepare("SELECT * FROM users WHERE username = :username");
+        $this->select = $this->getPdo()->prepare("SELECT * FROM users WHERE id = :id");
         $this->selectAll = $this->getPdo()->prepare("SELECT * FROM users");
         $this->login = $this->getPdo()->prepare("SELECT * FROM users where username=:username and password=:password");
+        $this->selectByUsername = $this->getPdo()->prepare("SELECT * FROM users WHERE username = :username");
     }
 
     /**
@@ -62,6 +65,7 @@ class UserMapper extends Mapper
         return $model;
     }
 
+
     protected function doUpdate(Model $model): void
     {
         $this->update->execute([
@@ -78,24 +82,31 @@ class UserMapper extends Mapper
         $this->delete->execute([":username" => $model->getUsername()]);
     }
 
-    protected function doSelectUserByUsername(Model $model): array
-    {
-        $this->select->execute([":username" => $model->getUsername()]);
-        return $this->select->fetch(\PDO::FETCH_NAMED);
-    }
-
     protected function doSelectAll(): array
     {
         $this->selectAll->execute();
         return $this->selectAll->fetchAll();
     }
 
+    protected function doSelect(int $id): array
+    {
+        $this->select->execute([":id" => $id]);
+        return $this->select->fetch(\PDO::FETCH_NAMED);
+    }
+
+    public function doSelectByUsername(string $username): array
+    {
+        $this->selectByUsername->execute([":username" => $username]);
+        return $this->selectByUsername->fetchAll();
+    }
+
     public function doLogin(string $username, string $password): array
     {
         $this->login->execute([":username" => $username,
-            ":password"=>$password]);
+            ":password" => $password]);
         return $this->login->fetchAll(\PDO::FETCH_ASSOC);
     }
+
     function createObject(array $data): Model
     {
         return new User(
@@ -110,12 +121,5 @@ class UserMapper extends Mapper
     public function getInstance()
     {
         return $this;
-    }
-
-
-    protected function doSelect(int $id): array
-    {
-        $this->select->execute([":id" => $id]);
-        return $this->select->fetch(\PDO::FETCH_NAMED);
     }
 }

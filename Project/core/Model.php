@@ -4,7 +4,7 @@ namespace app\core;
 
 abstract class Model
 {
-    private ?int $id;
+    protected ?int $id;
 
     public function __construct(?int $id)
     {

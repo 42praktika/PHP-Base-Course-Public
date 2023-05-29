@@ -6,7 +6,7 @@ use app\core\Model;
 
 class Category extends Model
 {
- private string $name;
+    private string $name;
 
     /**
      * @param int|null $id
@@ -15,10 +15,11 @@ class Category extends Model
 
 
     public function __construct(
-        ?int $id,
+        ?int   $id,
         string $name
 
-    ) {
+    )
+    {
         parent::__construct($id);
         $this->name = $name;
     }

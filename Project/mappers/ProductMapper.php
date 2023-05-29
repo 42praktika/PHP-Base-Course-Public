@@ -1,6 +1,7 @@
 <?php
 
 namespace app\mappers;
+
 use app\models\Product;
 use app\core\Mapper;
 use app\core\Model;
@@ -20,6 +21,7 @@ class ProductMapper extends Mapper
 
     private ?\PDOStatement $selectLast;
 
+
     /**
      * @param \PDOStatement|null $insert
      * @param \PDOStatement|null $update
@@ -29,8 +31,8 @@ class ProductMapper extends Mapper
     {
         parent::__construct();
         $this->insert = $this->getPdo()->prepare(
-            "INSERT into product  (name,image,price,title,description,categoryId)
-                    VALUES ( :name, :image, :price, :title, :description, :categoryId  )"
+            "INSERT into product  (name,image,price,title,description,categoryid)
+                    VALUES ( :name, :image, :price, :title, :description, :categoryid  )"
         );
         $this->update = $this->getPdo()->prepare(
             "UPDATE product
@@ -39,15 +41,17 @@ class ProductMapper extends Mapper
                       price = :price, 
                       title = :title,
                       description = :description,
-                      categoryId = :categoryId 
+                      categoryid = :categoryid 
                       WHERE id = :id");
         $this->delete = $this->getPdo()->prepare("DELETE FROM product WHERE id=:id");
         $this->select = $this->getPdo()->prepare("SELECT * FROM product WHERE id = :id");
         $this->selectAll = $this->getPdo()->prepare("SELECT * FROM product");
-        $this->selectByCategory = $this->getPdo()->prepare("select * from product where categoryId = :categoryId");
-        $this->selectByTitle = $this->getPdo()->prepare("select * from product where name like %:title% ");
-        $this->selectLast = $this->getPdo()->prepare("select * from product order by id desc");
+        $this->selectByCategory = $this->getPdo()->prepare("select * from product where categoryid = :categoryid");
+        $this->selectByTitle = $this->getPdo()->prepare("select * from product where name like :title ");
+        $this->selectLast = $this->getPdo()->prepare("select * from product order by id desc limit 1");
+
     }
+
     /**
      * @param Product $model
      * @return Model
@@ -61,7 +65,7 @@ class ProductMapper extends Mapper
             ":price" => $model->getPrice(),
             ":title" => $model->getTitle(),
             ":description" => $model->getDescription(),
-            ":categoryId" => $model->getCategoryId()
+            ":categoryid" => $model->getCategoryid()
         ]);
         $id = $this->getPdo()->lastInsertId();
         $model->setId($id);
@@ -77,7 +81,20 @@ class ProductMapper extends Mapper
             ":price" => $model->getPrice(),
             ":title" => $model->getTitle(),
             ":description" => $model->getDescription(),
-            ":categoryId" => $model->getCategoryId()
+            ":categoryId" => $model->getCategoryid()
+        ]);
+    }
+
+    public function doUpdateProduct(int $id, string $name, string $image, int $price, string $title, string $description, int $categoryid): void
+    {
+        $this->update->execute([
+            ":id" => $id,
+            ":name" => $name,
+            ":image" => $image,
+            ":price" => $price,
+            ":title" => $title,
+            ":description" => $description,
+            ":categoryid" => $categoryid
         ]);
     }
 
@@ -86,10 +103,21 @@ class ProductMapper extends Mapper
         $this->delete->execute([":id" => $model->getId()]);
     }
 
-    protected function doSelect(int $id): array
+    public function doDeleteProduct(int $id): void
+    {
+        $this->delete->execute([":id" => $id]);
+    }
+
+    public function doSelect(int $id): array
     {
         $this->select->execute([":id" => $id]);
-        return $this->select->fetch(\PDO::FETCH_NAMED);
+        return $this->select->fetch();
+    }
+
+    public function doSelectById(int $id): array
+    {
+        $this->select->execute([":id" => $id]);
+        return $this->select->fetch();
     }
 
     protected function doSelectAll(): array
@@ -98,23 +126,24 @@ class ProductMapper extends Mapper
         return $this->selectAll->fetchAll();
     }
 
-    protected function doSelectByCategory(Model $model): array
+    public function doSelectByCategory(int $id): array
     {
-        $this->selectByCategory->execute([":categoryId" => $model->getCategoryId()]);
-        return $this->selectByCategory->fetch(\PDO::FETCH_NAMED);
+        $this->selectByCategory->execute([":categoryid" => $id]);
+        return $this->selectByCategory->fetchAll();
     }
 
-    protected function doSelectByTitle(Model $model): array
+    public function doSelectByTitle(string $text): array
     {
-        $this->selectByTitle->execute([":title" => $model->getTitle()]);
-        return $this->selectByTitle->fetch(\PDO::FETCH_NAMED);
+        $this->selectByTitle->execute([":title" => $text]);
+        return $this->selectByTitle->fetchAll();
     }
 
-    protected function doSelectLast(): array
+    public function doSelectLast(): array
     {
         $this->selectLast->execute();
         return $this->selectLast->fetch(\PDO::FETCH_NAMED);
     }
+
     function createObject(array $data): Model
     {
         return new Product(
@@ -124,11 +153,12 @@ class ProductMapper extends Mapper
             $data["price"],
             $data["title"],
             $data["description"],
-            $data["categoryId"]);
+            $data["categoryid"]);
     }
 
     public function getInstance()
     {
         return $this;
     }
+
 }

@@ -19,12 +19,13 @@ class Cart extends Model
 
 
     public function __construct(
-        ?int $id,
+        ?int   $id,
         string $username,
-        int $productId,
-        int $amount
+        int    $productId,
+        int    $amount
 
-    ) {
+    )
+    {
         parent::__construct($id);
         $this->username = $username;
         $this->productId = $productId;
@@ -78,6 +79,5 @@ class Cart extends Model
     {
         $this->amount = $amount;
     }
-
 
 }

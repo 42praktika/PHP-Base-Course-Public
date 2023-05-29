@@ -4,12 +4,13 @@
 
 {%block content%}
 {% endblock %}
-{% include header.html %}
+{% include header.html  %}
 <main>
 
-    <div  id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+    <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-indicators">
-            <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true"
+                    aria-label="Slide 1"></button>
             <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
             <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
         </div>
@@ -25,11 +26,13 @@
                 </div>
             </div>
             <div class="carousel-item">
-                <img src="img/5865.jpg" width="750px" height="650px" style="position: relative; left: 600px; top:-120px"/>
+                <img src="img/5865.jpg" width="750px" height="650px"
+                     style="position: relative; left: 600px; top:-120px"/>
                 <div class="container">
                     <div class="carousel-caption">
                         <h1 style="color: black">Interesting news</h1>
-                        <p style="color: black">Our experts conducted an experiment and revealed the advantages of online shopping.</p>
+                        <p style="color: black">Our experts conducted an experiment and revealed the advantages of
+                            online shopping.</p>
                         <p><a class="btn btn-lg btn-primary" href="/news">Learn more</a></p>
                     </div>
                 </div>
@@ -45,8 +48,9 @@
                 </div>
             </div>
         </div>
-        <button  style="color: black" class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
-            <span  class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <button style="color: black" class="carousel-control-prev" type="button" data-bs-target="#myCarousel"
+                data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Previous</span>
         </button>
         <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
@@ -57,33 +61,37 @@
 
     {% include leftPanel.html %}
     <div class="container" style="position: relative; top:-464px; left: 200px">
-        <div class="row row-cols-md-3" >
-<!--            <?php foreach ($products as $product): ?>-->
+        <div class="row row-cols-md-3">
+            {% foreach ( $products as $product): %}
             <div class="col mb-4">
-     <div class="card" style="width: 300px;">
+                <div class="card" style="width: 300px;">
 
-         <img  class="card-img-top" alt="..."> >
-         <div class="card-body">
-             <h5 class="card-title"></h5>
-             <p class="card-text"></p>
-         </div>
-         <div class="card-footer">
-             <button  class="btn btn-primary" style="background:black "></button>
-             <form action="addToCart" method="post">
-<!--                 <input hidden name="login" value="${sessionScope.acc.login}">-->
-<!--                 <input hidden name="id" value=<?php echo $product->id; ?>>-->
-<!--                 <input hidden name="amount" value="1">-->
-             <button type="submit" class="btn btn-primary">Add to cart</button>
-             </form>
-         </div>
-     </div>
-     </div>
-<!--            <?php endforeach; ?>-->
- </div>
+                    <img class="card-img-top" alt="..." src="{{ $product['image'] }}">
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            <form action="http://localhost:8081/{{ $detailsAction }}" method="post">
+                                <input hidden name="id" value="{{ $product['id']}}">
+                                <button type="submit" class="dropdown-item rounded-2">{{ $product['name'] }}</button>
+                            </form>
+                            <p class="card-text">{{$product['title']}}</p>
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn btn-primary" style="background:black ">{{$product['price']}}</button>
+                        <form action="http://localhost:8081/{{ $postAction }}" method="post">
+                            <input hidden name="id" value="{{ $product['id']}}">
+                            <input hidden name="amount" value="1">
+                            <button type="submit" class="btn btn-primary">Add to cart</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            {% endforeach %}
+        </div>
     </div>
 
 
-    <script async src="https://cdn.jsdelivr.net/npm/es-module-shims@1/dist/es-module-shims.min.js" crossorigin="anonymous"></script>
+    <script async src="https://cdn.jsdelivr.net/npm/es-module-shims@1/dist/es-module-shims.min.js"
+            crossorigin="anonymous"></script>
     <script type="importmap">
     {
       "imports": {
@@ -91,6 +99,7 @@
         "bootstrap": "https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.esm.min.js"
       }
     }
+
     </script>
     <script type="module">
         import * as bootstrap from 'bootstrap'
@@ -98,4 +107,4 @@
         new bootstrap.Popover(document.getElementById('popoverButton'))
     </script>
 </main>
-    {% include footer.html %}
+{% include footer.html %}
