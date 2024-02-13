@@ -3,9 +3,15 @@
 `PHP` (англ. PHP: Hypertext Preprocessor) - скриптовый язык, используемый для разработки веб-приложений.
 `PHP` является одним из самых распространенных языков программирования для создания динамических веб-приложений.
 
-По индексу PYPL `PHP` занимает 6 место в мире (данные на июнь 2022 года). PYPL (PopularitY of Programming Language Index) сформирован на основе анализа частоты поиска обучающих материалов по языку программированию в Google.
+По индексу TIOBE `PHP` занимает 7 место в мире (данные на январь 2024 года). TIOBE формирует свой рейтинг на основе частоты поисковых запросов.
 
-[![PYPL](assets/computer_languages22.png)](https://statisticstimes.com/tech/top-computer-languages.php)
+
+![Рейтинг TIOBE](https://github.com/42praktika/PHP-Base-Course-Public/assets/20073167/5a65ab55-c39d-46c7-962d-4e87d734fa66)
+
+Среди языков бекенда по данным w3techs PHP много лет надёжно удерживает первое место, являясь основным серверным языком программирования на подавляющем большинстве сайтов (хоть и теряет каждый год около 1%)
+![image](https://github.com/42praktika/PHP-Base-Course-Public/assets/20073167/e5b9baf0-002f-455b-a0f5-cf5710aadfcd)
+
+
 
 ## Особенности PHP
 - Это интерпретируемый язык
@@ -32,12 +38,14 @@
     - версия 8.0 - 2020 год - поддержка union-типов, [JIT-компиляция](https://ru.wikipedia.org/wiki/JIT-%D0%BA%D0%BE%D0%BC%D0%BF%D0%B8%D0%BB%D1%8F%D1%86%D0%B8%D1%8F) и атрибуты (также известны как аннотации)
     - версия 8.1 - 2021 год - добавлен новый тип enum, readonly свойства классов, улучшение производительности и т.д.
     - версия 8.2 - 2022 год - readonly для классов целиком, новый генератор случайных чисел (объектный и лучше чем старые), константы в трейтах и т.д.
+    - версия 8.3 - 2023 год - типизированные константы классов, динамическое обращение к константам классов, глубокое клонирование readomly-полей и т.д.
 - низкий порог входа в разработку на `PHP` и постоянное развитие
 - огромное сообщество
 - поддерживаемые удобные фреймворки для разработки приложений от сайта визитки до Enterprise приложения
-- средняя зарплата 177 тысяч рублей, медианная - 155 тысяч (по данным https://zarplan.com/)
+- средняя зарплата middle - 158 тысяч рублей (по данным geeklink.io) 
 
-![image](https://user-images.githubusercontent.com/20073167/218404841-27fcef4c-b136-4791-80dd-ede321bd7157.png)
+![image](https://github.com/42praktika/PHP-Base-Course-Public/assets/20073167/a00a3eac-d344-417d-a7d6-5d07bc3d7705)
+
 
 
 ## Benchmarks
@@ -50,8 +58,9 @@
 ## Где запускать PHP?
 
 - IDE:
-    - рекомендуемая бесплатная учебная лицензия [PHPStorm](https://www.jetbrains.com/help/phpstorm/installation-guide.html)
+    - [PHPStorm](https://www.jetbrains.com/help/phpstorm/installation-guide.html)
     - [Visual Studio](https://visualstudio.microsoft.com/)
+    - [Visual Studio Code](https://code.visualstudio.com/docs/languages/php)
     - [Dreamweaver](https://helpx.adobe.com/dreamweaver/get-started.html)
 - Песочницы:
     - https://sandbox.onlinephpfunctions.com/
