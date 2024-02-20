@@ -2,7 +2,7 @@
 
 ### Требования к проекту:
 
-1. Проект должен выполнять все CRUD операции (creade, read, update, delete)
+1. Проект должен выполнять все CRUD операции (create, read, update, delete)
 2. backend на `PHP` версии 8.0
 3. frontend -  `HTML` + `JS` + `CSS`. Дополнительный балл за `Vue.js`/`JS`
 4. Тема проекта любая
