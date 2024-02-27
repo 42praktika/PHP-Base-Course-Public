@@ -1,6 +1,6 @@
 ## Задание 1. Худший UI
 
-В TJ есть статья с худшими интерфейсами форм https://tjournal.ru/internet/99709-bad-ui-na-reddit-tri-goda-sorevnuyutsya-v-sozdanii-hudshih-interfeysov-regulirovki-zvuka-vvoda-nomera-i-parolya.
+В TJ есть статья с худшими интерфейсами форм https://tjournal.ru/internet/99709-bad-ui-na-reddit-tri-goda-sorevnuyutsya-v-sozdanii-hudshih-interfeysov-regulirovki-zvuka-vvoda-nomera-i-parolya (https://www.reddit.com/r/badUIbattles).
 
 Можно взять любой интерфейс и реализовать его средствами `php`, `js` и `css`.
 
