@@ -5,6 +5,7 @@ declare(strict_types=1);
 $di = new DirectoryIterator('.');
 
 
+
 /**
  * @var DirectoryIterator $file
  */

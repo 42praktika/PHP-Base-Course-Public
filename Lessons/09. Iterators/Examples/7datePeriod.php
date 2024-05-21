@@ -6,10 +6,11 @@ $start = new DateTime('first day of this month');
 $end = new DateTime('first day of next month');
 $step = new DateInterval('P1D');
 $datePeriod = new DatePeriod($start, $step, $end);
+echo "SU MO TU WE TH FR SA", PHP_EOL;
 echo str_repeat("   ", (int)$start->format("w")); // Месяц начинается не всегда с понедельника - добавляем по 3 пробела на каждый день недели до 1 числа
-foreach ($datePeriod as $date ) {
+foreach ($datePeriod as $date) {
     echo $date->format("d"), " ";
-    if ($date->format("w")==="6") {
+    if ($date->format("w") === "6") {
         echo PHP_EOL;
     }
 }

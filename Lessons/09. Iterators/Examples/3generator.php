@@ -1,14 +1,14 @@
 <?php
 
 declare(strict_types=1);
-function GenerateOdds(): iterable
+function GenerateOdds(): Generator
 {
     yield 1;
     yield 3;
     yield 5;
     yield 7;
     yield 9;
-    return 4;
+    return 5;
 }
 
 $gen = GenerateOdds();
@@ -18,4 +18,4 @@ foreach ($gen as $num) {
 }
 echo PHP_EOL;
 
-echo 'Number of elements: ', $gen->getReturn();
+echo 'Number of elements: ', @$gen->getReturn();

@@ -4,22 +4,22 @@ declare(strict_types=1);
 
 /**
  * Выполняет действие над каждым элементом массива и возвращает результат
- * @param $arr
+ * @param iterable $arr
  * @param $callback
  * @return Generator
  */
-function collect($arr, $callback)
+function collect(iterable $arr, $callback): Generator
 {
     foreach ($arr as $v) yield $callback($v);
 }
 
 /**
  * Фильтрует массив и возвращает только подходящие значения
- * @param $arr
+ * @param iterable $arr
  * @param $callback
  * @return Generator
  */
-function select($arr, $callback)
+function select(iterable $arr, $callback): Generator
 {
     foreach ($arr as $v)
         if ($callback($v)) yield $v;

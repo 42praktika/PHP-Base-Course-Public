@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-function square($value)
+function square($value): Generator
 {
     yield $value * $value;
 }
 
-function even_square($arr)
+function even_square($arr): Generator
 {
     foreach ($arr as $value) {
         if ($value % 2 == 0) yield from square($value);
